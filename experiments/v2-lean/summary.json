@@ -1,0 +1,447 @@
+{
+  "cases": [
+    {
+      "case": "q01",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q02",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q03",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q04",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q05",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q06",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q07",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q08",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q09",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q10",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q11",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q12",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q13",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q14",
+      "encoding_status": "inconsistent_premises",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q15",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q16",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q17",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q18",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q19",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q20",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q21",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q22",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q23",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q24",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q25",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q26",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q27",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q28",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q29",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q30",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q31",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q32",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    },
+    {
+      "case": "q33",
+      "encoding_status": "unsupported",
+      "lean": {
+        "status": "not_applicable",
+        "proof_checked": false
+      }
+    },
+    {
+      "case": "q34",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    },
+    {
+      "case": "q35",
+      "encoding_status": "unsupported",
+      "lean": {
+        "status": "not_applicable",
+        "proof_checked": false
+      }
+    },
+    {
+      "case": "q36",
+      "encoding_status": "unsupported",
+      "lean": {
+        "status": "not_applicable",
+        "proof_checked": false
+      }
+    },
+    {
+      "case": "q37",
+      "encoding_status": "unsupported",
+      "lean": {
+        "status": "not_applicable",
+        "proof_checked": false
+      }
+    },
+    {
+      "case": "q38",
+      "encoding_status": "invalid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "requested_proof": false
+    }
+  ],
+  "proofs_checked": 17,
+  "failures": 0,
+  "note": "First-order exports are statements, not kernel-checked proofs."
+}

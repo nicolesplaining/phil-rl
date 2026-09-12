@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.1",
+  "source": "Vera is identical to the critic. The critic is thoughtful. Therefore Vera is thoughtful.",
+  "source_sha256": "6e776f62a27e87e832718d39d5ad70981aef77d15aa8d3395516fc46f4d25311",
+  "reconstruction": {
+    "title": "Identity and Thoughtfulness Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Vera is identical to the critic.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Vera is identical to the critic.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The critic is thoughtful.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The critic is thoughtful.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Vera is thoughtful.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Vera is thoughtful.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "84e1c64049906a483f335c701a85c91a6dae1625c728706682f58e63d6d67193",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Vera",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual named Vera"
+      },
+      {
+        "name": "the_critic",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual known as the critic"
+      },
+      {
+        "name": "Thoughtful",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is thoughtful"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(eq Vera the_critic)",
+        "reason": "Identity relation between Vera and the critic using built-in equality"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Thoughtful the_critic)",
+        "reason": "Predicate application to the_critic constant"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Thoughtful Vera)",
+        "reason": "Predicate application to Vera constant"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on the substitution property of identity in first-order logic with equality",
+      "The conclusion follows by replacing 'the_critic' with 'Vera' in the Thoughtful predicate due to their established identity"
+    ]
+  },
+  "formalization_sha256": "29293c82d0494bd32e6246c71f30c592a68e6308a3fa6917037fd752ab877ad6"
+}

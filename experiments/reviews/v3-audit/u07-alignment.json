@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "4b6a9336f0b57918ad5dc362a51f575634dbd1df2c371b150f512830c6bdd171",
+  "generated_sha256": "8784cdf110dff9e079f16b47003428d0a99ec35e59314b6bbe9e563f23bd45b2",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "c1": "I",
+    "c2": "D"
+  },
+  "glossary_rationale": "The lowercase proposition names denote being informed and independent. Their conjunction is the conclusion.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The lowercase proposition names denote being informed and independent. Their conjunction is the conclusion.",
+  "domain_restriction": null
+}

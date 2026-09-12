@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-09-12T22:24:09.941508+00:00",
+  "finished_at": "2026-09-12T22:25:11.221915+00:00",
+  "prompt_version": "0.2",
+  "prompt_sha256": {
+    "reconstruction": "7082661e2630dd3a7052490a4b909b3f6a0dc777ccd9c69abd64815908590bbe",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"title\": \"Moral Responsibility and Free Action\", \"claims\": [{\"id\": \"c1\", \"text\": \"The agent is morally responsible.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"The agent is morally responsible.\", \"occurrence\": 0}, \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"The agent is not morally responsible.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"The agent is not morally responsible.\", \"occurrence\": 0}, \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"The agent acted freely.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"Therefore, the agent acted freely.\", \"occurrence\": 0}, \"interpretation_note\": \"The argument is logically invalid due to contradictory premises. The conclusion does not follow from the premises unless an implicit assumption is made that a contradiction implies free action, which is not established by the source.\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "usage": {
+        "prompt_tokens": 1461,
+        "total_tokens": 2612,
+        "completion_tokens": 1151,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"A single nonempty set containing the agent in question\", \"symbols\": [{\"name\": \"M\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The agent is morally responsible\"}, {\"name\": \"F\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The agent acted freely\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"M\", \"reason\": \"Direct translation of 'The agent is morally responsible' as a proposition\"}, {\"claim_id\": \"c2\", \"formula\": \"(not M)\", \"reason\": \"Direct translation of 'The agent is not morally responsible' as the negation of M\"}, {\"claim_id\": \"c3\", \"formula\": \"F\", \"reason\": \"Direct translation of 'The agent acted freely' as a proposition\"}], \"interpretation_notes\": [\"Premises c1 and c2 are direct logical contradictions (M and ¬M), making the argument unsound. The conclusion F does not logically follow from these premises in classical logic unless an implicit assumption is made that contradictions entail free action, which is not established here. The formalization preserves the original structure despite the contradiction.\"]}",
+      "usage": {
+        "prompt_tokens": 1622,
+        "total_tokens": 2769,
+        "completion_tokens": 1147,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      33
+    ],
+    "c2": [
+      34,
+      71
+    ],
+    "c3": [
+      72,
+      106
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "896b71905fb4bfa2d41912ec1177980f1a0bd794e4ad635aed8cae464fd0af6e",
+    "reconstruction_sha256": "36acafd27124988af2c394eb1b871b068e60454e2c9dbbfac5ef84c52c7621c6",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "inconsistent_premises",
+    "premises_satisfiable": false
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "896b71905fb4bfa2d41912ec1177980f1a0bd794e4ad635aed8cae464fd0af6e",
+    "reconstruction_sha256": "36acafd27124988af2c394eb1b871b068e60454e2c9dbbfac5ef84c52c7621c6",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "inconsistent_premises",
+    "premises_satisfiable": false
+  }
+}

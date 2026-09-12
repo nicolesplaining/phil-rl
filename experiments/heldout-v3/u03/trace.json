@@ -1,0 +1,169 @@
+{
+  "source": "If this confession is sincere, it is voluntary. This confession is voluntary. Therefore this confession is sincere.",
+  "source_sha256": "99722952c3e0a26dc3739bff02d58468c53c3ebd2c5f86d828551e05ad2a1045",
+  "started_at": "2026-09-12T23:30:27.026184+00:00",
+  "prompt_version": "0.6",
+  "policy_version": "0.2",
+  "schema_sha256": {
+    "reconstruction": "0a89838f3fdea32fc87902a5547ac0438a90c62ae1af00f8696c381f60f9f494",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "fc14470e9688795eedcaf60215c6917106b75f199f51c7db9feb326198f5a93a",
+    "formalization": "c52b9d17fed3119ee9a17dbce8a892d563effa49c4bd542d00f76e210abe43b2"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a conditional statement followed by an assertion of the consequent and a conclusion affirming the antecedent, forming a logical argument.\", \"title\": \"Argument about the sincerity of a confession based on voluntariness\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"If this confession is sincere, it is voluntary.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"This confession is voluntary.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Therefore this confession is sincere.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one is a conditional statement: \"If this confession is sincere, it is voluntary.\" The second states that the confession is voluntary. The third is a conclusion: \"Therefore this confession is sincere.\"\n\nHmm, so the first step is to determine if this is an argument. The presence of \"Therefore\" in the third unit suggests a conclusion. The first two units are premises leading to that conclusion. \n\nThe first premise is a conditional: If sincere, then voluntary. The second premise is that the confession is voluntary. The conclusion is that it's sincere. Wait, but in logic, affirming the consequent is a fallacy. The structure here is P → Q, Q, therefore P. That's a classic fallacy, but the task is to reconstruct the argument as presented, not evaluate its validity.\n\nSo, the author is using the two premises to derive the conclusion. The first unit is a premise (conditional), the second is another premise (affirming the consequent), and the third is the conclusion. \n\nNow, I need to map these into the JSON structure. The status is \"argument\" because there's a conclusion. The claims would be each of the three units. The first claim (s1) is a premise, the second (s2) is a premise, and the third (s3) is the conclusion. The relation would be that premises s1 and s2 support the conclusion s3. \n\nWait, but in the argument form, the first premise is a conditional. So the relation would be that the conditional (s1) and the affirmation of the consequent (s2) are used to derive the conclusion (s3). Even though it's a fallacy, the reconstruction should reflect the actual structure presented. \n\nSo the claims are each of the three units. The relations would have premises s1 and s2 supporting s3. The conclusion_id is s3. There's no ambiguity here, so the ambiguities array is empty. The title could be something like \"Argument about the sincerity of a confession based on voluntariness.\"\n",
+      "usage": {
+        "prompt_tokens": 1697,
+        "total_tokens": 2422,
+        "completion_tokens": 725,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"S\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This confession is sincere\"}, {\"name\": \"V\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This confession is voluntary\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(implies S V)\", \"reason\": \"Direct translation of the conditional statement\"}, {\"claim_id\": \"c2\", \"formula\": \"V\", \"reason\": \"Direct translation of the atomic proposition\"}, {\"claim_id\": \"c3\", \"formula\": \"S\", \"reason\": \"Direct translation of the conclusion proposition\"}], \"interpretation_notes\": [\"The argument commits the fallacy of affirming the consequent (S → V and V does not entail S), but this is a structural observation unrelated to translation fidelity. Propositional logic was chosen because all claims can be represented as atomic propositions without requiring quantifiers or predicates. The domain description 'All individuals' is required by the schema but not semantically relevant in propositional logic.\"]}",
+      "reasoning": "\nOkay, let's tackle this. The user provided an argument about a confession's sincerity based on voluntariness. The task is to translate this into a formal logical structure using the specified JSON schema.\n\nFirst, I need to determine the logic type. The argument is a syllogism, but it's actually a logical fallacy (affirming the consequent). However, the user's instruction says to focus on translation, not validity. The structure uses conditional and premises, so classical propositional logic is appropriate here.\n\nNext, the domain description. Since all claims are about the same confession, the domain is all individuals, but since we're dealing with propositions, maybe propositional logic suffices. Wait, the user's normalization contract says that in propositional logic, atomic claims can be propositions. So, each claim can be a proposition.\n\nNow, symbols. Let's assign proposition symbols. Let S be \"This confession is sincere\" and V be \"This confession is voluntary.\" The first premise is \"If S, then V\" (S → V). The second premise is V. The conclusion is S. \n\nBut wait, the argument is in the form of affirming the consequent, which is invalid. But the user says to preserve the structure as is. So the formulas would be:\n\nc1: (implies S V)\nc2: V\nc3: S\n\nBut in propositional logic, these are propositions. So symbols would be S and V as propositions. \n\nCheck the JSON schema. The symbols array should have each proposition. The translations for each claim would map to these propositions. \n\nFor the translations, each claim's formula is straightforward. The reason for each is just that they are direct translations. \n\nInterpretation notes: The argument is invalid, but the user says not to comment on validity. However, the note should mention that the translation uses propositional logic and the structure, even if the argument is fallacious. \n\nWait, the user's instruction says to not comment on validity, consistency, etc. So the interpretation notes should only explain translation choices. For example, why S and V are propositions, and how the formulas are structured. \n\nAlso, check if any part requires first-order logic. Since the claims are about specific properties of a single confession, propositional logic is sufficient. \n\nSo the final JSON would have logic as classical_propositional, symbols S and V as propositions, translations for each claim, and notes explaining the choice of propositional logic and the structure.\n",
+      "usage": {
+        "prompt_tokens": 2026,
+        "total_tokens": 2786,
+        "completion_tokens": 760,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Argument about the sincerity of a confession based on voluntariness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this confession is sincere, it is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this confession is sincere, it is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This confession is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This confession is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this confession is sincere.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this confession is sincere.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8a4783885bd6126f6b73391a6b84a17f7108972e41bc5a4dfca934db3f794471",
+  "normalization": null,
+  "finished_at": "2026-09-12T23:31:07.961922+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      47
+    ],
+    "c2": [
+      48,
+      77
+    ],
+    "c3": [
+      78,
+      115
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "f8f859d125a05df26b404c37fa8a9ca077093191db5fac17a0d5f8e7ecec1062",
+    "reconstruction_sha256": "8a4783885bd6126f6b73391a6b84a17f7108972e41bc5a4dfca934db3f794471",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[S = False, V = True]",
+    "assignments": {
+      "S": "False",
+      "V": "True"
+    }
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "f8f859d125a05df26b404c37fa8a9ca077093191db5fac17a0d5f8e7ecec1062",
+    "reconstruction_sha256": "8a4783885bd6126f6b73391a6b84a17f7108972e41bc5a4dfca934db3f794471",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[S = False, V = True]",
+    "assignments": {
+      "S": "False",
+      "V": "True"
+    }
+  }
+}

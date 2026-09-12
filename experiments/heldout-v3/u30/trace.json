@@ -1,0 +1,163 @@
+{
+  "source": "Every promise is a commitment. No commitment is a sensation. Therefore no promise is a sensation.",
+  "source_sha256": "f2c77d5032d1e22513ea59e22f14314317c5d3bb8c0e4927e8f7b1a768ec191c",
+  "started_at": "2026-09-12T23:35:48.095831+00:00",
+  "prompt_version": "0.6",
+  "policy_version": "0.2",
+  "schema_sha256": {
+    "reconstruction": "0a89838f3fdea32fc87902a5547ac0438a90c62ae1af00f8696c381f60f9f494",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "fc14470e9688795eedcaf60215c6917106b75f199f51c7db9feb326198f5a93a",
+    "formalization": "c52b9d17fed3119ee9a17dbce8a892d563effa49c4bd542d00f76e210abe43b2"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a syllogism with two premises and a conclusion marked by 'Therefore'.\", \"title\": \"Syllogism on Promises and Sensations\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"Every promise is a commitment.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"No commitment is a sensation.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Therefore no promise is a sensation.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says \"Every promise is a commitment.\" The second is \"No commitment is a sensation.\" The third is \"Therefore no promise is a sensation.\" I need to determine if this is an argument.\n\nFirst, I check if there's a conclusion. The third sentence starts with \"Therefore,\" which is a conclusion indicator. So the conclusion is \"no promise is a sensation.\" The first two sentences are premises. The first premise is that all promises are commitments, and the second is that no commitments are sensations. The conclusion follows logically from these two premises using syllogistic reasoning. \n\nNow, I need to structure this into the required JSON format. The status should be \"argument\" because there's a clear conclusion derived from premises. The claims will be each of the source units. The first two are premises, the third is the conclusion. The relations will link the premises to the conclusion. \n\nI should make sure each claim has the correct role: premise for s1 and s2, conclusion for s3. The evidence_ids for each claim are their respective source unit IDs. The relations will have premises as s1 and s2 supporting the conclusion s3. \n\nNo ambiguities here since the structure is straightforward. The author is presenting a syllogism. No objections or replies mentioned. The title can be something like \"Syllogism on Promises and Sensations.\" \n\nI need to ensure that the JSON follows the schema exactly. Each claim's text is taken directly from the source units. The interpretation notes are empty because there's no ambiguity in the roles. The conclusion_id is s3. \n\nDouble-checking that all source units are included as claims. Yes, s1, s2, s3 are all there. The relations correctly link the premises to the conclusion. The status is \"argument\" with a valid reason. Everything seems in order.\n",
+      "usage": {
+        "prompt_tokens": 1694,
+        "total_tokens": 2363,
+        "completion_tokens": 669,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"Promise\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a promise\"}, {\"name\": \"Commitment\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a commitment\"}, {\"name\": \"Sensation\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a sensation\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (Promise x) (Commitment x)))\", \"reason\": \"Translates 'Every promise is a commitment' as universal implication\"}, {\"claim_id\": \"c2\", \"formula\": \"(forall x (implies (Commitment x) (not (Sensation x))))\", \"reason\": \"Translates 'No commitment is a sensation' as universal negative statement\"}, {\"claim_id\": \"c3\", \"formula\": \"(forall x (implies (Promise x) (not (Sensation x))))\", \"reason\": \"Translates 'No promise is a sensation' as derived universal negative\"}], \"interpretation_notes\": []}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate a philosophical argument into a formal logical structure using the specified JSON schema. The argument is a syllogism about promises, commitments, and sensations.\n\nFirst, I need to understand the structure of the argument. The premises are \"Every promise is a commitment\" and \"No commitment is a sensation,\" leading to the conclusion \"Therefore no promise is a sensation.\" This looks like a classic syllogism in categorical logic, specifically a syllogism in the form of All A are B, No B are C, therefore No A are C. \n\nNow, translating this into first-order logic. The first step is to identify the predicates and constants. The terms here are \"promise,\" \"commitment,\" and \"sensation.\" Since these are categories, I'll represent them as predicates. Let's denote:\n\n- Promise(x): x is a promise\n- Commitment(x): x is a commitment\n- Sensation(x): x is a sensation\n\nThe first premise, \"Every promise is a commitment,\" translates to a universal statement: For all x, if Promise(x), then Commitment(x). In FOL, that's (forall x (implies (Promise x) (Commitment x))).\n\nThe second premise, \"No commitment is a sensation,\" translates to: For all x, if Commitment(x), then not Sensation(x). So, (forall x (implies (Commitment x) (not (Sensation x)))).\n\nThe conclusion, \"No promise is a sensation,\" would be: For all x, if Promise(x), then not Sensation(x). Which is (forall x (implies (Promise x) (not (Sensation x)))).\n\nThe domain description should be \"All individuals.\" as per the instructions, since we're using first-order logic with a non-empty domain. The symbols declared are the three predicates, each with arity 1. \n\nI need to make sure that the logical structure is correctly captured. The syllogism is valid in classical first-order logic, so the translation should reflect that. There are no ambiguities mentioned in the frozen reconstruction, so no need to add notes about that. \n\nChecking the JSON schema requirements: the logic is classical_first_order, the domain is \"All individuals,\" the symbols are the three predicates. Each claim is translated into the corresponding formula. The translations array maps each claim ID to its formula and a reason. The interpretation notes can be left empty since there are no specific issues to note here.\n\nI should also ensure that the formulas are in the correct prefix notation as specified. No constants are needed here because the argument is about categories, not specific individuals. The use of predicates with arity 1 is appropriate for these categorical statements. \n\nNo modal or other complex logics are involved here, so the logic is supported. All formulas are valid in the given syntax. The relations between premises and conclusion are captured through the structure of the formulas. \n\nFinally, I'll structure the JSON accordingly, making sure all required fields are present and correctly formatted. The symbols array includes each predicate with their names, kinds, arities, and meanings. The translations array maps each claim ID to its formula and a brief reason. The interpretation_notes is an empty array since there are no specific notes to add.\n",
+      "usage": {
+        "prompt_tokens": 2018,
+        "total_tokens": 2954,
+        "completion_tokens": 936,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Syllogism on Promises and Sensations",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every promise is a commitment.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every promise is a commitment.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "No commitment is a sensation.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No commitment is a sensation.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore no promise is a sensation.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore no promise is a sensation.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2639707b1115f4cf0400f4366c729a40147a4942e17b50ae58a797fa845399ba",
+  "normalization": null,
+  "finished_at": "2026-09-12T23:36:32.367320+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      30
+    ],
+    "c2": [
+      31,
+      60
+    ],
+    "c3": [
+      61,
+      97
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "4d12f0336fec6a95616ce46b036bbf3817a84bfc598398cdb72c82968c315cef",
+    "reconstruction_sha256": "2639707b1115f4cf0400f4366c729a40147a4942e17b50ae58a797fa845399ba",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "4d12f0336fec6a95616ce46b036bbf3817a84bfc598398cdb72c82968c315cef",
+    "reconstruction_sha256": "2639707b1115f4cf0400f4366c729a40147a4942e17b50ae58a797fa845399ba",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

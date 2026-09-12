@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "Not every desire is coherent. Therefore some desire is not coherent.",
+  "source_sha256": "18b404d0a5f31557f59a03856666b1bba16a4b065dd02b16242dfa514350ef7c",
+  "reconstruction": {
+    "title": "Inference from Universal to Existential Statement",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Not every desire is coherent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Not every desire is coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some desire is not coherent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some desire is not coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fd17916d75882555d7aea1e9b669fd1146927a9f32a8f097f857e1c8100f733f",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Desire",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a desire"
+      },
+      {
+        "name": "Coherent",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is coherent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (forall x (implies (Desire x) (Coherent x))))",
+        "reason": "The premise 'Not every desire is coherent' is formalized as the negation of the universal statement that all desires are coherent."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (and (Desire x) (not (Coherent x))))",
+        "reason": "The conclusion 'Some desire is not coherent' is formalized as an existential statement asserting the existence of a desire that lacks coherence."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on the classical first-order equivalence between the negation of a universal statement and the existential statement of its negation.",
+      "The domain includes all individuals, with predicates 'Desire' and 'Coherent' restricting the relevant scope without assuming a non-empty subclass of desires."
+    ]
+  },
+  "formalization_sha256": "6b968bf39c5e37328cb6d7c06c65d5a8130ebe591001eba2029cfd923504bdc8"
+}

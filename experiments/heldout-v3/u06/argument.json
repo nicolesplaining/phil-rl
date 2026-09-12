@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "source": "Either this intention is benevolent or it is prudent, or both. This intention is benevolent. Therefore this intention is not prudent.",
+  "source_sha256": "9140b51be05408fe3c63ebdf154955b925f2bc09d7136d1bfacbf3e95838714d",
+  "reconstruction": {
+    "title": "Argument about Intentional Benevolence and Prudence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Either this intention is benevolent or it is prudent, or both.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Either this intention is benevolent or it is prudent, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This intention is benevolent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This intention is benevolent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this intention is not prudent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this intention is not prudent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "The logical structure of the disjunction is ambiguous between inclusive and exclusive 'or'. The author's conclusion requires an exclusive 'or' to be valid, but the premise explicitly allows for 'both'.",
+        "alternatives": [
+          "The disjunction is exclusive (only one can be true)",
+          "The disjunction is inclusive (both can be true)"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "67997ab017590c5b91e23f0618b9eb2c5e2791c6921e9a14e8fc2a3e9b9878a3",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All propositions.",
+    "symbols": [
+      {
+        "name": "B",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This intention is benevolent"
+      },
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This intention is prudent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(or B P)",
+        "reason": "The premise states an inclusive disjunction (explicitly allowing 'both') between benevolence and prudence."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "B",
+        "reason": "Direct assertion of benevolence as a premise."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not P)",
+        "reason": "The conclusion claims prudence is false, which does not follow from the premises in classical logic since inclusive disjunction allows both B and P to be true."
+      }
+    ],
+    "interpretation_notes": [
+      "The premise explicitly allows for both disjuncts (inclusive OR), but the conclusion requires an exclusive OR to be valid. This creates a logical inconsistency between premise structure and conclusion inference.",
+      "The formalization preserves the inclusive disjunction as stated in the premise, making the argument invalid in classical propositional logic."
+    ]
+  },
+  "formalization_sha256": "9eb53c94df78560930efafcb527fc1132a2d6d1fda53a5e2270a0e971d792f25"
+}

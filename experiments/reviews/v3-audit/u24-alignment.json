@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "a0e2a529d24899d44475b8c26b3138dfca4695a9dd0eeb45f14f1b68d9ce517b",
+  "generated_sha256": "4ded76184cc2c00d4b4c89f3d67130774d06d76284f82e2308030fcbc0c8cff2",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Virtue": "Virtue",
+    "Admirable": "Admirable"
+  },
+  "glossary_rationale": "Virtue and admirability are preserved without assuming a virtue exists.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Virtue and admirability are preserved without assuming a virtue exists.",
+  "domain_restriction": null
+}

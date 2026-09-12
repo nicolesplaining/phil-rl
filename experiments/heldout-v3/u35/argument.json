@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "source": "Eli knows that the portrait is authentic. Therefore the portrait is authentic.",
+  "source_sha256": "f1ddafba1189e7415aafef898e2d97c248d927dc3ba69ef24df0122af335b91f",
+  "reconstruction": {
+    "title": "Eli's Knowledge and Portrait Authenticity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Eli knows that the portrait is authentic.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Eli knows that the portrait is authentic.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The portrait is authentic.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the portrait is authentic.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "713b89aae3bd1157423b5e8df6d4b9cb56dcf0b4843228f1b06072c78de25368",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "K",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "Eli knows that the portrait is authentic"
+      },
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The portrait is authentic"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The knowledge operator requires epistemic logic, which is not supported in the available formalism"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The conclusion depends on the epistemic principle 'if S knows P, then P is true,' which cannot be expressed in classical propositional/first-order logic without modal operators"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on the epistemic entailment Kp → p (if an agent knows p, then p is true), which cannot be formalized in classical logic without modal operators. Both premises and conclusion require modal semantics for accurate representation."
+    ]
+  },
+  "formalization_sha256": "6484b4a8cbf336cf23955daa7fca9af6e7443154be07fa0f1fb600cb9f02e6d4"
+}

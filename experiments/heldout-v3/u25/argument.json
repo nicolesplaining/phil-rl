@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "source": "No testimony that deceives is trustworthy. Some testimony deceives. Therefore some testimony is not trustworthy.",
+  "source_sha256": "bd1d52336aea744a6780f3cd8fc1cd9dec27d2ccb958318d682f3dcfca063e25",
+  "reconstruction": {
+    "title": "Argument about Testimony and Trustworthiness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "No testimony that deceives is trustworthy.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No testimony that deceives is trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some testimony deceives.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some testimony deceives.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore some testimony is not trustworthy.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some testimony is not trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "c38d642cc3d58930d38a9abd1f5d5048a1cad83d832a4cf0f0fc37b1514bf273",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Testimony",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a testimony"
+      },
+      {
+        "name": "Deceives",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x deceives"
+      },
+      {
+        "name": "Trustworthy",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is trustworthy"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (and (Testimony x) (Deceives x)) (not (Trustworthy x))))",
+        "reason": "Universal statement: All testimonies that deceive are not trustworthy"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (and (Testimony x) (Deceives x)))",
+        "reason": "Existential statement: There exists at least one testimony that deceives"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(exists x (and (Testimony x) (not (Trustworthy x))))",
+        "reason": "Existential conclusion: There exists at least one testimony that is not trustworthy"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "0319b43cb78e3f2bf3579802b5d65b9b385ccbd41120ccfee7d164245ff35a76"
+}

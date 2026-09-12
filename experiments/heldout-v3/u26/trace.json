@@ -1,0 +1,145 @@
+{
+  "source": "Not every desire is coherent. Therefore some desire is not coherent.",
+  "source_sha256": "18b404d0a5f31557f59a03856666b1bba16a4b065dd02b16242dfa514350ef7c",
+  "started_at": "2026-09-12T23:34:49.005550+00:00",
+  "prompt_version": "0.6",
+  "policy_version": "0.2",
+  "schema_sha256": {
+    "reconstruction": "0a89838f3fdea32fc87902a5547ac0438a90c62ae1af00f8696c381f60f9f494",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "fc14470e9688795eedcaf60215c6917106b75f199f51c7db9feb326198f5a93a",
+    "formalization": "c52b9d17fed3119ee9a17dbce8a892d563effa49c4bd542d00f76e210abe43b2"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a logical inference from a premise to a conclusion using 'Therefore' as a conclusion indicator.\", \"title\": \"Inference from Universal to Existential Statement\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"Not every desire is coherent.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"Some desire is not coherent.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\"],\n        \"conclusion\": \"c2\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided a passage with two sentences. The first one is \"Not every desire is coherent.\" The second is \"Therefore some desire is not coherent.\" I need to determine if this is an argument.\n\nFirst, I check if there's a conclusion. The second sentence starts with \"Therefore,\" which is a conclusion indicator. So the conclusion is \"some desire is not coherent.\" The first sentence is the premise, stating that not every desire is coherent. \n\nNow, I need to see if the author is asserting this as an argument. The structure seems to be a logical inference. The premise is a universal statement (not all), and the conclusion is an existential one (some are not). In classical logic, \"Not every\" translates to \"There exists at least one that is not,\" which is equivalent to \"Some are not.\" So the conclusion follows logically from the premise. \n\nI should check if there are any ambiguities. The premise uses \"Not every,\" which might be a bit tricky. But in standard logic, \"Not all\" and \"Some are not\" are equivalent. However, in some contexts, there might be a difference, but here it seems straightforward. The author is using a valid inference. \n\nSo the argument has one premise and one conclusion. The relation is that the premise supports the conclusion. There are no objections or replies mentioned. The claims are both explicit. The conclusion is marked with \"Therefore,\" so the conclusion_id is the second claim. \n\nNo ambiguities here, as the logical structure is clear. The user wants the JSON with the status as \"argument,\" the claims, relations, and conclusion_id. I'll structure the JSON accordingly, making sure to map the evidence_ids correctly to the source units.\n",
+      "usage": {
+        "prompt_tokens": 1662,
+        "total_tokens": 2234,
+        "completion_tokens": 572,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"Desire\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a desire\"}, {\"name\": \"Coherent\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is coherent\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(not (forall x (implies (Desire x) (Coherent x))))\", \"reason\": \"The premise 'Not every desire is coherent' is formalized as the negation of the universal statement that all desires are coherent.\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists x (and (Desire x) (not (Coherent x))))\", \"reason\": \"The conclusion 'Some desire is not coherent' is formalized as an existential statement asserting the existence of a desire that lacks coherence.\"}], \"interpretation_notes\": [\"The argument relies on the classical first-order equivalence between the negation of a universal statement and the existential statement of its negation.\", \"The domain includes all individuals, with predicates 'Desire' and 'Coherent' restricting the relevant scope without assuming a non-empty subclass of desires.\"]}",
+      "reasoning": "\nOkay, let's tackle this. The user wants me to translate the given philosophical argument into a formal structure using the specified JSON schema. The argument is: \"Not every desire is coherent. Therefore some desire is not coherent.\"\n\nFirst, I need to determine the logic type. The argument moves from a universal statement to an existential one. In classical logic, \"Not every desire is coherent\" is equivalent to \"There exists a desire that is not coherent.\" So this seems like a first-order logic problem because it involves quantifiers.\n\nNext, the domain description. The argument talks about desires, so the domain should be all individuals, and we'll use predicates to specify desires and coherence. The domain_description should be \"All individuals.\"\n\nNow, symbols. We need predicates for Desire and Coherent. Let's say Desire(x) means x is a desire, and Coherent(x) means x is coherent. The statements involve quantifiers over these predicates.\n\nFor the premise \"Not every desire is coherent,\" in FOL, that translates to ¬(∀x (Desire(x) → Coherent(x))). Which is equivalent to ∃x (Desire(x) ∧ ¬Coherent(x)). But the conclusion is \"Some desire is not coherent,\" which is ∃x (Desire(x) ∧ ¬Coherent(x)). So the premise and conclusion are logically equivalent in classical logic, but the user's reconstruction shows the premise leading to the conclusion, which is valid.\n\nI need to declare the symbols: Desire as a predicate of arity 1, Coherent as a predicate of arity 1. No constants are needed here.\n\nFor the translations, each claim (c1 and c2) needs a formula. The premise c1 is ¬(∀x (Desire(x) → Coherent(x))), and the conclusion c2 is ∃x (Desire(x) ∧ ¬Coherent(x)). The reason for translation would be straightforward since they directly map to the FOL expressions.\n\nInterpretation notes: Maybe note that the equivalence between the negation of a universal and the existential of the negation is a standard FOL move. Also, confirm that the domain is all individuals, and that Desire and Coherent are predicates restricting the domain appropriately.\n\nCheck if there are any unsupported features. Since this is classical first-order logic with standard quantifiers and predicates, it's supported. No modal or higher-order elements here.\n\nSo the final JSON should have logic as classical_first_order, domain_description as \"All individuals.\", symbols for Desire and Coherent as predicates, and the translations for each claim with their respective formulas. The interpretation notes can mention the standard FOL equivalence and the domain handling.\n",
+      "usage": {
+        "prompt_tokens": 1947,
+        "total_tokens": 2757,
+        "completion_tokens": 810,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Inference from Universal to Existential Statement",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Not every desire is coherent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Not every desire is coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some desire is not coherent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some desire is not coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fd17916d75882555d7aea1e9b669fd1146927a9f32a8f097f857e1c8100f733f",
+  "normalization": null,
+  "finished_at": "2026-09-12T23:35:27.143172+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      29
+    ],
+    "c2": [
+      30,
+      68
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "6b968bf39c5e37328cb6d7c06c65d5a8130ebe591001eba2029cfd923504bdc8",
+    "reconstruction_sha256": "fd17916d75882555d7aea1e9b669fd1146927a9f32a8f097f857e1c8100f733f",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "6b968bf39c5e37328cb6d7c06c65d5a8130ebe591001eba2029cfd923504bdc8",
+    "reconstruction_sha256": "fd17916d75882555d7aea1e9b669fd1146927a9f32a8f097f857e1c8100f733f",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

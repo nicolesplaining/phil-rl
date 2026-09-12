@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent is morally responsible, the agent acted freely. The agent acted freely. Therefore, the agent is morally responsible.",
+  "source_sha256": "c670cb85906a3c4f8a6820bf965cd936ce295c446238b47fd7bea98c0ecc459b",
+  "reconstruction": {
+    "title": "Argument about Moral Responsibility and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent is morally responsible, the agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent is morally responsible, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a necessary condition for moral responsibility."
+      },
+      {
+        "id": "c2",
+        "text": "The agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Assertion of the consequent in the conditional premise."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent is morally responsible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from the two premises, though this commits the logical fallacy of affirming the consequent."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c3",
+        "issue": "The argument commits the logical fallacy of affirming the consequent (If A then B, B, therefore A). The conclusion does not logically follow from the premises.",
+        "alternatives": [
+          "The argument assumes a biconditional relationship (A if and only if B) which is not stated in the premises",
+          "The argument could be rephrased as a valid modus tollens by negating the consequent"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "6407f4b4cf20c6c07d76fc5c5f648ffb2070abb4647ee700b0be800b865c1c99",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of propositions about an agent's moral responsibility and free action.",
+    "symbols": [
+      {
+        "name": "MR",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible"
+      },
+      {
+        "name": "FA",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies MR FA)",
+        "reason": "Conditional statement translating 'If the agent is morally responsible, the agent acted freely'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "FA",
+        "reason": "Direct assertion of 'The agent acted freely'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "MR",
+        "reason": "Direct assertion of 'The agent is morally responsible' as conclusion"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument commits the fallacy of affirming the consequent (from (implies MR FA) and FA, concluding MR is invalid in classical logic)",
+      "The biconditional relationship (iff MR FA) would be required for valid inference but is not stated in the premises",
+      "The translation preserves the original structure despite its logical invalidity as per instructions"
+    ]
+  },
+  "formalization_sha256": "288d33378bdc6f555f21b003b0d1e6a24bc0262cc1e63a4046e629243843933d"
+}

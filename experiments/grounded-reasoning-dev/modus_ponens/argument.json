@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent is morally responsible, the agent acted freely. The agent is morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "57c0e12edc98567a2e737ba20dd288f0b293b1e39fe52534a37b4d35a011352d",
+  "reconstruction": {
+    "title": "Argument for the agent's free action based on moral responsibility",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent is morally responsible, the agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent is morally responsible, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "7df08054bac6c4dbee3596e13cf66fd6f1589ddaac739680e7f3b23d844b2777",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Abstract domain of truth values for propositions about moral responsibility and free action",
+    "symbols": [
+      {
+        "name": "MR",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible"
+      },
+      {
+        "name": "FA",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies MR FA)",
+        "reason": "Material implication between moral responsibility and free action"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "MR",
+        "reason": "Direct assertion of moral responsibility"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "FA",
+        "reason": "Logical conclusion via modus ponens"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is formalized in classical propositional logic using atomic propositions MR and FA",
+      "No quantifiers or predicates needed since the argument structure is purely conditional",
+      "The validity follows from modus ponens: (P → Q), P ⊢ Q"
+    ]
+  },
+  "formalization_sha256": "9d453a6906ca0090e2d2bf82b6d9058fec9ae69a51e12c611fae0b94d23edee2"
+}

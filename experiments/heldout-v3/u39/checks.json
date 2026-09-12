@@ -1,0 +1,14 @@
+{
+  "explicit": {
+    "status": "no_argument",
+    "reason": "The passage contains only questions without asserting any conclusion or premises.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  },
+  "with_proposed_implicit": {
+    "status": "no_argument",
+    "reason": "The passage contains only questions without asserting any conclusion or premises.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  }
+}

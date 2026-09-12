@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "Being needlessly cruel is sufficient for this punishment to be wrong. This punishment is needlessly cruel. Therefore this punishment is wrong.",
+  "source_sha256": "bf244114c13cca4ba1b06de33d670ae19a23afa49a178f1b4cd74b6b83c70cd8",
+  "reconstruction": {
+    "title": "Argument about Punishment Cruelty",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Being needlessly cruel is sufficient for this punishment to be wrong.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Being needlessly cruel is sufficient for this punishment to be wrong.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This punishment is needlessly cruel.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This punishment is needlessly cruel.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This punishment is wrong.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this punishment is wrong.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "dc1c37b80c5fed102c2e17b2e011454f190d1ed9b6d707b9b0c21903c9ea9662",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "C",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This punishment is needlessly cruel"
+      },
+      {
+        "name": "W",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This punishment is wrong"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies C W)",
+        "reason": "Translates 'Being needlessly cruel is sufficient for this punishment to be wrong' as material implication"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "C",
+        "reason": "Direct assertion of the antecedent proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "W",
+        "reason": "Direct assertion of the consequent proposition"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "2314858bd19e8cd97ce0db70cb0222f24e0946a65f8fabe504cfe8a6eb1ec63e"
+}

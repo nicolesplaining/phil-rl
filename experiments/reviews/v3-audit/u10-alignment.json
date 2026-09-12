@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "837fbcdef078b5aeececf9632f428d8929d8bd5d0db0716cd8b5bdcb40ee5da6",
+  "generated_sha256": "3d242fa849784e3bd10a10fa182cffe6fd446778088fb23b3b62eee6b06b18be",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "G",
+    "Q": "O"
+  },
+  "glossary_rationale": "P is a genuine promise and Q an optional commitment. The entire conditional is negated.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is a genuine promise and Q an optional commitment. The entire conditional is negated.",
+  "domain_restriction": null
+}

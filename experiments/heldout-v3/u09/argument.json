@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "It is not the case that this principle is universal and exceptionless. This principle is universal. Therefore this principle is not exceptionless.",
+  "source_sha256": "3b54f5560980c8a07b9277079010b1e11970d0d724e8678e47a52ce633558fb5",
+  "reconstruction": {
+    "title": "Argument about the universality and exceptionlessness of a principle",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is not the case that this principle is universal and exceptionless.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is not the case that this principle is universal and exceptionless.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This principle is universal.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This principle is universal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This principle is not exceptionless.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this principle is not exceptionless.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6d20613c199c850f26dce7061d654c14a841638888ab9dcc30e1bf1bdf8cd865",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This principle is universal"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This principle is exceptionless"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (and P Q))",
+        "reason": "Translates 'It is not the case that this principle is universal and exceptionless' as the negation of the conjunction of P and Q"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "P",
+        "reason": "Directly asserts 'This principle is universal' as proposition P"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not Q)",
+        "reason": "Translates 'This principle is not exceptionless' as the negation of Q"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument uses classical propositional logic with standard negation and conjunction operators",
+      "The conclusion follows from premises via disjunctive syllogism (if ¬(P∧Q) and P, then ¬Q)"
+    ]
+  },
+  "formalization_sha256": "7d1a95059d3e465dfb80bf2ff3898da87579a92b913b6c7533b9ad5c386e6986"
+}

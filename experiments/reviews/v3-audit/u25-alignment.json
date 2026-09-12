@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "7363d9275d9ad7421812f9511516c4fa74f25690c7998e106be5d21181709dc4",
+  "generated_sha256": "c47b69041703662b1372d2a8a5713b1711f9cdcc288807a8de60aa101da988ca",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Testimony": "Testimony",
+    "Deceives": "Deceives",
+    "Trustworthy": "Trustworthy"
+  },
+  "glossary_rationale": "The testimony restriction, deception property and trustworthiness predicate align with the source's universal and existential clauses.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The testimony restriction, deception property and trustworthiness predicate align with the source's universal and existential clauses.",
+  "domain_restriction": null
+}

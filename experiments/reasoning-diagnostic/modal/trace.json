@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-09-12T22:25:11.226907+00:00",
+  "finished_at": "2026-09-12T22:26:15.332903+00:00",
+  "prompt_version": "0.2",
+  "prompt_sha256": {
+    "reconstruction": "7082661e2630dd3a7052490a4b909b3f6a0dc777ccd9c69abd64815908590bbe",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"title\": \"Self-Identity Argument\", \"claims\": [{\"id\": \"c1\", \"text\": \"Necessarily, every person is self-identical.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"Necessarily, every person is self-identical.\", \"occurrence\": 0}, \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"Every person is self-identical.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"Every person is self-identical.\", \"occurrence\": 0}, \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"If something is necessarily true, then it is true (in all possible worlds, P implies P).\", \"role\": \"premise\", \"origin\": \"implicit\", \"evidence\": null, \"interpretation_note\": \"This implicit premise bridges the modal claim (necessity) to the non-modal conclusion. The source text does not explicitly state this logical principle, but it is required to validate the inference from c1 to c2.\"}], \"relations\": [{\"premises\": [\"c1\", \"c3\"], \"conclusion\": \"c2\", \"kind\": \"supports\"}], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "usage": {
+        "prompt_tokens": 1462,
+        "total_tokens": 2139,
+        "completion_tokens": 677,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "Claim c2: evidence.quote 'Every person is self-identical.', occurrence 0, is absent from the source. Quotes are case-sensitive. Copy the source's exact capitalization and punctuation; do not substitute the normalized claim text."
+    },
+    {
+      "attempt": 2,
+      "response": "{\"title\": \"Self-Identity Argument\", \"claims\": [{\"id\": \"c1\", \"text\": \"Necessarily, every person is self-identical.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"Necessarily, every person is self-identical.\", \"occurrence\": 0}, \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"Every person is self-identical.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence\": {\"quote\": \"every person is self-identical.\", \"occurrence\": 0}, \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"If something is necessarily true, then it is true (in all possible worlds, P implies P).\", \"role\": \"premise\", \"origin\": \"implicit\", \"evidence\": null, \"interpretation_note\": \"This implicit premise bridges the modal claim (necessity) to the non-modal conclusion. The source text does not explicitly state this logical principle, but it is required to validate the inference from c1 to c2.\"}], \"relations\": [{\"premises\": [\"c1\", \"c3\"], \"conclusion\": \"c2\", \"kind\": \"supports\"}], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "usage": {
+        "prompt_tokens": 1837,
+        "total_tokens": 2643,
+        "completion_tokens": 806,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"The domain consists of all persons. The argument concerns the property of self-identity among persons.\", \"symbols\": [{\"name\": \"Person\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a person\"}, {\"name\": \"SelfIdentical\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is self-identical\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": null, \"reason\": \"The modal operator 'necessarily' requires modal logic semantics which are not supported in the available classical first-order logic framework. The necessity operator cannot be expressed using the allowed syntax.\"}, {\"claim_id\": \"c2\", \"formula\": \"(forall x (implies (Person x) (SelfIdentical x)))\", \"reason\": \"Translated as a universal statement about all persons in the domain having the self-identity property\"}, {\"claim_id\": \"c3\", \"formula\": null, \"reason\": \"The modal principle 'if necessarily P then P' requires modal logic semantics which are not supported in the available classical first-order logic framework. This cannot be expressed using the allowed syntax.\"}], \"interpretation_notes\": [\"The argument relies on modal logic principles (necessitation) that cannot be fully captured in classical first-order logic. The necessity operator in c1 and the modal implication in c3 are omitted from formalization.\", \"The implicit premise c3 is necessary to bridge the modal claim (c1) to the non-modal conclusion (c2), but remains unformalized due to modal logic limitations.\", \"The translation of c2 uses first-order logic to express the universal self-identity property for all persons in the domain.\"]}",
+      "usage": {
+        "prompt_tokens": 1638,
+        "total_tokens": 2533,
+        "completion_tokens": 895,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      44
+    ],
+    "c2": [
+      13,
+      44
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "890b17010f7b77efdcd1a3daf78d7f2c8f6caeeaeaa84bfe01be2bf80f47cb3d",
+    "reconstruction_sha256": "29a0a80ef095a4687c351a7b2f952cc420170c68d23609c56168b57e060a7b74",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "890b17010f7b77efdcd1a3daf78d7f2c8f6caeeaeaa84bfe01be2bf80f47cb3d",
+    "reconstruction_sha256": "29a0a80ef095a4687c351a7b2f952cc420170c68d23609c56168b57e060a7b74",
+    "included_premise_ids": [
+      "c1",
+      "c3"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  }
+}

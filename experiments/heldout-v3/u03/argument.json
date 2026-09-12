@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "If this confession is sincere, it is voluntary. This confession is voluntary. Therefore this confession is sincere.",
+  "source_sha256": "99722952c3e0a26dc3739bff02d58468c53c3ebd2c5f86d828551e05ad2a1045",
+  "reconstruction": {
+    "title": "Argument about the sincerity of a confession based on voluntariness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this confession is sincere, it is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this confession is sincere, it is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This confession is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This confession is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this confession is sincere.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this confession is sincere.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8a4783885bd6126f6b73391a6b84a17f7108972e41bc5a4dfca934db3f794471",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This confession is sincere"
+      },
+      {
+        "name": "V",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This confession is voluntary"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies S V)",
+        "reason": "Direct translation of the conditional statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "V",
+        "reason": "Direct translation of the atomic proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "S",
+        "reason": "Direct translation of the conclusion proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument commits the fallacy of affirming the consequent (S → V and V does not entail S), but this is a structural observation unrelated to translation fidelity. Propositional logic was chosen because all claims can be represented as atomic propositions without requiring quantifiers or predicates. The domain description 'All individuals' is required by the schema but not semantically relevant in propositional logic."
+    ]
+  },
+  "formalization_sha256": "f8f859d125a05df26b404c37fa8a9ca077093191db5fac17a0d5f8e7ecec1062"
+}

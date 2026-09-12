@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "source": "Every scholar consults some scholar. Therefore there is a scholar whom every scholar consults.",
+  "source_sha256": "615e917b927cf2272a219b7d79dc7544022020bc30450562b4fe4fd160853124",
+  "reconstruction": {
+    "title": "Scholar Consultation Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every scholar consults some scholar.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every scholar consults some scholar.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "There is a scholar whom every scholar consults.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore there is a scholar whom every scholar consults.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The logical validity of the inference from 'every scholar consults some scholar' to 'there is a scholar consulted by every scholar' is ambiguous.",
+        "alternatives": [
+          "The conclusion follows logically (e.g., if the set of scholars is finite and the relation is symmetric, transitive, etc.)",
+          "The conclusion does not follow (the premise allows for each scholar to consult a different scholar)"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "6b6da527f764890dc02fec981c713f3f7b8c66c49a83584ee589c51a23d52c63",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Scholar",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a scholar"
+      },
+      {
+        "name": "Consults",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x consults y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Scholar x) (exists y (and (Scholar y) (Consults x y)))))",
+        "reason": "Universal quantifier over scholars, each consulting some scholar"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (and (Scholar y) (forall x (implies (Scholar x) (Consults x y)))))",
+        "reason": "Existential quantifier for a scholar consulted by all scholars"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise uses universal quantifier with existential subclaim, while the conclusion uses existential quantifier with universal subclaim. This reversal of quantifier order is central to the argument's structure.",
+      "The formalization preserves the original quantifier scope without assuming finiteness or specific properties of the Consults relation."
+    ]
+  },
+  "formalization_sha256": "fa176119367d6d00760e0a64ed86f7204bde290be1c7bba7500d49cacc16be8a"
+}

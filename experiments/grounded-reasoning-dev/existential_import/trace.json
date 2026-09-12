@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-09-12T22:33:36.820215+00:00",
+  "finished_at": "2026-09-12T22:34:17.879072+00:00",
+  "prompt_version": "0.3",
+  "prompt_sha256": {
+    "reconstruction": "daee2f02e50b2bbc4696d926bc8d2dcac5af58984d872cf3edcd9aef26b537e3",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"title\": \"Argument from Universality to Existence\", \"claims\": [{\"id\": \"c1\", \"text\": \"Every human is mortal.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"Universal statement about humans and mortality\"}, {\"id\": \"c2\", \"text\": \"Therefore, a human exists.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"Conclusion derived from the premise\"}], \"relations\": [{\"premises\": [\"c1\"], \"conclusion\": \"c2\", \"kind\": \"supports\"}], \"conclusion_id\": \"c2\", \"ambiguities\": [{\"claim_id\": \"c2\", \"issue\": \"The premise 'Every human is mortal' does not logically entail the existence of any humans. The argument assumes existential import for the universal statement, which is not valid in standard predicate logic.\", \"alternatives\": [\"The author might be using a non-standard logic that assumes existential import for universal statements\", \"The author might be conflating 'Every human is mortal' with 'There are humans who are mortal'\"]}] }",
+      "usage": {
+        "prompt_tokens": 1452,
+        "total_tokens": 2081,
+        "completion_tokens": 629,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"A non-empty set of individuals, including humans and other possible entities.\", \"symbols\": [{\"name\": \"Human\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a human\"}, {\"name\": \"Mortal\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is mortal\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (Human x) (Mortal x)))\", \"reason\": \"Universal statement about all humans being mortal\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists x (Human x))\", \"reason\": \"Existential claim about the existence of at least one human\"}], \"interpretation_notes\": [\"The premise 'Every human is mortal' does not logically entail the conclusion 'a human exists' in standard classical first-order logic, as universal statements lack existential import by default. The argument assumes an implicit existential import that is not valid in standard FOL semantics.\", \"The formalization preserves the original structure despite the invalid inference, as per instructions to not alter claims or their logical relationships.\", \"The domain is described as non-empty to satisfy FOL requirements, but the premise alone does not assert existence in this logic.\"]}",
+      "usage": {
+        "prompt_tokens": 1615,
+        "total_tokens": 2510,
+        "completion_tokens": 895,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      22
+    ],
+    "c2": [
+      23,
+      49
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "bfc286845188f11bf3ca7572faa7fa676b7ad2afe33f847e0d988b17b6de21ea",
+    "reconstruction_sha256": "6c6fab22670e25d88a50873059de4ebef7ecfad7ca987b4bcf6702f9ff45d58a",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Mortal = [else -> False], Human = [else -> False]]",
+    "assignments": {}
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "bfc286845188f11bf3ca7572faa7fa676b7ad2afe33f847e0d988b17b6de21ea",
+    "reconstruction_sha256": "6c6fab22670e25d88a50873059de4ebef7ecfad7ca987b4bcf6702f9ff45d58a",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Mortal = [else -> False], Human = [else -> False]]",
+    "assignments": {}
+  }
+}

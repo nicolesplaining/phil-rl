@@ -1,0 +1,14 @@
+{
+  "explicit": {
+    "status": "no_argument",
+    "reason": "The passage merely repeats the same assertion without providing any premises or reasoning to support it.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  },
+  "with_proposed_implicit": {
+    "status": "no_argument",
+    "reason": "The passage merely repeats the same assertion without providing any premises or reasoning to support it.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "source": "Necessarily, every person is self-identical. Therefore, every person is self-identical.",
+  "source_sha256": "3c7db4bfa9caedf479f810f4b97c625b021f6989f1cd44b77a2ccf55b52053d0",
+  "reconstruction": {
+    "title": "Necessity of Self-Identity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Necessarily, every person is self-identical.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Necessarily, every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The premise asserts a necessary truth about self-identity."
+      },
+      {
+        "id": "c2",
+        "text": "Every person is self-identical.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The conclusion follows from the necessity asserted in the premise."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "c83201153182b5b7ff5e1325055e01165bad2bccee1ae669dc188a870c833668",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "The domain consists of all persons. The necessity operator in the premise cannot be formalized in classical first-order logic.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person"
+      },
+      {
+        "name": "Identical",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x is identical to y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Modal operator 'necessarily' requires modal logic which is not supported in the available formalism"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Depends on unformalizable premise about necessity; cannot be isolated in classical first-order logic"
+      }
+    ],
+    "interpretation_notes": [
+      "Both claims require modal logic to represent the necessity operator",
+      "The predicate Identical is defined but cannot be used in a formalizable argument here",
+      "The conclusion's truth follows from the premise in modal logic but not in classical first-order logic"
+    ]
+  },
+  "formalization_sha256": "9345230ed2bb145b88baedb0b80f73c4b3f8b475c9f5145bb59f16f1bc1cebfa"
+}

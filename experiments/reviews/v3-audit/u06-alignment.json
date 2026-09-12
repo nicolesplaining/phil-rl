@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "f48cab188012ece53694a20e90ed99fa06ca7cf3d3c393915d60cf7c2696f8c0",
+  "generated_sha256": "64baada7333b9a707925c15233a6dda9f1b6d9a2a033f209958376347da68a02",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "B": "B",
+    "P": "P"
+  },
+  "glossary_rationale": "Benevolence and prudence concern the same intention. No exclusive-or assumption is added.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Benevolence and prudence concern the same intention. No exclusive-or assumption is added.",
+  "domain_restriction": null
+}

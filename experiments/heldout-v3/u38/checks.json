@@ -1,0 +1,34 @@
+{
+  "explicit": {
+    "formalization_sha256": "93d01d64b8c659e89a601ac3b5cbf8a33a7698fabc074762d988d5eeeb0cd31d",
+    "reconstruction_sha256": "da84c5c960a61031870a5af0e3de110ffa162a3b3adcb7a865ba2b6c4012e9a7",
+    "included_premise_ids": [
+      "C1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Philosopher = [else -> False], Position = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "93d01d64b8c659e89a601ac3b5cbf8a33a7698fabc074762d988d5eeeb0cd31d",
+    "reconstruction_sha256": "da84c5c960a61031870a5af0e3de110ffa162a3b3adcb7a865ba2b6c4012e9a7",
+    "included_premise_ids": [
+      "C1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Philosopher = [else -> False], Position = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  }
+}

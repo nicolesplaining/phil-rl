@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "source": "Every virtue is admirable. Therefore some virtue is admirable.",
+  "source_sha256": "25e2c763b8cc57fafc69f37271f260c81def0babc4295b552bdc8accd950c1cf",
+  "reconstruction": {
+    "title": "Argument from universality to existence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every virtue is admirable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every virtue is admirable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some virtue is admirable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some virtue is admirable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "53cd7c02e674aa49881ea85ffee10eccef11b5cd72af11251250dc8c56e65b2b",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Virtue",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a virtue"
+      },
+      {
+        "name": "Admirable",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is admirable"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Virtue x) (Admirable x)))",
+        "reason": "Universal quantification over virtues with implication to admirability"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (and (Virtue x) (Admirable x)))",
+        "reason": "Existential quantification asserting at least one virtue exists and is admirable"
+      }
+    ],
+    "interpretation_notes": [
+      "The translation preserves the logical structure of moving from universal to existential quantification. The argument's validity depends on the non-emptiness of the domain of virtues, which is not asserted in the premises."
+    ]
+  },
+  "formalization_sha256": "c0f7bab0a5dca25b15774afd4a9dcc7a65b4cbae9319711b1c30a41914ad0c45"
+}

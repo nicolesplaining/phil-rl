@@ -1,0 +1,163 @@
+{
+  "source": "If this recollection is invented, it is not evidence. This recollection is invented. Therefore this recollection is not evidence.",
+  "source_sha256": "beac22d99460afbfe71e133bb8debedbd250e4b3d3a1c96abdcb7c68f9457ef6",
+  "started_at": "2026-09-12T23:33:05.364343+00:00",
+  "prompt_version": "0.6",
+  "policy_version": "0.2",
+  "schema_sha256": {
+    "reconstruction": "0a89838f3fdea32fc87902a5547ac0438a90c62ae1af00f8696c381f60f9f494",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "fc14470e9688795eedcaf60215c6917106b75f199f51c7db9feb326198f5a93a",
+    "formalization": "c52b9d17fed3119ee9a17dbce8a892d563effa49c4bd542d00f76e210abe43b2"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The text presents a conditional statement followed by an affirmation of its antecedent and a derived conclusion, forming a valid modus ponens argument.\", \"title\": \"Invented Recollection and Evidence\", \"claims\": [{\"id\": \"c1\", \"text\": \"If this recollection is invented, it is not evidence.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"This recollection is invented.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"This recollection is not evidence.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one is a conditional statement: \"If this recollection is invented, it is not evidence.\" The second states that \"This recollection is invented.\" The third is a conclusion: \"Therefore this recollection is not evidence.\"\n\nSo, the first step is to determine if this is an argument. The structure here looks like a classic modus ponens. The first premise is a conditional (if P then Q), the second premise affirms P, and the conclusion is Q. That's a valid argument form. \n\nNow, I need to break down each part. The first source unit (s1) is the conditional, which would be a premise. The second (s2) is another premise, affirming the antecedent. The third (s3) is the conclusion derived from the two premises. \n\nEach of these should be a claim. The role for s1 and s2 would be premises, and s3 is the conclusion. The relation between them would be that the premises support the conclusion. \n\nI need to check if there are any ambiguities. The statements seem straightforward. The conditional is clear, and the conclusion follows directly. No objections or replies are present here. \n\nSo, the JSON structure should have status \"argument\", with the three claims and the relation linking the premises to the conclusion. The conclusion_id would be the ID of the third claim. No ambiguities are present here. \n\nI should make sure that each claim's text is exactly as in the source units. The evidence_ids for each claim are their respective source IDs. The interpretation notes can be left empty since there's no ambiguity in the roles. \n\nYes, that should cover it. Let me structure the JSON accordingly.\n",
+      "usage": {
+        "prompt_tokens": 1702,
+        "total_tokens": 2313,
+        "completion_tokens": 611,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"R\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This recollection is invented\"}, {\"name\": \"E\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This recollection is evidence\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(implies R (not E))\", \"reason\": \"Translates 'If this recollection is invented, it is not evidence' as material implication\"}, {\"claim_id\": \"c2\", \"formula\": \"R\", \"reason\": \"Direct assertion of 'This recollection is invented'\"}, {\"claim_id\": \"c3\", \"formula\": \"(not E)\", \"reason\": \"Direct assertion of 'This recollection is not evidence'\"}], \"interpretation_notes\": []}",
+      "reasoning": "\nOkay, let's tackle this. The user provided a philosophical argument and wants it translated into a formal structure using the specified JSON schema. The argument is about an invented recollection not being evidence. \n\nFirst, I need to determine the logic type. The argument is a simple modus ponens: If P then Q, P, therefore Q. Since it's a propositional structure without quantifiers or predicates, classical propositional logic is appropriate here.\n\nNext, the domain description. Since it's propositional, there's no need for an individual domain beyond \"All individuals.\" But the schema requires it, so I'll set it to \"All individuals.\" \n\nNow, symbols. The propositions here are the three claims. Let's assign them as propositions. For example, R for \"This recollection is invented\" and E for \"This recollection is evidence.\" The first premise is \"If R then not E,\" the second is R, and the conclusion is not E. \n\nEach claim in the frozen reconstruction has an ID (c1, c2, c3). I need to map these to the formulas. For c1: (implies R (not E)), c2: R, and c3: (not E). \n\nI should check if there are any ambiguities or if any part requires a different logic. The argument seems straightforward, so no need for modal or first-order logic. All formulas can be expressed in propositional logic. \n\nNo interpretation notes are needed here since the translation is direct. The symbols are propositions with arity 0. \n\nMake sure the JSON structure follows the schema: symbols array with each symbol's name, kind, arity, and meaning. Translations array linking each claim ID to its formula and reason. \n\nDouble-check that all formulas are correctly formatted in prefix notation. For example, (implies R (not E)) is correct. \n\nNo unsupported features are present, so the logic is classical_propositional. \n\nEverything seems in order. Time to put it all together in the required JSON format.\n",
+      "usage": {
+        "prompt_tokens": 2034,
+        "total_tokens": 2648,
+        "completion_tokens": 614,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Invented Recollection and Evidence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this recollection is invented, it is not evidence.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this recollection is invented, it is not evidence.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This recollection is invented.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This recollection is invented.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This recollection is not evidence.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this recollection is not evidence.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "0a7226507278a27f5bd6b6cdcf4c08ef13b34c9479888132dfaccf98629de45f",
+  "normalization": null,
+  "finished_at": "2026-09-12T23:33:39.329988+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      53
+    ],
+    "c2": [
+      54,
+      84
+    ],
+    "c3": [
+      85,
+      129
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "71b2e070cb9dbc1dc6baf8e450e2f8553e47dc4d945eefcbb5d75b4bdc023284",
+    "reconstruction_sha256": "0a7226507278a27f5bd6b6cdcf4c08ef13b34c9479888132dfaccf98629de45f",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "71b2e070cb9dbc1dc6baf8e450e2f8553e47dc4d945eefcbb5d75b4bdc023284",
+    "reconstruction_sha256": "0a7226507278a27f5bd6b6cdcf4c08ef13b34c9479888132dfaccf98629de45f",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

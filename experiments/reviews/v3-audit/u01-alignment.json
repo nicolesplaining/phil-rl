@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "1a983ac5eaa83b0b813583ca06327d254982446b856fc9d166e559549cfa4fe7",
+  "generated_sha256": "0fe91e4dcab2b2a729dbee05e3d13a9342ac7f3bdc5150a8b291042ea0752ab5",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "I",
+    "Q": "D"
+  },
+  "glossary_rationale": "P is impartiality and Q defensibility of this decision. The conditional direction is unchanged.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is impartiality and Q defensibility of this decision. The conditional direction is unchanged.",
+  "domain_restriction": null
+}

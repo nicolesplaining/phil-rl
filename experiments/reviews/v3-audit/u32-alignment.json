@@ -1,0 +1,28 @@
+{
+  "reference_sha256": "8c622562c79ff03eb5054d2aaaf9dd433bdf71b7dffaac3a002797a431a82652",
+  "generated_sha256": "3972b66b42ad0022570e1d24ed87ce8dc92ac28f81b4f451090e41837df4424b",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {},
+  "glossary_rationale": "Both statements use actual equality, without an invented predicate. The existential conclusion follows under the explicitly chosen nonempty-domain fragment.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Both statements use actual equality, without an invented predicate. The existential conclusion follows under the explicitly chosen nonempty-domain fragment.",
+  "domain_restriction": null
+}

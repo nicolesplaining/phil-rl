@@ -1,0 +1,56 @@
+{
+  "reference_sha256": "27549a081f57653a34907718281cee9054423bf57a2d6fc7ce3edf1920f67308",
+  "generated_sha256": "c44a6d99392f82d5caeafd95d91628b62996bad332fc529dc8e6cc7d77af9e3e",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "D": "D",
+    "C": "C",
+    "F": "F"
+  },
+  "glossary_rationale": "D is discussion context. The opponent's content is credibility, not a reporting atom; the author's conditional reply is a premise and the fabricated report is its factual premise.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r4"
+      ],
+      "generated_ids": [
+        "c4"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r5"
+      ],
+      "generated_ids": [
+        "c5"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "D is discussion context. The opponent's content is credibility, not a reporting atom; the author's conditional reply is a premise and the fabricated report is its factual premise.",
+  "domain_restriction": null
+}

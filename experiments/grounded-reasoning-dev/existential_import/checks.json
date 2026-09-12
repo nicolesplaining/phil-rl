@@ -1,0 +1,32 @@
+{
+  "explicit": {
+    "formalization_sha256": "bfc286845188f11bf3ca7572faa7fa676b7ad2afe33f847e0d988b17b6de21ea",
+    "reconstruction_sha256": "6c6fab22670e25d88a50873059de4ebef7ecfad7ca987b4bcf6702f9ff45d58a",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Mortal = [else -> False], Human = [else -> False]]",
+    "assignments": {}
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "bfc286845188f11bf3ca7572faa7fa676b7ad2afe33f847e0d988b17b6de21ea",
+    "reconstruction_sha256": "6c6fab22670e25d88a50873059de4ebef7ecfad7ca987b4bcf6702f9ff45d58a",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Mortal = [else -> False], Human = [else -> False]]",
+    "assignments": {}
+  }
+}

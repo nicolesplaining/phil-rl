@@ -22,8 +22,14 @@
   },
   "runs":{
     "heldout-v1":{"run_code_commit":"76c99b1035ed0aec1a8d458cb091e585eadc46bc","prompt_version":"0.4","workers":4},
-    "heldout-v2":{"run_code_commit":"5a003635e96765f4675da275d098f5a4f9d44a33","prompt_version":"0.5","policy_version":"0.1","workers":4}
+    "heldout-v2":{"run_code_commit":"5a003635e96765f4675da275d098f5a4f9d44a33","prompt_version":"0.5","policy_version":"0.1","workers":4},
+    "heldout-v3":{"run_code_commit":"b83158a1901ff51a483228d79dca06fd141325e8","prompt_version":"0.6","policy_version":"0.2","workers":4}
   },
+  "lean":"4.19.0",
+  "client_python":"3.12.2",
+  "client_httpx":"0.28.1",
+  "client_pydantic":"2.13.5",
+  "client_z3":"4.16.0.0",
   "client_note":"Each saved trace records sampling, token limits, retries, schemas and prompt fingerprints. Temperature zero and a seed do not promise bit-identical GPU results across batching or software changes.",
   "credentials":"Public weights were downloaded anonymously. No supplied Hugging Face token was used or stored."
 }

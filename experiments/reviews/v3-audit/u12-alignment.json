@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "4d607397c5e27db0282f34590bc29431cd75ab465c64258994c4d22906ee22f9",
+  "generated_sha256": "a534a5f8f9768ad9627aad99849b8ddadefe9de88f5d8c72121d0c5c2b959d06",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "D": "D",
+    "R": "R"
+  },
+  "glossary_rationale": "D is defensibility and R revisability of this standard. The necessary-condition direction is preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "D is defensibility and R revisability of this standard. The necessary-condition direction is preserved.",
+  "domain_restriction": null
+}

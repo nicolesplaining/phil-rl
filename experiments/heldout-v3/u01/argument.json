@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "If this decision is impartial, it is defensible. This decision is impartial. Therefore it is defensible.",
+  "source_sha256": "7b0f81e52cf13ce5955f022a53276c3e341f683ada40e55318d19f01eb517b11",
+  "reconstruction": {
+    "title": "Impartial Decision Defensibility Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this decision is impartial, it is defensible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this decision is impartial, it is defensible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This decision is impartial.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This decision is impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore it is defensible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore it is defensible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "e55f4e2a6c53b8222bcce2d101c078d4e0a2fd4a7c4e2e7e66070687b632b72b",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This decision is impartial."
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This decision is defensible."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies P Q)",
+        "reason": "The conditional statement 'If this decision is impartial, it is defensible' is formalized as material implication between propositions P and Q."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "P",
+        "reason": "The assertion 'This decision is impartial' is directly represented by proposition P."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Q",
+        "reason": "The conclusion 'Therefore it is defensible' is directly represented by proposition Q."
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "34359344d8850a694a56230daa5d4bda7d1cc2e5518e88dd0ea0912daad22bcd"
+}

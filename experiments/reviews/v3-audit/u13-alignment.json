@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "2a634c7e73f8bfec2620b799062445c9e7dbb38c8caf879db8caaa01b8f6db21",
+  "generated_sha256": "8f322aff23535573158e9d23ba2cecf6d39a6dec14d07c2e9e6847266df2e338",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "C": "C",
+    "W": "W"
+  },
+  "glossary_rationale": "Needless cruelty and wrongness of the punishment match the explicit sufficient condition.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Needless cruelty and wrongness of the punishment match the explicit sufficient condition.",
+  "domain_restriction": null
+}

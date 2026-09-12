@@ -1,0 +1,32 @@
+{
+  "reference_sha256": "19f7b1332e045d7f4e318e385878cc19afa1cd0a6b4c56bbb9b3b6be52f25969",
+  "generated_sha256": "0aa96cbf55e470030ec7155986f52b1562f9b70638d93e2e5fdeb75035de141f",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "C",
+    "Q": "J"
+  },
+  "glossary_rationale": "The model splits the single neither/nor premise into its two negated conjuncts with the same source evidence. Both remain active premises; P is certainty and Q justification.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The model splits the single neither/nor premise into its two negated conjuncts with the same source evidence. Both remain active premises; P is certainty and Q justification.",
+  "domain_restriction": null
+}

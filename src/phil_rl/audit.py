@@ -104,9 +104,22 @@ def verify_run(run_directory: Path, destination: Path, lean_bin="lean"):
     from phil_rl.lean import check_lean, export
     from phil_rl.verify import check
 
+    paths = sorted(run_directory.glob("*/argument.json"))
+    if (run_directory / "argument.json").is_file():
+        paths.insert(0, run_directory / "argument.json")
+    if not paths and not any(
+        (run_directory / name).is_file() for name in ("trace.json", "summary.json")
+    ):
+        raise ValueError("Provide a saved argument run or evaluation directory.")
     destination.mkdir(parents=True, exist_ok=False)
     rows = []
-    for path in sorted(run_directory.glob("*/argument.json")):
+    result = {
+        "cases": rows,
+        "proofs_checked": 0,
+        "failures": 0,
+        "note": "No argument artifacts to check.",
+    }
+    for path in paths:
         artifact = Artifact.model_validate_json(path.read_text())
         diagnostic = check(artifact)
         row = {"case": path.parent.name, "encoding_status": diagnostic["status"]}
@@ -128,5 +141,7 @@ def verify_run(run_directory: Path, destination: Path, lean_bin="lean"):
             "failures": sum(r["lean"]["status"] not in {"passed", "not_applicable"} for r in rows),
             "note": "First-order exports are statements, not kernel-checked proofs.",
         }
+        write_json(destination / "summary.json", result)
+    if not paths:
         write_json(destination / "summary.json", result)
     return result

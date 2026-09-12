@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "0da06af7fdcf3354864fb17b90c5bc47e0f227e79030a24808d6f7decd08bf97",
+  "generated_sha256": "0eff63bb17cb9413243dee6619df375a8eaa00aa85c1648e371eca9ce94df287",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Scholar": "Scholar",
+    "Consults": "Consults"
+  },
+  "glossary_rationale": "Consults(x,y) means x consults y, with the right scholar guards and quantifier order. The model's extra note calling validity ambiguous and proposing relation properties is unreliable and not part of this formal-meaning approval.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Consults(x,y) means x consults y, with the right scholar guards and quantifier order. The model's extra note calling validity ambiguous and proposing relation properties is unreliable and not part of this formal-meaning approval.",
+  "domain_restriction": null
+}

@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "case": "clean-install-model",
+      "encoding_status": "valid",
+      "lean": {
+        "status": "passed",
+        "statement_typechecked": true,
+        "proof_checked": true,
+        "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "requested_proof": true
+    }
+  ],
+  "proofs_checked": 1,
+  "failures": 0,
+  "note": "First-order exports are statements, not kernel-checked proofs."
+}

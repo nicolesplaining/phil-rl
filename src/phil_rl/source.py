@@ -121,8 +121,13 @@ class GroundedReconstruction(Record):
                 quote = source[first.start : last.end]
                 matches = list(re.finditer(re.escape(quote), source))
                 occurrence = next(
-                    i for i, match in enumerate(matches) if match.start() == first.start
+                    (i for i, match in enumerate(matches) if match.start() == first.start), None
                 )
+                if occurrence is None:
+                    raise ValueError(
+                        f"Evidence for {draft.id} overlaps an earlier identical quote. "
+                        "Use a single source unit or a wider unambiguous evidence span."
+                    )
                 evidence = Evidence(quote=quote, occurrence=occurrence)
             claims.append(
                 Claim(

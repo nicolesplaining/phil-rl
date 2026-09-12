@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "This judgment is informed. This judgment is independent. Consequently this judgment is informed and independent.",
+  "source_sha256": "febe071058f3e9e9e6fc1377a4d02446a752071f6b7115f559afdf834c70874a",
+  "reconstruction": {
+    "title": "The Judgment is Informed and Independent",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This judgment is informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This judgment is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This judgment is independent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This judgment is independent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This judgment is informed and independent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Consequently this judgment is informed and independent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "a8a833e5e008eabca46e04d5790a339be4c276d76dcef716c2e9a571e091c00b",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "c1",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This judgment is informed."
+      },
+      {
+        "name": "c2",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This judgment is independent."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "c1",
+        "reason": "Direct atomic proposition"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "c2",
+        "reason": "Direct atomic proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(and c1 c2)",
+        "reason": "Logical conjunction of premises c1 and c2"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "c51ebaf7b7045d9dd5566c774f2655a24b6c949f6925b7d32c562b3e047a21e6"
+}

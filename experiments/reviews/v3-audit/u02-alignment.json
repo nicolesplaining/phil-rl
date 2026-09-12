@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "22a540bb2183f73a6d9a072d23dfe9c7bbe9e54dd67ab533ab578ab92feed2e8",
+  "generated_sha256": "317e294ce17b05bc2dd6fa550170e7e71b89faad27150e0e8b8dc89fe418b1c2",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "L": "L",
+    "I": "I"
+  },
+  "glossary_rationale": "Legitimacy and inclusivity refer to this election; only-if direction and both negations match.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Legitimacy and inclusivity refer to this election; only-if direction and both negations match.",
+  "domain_restriction": null
+}

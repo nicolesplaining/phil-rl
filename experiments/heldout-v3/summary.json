@@ -1,0 +1,344 @@
+{
+  "suite_version": "heldout-v3",
+  "suite_sha256": "95299beb6e5284f17ba6e7ee9ffd9ac2915b6ff80d74064fda78fc568eef4f9c",
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "workers": 4,
+  "total": 40,
+  "selected_cases": [
+    "u01",
+    "u02",
+    "u03",
+    "u04",
+    "u05",
+    "u06",
+    "u07",
+    "u08",
+    "u09",
+    "u10",
+    "u11",
+    "u12",
+    "u13",
+    "u14",
+    "u15",
+    "u16",
+    "u17",
+    "u18",
+    "u19",
+    "u20",
+    "u21",
+    "u22",
+    "u23",
+    "u24",
+    "u25",
+    "u26",
+    "u27",
+    "u28",
+    "u29",
+    "u30",
+    "u31",
+    "u32",
+    "u33",
+    "u34",
+    "u35",
+    "u36",
+    "u37",
+    "u38",
+    "u39",
+    "u40"
+  ],
+  "completed": 40,
+  "cases": [
+    {
+      "case": "u01",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u02",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u03",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u04",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u05",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u06",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "u07",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u08",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "u09",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u10",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u11",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u12",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u13",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u14",
+      "expected": "inconsistent_premises",
+      "generated": true,
+      "actual": "inconsistent_premises",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "u15",
+      "expected": "valid",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u16",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u17",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u18",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u19",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u20",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u21",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u22",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u23",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u24",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u25",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u26",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u27",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "u28",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u29",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u30",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u31",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u32",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u33",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u34",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u35",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u36",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "u37",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u38",
+      "expected": "review_required",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "u39",
+      "expected": "no_argument",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "u40",
+      "expected": "no_argument",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    }
+  ],
+  "fidelity": "not_assessed",
+  "note": "Review source meaning and symbol alignment before scoring fidelity."
+}

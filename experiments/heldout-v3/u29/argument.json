@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "The narrator is identical to the observer. Therefore the observer is identical to the narrator.",
+  "source_sha256": "130b32424388fa6a0d27c85b39ac89494d3a32348491d3e20c025b3f2d41529e",
+  "reconstruction": {
+    "title": "Identity Symmetry Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The narrator is identical to the observer.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The narrator is identical to the observer.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The observer is identical to the narrator.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the observer is identical to the narrator.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "138670b3eeb41ff7f572cf0a97075b7daefb289e96331d5f4c135dc0eeae2fe0",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Narrator",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The narrator individual"
+      },
+      {
+        "name": "Observer",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The observer individual"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(eq Narrator Observer)",
+        "reason": "Direct translation of identity statement using built-in equality"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(eq Observer Narrator)",
+        "reason": "Direct translation of identity statement using built-in equality"
+      }
+    ],
+    "interpretation_notes": [
+      "Identity relation is symmetric in first-order logic, so both directions are logically equivalent",
+      "Used built-in equality syntax (eq) rather than declaring a custom identity predicate as required by normalization contract"
+    ]
+  },
+  "formalization_sha256": "5a00a389f06264fd173eaee50b6683fb6b8f8a3ab92e9a32cbbfdb01feb13930"
+}

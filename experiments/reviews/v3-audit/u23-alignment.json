@@ -1,0 +1,41 @@
+{
+  "reference_sha256": "a88219f4c5ef0c05f4963fd2ce95663d3e119e98079aed8492903922c21dcf6b",
+  "generated_sha256": "87f5a9608e1b7a053cf9beb29e48e106b215f4747b9d34c90f2721a35659b202",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Person": "Person",
+    "Reasons": "Reasons",
+    "Fallible": "Fallible",
+    "r": "rena"
+  },
+  "glossary_rationale": "The constant r denotes Rena. Person and reasoning predicates are separate and the relative clause remains a conjunction.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The constant r denotes Rena. Person and reasoning predicates are separate and the relative clause remains a conjunction.",
+  "domain_restriction": null
+}

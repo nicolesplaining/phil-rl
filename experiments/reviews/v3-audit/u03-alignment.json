@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "18bba25dd38cd0361f04af427b0e9631b7b1efc6db59c0cd851c05ddbfbe54dc",
+  "generated_sha256": "03e44f52d884983902579b86eacb0fb5deb93fd2688c391fbbfa36b596c18c97",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "S": "S",
+    "V": "V"
+  },
+  "glossary_rationale": "Sincerity and voluntariness of the confession remain distinct. The consequent stays a premise.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Sincerity and voluntariness of the confession remain distinct. The consequent stays a premise.",
+  "domain_restriction": null
+}

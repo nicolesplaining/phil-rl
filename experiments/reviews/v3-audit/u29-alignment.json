@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "9195ccd84c72ea72b13d4fee96cc81ea05171e368b13b75ae65395110735f64d",
+  "generated_sha256": "7e70ed912f2245a2ef66980b8dc32e9828cda51dfcc2f65cb2692ff1414f715f",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Narrator": "narrator",
+    "Observer": "observer"
+  },
+  "glossary_rationale": "The narrator and observer constants retain their references, with equality reversed in the conclusion.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The narrator and observer constants retain their references, with equality reversed in the conclusion.",
+  "domain_restriction": null
+}

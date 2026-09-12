@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "3f7a6b9595fb0f638b279ac447b7ebb4b9e7ea3814bd8e53e2d2b4c0f68a41d7",
+  "generated_sha256": "286801f2d49a435ab178223a9a448808c84294c2496927943652576d36562293",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "R": "R",
+    "Q": "A"
+  },
+  "glossary_rationale": "R is reflectiveness and Q rationality of this choice. The denial-of-antecedent pattern is retained.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "R is reflectiveness and Q rationality of this choice. The denial-of-antecedent pattern is retained.",
+  "domain_restriction": null
+}

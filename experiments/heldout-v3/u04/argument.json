@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "If this choice is reflective, it is rational. This choice is not reflective. Thus this choice is not rational.",
+  "source_sha256": "a2b57da87798c55c9c4cfaa154cb54b5f2962313583bd42cda9cf0c34e93a23c",
+  "reconstruction": {
+    "title": "Invalid Argument About Reflective Choices",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this choice is reflective, it is rational.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this choice is reflective, it is rational.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This choice is not reflective.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This choice is not reflective.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Thus this choice is not rational.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus this choice is not rational.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "44c7f5732918a47e4c2418cfedf96d6a493ff101567144398429a0fd9ed3e32e",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This choice is reflective"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This choice is rational"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies R Q)",
+        "reason": "Translates the conditional statement 'If this choice is reflective, it is rational'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not R)",
+        "reason": "Translates the negation 'This choice is not reflective'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not Q)",
+        "reason": "Translates the conclusion 'Thus this choice is not rational'"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument commits the formal fallacy of denying the antecedent: from (R → Q) and ¬R, it incorrectly concludes ¬Q. This is preserved in the formalization as requested."
+    ]
+  },
+  "formalization_sha256": "74d722630a81f60eaf410bb72bfafe0242514c4faab2c9823244fd7417ab5ffe"
+}

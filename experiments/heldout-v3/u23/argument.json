@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "source": "Every person who reasons is fallible. Rena is a person who reasons. Therefore Rena is fallible.",
+  "source_sha256": "864913879beb1b535a6476c36b4fe5167f48e60a433e4bd579447be0ff91b29a",
+  "reconstruction": {
+    "title": "Rena's Fallibility",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person who reasons is fallible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person who reasons is fallible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Rena is a person who reasons.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Rena is a person who reasons.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Rena is fallible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Rena is fallible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "dc37bc4c342439d54adac2c2ee4dbf26e596189f6708abfc002db7a4e35a22a5",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person"
+      },
+      {
+        "name": "Reasons",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x reasons"
+      },
+      {
+        "name": "Fallible",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is fallible"
+      },
+      {
+        "name": "r",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "Rena"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (and (Person x) (Reasons x)) (Fallible x)))",
+        "reason": "Universal quantification over individuals who are both persons and reasoners, implying fallibility"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(and (Person r) (Reasons r))",
+        "reason": "Conjunction of predicates applied to constant r (Rena) asserting she is both a person and a reasoner"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Fallible r)",
+        "reason": "Predicate applied to constant r (Rena) asserting her fallibility"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "a765d290eadd3ac293c42a19db104957a9d11f02f11bbbbf989b546a827dbb18"
+}

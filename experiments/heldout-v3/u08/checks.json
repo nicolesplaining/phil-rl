@@ -1,0 +1,38 @@
+{
+  "explicit": {
+    "formalization_sha256": "57c89895eace9cb7e7353de6fc2c0cdfdf55b692940660c8503bfdff3cbd13cf",
+    "reconstruction_sha256": "f190359a225857821f29192139754616adc52f901ce339c755804517ac5aaef6",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [
+      "Premise c2 repeats the conclusion's formula."
+    ],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "57c89895eace9cb7e7353de6fc2c0cdfdf55b692940660c8503bfdff3cbd13cf",
+    "reconstruction_sha256": "f190359a225857821f29192139754616adc52f901ce339c755804517ac5aaef6",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [
+      "Premise c2 repeats the conclusion's formula."
+    ],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "0.1",
+  "source": "Our discussion concerns the reliability of this report. An opponent says the report is credible. I reply that if the report is fabricated, it is not credible. The report is fabricated. Therefore the report is not credible.",
+  "source_sha256": "c645d5386a0e0514dbeb384e7ae141d2f9b5e838347fd94d5d850560e6f75edd",
+  "reconstruction": {
+    "title": "Argument about Report Credibility",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Our discussion concerns the reliability of this report.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Our discussion concerns the reliability of this report.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The report is credible.",
+        "role": "objection",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "An opponent says the report is credible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Attributed to an opponent"
+      },
+      {
+        "id": "c3",
+        "text": "If the report is fabricated, it is not credible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "I reply that if the report is fabricated, it is not credible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Author's reply to the objection"
+      },
+      {
+        "id": "c4",
+        "text": "The report is fabricated.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The report is fabricated.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "The report is not credible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the report is not credible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c3",
+          "c4"
+        ],
+        "conclusion": "c5",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c3",
+          "c4"
+        ],
+        "conclusion": "c2",
+        "kind": "attacks"
+      }
+    ],
+    "conclusion_id": "c5",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "03db86e45ad413583ef6532ce572f934e5429aca686924be132c910ed0ac24be",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "C",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The report is credible"
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The report is fabricated"
+      },
+      {
+        "name": "D",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "Our discussion concerns the reliability of this report"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "D",
+        "reason": "Context statement formalized as a proposition about the discussion's focus"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "C",
+        "reason": "Direct assertion of credibility"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(implies F (not C))",
+        "reason": "Conditional statement about fabrication and credibility"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "F",
+        "reason": "Direct assertion of fabrication"
+      },
+      {
+        "claim_id": "c5",
+        "formula": "(not C)",
+        "reason": "Negation of credibility derived from premises"
+      }
+    ],
+    "interpretation_notes": [
+      "Added proposition D to formalize the context statement as required by validation rules",
+      "The argument uses modus ponens: from (F → ¬C) and F, derive ¬C",
+      "The 'opponent' position (C) is explicitly labeled as an objection being refuted",
+      "No domain restrictions needed since all claims are propositional"
+    ]
+  },
+  "formalization_sha256": "9e2a47c83f436ce0b8adb7e5de6693dfdfe1dc4201eecc3fddf9a58b35954d51"
+}

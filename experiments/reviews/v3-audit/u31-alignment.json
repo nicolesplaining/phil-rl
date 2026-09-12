@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "0a2de27f3638133cea09e2a135beb6189b0c5d1b2317ed49474ef57cbc26ad03",
+  "generated_sha256": "fa863fbf1d130875f63e21d02c0ac0dfae290e942c343c64e16268f43c6a0066",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Interpreter": "Interpreter",
+    "Questions": "Questions"
+  },
+  "glossary_rationale": "Questions(x,y) means x questions y. Both formulas preserve interpreter restrictions and witness dependence.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Questions(x,y) means x questions y. Both formulas preserve interpreter restrictions and witness dependence.",
+  "domain_restriction": null
+}

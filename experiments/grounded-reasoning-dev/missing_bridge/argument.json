@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent is morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "d58f743140bd3ad3885209782d30ca95d2cc35697840bcafa531b584a9c36c95",
+  "reconstruction": {
+    "title": "Moral Responsibility and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Stated as a factual assertion about the agent's moral status."
+      },
+      {
+        "id": "c2",
+        "text": "The agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Concluded using 'therefore' as a logical consequence of the premise."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "28c52857273f9f59dfdb3bd09f5ad1d62102cb640e5628e83cf17e7794389890",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "A non-empty set of possible agents, with the agent in question being the sole individual of interest.",
+    "symbols": [
+      {
+        "name": "MR",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible."
+      },
+      {
+        "name": "AF",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "MR",
+        "reason": "Direct translation of the premise as a proposition about moral responsibility."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "AF",
+        "reason": "Direct translation of the conclusion as a proposition about free action."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument assumes an implicit implication from moral responsibility (MR) to free action (AF), but this is not encoded as an explicit premise in the formalization. The validity of the argument depends on this unrepresented philosophical connection.",
+      "Moral responsibility and free action are treated as atomic propositions despite their philosophical complexity, as permitted by the classical propositional logic framework."
+    ]
+  },
+  "formalization_sha256": "3073621a64a48dcc157ccb1150c43d2098fe3749e47fd2d2c5e9494471e5a94f"
+}

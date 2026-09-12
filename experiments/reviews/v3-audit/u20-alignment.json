@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "463ade5a5373fa7d0cc24cb7b4715c9062d75c649634a9da3472e9f915ba193d",
+  "generated_sha256": "6bcad4defc10870b301311668ecc3e935add5a548f607cfa2c0c9a375eaee4f6",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "A": "A",
+    "R": "R"
+  },
+  "glossary_rationale": "Authenticity of the intention and relevance of the inquiry align in both complementary conditionals.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Authenticity of the intention and relevance of the inquiry align in both complementary conditionals.",
+  "domain_restriction": null
+}

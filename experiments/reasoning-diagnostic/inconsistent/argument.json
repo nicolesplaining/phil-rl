@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent is morally responsible. The agent is not morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "8916c1048de1967c509e0bed440319c3c39baf050f2751a1c703f6cfbe6637b0",
+  "reconstruction": {
+    "title": "Moral Responsibility and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent is not morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is not morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "The agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The argument is logically invalid due to contradictory premises. The conclusion does not follow from the premises unless an implicit assumption is made that a contradiction implies free action, which is not established by the source."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "36acafd27124988af2c394eb1b871b068e60454e2c9dbbfac5ef84c52c7621c6",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "A single nonempty set containing the agent in question",
+    "symbols": [
+      {
+        "name": "M",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible"
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "M",
+        "reason": "Direct translation of 'The agent is morally responsible' as a proposition"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not M)",
+        "reason": "Direct translation of 'The agent is not morally responsible' as the negation of M"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "F",
+        "reason": "Direct translation of 'The agent acted freely' as a proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "Premises c1 and c2 are direct logical contradictions (M and ¬M), making the argument unsound. The conclusion F does not logically follow from these premises in classical logic unless an implicit assumption is made that contradictions entail free action, which is not established here. The formalization preserves the original structure despite the contradiction."
+    ]
+  },
+  "formalization_sha256": "896b71905fb4bfa2d41912ec1177980f1a0bd794e4ad635aed8cae464fd0af6e"
+}

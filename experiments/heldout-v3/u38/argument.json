@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "source": "Every philosopher examined a position. Therefore there is one position that every philosopher examined.",
+  "source_sha256": "cfbc43f71bfafc34c02288b6db24e2002ed28b1dc4c29c366c09fa5ce9f6833b",
+  "reconstruction": {
+    "title": "Position Examination Argument",
+    "claims": [
+      {
+        "id": "C1",
+        "text": "Every philosopher examined a position.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every philosopher examined a position.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The author assumes this universal statement implies a single shared position, though the premise could also be interpreted as each philosopher examining a distinct position."
+      },
+      {
+        "id": "C2",
+        "text": "There is one position that every philosopher examined.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore there is one position that every philosopher examined.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "C1"
+        ],
+        "conclusion": "C2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "C2",
+    "ambiguities": [
+      {
+        "claim_id": "C1",
+        "issue": "Ambiguity in the scope of 'a position' in the premise",
+        "alternatives": [
+          "Each philosopher examined a unique position (distinct from others)",
+          "All philosophers examined the same single position"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "da84c5c960a61031870a5af0e3de110ffa162a3b3adcb7a865ba2b6c4012e9a7",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Philosopher",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a philosopher"
+      },
+      {
+        "name": "Examined",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x examined y"
+      },
+      {
+        "name": "Position",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "y is a position"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "C1",
+        "formula": "(forall x (implies (Philosopher x) (exists y (and (Position y) (Examined x y)))))",
+        "reason": "Translates 'Every philosopher examined a position' as universal quantification over philosophers, each with an existential quantifier for their position"
+      },
+      {
+        "claim_id": "C2",
+        "formula": "(exists y (and (Position y) (forall x (implies (Philosopher x) (Examined x y)))))",
+        "reason": "Translates 'There is one position that every philosopher examined' as existential quantification for the shared position, with universal quantification over philosophers"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise C1 allows for multiple distinct positions (one per philosopher) while the conclusion C2 requires a single shared position. The formalization preserves this ambiguity in the premise's scope without resolving it.",
+      "The translation uses first-order logic with explicit quantifier scope to represent the two possible interpretations of C1 mentioned in the reconstruction's ambiguities section."
+    ]
+  },
+  "formalization_sha256": "93d01d64b8c659e89a601ac3b5cbf8a33a7698fabc074762d988d5eeeb0cd31d"
+}

@@ -1,0 +1,58 @@
+{
+  "provenance": "llm_on_original_synthetic_passages",
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "cases": [
+    {
+      "case": "missing_bridge",
+      "expected_explicit": "invalid",
+      "expected_augmented": "valid",
+      "generated": true,
+      "actual_explicit": "invalid",
+      "actual_augmented": "valid",
+      "status_match": true,
+      "augmented_status_match": true,
+      "reconstruction_attempts": 1,
+      "formalization_attempts": 1
+    },
+    {
+      "case": "inconsistent",
+      "expected_explicit": "inconsistent_premises",
+      "expected_augmented": "inconsistent_premises",
+      "generated": true,
+      "actual_explicit": "inconsistent_premises",
+      "actual_augmented": "inconsistent_premises",
+      "status_match": true,
+      "augmented_status_match": true,
+      "reconstruction_attempts": 1,
+      "formalization_attempts": 1
+    },
+    {
+      "case": "modal",
+      "expected_explicit": "unsupported",
+      "expected_augmented": "unsupported",
+      "generated": true,
+      "actual_explicit": "unsupported",
+      "actual_augmented": "unsupported",
+      "status_match": true,
+      "augmented_status_match": true,
+      "reconstruction_attempts": 2,
+      "formalization_attempts": 1
+    }
+  ],
+  "total": 3,
+  "completed": 3,
+  "generated": 3,
+  "explicit_status_matches": 3,
+  "augmented_status_matches": 3,
+  "fidelity": "not_assessed",
+  "note": "Status agreement does not establish fidelity or philosophical quality."
+}

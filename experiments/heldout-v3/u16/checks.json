@@ -1,0 +1,38 @@
+{
+  "explicit": {
+    "formalization_sha256": "69434a61e41de02616461081e004b192756d543acbdb07245fc94cf9cc7c7c08",
+    "reconstruction_sha256": "f3442fdb9b893df08de445b50feee461942d1c89bd74d19ae61666d8644a8d39",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Q = False, P = True]",
+    "assignments": {
+      "P": "True",
+      "Q": "False"
+    }
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "69434a61e41de02616461081e004b192756d543acbdb07245fc94cf9cc7c7c08",
+    "reconstruction_sha256": "f3442fdb9b893df08de445b50feee461942d1c89bd74d19ae61666d8644a8d39",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Q = False, P = True]",
+    "assignments": {
+      "P": "True",
+      "Q": "False"
+    }
+  }
+}

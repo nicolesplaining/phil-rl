@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "This inquiry is complete if and only if this challenge is answered. This challenge is not answered. Therefore this inquiry is not complete.",
+  "source_sha256": "715c5724d4821481d8b0d98c2b86563aba3ec081e71f877e1bdfef37e813555b",
+  "reconstruction": {
+    "title": "Inquiry Completeness Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This inquiry is complete if and only if this challenge is answered.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This inquiry is complete if and only if this challenge is answered.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This challenge is not answered.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This challenge is not answered.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this inquiry is not complete.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this inquiry is not complete.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "f4676a662bb14c133fadbeff6a1fc4292ac7853cb1058d312e5fb4b4b2eca0af",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "C",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This inquiry is complete"
+      },
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This challenge is answered"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(iff C A)",
+        "reason": "Biconditional connecting inquiry completeness and challenge being answered"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not A)",
+        "reason": "Direct negation of the challenge being answered"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not C)",
+        "reason": "Direct negation of inquiry completeness"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "47d3f692450b681fe94739189ee0ecabf6ab46f3cf792f87f9f62e322485b2b6"
+}

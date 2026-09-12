@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "8f6b3267a054174ee0452ff8331d5344c8acecd976aca2316cfa6a5b135f6842",
+  "generated_sha256": "0aff080f4cb861897e25eeee9dd7916606dcb2356a88522a8cc358a6260a1a80",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Promise": "Promise",
+    "Commitment": "Commitment",
+    "Sensation": "Sensation"
+  },
+  "glossary_rationale": "The three classes and the two negative universal clauses retain their meanings and scope.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The three classes and the two negative universal clauses retain their meanings and scope.",
+  "domain_restriction": null
+}

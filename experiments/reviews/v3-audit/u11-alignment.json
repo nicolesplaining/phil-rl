@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "300d49234efc726cfd54079aa57853bb1579545145f09f27e677a766b7db02b3",
+  "generated_sha256": "4583a6605a67f7dd329dfc66b366e0c7ac090a2e70d1f271c1aa163e77139b5d",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "C": "C",
+    "A": "A"
+  },
+  "glossary_rationale": "Inquiry completeness and the answered challenge match the biconditional and negative premises.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Inquiry completeness and the answered challenge match the biconditional and negative premises.",
+  "domain_restriction": null
+}

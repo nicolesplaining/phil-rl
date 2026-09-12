@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1",
+  "source": "Everyone admires someone. Therefore, someone is admired by everyone.",
+  "source_sha256": "7c2e3e4b98e6b9bb31532ad2cca5579aaf394663790bee44752abb144208e607",
+  "reconstruction": {
+    "title": "Everyone Admires Someone Therefore Someone is Admired by Everyone",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Everyone admires someone.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Everyone admires someone.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The premise states a universal claim about admiration."
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, someone is admired by everyone.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, someone is admired by everyone.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The conclusion is presented as a logical consequence of the premise, though this inference is logically invalid (the premise does not entail the conclusion in standard logic)."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The logical validity of the inference from 'Everyone admires someone' to 'Someone is admired by everyone'",
+        "alternatives": [
+          "The argument assumes that the 'someone' admired by each person is the same individual",
+          "The argument could be interpreted as a definitional equivalence between the two statements",
+          "The argument might rely on an implicit assumption about the transitivity of admiration"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "4e1dab2c0242f15c16bc15e04737435eb5f70607b9a86aaa7d0127a4e5c3d95c",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals in the domain of discourse",
+    "symbols": [
+      {
+        "name": "Admires",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "Admires(x, y) is true when individual x admires individual y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (exists y (Admires x y)))",
+        "reason": "Translates 'Everyone admires someone' as universal quantification over individuals, with existential quantification for the admired person"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (forall x (Admires x y)))",
+        "reason": "Translates 'Someone is admired by everyone' as existential quantification for the admired person, with universal quantification over admirers"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise allows each person to admire a different individual, while the conclusion requires a single individual admired by all",
+      "The inference is logically invalid in classical first-order logic because ∃y∀x(Admires(x,y)) does not follow from ∀x∃y(Admires(x,y))",
+      "The argument would require additional constraints (e.g., uniqueness or transitivity) to make the inference valid"
+    ]
+  },
+  "formalization_sha256": "449f9d1fb2071bac0434836b34627146555bc2987a5117e6ad3d5717c15969db"
+}

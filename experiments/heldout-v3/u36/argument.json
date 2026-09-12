@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1",
+  "source": "Usually cautious agents reconsider their choices. Lumi is a cautious agent. Therefore Lumi reconsiders their choices.",
+  "source_sha256": "31f37d86c7a41ed0330e1086bc2ffa9225a9bafd337adcc3b397800a0548ebec",
+  "reconstruction": {
+    "title": "Argument about cautious agents reconsidering choices",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Usually cautious agents reconsider their choices.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Usually cautious agents reconsider their choices.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Lumi is a cautious agent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Lumi is a cautious agent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Lumi reconsiders their choices.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Lumi reconsiders their choices.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "The use of 'usually' introduces a probabilistic element, but the argument treats it as a universal rule when applied to Lumi.",
+        "alternatives": [
+          "The argument assumes all cautious agents reconsider choices despite the 'usually' qualifier.",
+          "The argument could be interpreted as probabilistic rather than deductive."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "bb56bfc752c650cbaab56653567640f54c4c8afa0052d3317a397a1fba43d88e",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "CautiousAgent",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a cautious agent"
+      },
+      {
+        "name": "ReconsidersChoices",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x reconsiders their choices"
+      },
+      {
+        "name": "Lumi",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual named Lumi"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The 'usually' qualifier requires probabilistic or modal semantics not supported in classical first-order logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The argument's logic is unsupported due to the 'usually' qualifier in c1"
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "The argument's logic is unsupported due to the 'usually' qualifier in c1"
+      }
+    ],
+    "interpretation_notes": [
+      "The 'usually' in c1 cannot be formalized in classical first-order logic without losing its probabilistic meaning",
+      "The argument's validity depends on treating 'usually' as a universal generalization, which is not logically equivalent to the original claim"
+    ]
+  },
+  "formalization_sha256": "0f99183a9a16f62ddaf7725736aedf37ed990a0d4fa927278cae2b4dab410560"
+}

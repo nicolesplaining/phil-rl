@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "0cb5286eb005e9676f58f2bdebe0e9075af169f0cb749c3f1237cef71c62fa36",
+  "generated_sha256": "2c9e3d1a7b944cdcf1bfddfca9161a580005df788b3ff8cb9d30549bfe180d6a",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "A": "I",
+    "B": "D"
+  },
+  "glossary_rationale": "A is the incomplete account and B the decisive objection; disjunction introduction retains both meanings.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "A is the incomplete account and B the decisive objection; disjunction introduction retains both meanings.",
+  "domain_restriction": null
+}

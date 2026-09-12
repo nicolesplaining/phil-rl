@@ -1,0 +1,93 @@
+{
+  "started_at": "2026-09-12T22:30:29.223809+00:00",
+  "finished_at": "2026-09-12T22:31:19.242786+00:00",
+  "prompt_version": "0.3",
+  "prompt_sha256": {
+    "reconstruction": "daee2f02e50b2bbc4696d926bc8d2dcac5af58984d872cf3edcd9aef26b537e3",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"title\": \"Moral Responsibility and Free Action\", \"claims\": [{\"id\": \"c1\", \"text\": \"The agent is morally responsible.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"Stated as a factual assertion about the agent's moral status.\"}, {\"id\": \"c2\", \"text\": \"The agent acted freely.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"Concluded using 'therefore' as a logical consequence of the premise.\"}], \"relations\": [{\"premises\": [\"c1\"], \"conclusion\": \"c2\", \"kind\": \"supports\"}], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "usage": {
+        "prompt_tokens": 1454,
+        "total_tokens": 1938,
+        "completion_tokens": 484,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"A non-empty set of possible agents, with the agent in question being the sole individual of interest.\", \"symbols\": [{\"name\": \"MR\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The agent is morally responsible.\"}, {\"name\": \"AF\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The agent acted freely.\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"MR\", \"reason\": \"Direct translation of the premise as a proposition about moral responsibility.\"}, {\"claim_id\": \"c2\", \"formula\": \"AF\", \"reason\": \"Direct translation of the conclusion as a proposition about free action.\"}], \"interpretation_notes\": [\"The argument assumes an implicit implication from moral responsibility (MR) to free action (AF), but this is not encoded as an explicit premise in the formalization. The validity of the argument depends on this unrepresented philosophical connection.\", \"Moral responsibility and free action are treated as atomic propositions despite their philosophical complexity, as permitted by the classical propositional logic framework.\"]}",
+      "usage": {
+        "prompt_tokens": 1540,
+        "total_tokens": 2915,
+        "completion_tokens": 1375,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      33
+    ],
+    "c2": [
+      34,
+      68
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "3073621a64a48dcc157ccb1150c43d2098fe3749e47fd2d2c5e9494471e5a94f",
+    "reconstruction_sha256": "28c52857273f9f59dfdb3bd09f5ad1d62102cb640e5628e83cf17e7794389890",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[AF = False, MR = True]",
+    "assignments": {
+      "MR": "True",
+      "AF": "False"
+    }
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "3073621a64a48dcc157ccb1150c43d2098fe3749e47fd2d2c5e9494471e5a94f",
+    "reconstruction_sha256": "28c52857273f9f59dfdb3bd09f5ad1d62102cb640e5628e83cf17e7794389890",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[AF = False, MR = True]",
+    "assignments": {
+      "MR": "True",
+      "AF": "False"
+    }
+  }
+}

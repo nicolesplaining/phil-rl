@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "source": "Some interpreter questions every interpreter. Therefore every interpreter is questioned by some interpreter.",
+  "source_sha256": "333d1f8a91ec5469f677b4ea2f4f625de27deeb94982ef885f96b2344b45038a",
+  "reconstruction": {
+    "title": "Quantifier Argument about Interpreters",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Some interpreter questions every interpreter.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some interpreter questions every interpreter.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The premise asserts the existence of at least one interpreter who questions all interpreters."
+      },
+      {
+        "id": "c2",
+        "text": "Every interpreter is questioned by some interpreter.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore every interpreter is questioned by some interpreter.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The conclusion states that for all interpreters, there exists an interpreter who questions them."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6b31715e0603dc712dc9dc6ac7bad2097a2917c8201b0c7f89d3707558074c04",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Interpreter",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is an interpreter"
+      },
+      {
+        "name": "Questions",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x questions y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(exists x (and (Interpreter x) (forall y (implies (Interpreter y) (Questions x y)))))",
+        "reason": "The premise asserts existence of an interpreter who questions all interpreters, requiring existential and universal quantifiers."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall y (implies (Interpreter y) (exists x (and (Interpreter x) (Questions x y)))))",
+        "reason": "The conclusion requires universal quantification over interpreters with existential witnesses for each."
+      }
+    ],
+    "interpretation_notes": [
+      "The premise uses an existential quantifier with universal scope over interpreters, while the conclusion uses universal quantification with existential witnesses. The order of quantifiers distinguishes the two claims."
+    ]
+  },
+  "formalization_sha256": "208b3125636ca5b3341013c3ca9559530ea2b2737f5052db8cf12680e38b3e7c"
+}

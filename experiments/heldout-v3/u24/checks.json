@@ -1,0 +1,34 @@
+{
+  "explicit": {
+    "formalization_sha256": "c0f7bab0a5dca25b15774afd4a9dcc7a65b4cbae9319711b1c30a41914ad0c45",
+    "reconstruction_sha256": "53cd7c02e674aa49881ea85ffee10eccef11b5cd72af11251250dc8c56e65b2b",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Virtue = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "c0f7bab0a5dca25b15774afd4a9dcc7a65b4cbae9319711b1c30a41914ad0c45",
+    "reconstruction_sha256": "53cd7c02e674aa49881ea85ffee10eccef11b5cd72af11251250dc8c56e65b2b",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Virtue = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  }
+}

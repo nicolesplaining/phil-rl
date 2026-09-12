@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.1",
+  "source": "This allocation is equitable. This allocation is not equitable. Therefore this allocation is efficient.",
+  "source_sha256": "62a54275e5904bf795fb1b3b0bee08b94e48e67194c6eb977ac1700ca3656293",
+  "reconstruction": {
+    "title": "Equity and Efficiency Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This allocation is equitable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This allocation is equitable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This allocation is not equitable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This allocation is not equitable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This allocation is efficient.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this allocation is efficient.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "Contradiction between c1 and c2",
+        "alternatives": [
+          "The premises are mutually exclusive and cannot both be true.",
+          "The author may intend to use a non-classical logic framework to resolve the contradiction."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "bfd2020016659e1ce8762de9f2e7e58cb93de57166fae6bd91f833e0aad0ad2a",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Equitable",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This allocation is equitable"
+      },
+      {
+        "name": "Efficient",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This allocation is efficient"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "Equitable",
+        "reason": "Direct translation of the atomic proposition 'This allocation is equitable'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not Equitable)",
+        "reason": "Direct translation of the negated proposition 'This allocation is not equitable'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Efficient",
+        "reason": "Direct translation of the atomic proposition 'This allocation is efficient'"
+      }
+    ],
+    "interpretation_notes": [
+      "Premises c1 and c2 are logically contradictory (P and ¬P), which in classical logic would make the argument valid by explosion, but this is preserved as a faithful translation of the source text. The conclusion does not follow from the premises in any standard logic, but the translation remains neutral on validity."
+    ]
+  },
+  "formalization_sha256": "4e7764f22baea2d04208ce276275714e87914ebcffdf0a35b5b6bd04ba1d9ce5"
+}

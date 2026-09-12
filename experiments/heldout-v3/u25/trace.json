@@ -1,0 +1,163 @@
+{
+  "source": "No testimony that deceives is trustworthy. Some testimony deceives. Therefore some testimony is not trustworthy.",
+  "source_sha256": "bd1d52336aea744a6780f3cd8fc1cd9dec27d2ccb958318d682f3dcfca063e25",
+  "started_at": "2026-09-12T23:34:41.300362+00:00",
+  "prompt_version": "0.6",
+  "policy_version": "0.2",
+  "schema_sha256": {
+    "reconstruction": "0a89838f3fdea32fc87902a5547ac0438a90c62ae1af00f8696c381f60f9f494",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "fc14470e9688795eedcaf60215c6917106b75f199f51c7db9feb326198f5a93a",
+    "formalization": "c52b9d17fed3119ee9a17dbce8a892d563effa49c4bd542d00f76e210abe43b2"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a syllogism with two premises and a conclusion.\", \"title\": \"Argument about Testimony and Trustworthiness\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"No testimony that deceives is trustworthy.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"Some testimony deceives.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Therefore some testimony is not trustworthy.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says, \"No testimony that deceives is trustworthy.\" The second is \"Some testimony deceives.\" The third is the conclusion: \"Therefore some testimony is not trustworthy.\"\n\nI need to determine if this is an argument. The first two statements are premises, and the third is the conclusion. The structure seems like a syllogism. The first premise is a universal negative: all deceiving testimonies are not trustworthy. The second premise is an existential: some testimonies deceive. The conclusion is that some testimonies are not trustworthy.\n\nSo, the author is using these two premises to derive the conclusion. The conclusion logically follows from the premises. The first premise sets up that if a testimony deceives, it's not trustworthy. The second premise states that there are testimonies that do deceive. Therefore, those testimonies are not trustworthy, leading to the conclusion that some testimonies are not trustworthy.\n\nI need to map each part to the JSON structure. The status is \"argument\" because there's a conclusion derived from premises. The claims will include the two premises and the conclusion. The relations will show that the premises support the conclusion. The conclusion_id is the third claim. There are no ambiguities here since the structure is clear. Each source unit is a separate claim. The roles are premise for the first two and conclusion for the third. The evidence_ids for each claim are their respective source unit IDs. The interpretation notes are empty because there's no ambiguity in the statements.\n",
+      "usage": {
+        "prompt_tokens": 1696,
+        "total_tokens": 2279,
+        "completion_tokens": 583,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"Testimony\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a testimony\"}, {\"name\": \"Deceives\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x deceives\"}, {\"name\": \"Trustworthy\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is trustworthy\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (and (Testimony x) (Deceives x)) (not (Trustworthy x))))\", \"reason\": \"Universal statement: All testimonies that deceive are not trustworthy\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists x (and (Testimony x) (Deceives x)))\", \"reason\": \"Existential statement: There exists at least one testimony that deceives\"}, {\"claim_id\": \"c3\", \"formula\": \"(exists x (and (Testimony x) (not (Trustworthy x))))\", \"reason\": \"Existential conclusion: There exists at least one testimony that is not trustworthy\"}], \"interpretation_notes\": []}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate a philosophical argument into a formal logical structure using the specified JSON schema. The argument is about testimony and trustworthiness. \n\nFirst, I need to understand the argument. The premises are: \"No testimony that deceives is trustworthy.\" and \"Some testimony deceives.\" The conclusion is \"Therefore some testimony is not trustworthy.\"\n\nI need to represent this in first-order logic. Let's break down each part.\n\nFor the first premise, \"No testimony that deceives is trustworthy.\" This is a universal statement. In FOL, this would be something like \"For all x, if x is a testimony and x deceives, then x is not trustworthy.\" So I'll need predicates for Testimony(x), Deceives(x), and Trustworthy(x). The structure would be ∀x ((Testimony(x) ∧ Deceives(x)) → ¬Trustworthy(x)).\n\nThe second premise is \"Some testimony deceives.\" This is an existential statement. So ∃x (Testimony(x) ∧ Deceives(x)).\n\nThe conclusion is \"Some testimony is not trustworthy.\" Which would be ∃x (Testimony(x) ∧ ¬Trustworthy(x)).\n\nNow, I need to define the symbols. The predicates Testimony, Deceives, and Trustworthy each take one argument (arity 1). The domain is all individuals, as per the instructions. \n\nI should check if there are any ambiguities. The original argument seems straightforward. The terms are all predicates applied to individuals. There's no modal or deontic logic here, so classical first-order logic should suffice.\n\nI need to make sure that the formulas are correctly structured. The first premise uses a universal quantifier, the second an existential. The conclusion is also existential. The translation should capture that structure accurately.\n\nAlso, the note says to use positive atoms. For example, \"not trustworthy\" is expressed as ¬Trustworthy(x), not as a separate predicate. That's correct here.\n\nI don't see any need for constants here since the argument is general about testimonies. All references are through predicates.\n\nNow, putting it all together in the JSON format. The logic is classical_first_order. The domain is \"All individuals.\" The symbols are Testimony, Deceives, Trustworthy, each as predicates with arity 1. The translations for each claim are the formulas I outlined. The interpretation notes can be empty since there are no issues here.\n\nI think that's all. Let me double-check the JSON structure to ensure it matches the schema provided. Each symbol is declared, the translations are correct, and the logic is set appropriately.\n",
+      "usage": {
+        "prompt_tokens": 2019,
+        "total_tokens": 2830,
+        "completion_tokens": 811,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Argument about Testimony and Trustworthiness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "No testimony that deceives is trustworthy.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No testimony that deceives is trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some testimony deceives.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some testimony deceives.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore some testimony is not trustworthy.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some testimony is not trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "c38d642cc3d58930d38a9abd1f5d5048a1cad83d832a4cf0f0fc37b1514bf273",
+  "normalization": null,
+  "finished_at": "2026-09-12T23:35:19.828065+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      42
+    ],
+    "c2": [
+      43,
+      67
+    ],
+    "c3": [
+      68,
+      112
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "0319b43cb78e3f2bf3579802b5d65b9b385ccbd41120ccfee7d164245ff35a76",
+    "reconstruction_sha256": "c38d642cc3d58930d38a9abd1f5d5048a1cad83d832a4cf0f0fc37b1514bf273",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "0319b43cb78e3f2bf3579802b5d65b9b385ccbd41120ccfee7d164245ff35a76",
+    "reconstruction_sha256": "c38d642cc3d58930d38a9abd1f5d5048a1cad83d832a4cf0f0fc37b1514bf273",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

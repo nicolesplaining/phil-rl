@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "This election is legitimate only if it is inclusive. This election is not inclusive. Hence this election is not legitimate.",
+  "source_sha256": "0413116a472107c9781c500e7334236acbe121be323e2d991a9852dbbba95308",
+  "reconstruction": {
+    "title": "Legitimacy of Election Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This election is legitimate only if it is inclusive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This election is legitimate only if it is inclusive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This election is not inclusive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This election is not inclusive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This election is not legitimate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this election is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d66d9d3a713591830705e938df900ed52a51954cceb5f2fdbd5c8927613a4cdb",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "L",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This election is legitimate"
+      },
+      {
+        "name": "I",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This election is inclusive"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies L I)",
+        "reason": "Translates 'only if' as material implication: Legitimacy requires inclusivity"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not I)",
+        "reason": "Direct negation of inclusivity claim"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not L)",
+        "reason": "Direct negation of legitimacy claim"
+      }
+    ],
+    "interpretation_notes": [
+      "'Only if' is formalized as material implication (L → I) following standard logical convention",
+      "No quantifiers needed since the argument operates on atomic propositions about a single election",
+      "The nonempty domain declaration is syntactically required but semantically irrelevant in propositional logic"
+    ]
+  },
+  "formalization_sha256": "50efa2e88f4a27e6fe27def2a54bfa7331f6a6bdf25f707a3f6cce06833a3432"
+}

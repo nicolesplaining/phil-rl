@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "This outcome is beneficial. Therefore this outcome is fair.",
+  "source_sha256": "412441cacb6f27e551e6ce9cd2bac592a8f53fb9bd19f7276c1cb5bcfd5de8cf",
+  "reconstruction": {
+    "title": "Beneficial Outcome Implies Fairness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This outcome is beneficial.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This outcome is beneficial.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This outcome is fair.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this outcome is fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "f3442fdb9b893df08de445b50feee461942d1c89bd74d19ae61666d8644a8d39",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This outcome is beneficial"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This outcome is fair"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "P",
+        "reason": "Direct translation of atomic proposition"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "Q",
+        "reason": "Direct translation of atomic proposition"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "69434a61e41de02616461081e004b192756d543acbdb07245fc94cf9cc7c7c08"
+}

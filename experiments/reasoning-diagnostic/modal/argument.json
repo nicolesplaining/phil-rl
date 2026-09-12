@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "source": "Necessarily, every person is self-identical. Therefore, every person is self-identical.",
+  "source_sha256": "3c7db4bfa9caedf479f810f4b97c625b021f6989f1cd44b77a2ccf55b52053d0",
+  "reconstruction": {
+    "title": "Self-Identity Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Necessarily, every person is self-identical.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Necessarily, every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Every person is self-identical.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "If something is necessarily true, then it is true (in all possible worlds, P implies P).",
+        "role": "premise",
+        "origin": "implicit",
+        "evidence": null,
+        "interpretation_note": "This implicit premise bridges the modal claim (necessity) to the non-modal conclusion. The source text does not explicitly state this logical principle, but it is required to validate the inference from c1 to c2."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c3"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "29a0a80ef095a4687c351a7b2f952cc420170c68d23609c56168b57e060a7b74",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all persons. The argument concerns the property of self-identity among persons.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person"
+      },
+      {
+        "name": "SelfIdentical",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is self-identical"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The modal operator 'necessarily' requires modal logic semantics which are not supported in the available classical first-order logic framework. The necessity operator cannot be expressed using the allowed syntax."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall x (implies (Person x) (SelfIdentical x)))",
+        "reason": "Translated as a universal statement about all persons in the domain having the self-identity property"
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "The modal principle 'if necessarily P then P' requires modal logic semantics which are not supported in the available classical first-order logic framework. This cannot be expressed using the allowed syntax."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on modal logic principles (necessitation) that cannot be fully captured in classical first-order logic. The necessity operator in c1 and the modal implication in c3 are omitted from formalization.",
+      "The implicit premise c3 is necessary to bridge the modal claim (c1) to the non-modal conclusion (c2), but remains unformalized due to modal logic limitations.",
+      "The translation of c2 uses first-order logic to express the universal self-identity property for all persons in the domain."
+    ]
+  },
+  "formalization_sha256": "890b17010f7b77efdcd1a3daf78d7f2c8f6caeeaeaa84bfe01be2bf80f47cb3d"
+}

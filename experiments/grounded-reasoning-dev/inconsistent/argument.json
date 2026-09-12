@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent is morally responsible. The agent is not morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "8916c1048de1967c509e0bed440319c3c39baf050f2751a1c703f6cfbe6637b0",
+  "reconstruction": {
+    "title": "Contradictory Premises and Conclusion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Direct assertion of moral responsibility."
+      },
+      {
+        "id": "c2",
+        "text": "The agent is not morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is not morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Direct negation of moral responsibility."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from contradictory premises."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "Contradiction with c2",
+        "alternatives": [
+          "The premises are mutually exclusive and cannot both be true.",
+          "The argument may be using a reductio ad absurdum structure, but this is not explicitly stated."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "82c25783c5fcb5ca8d038f286862265096f96ea83d0c402182278aa77f5833b6",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of propositions related to moral responsibility and free action.",
+    "symbols": [
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible."
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "R",
+        "reason": "Direct assertion of moral responsibility as a proposition."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not R)",
+        "reason": "Direct negation of moral responsibility as a proposition."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "F",
+        "reason": "Conclusion derived from contradictory premises, treated as a separate proposition."
+      }
+    ],
+    "interpretation_notes": [
+      "The premises c1 and c2 are logical contradictions (R and not R), which cannot both be true in classical logic. This invalidates the argument's structure.",
+      "The conclusion c3 (F) does not logically follow from the premises in classical propositional logic, as contradictions entail any proposition (ex falso quodlibet). However, the argument explicitly presents this derivation, which may reflect a non-classical reasoning pattern.",
+      "The use of propositional logic here preserves the atomic structure of the claims while exposing the inconsistency between premises."
+    ]
+  },
+  "formalization_sha256": "d507a709802abdc1746e253e7c3af12cb9ff28f62ba292fb389750a37c07965a"
+}

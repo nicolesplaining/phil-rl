@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "5e2a6fd7cfcdc52add4e28dbee04d97618cbb94fa6bd7149be49c3c1040d8e35",
+  "generated_sha256": "38cadc3ecb4e4feac75a43a988bbaf1b47297d1015995f175186c1ccb606ba22",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Equitable": "E",
+    "Efficient": "F"
+  },
+  "glossary_rationale": "The allocation's equity and efficiency are separate. Both contradictory equity premises remain explicit.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The allocation's equity and efficiency are separate. Both contradictory equity premises remain explicit.",
+  "domain_restriction": null
+}

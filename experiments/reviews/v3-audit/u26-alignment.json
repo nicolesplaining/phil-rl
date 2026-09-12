@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "d6b461d89aa8793be3454a8ba4ac595557c0d0dee99106510f633f111bd42261",
+  "generated_sha256": "76b47367efd6ae0de6bdfa49ddf2a498e66d5cdf134cc223f6f11f12a66df1f2",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Desire": "Desire",
+    "Coherent": "Coherent"
+  },
+  "glossary_rationale": "The desire restriction and coherence predicate are explicit; negation scopes over the universal premise.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The desire restriction and coherence predicate are explicit; negation scopes over the universal premise.",
+  "domain_restriction": null
+}

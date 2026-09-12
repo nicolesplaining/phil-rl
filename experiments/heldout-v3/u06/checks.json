@@ -1,0 +1,40 @@
+{
+  "explicit": {
+    "formalization_sha256": "9eb53c94df78560930efafcb527fc1132a2d6d1fda53a5e2270a0e971d792f25",
+    "reconstruction_sha256": "67997ab017590c5b91e23f0618b9eb2c5e2791c6921e9a14e8fc2a3e9b9878a3",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[B = True, P = True]",
+    "assignments": {
+      "B": "True",
+      "P": "True"
+    }
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "9eb53c94df78560930efafcb527fc1132a2d6d1fda53a5e2270a0e971d792f25",
+    "reconstruction_sha256": "67997ab017590c5b91e23f0618b9eb2c5e2791c6921e9a14e8fc2a3e9b9878a3",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[B = True, P = True]",
+    "assignments": {
+      "B": "True",
+      "P": "True"
+    }
+  }
+}

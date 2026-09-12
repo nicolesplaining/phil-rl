@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "78bdd1c8e9f07a0d18349c1a51b25e51277093f1ecc5cb66452cbc769811073e",
+  "generated_sha256": "ac2bb478a370f2df36d509b27f986dc784c3f139608865a9993d0f74bf3c9d91",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "B",
+    "Q": "F"
+  },
+  "glossary_rationale": "P is a beneficial outcome and Q a fair outcome. No moral bridge is invented.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is a beneficial outcome and Q a fair outcome. No moral bridge is invented.",
+  "domain_restriction": null
+}

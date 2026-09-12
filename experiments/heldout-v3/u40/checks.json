@@ -1,0 +1,14 @@
+{
+  "explicit": {
+    "status": "no_argument",
+    "reason": "The text contains only factual statements without an asserted conclusion or reasoning.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  },
+  "with_proposed_implicit": {
+    "status": "no_argument",
+    "reason": "The text contains only factual statements without an asserted conclusion or reasoning.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  }
+}

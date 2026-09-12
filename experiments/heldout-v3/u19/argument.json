@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "This account is incomplete. Therefore this account is incomplete or this objection is decisive, or both.",
+  "source_sha256": "57d146bd354d9ad5e6cb58e76b51df00b0e690ce24b4c9b24f485855bc6806c9",
+  "reconstruction": {
+    "title": "Disjunctive Argument about Incompleteness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This account is incomplete.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This account is incomplete.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This account is incomplete or this objection is decisive, or both.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this account is incomplete or this objection is decisive, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d563f177ee6f095c405a511cd78ac03227b4fc1c0b0ed8531e3f3c440cad31a9",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This account is incomplete"
+      },
+      {
+        "name": "B",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This objection is decisive"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "A",
+        "reason": "Direct atomic proposition"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(or A B)",
+        "reason": "Disjunction of the two propositions"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "054be2dde12fb93761ccb8aa21216cadc9eedfc4a6ed455d7cfc9c53396ea156"
+}

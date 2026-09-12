@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "91873699ae56a9bd6a9f12ef6c8988efd627b56db73e3358dd8847002d883608",
+  "generated_sha256": "4dad03aa37ccf43b30f5af759a6a850906d29bf098c0655fd0a51afc6c7ea434",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "U",
+    "Q": "E"
+  },
+  "glossary_rationale": "P is universality and Q exceptionlessness of the principle. The conjunction is negated as a whole.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is universality and Q exceptionlessness of the principle. The conjunction is negated as a whole.",
+  "domain_restriction": null
+}

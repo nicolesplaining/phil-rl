@@ -1,0 +1,40 @@
+{
+  "explicit": {
+    "formalization_sha256": "74d722630a81f60eaf410bb72bfafe0242514c4faab2c9823244fd7417ab5ffe",
+    "reconstruction_sha256": "44c7f5732918a47e4c2418cfedf96d6a493ff101567144398429a0fd9ed3e32e",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[R = False, Q = True]",
+    "assignments": {
+      "R": "False",
+      "Q": "True"
+    }
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "74d722630a81f60eaf410bb72bfafe0242514c4faab2c9823244fd7417ab5ffe",
+    "reconstruction_sha256": "44c7f5732918a47e4c2418cfedf96d6a493ff101567144398429a0fd9ed3e32e",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[R = False, Q = True]",
+    "assignments": {
+      "R": "False",
+      "Q": "True"
+    }
+  }
+}

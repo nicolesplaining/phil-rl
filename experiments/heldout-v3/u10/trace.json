@@ -1,0 +1,145 @@
+{
+  "source": "It is false that, if this promise is genuine, this commitment is optional. Hence this promise is genuine and this commitment is not optional.",
+  "source_sha256": "21617fe1ed83c20258a3de3c2f9074e0b8b66076eda8bda9cd77c21811d607ab",
+  "started_at": "2026-09-12T23:31:55.465379+00:00",
+  "prompt_version": "0.6",
+  "policy_version": "0.2",
+  "schema_sha256": {
+    "reconstruction": "0a89838f3fdea32fc87902a5547ac0438a90c62ae1af00f8696c381f60f9f494",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "fc14470e9688795eedcaf60215c6917106b75f199f51c7db9feb326198f5a93a",
+    "formalization": "c52b9d17fed3119ee9a17dbce8a892d563effa49c4bd542d00f76e210abe43b2"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a logical inference from a negated conditional to a conjunction of its antecedent and negated consequent.\", \"title\": \"Negation of Conditional Implies Conjunction of Antecedent and Negated Consequent\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"It is false that, if this promise is genuine, this commitment is optional.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"This negates the conditional statement 'If this promise is genuine, then this commitment is optional.' In classical logic, ¬(P→Q) is equivalent to P∧¬Q.\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"This promise is genuine and this commitment is not optional.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"This is the logical consequence of the negated conditional in c1.\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\"],\n        \"conclusion\": \"c2\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's tackle this. The user provided two source units. The first one says, \"It is false that, if this promise is genuine, this commitment is optional.\" The second is \"Hence this promise is genuine and this commitment is not optional.\"\n\nFirst, I need to determine if there's an argument here. The first sentence is a negation of a conditional statement. The second sentence is a conclusion that follows from the first. So, the author is arguing that because the conditional is false, the promise is genuine and the commitment is not optional.\n\nThe main conclusion is in the second sentence. The first sentence is the premise. The structure here is that the negation of a conditional (if P then Q) implies that P is true and Q is false. In logic, ¬(P → Q) is equivalent to P ∧ ¬Q. So the author is using that logical equivalence to derive the conclusion.\n\nNow, I need to map this into the JSON structure. The status is \"argument\" because there's a clear premise leading to a conclusion. The claims are the two sentences. The first is a premise, the second is the conclusion. The relation between them is that the premise supports the conclusion. \n\nI should check if there are any ambiguities. The first sentence is a negation of a conditional, which is a standard logical form. The conclusion directly states the result of that negation. There's no ambiguity here, so the ambiguities array can be empty.\n\nEach claim's evidence is the corresponding source unit. The first claim (premise) uses s1, the second (conclusion) uses s2. The relation is a support from the premise to the conclusion. The conclusion_id is the ID of the conclusion claim.\n\nI need to make sure the JSON follows the schema. The claims have the correct roles, evidence IDs, and interpretation notes. The interpretation note for the premise can mention the logical structure, but the text of the claim is the original sentence. The conclusion is straightforward.\n\nNo objections or replies are present, so those aren't included. The title can be something like \"Negation of Conditional Implies Conjunction of Antecedent and Negated Consequent\".\n",
+      "usage": {
+        "prompt_tokens": 1679,
+        "total_tokens": 2419,
+        "completion_tokens": 740,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"P\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This promise is genuine\"}, {\"name\": \"Q\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This commitment is optional\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(not (implies P Q))\", \"reason\": \"The negation of the conditional 'If P then Q' is logically equivalent to 'P and not Q' in classical logic.\"}, {\"claim_id\": \"c2\", \"formula\": \"(and P (not Q))\", \"reason\": \"This directly expresses the conjunction of the antecedent and negated consequent derived from the negated conditional in c1.\"}], \"interpretation_notes\": [\"The argument relies on the classical equivalence ¬(P→Q) ≡ P∧¬Q. The translation preserves this structure using propositional logic formulas.\", \"No quantifiers or predicates are needed since the claims are purely propositional.\"]}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate a philosophical argument into a formal logical structure using the specified JSON schema. The argument given is: \"It is false that, if this promise is genuine, this commitment is optional. Hence this promise is genuine and this commitment is not optional.\"\n\nFirst, I need to understand the logical structure here. The first claim (c1) is the negation of a conditional statement. In classical logic, the negation of \"If P then Q\" (P → Q) is equivalent to \"P and not Q\". The second claim (c2) directly states \"P and not Q\", which aligns with that equivalence. So the argument is straightforward in terms of logical structure.\n\nNext, I need to determine the logic type. Since the argument involves propositions and their negations, and the structure is purely propositional (no quantifiers or predicates over individuals), classical propositional logic is appropriate here. The domain description is not necessary for propositional logic, but according to the instructions, if using first-order logic, the domain must be specified. However, since this is propositional, the domain description can be omitted or set to a default. Wait, the schema requires a domain_description even for propositional logic? Let me check the instructions again. The user says: \"In first-order logic, domain_description must be exactly 'All individuals.'.\" For propositional logic, maybe it's not required, but the schema requires it. Hmm, the example might have it. Wait, looking at the JSON schema, the domain_description is a required field. So even for propositional logic, I need to provide a domain description. But in propositional logic, there are no individuals, so perhaps I can set it to something like \"All propositions.\" But the instructions don't specify. Maybe just \"All individuals.\" is acceptable, but that's for first-order. Wait, the user's instruction says: \"In first-order logic, domain_description must be exactly 'All individuals.'.\" For propositional logic, maybe it's irrelevant, but the schema requires it. Maybe I can put \"All individuals.\" even though it's propositional. Or perhaps the domain description is not applicable here. But the schema requires it. Let me check the example in the problem. The user's example for the domain_description in first-order is \"All individuals.\" So for propositional logic, perhaps the domain description is not needed, but the schema requires it. Maybe I can just put \"All individuals.\" even though it's propositional. Alternatively, maybe the domain description can be left as an empty string, but the schema says minLength is 1. So I have to put something. Maybe \"All propositions.\" but the instructions don't mention that. Alternatively, perhaps the domain description is not applicable here, but the schema requires it. I'll proceed with \"All individuals.\" since the logic is classical propositional, and the domain description is a required field. Maybe the checker will ignore it for propositional logic.\n\nNow, symbols. The propositions involved are \"This promise is genuine\" and \"This commitment is optional.\" Let's assign them proposition symbols. Let's say P for \"This promise is genuine\" and Q for \"This commitment is optional.\" Then, the first claim is ¬(P → Q), and the second is P ∧ ¬Q. \n\nIn the symbols array, I need to declare P and Q as propositions. Each with name, kind (proposition), arity 0, and their meanings. \n\nFor the translations, each claim is translated into a formula. For c1: ¬(P → Q). In the required prefix syntax, that would be (not (implies P Q)). For c2: (and P (not Q)). \n\nThe interpretation_notes should mention that the negation of the conditional is equivalent to the conjunction of the antecedent and the negated consequent, which is a standard equivalence in classical logic. Also, note that the argument is valid because ¬(P→Q) entails P ∧ ¬Q.\n\nWait, the user's instructions say not to comment on validity, consistency, etc., but the interpretation_notes can record translation decisions. So in the notes, I can mention that the negation of the conditional is translated as P ∧ ¬Q, which is the standard equivalence. Also, note that the argument is an instance of that equivalence.\n\nNow, checking for any unsupported features. The argument uses classical propositional logic, which is supported. No modal or higher-order elements. So the logic is classical_propositional.\n\nPutting it all together:\n\n- Logic: classical_propositional\n- Domain_description: \"All individuals.\" (as required, even though it's propositional)\n- Symbols: P and Q as propositions\n- Translations: c1 as (not (implies P Q)), c2 as (and P (not Q))\n- Interpretation_notes: Explain the equivalence and that the translation follows standard logic.\n\nI need to make sure that the JSON structure is correct, with the symbols array containing the two propositions, the translations array with the two claims, and the interpretation_notes explaining the translation choices.\n",
+      "usage": {
+        "prompt_tokens": 2053,
+        "total_tokens": 3344,
+        "completion_tokens": 1291,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Negation of Conditional Implies Conjunction of Antecedent and Negated Consequent",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is false that, if this promise is genuine, this commitment is optional.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is false that, if this promise is genuine, this commitment is optional.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This negates the conditional statement 'If this promise is genuine, then this commitment is optional.' In classical logic, ¬(P→Q) is equivalent to P∧¬Q."
+      },
+      {
+        "id": "c2",
+        "text": "This promise is genuine and this commitment is not optional.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this promise is genuine and this commitment is not optional.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is the logical consequence of the negated conditional in c1."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "50eab64c821729f9b25c43d7ab42c6538cb2bba582b006fb9875d4059ccde215",
+  "normalization": null,
+  "finished_at": "2026-09-12T23:32:50.888404+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      74
+    ],
+    "c2": [
+      75,
+      141
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "ce9345dc0d27665138762c9728e5d7909ddf28c2e19b8a4548ea3c961735e103",
+    "reconstruction_sha256": "50eab64c821729f9b25c43d7ab42c6538cb2bba582b006fb9875d4059ccde215",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "ce9345dc0d27665138762c9728e5d7909ddf28c2e19b8a4548ea3c961735e103",
+    "reconstruction_sha256": "50eab64c821729f9b25c43d7ab42c6538cb2bba582b006fb9875d4059ccde215",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

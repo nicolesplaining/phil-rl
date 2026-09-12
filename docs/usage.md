@@ -1,6 +1,6 @@
 # Usage
 
-This first prototype takes a short English argument through two LLM calls:
+This first-stage implementation takes a short English argument through two LLM calls:
 
 1. Reconstruct claims and their support/attack relations, with exact source evidence.
 2. Translate those frozen claims into propositional or function-free first-order logic.
@@ -184,7 +184,7 @@ and [vLLM structured-output documentation](https://docs.vllm.ai/en/latest/featur
 ## Frozen evaluation and review
 
 ```bash
-uv run phil benchmark --suite benchmarks/heldout-v2.json --out outputs/evaluation
+uv run phil benchmark --suite benchmarks/heldout-v3.json --out outputs/evaluation
 uv run phil audit outputs/evaluation --decisions PATH_TO_REVIEW.json --out outputs/audit
 uv run phil verify-run outputs/evaluation --out outputs/lean-checks
 ```
@@ -194,6 +194,15 @@ has an isolated solver process. The suite file is saved with the run and hashed;
 only each case's source text reaches the model. Review decisions are separate from
 the generated artifact. See [fidelity-review.md](fidelity-review.md) for the protocol
 and [acceptance.md](acceptance.md) for the completion gate.
+
+The saved final evaluation and its limitations are in
+[heldout-v3-report.md](../experiments/heldout-v3-report.md). V1 and V2 are now
+development sets. Replaying the final audit needs no model server:
+
+```bash
+uv run phil audit experiments/heldout-v3 \
+  --decisions experiments/reviews/v3-decisions.json --out outputs/replayed-audit
+```
 
 The normalization contracts are conservative, partly lexical guards, not a semantic
 classifier. They can reject an unusual but legitimate wording, and they do not catch

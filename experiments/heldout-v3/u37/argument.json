@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "source": "Probably this recollection is accurate. Hence this recollection is accurate.",
+  "source_sha256": "ddbb782bab0c5df70d842050d1c61b6aa1b11024997f4a1c736aadbc08961437",
+  "reconstruction": {
+    "title": "Argument from Probability to Certainty",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Probably this recollection is accurate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Probably this recollection is accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This recollection is accurate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this recollection is accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Derived from 'Hence' as a conclusion indicator"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "e4e48d7ba556d4be88393378b635f969399c65fea8121bdb6564b3c97aa8dd5d",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The term 'probably' requires probabilistic logic, which is not supported here."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The conclusion cannot be formalized in classical logic without its premise's probabilistic context."
+      }
+    ],
+    "interpretation_notes": [
+      "Both claims involve probabilistic reasoning ('probably') that cannot be expressed in classical logic. The argument's structure depends on probabilistic inference, which is outside the supported formal systems."
+    ]
+  },
+  "formalization_sha256": "1a6785e162f261d684447a221eca1f28abeec177012f8a4202b4542de9da980b"
+}

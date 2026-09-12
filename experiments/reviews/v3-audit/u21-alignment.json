@@ -1,0 +1,65 @@
+{
+  "reference_sha256": "14dda1dc4c583c092905f01976722bfc44d51dc7fa08db052a6450b7ceda1639",
+  "generated_sha256": "743759f33c76c468cb7dc69626bb5cef01a46a5ea63fcb2469df0547fc2bd0b4",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "PanelDiscussingEndorsement": "P",
+    "Coerced": "C",
+    "Voluntary": "V",
+    "Legitimate": "L"
+  },
+  "glossary_rationale": "The panel background is context; coercion, voluntariness and legitimacy retain the endorsement as subject. The intermediate conclusion and support chain are preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r4"
+      ],
+      "generated_ids": [
+        "c4"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r5"
+      ],
+      "generated_ids": [
+        "c5"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r6"
+      ],
+      "generated_ids": [
+        "c6"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The panel background is context; coercion, voluntariness and legitimacy retain the endorsement as subject. The intermediate conclusion and support chain are preserved.",
+  "domain_restriction": null
+}

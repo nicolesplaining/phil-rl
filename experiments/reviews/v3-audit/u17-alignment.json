@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "0b94fd4e6a0b8d2bd34ee45394522dce9b5a2c9112a1615c6481e3f1cd288efd",
+  "generated_sha256": "14d5c3364d3397e44e8d28cac7eba89b843e6900fae71b47cb688209ed7c517c",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "R": "I",
+    "E": "E"
+  },
+  "glossary_rationale": "R means the recollection is invented and E that it is evidence. Not evidence is a logical negation.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "R means the recollection is invented and E that it is evidence. Not evidence is a logical negation.",
+  "domain_restriction": null
+}

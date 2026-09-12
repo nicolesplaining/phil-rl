@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "It is false that, if this promise is genuine, this commitment is optional. Hence this promise is genuine and this commitment is not optional.",
+  "source_sha256": "21617fe1ed83c20258a3de3c2f9074e0b8b66076eda8bda9cd77c21811d607ab",
+  "reconstruction": {
+    "title": "Negation of Conditional Implies Conjunction of Antecedent and Negated Consequent",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is false that, if this promise is genuine, this commitment is optional.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is false that, if this promise is genuine, this commitment is optional.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This negates the conditional statement 'If this promise is genuine, then this commitment is optional.' In classical logic, ¬(P→Q) is equivalent to P∧¬Q."
+      },
+      {
+        "id": "c2",
+        "text": "This promise is genuine and this commitment is not optional.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this promise is genuine and this commitment is not optional.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is the logical consequence of the negated conditional in c1."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "50eab64c821729f9b25c43d7ab42c6538cb2bba582b006fb9875d4059ccde215",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This promise is genuine"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This commitment is optional"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (implies P Q))",
+        "reason": "The negation of the conditional 'If P then Q' is logically equivalent to 'P and not Q' in classical logic."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(and P (not Q))",
+        "reason": "This directly expresses the conjunction of the antecedent and negated consequent derived from the negated conditional in c1."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on the classical equivalence ¬(P→Q) ≡ P∧¬Q. The translation preserves this structure using propositional logic formulas.",
+      "No quantifiers or predicates are needed since the claims are purely propositional."
+    ]
+  },
+  "formalization_sha256": "ce9345dc0d27665138762c9728e5d7909ddf28c2e19b8a4548ea3c961735e103"
+}

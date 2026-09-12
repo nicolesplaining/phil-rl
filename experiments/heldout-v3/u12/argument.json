@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "Being revisable is necessary for this standard to be defensible. This standard is revisable. Therefore this standard is defensible.",
+  "source_sha256": "f045e73dc909495d437271eec3c5e31cea86bc43baa069b9c3d7cd13dc594d8e",
+  "reconstruction": {
+    "title": "Argument for the defensibility of a standard",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Being revisable is necessary for this standard to be defensible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Being revisable is necessary for this standard to be defensible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This standard is revisable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This standard is revisable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This standard is defensible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this standard is defensible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "b6f08631ef07a90fcace343e5000813cb213e197273e90f5849786eaefd1ef08",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "D",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This standard is defensible"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This standard is revisable"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies D R)",
+        "reason": "The necessity relation 'A is necessary for B' translates to B → A in propositional logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "R",
+        "reason": "Direct atomic proposition about revisability"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "D",
+        "reason": "Direct atomic proposition about defensibility"
+      }
+    ],
+    "interpretation_notes": [
+      "The first premise uses 'necessary' which is formalized as material implication (D → R) per standard logical translation conventions",
+      "The argument commits the fallacy of affirming the consequent, but this is a diagnostic for a separate checker"
+    ]
+  },
+  "formalization_sha256": "46508cfdc7113acc80a49c562169dbb329bb7bd43a6d37fa9aa5b794dd662741"
+}

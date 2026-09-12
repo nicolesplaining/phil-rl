@@ -1,0 +1,107 @@
+{
+  "started_at": "2026-09-12T22:34:55.679192+00:00",
+  "finished_at": "2026-09-12T22:36:05.719047+00:00",
+  "prompt_version": "0.3",
+  "prompt_sha256": {
+    "reconstruction": "daee2f02e50b2bbc4696d926bc8d2dcac5af58984d872cf3edcd9aef26b537e3",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"title\": \"Necessity of Self-Identity\", \"claims\": [{\"id\": \"c1\", \"text\": \"Necessarily, every person is self-identical.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"The premise asserts a necessary truth about self-identity.\"}, {\"id\": \"c2\", \"text\": \"Every person is self-identical.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"The conclusion follows from the necessity asserted in the premise.\"}], \"relations\": [{\"premises\": [\"c1\"], \"conclusion\": \"c2\", \"kind\": \"supports\"}], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "usage": {
+        "prompt_tokens": 1462,
+        "total_tokens": 2029,
+        "completion_tokens": 567,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"logic\": \"unsupported\", \"domain_description\": \"The domain consists of all persons. The equality predicate (eq) represents self-identity.\", \"symbols\": [{\"name\": \"Person\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a person\"}, {\"name\": \"eq\", \"kind\": \"predicate\", \"arity\": 2, \"meaning\": \"x is identical to y\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": null, \"reason\": \"Modal operator 'necessarily' requires modal logic which is not supported in the available formalism\"}, {\"claim_id\": \"c2\", \"formula\": \"(forall x (implies (Person x) (eq x x)))\", \"reason\": \"Universal quantification over persons with self-identity expressed via equality predicate\"}], \"interpretation_notes\": [\"The premise's modal necessity operator cannot be represented in classical first-order logic\", \"Self-identity is modeled using the standard equality predicate (eq)\", \"The conclusion is a tautology in classical logic but the premise's necessity claim remains untranslated\"]}",
+      "usage": {
+        "prompt_tokens": 1559,
+        "total_tokens": 2285,
+        "completion_tokens": 726,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "[{\"type\": \"value_error\", \"loc\": [\"symbols\", 1], \"msg\": \"Value error, Symbol name is a reserved logical operator.\"}]"
+    },
+    {
+      "attempt": 2,
+      "response": "{\"logic\": \"unsupported\", \"domain_description\": \"The domain consists of all persons. The predicate Identical represents self-identity.\", \"symbols\": [{\"name\": \"Person\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a person\"}, {\"name\": \"Identical\", \"kind\": \"predicate\", \"arity\": 2, \"meaning\": \"x is identical to y\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": null, \"reason\": \"Modal operator 'necessarily' requires modal logic which is not supported in the available formalism\"}, {\"claim_id\": \"c2\", \"formula\": \"(forall x (implies (Person x) (Identical x x)))\", \"reason\": \"Universal quantification over persons with self-identity expressed via predicate Identical\"}], \"interpretation_notes\": [\"The premise's modal necessity operator cannot be represented in classical first-order logic\", \"Self-identity is modeled using the predicate Identical instead of the reserved equality symbol\", \"The conclusion is a tautology in classical logic but the premise's necessity claim remains untranslated\"]}",
+      "usage": {
+        "prompt_tokens": 1855,
+        "total_tokens": 2563,
+        "completion_tokens": 708,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "Unsupported logic must abstain from formalization."
+    },
+    {
+      "attempt": 3,
+      "response": "{\"logic\": \"unsupported\", \"domain_description\": \"The domain consists of all persons. The necessity operator in the premise cannot be formalized in classical first-order logic.\", \"symbols\": [{\"name\": \"Person\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a person\"}, {\"name\": \"Identical\", \"kind\": \"predicate\", \"arity\": 2, \"meaning\": \"x is identical to y\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": null, \"reason\": \"Modal operator 'necessarily' requires modal logic which is not supported in the available formalism\"}, {\"claim_id\": \"c2\", \"formula\": null, \"reason\": \"Depends on unformalizable premise about necessity; cannot be isolated in classical first-order logic\"}], \"interpretation_notes\": [\"Both claims require modal logic to represent the necessity operator\", \"The predicate Identical is defined but cannot be used in a formalizable argument here\", \"The conclusion's truth follows from the premise in modal logic but not in classical first-order logic\"]}",
+      "usage": {
+        "prompt_tokens": 2133,
+        "total_tokens": 2717,
+        "completion_tokens": 584,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      44
+    ],
+    "c2": [
+      45,
+      87
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "9345230ed2bb145b88baedb0b80f73c4b3f8b475c9f5145bb59f16f1bc1cebfa",
+    "reconstruction_sha256": "c83201153182b5b7ff5e1325055e01165bad2bccee1ae669dc188a870c833668",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "9345230ed2bb145b88baedb0b80f73c4b3f8b475c9f5145bb59f16f1bc1cebfa",
+    "reconstruction_sha256": "c83201153182b5b7ff5e1325055e01165bad2bccee1ae669dc188a870c833668",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": "0.1",
+  "source": "The panel is discussing a specific endorsement. If the endorsement was coerced, it is not voluntary. The endorsement was coerced. Thus the endorsement is not voluntary. If the endorsement is not voluntary, it is not legitimate. Therefore the endorsement is not legitimate.",
+  "source_sha256": "3030eaadf2ba40986d9d5a46cfb36a8df9c32ec6accf2718c4340d94d0404198",
+  "reconstruction": {
+    "title": "Coercion and Legitimacy of Endorsement",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The panel is discussing a specific endorsement.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The panel is discussing a specific endorsement.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "If the endorsement was coerced, it is not voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the endorsement was coerced, it is not voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "The endorsement was coerced.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The endorsement was coerced.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "The endorsement is not voluntary.",
+        "role": "subconclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus the endorsement is not voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "If the endorsement is not voluntary, it is not legitimate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the endorsement is not voluntary, it is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c6",
+        "text": "The endorsement is not legitimate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the endorsement is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c2",
+          "c3"
+        ],
+        "conclusion": "c4",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c4",
+          "c5"
+        ],
+        "conclusion": "c6",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c6",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8921903442aacd33ed5fdf2480475656f8ec9f28a4c6145a9c337594432b098a",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "PanelDiscussingEndorsement",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The panel is discussing a specific endorsement"
+      },
+      {
+        "name": "Coerced",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The endorsement was coerced"
+      },
+      {
+        "name": "Voluntary",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The endorsement is voluntary"
+      },
+      {
+        "name": "Legitimate",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The endorsement is legitimate"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "PanelDiscussingEndorsement",
+        "reason": "Contextual statement about the panel's discussion"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies Coerced (not Voluntary))",
+        "reason": "Translating conditional statement about coercion and voluntariness"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Coerced",
+        "reason": "Direct assertion of coercion"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(not Voluntary)",
+        "reason": "Conclusion derived from c2 and c3 via modus ponens"
+      },
+      {
+        "claim_id": "c5",
+        "formula": "(implies (not Voluntary) (not Legitimate))",
+        "reason": "Translating conditional statement about voluntariness and legitimacy"
+      },
+      {
+        "claim_id": "c6",
+        "formula": "(not Legitimate)",
+        "reason": "Conclusion derived from c4 and c5 via modus ponens"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "ea93e4c83d2b6654dc7ab2bebd7604f34398dffd972a100b0760223f59db0fc4"
+}

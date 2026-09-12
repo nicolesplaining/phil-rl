@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "source": "Everything is identical to itself. Therefore something is identical to itself.",
+  "source_sha256": "e2c67020690d11ef0e58eb9ad83708d20b1e420904f3acb07c5941f8ba12a492",
+  "reconstruction": {
+    "title": "Identity Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Everything is identical to itself.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Everything is identical to itself.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Something is identical to itself.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore something is identical to itself.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "ac0ed85e006594089e608442e87542d97d80c1f259d4423512cc84cb21130795",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (eq x x))",
+        "reason": "Universal quantification over identity"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (eq x x))",
+        "reason": "Existential quantification over identity"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on the non-empty domain to infer existence from universality",
+      "Identity (eq) is treated as built-in syntax per instructions"
+    ]
+  },
+  "formalization_sha256": "2a7f63971869cc68300930e7b55933298188d6978cba2b358974c180b4e612f1"
+}

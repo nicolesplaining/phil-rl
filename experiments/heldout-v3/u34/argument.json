@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "If the observer had looked away, the disagreement would have persisted. The disagreement did not persist. Therefore the observer did not look away.",
+  "source_sha256": "1ef6eb9fe5d7d641b6a736000de3739097a139eb03f0b7b56a74df1096a6d1f2",
+  "reconstruction": {
+    "title": "Observer and Disagreement Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the observer had looked away, the disagreement would have persisted.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the observer had looked away, the disagreement would have persisted.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The disagreement did not persist.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The disagreement did not persist.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the observer did not look away.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the observer did not look away.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "cf7b7380e7c321595f3486918e7cbedfecca61412aa61eaedb8d3ccb7c5d8c55",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "LookedAway",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The observer looked away"
+      },
+      {
+        "name": "DisagreementPersisted",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The disagreement persisted"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Counterfactual 'if ... had ...' requires modal semantics not available in classical logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Negation of proposition requires classical logic context which is unsupported here"
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "Negation of proposition requires classical logic context which is unsupported here"
+      }
+    ],
+    "interpretation_notes": [
+      "The counterfactual conditional in c1 cannot be expressed in classical first-order logic without modal operators",
+      "All claims require modal or counterfactual semantics that are outside the supported formalism",
+      "The argument structure resembles modus tollens but relies on counterfactual reasoning"
+    ]
+  },
+  "formalization_sha256": "3a2c61c20ba4569fe72b3d764dd641f045ae23ba6a59f1a4e754499a4d0c4ff4"
+}

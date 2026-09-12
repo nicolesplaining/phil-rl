@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "Exactly one of these claims is true: this decision is final, or this decision is revisable. This decision is final. Hence this decision is not revisable.",
+  "source_sha256": "98abecf8ac700e086d4e499e57897768bd7f08f11d542ae321280e811bbfd940",
+  "reconstruction": {
+    "title": "Exclusive Disjunction Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Exactly one of these claims is true: this decision is final, or this decision is revisable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Exactly one of these claims is true: this decision is final, or this decision is revisable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This decision is final.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This decision is final.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This decision is not revisable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this decision is not revisable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "b52b273032a55c869dfb2557f0cd94d0242fcc12087e117dce466300462d50be",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This decision is final"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This decision is revisable"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(and (or F R) (not (and F R)))",
+        "reason": "Exclusive disjunction requires conjunction of disjunction and negated conjunction"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "F",
+        "reason": "Direct atomic proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not R)",
+        "reason": "Negation of the revisable proposition"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "6b484ddba145e46283d729d68454b28d2b2a123a0156c9c16e36c31d5f180eda"
+}

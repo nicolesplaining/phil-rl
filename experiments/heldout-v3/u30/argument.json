@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "source": "Every promise is a commitment. No commitment is a sensation. Therefore no promise is a sensation.",
+  "source_sha256": "f2c77d5032d1e22513ea59e22f14314317c5d3bb8c0e4927e8f7b1a768ec191c",
+  "reconstruction": {
+    "title": "Syllogism on Promises and Sensations",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every promise is a commitment.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every promise is a commitment.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "No commitment is a sensation.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No commitment is a sensation.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore no promise is a sensation.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore no promise is a sensation.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2639707b1115f4cf0400f4366c729a40147a4942e17b50ae58a797fa845399ba",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Promise",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a promise"
+      },
+      {
+        "name": "Commitment",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a commitment"
+      },
+      {
+        "name": "Sensation",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a sensation"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Promise x) (Commitment x)))",
+        "reason": "Translates 'Every promise is a commitment' as universal implication"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall x (implies (Commitment x) (not (Sensation x))))",
+        "reason": "Translates 'No commitment is a sensation' as universal negative statement"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(forall x (implies (Promise x) (not (Sensation x))))",
+        "reason": "Translates 'No promise is a sensation' as derived universal negative"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "4d12f0336fec6a95616ce46b036bbf3817a84bfc598398cdb72c82968c315cef"
+}

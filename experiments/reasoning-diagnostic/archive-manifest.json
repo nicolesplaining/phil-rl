@@ -1,0 +1,22 @@
+{
+  "archived_at": "2026-09-12T23:54:32.235493+00:00",
+  "run_code_commit": "uncommitted development before 76c99b1; reasoning-enabled diagnostic",
+  "sha256": {
+    "inconsistent/Statement.lean": "287f5c2c56475097c6d1e3135844f379327aff3f3d7bcabbc88daae52885ac18",
+    "inconsistent/argument.json": "1f23bab667a829ce178b0cd4e169d3f4fe0d22c166354929cea7f13f8552e362",
+    "inconsistent/checks.json": "0502cda519836ee7d930df057e1bc47d35f22b80f4efbfe3485b7f9f32708efa",
+    "inconsistent/review.md": "738b4ffcf1b78a66e0167cc4f5f9cdf2360b0f591b50f81d031c7c9063f9bf90",
+    "inconsistent/trace.json": "04d191d796466cb43b6f4b6c94aae329a8e13f9c2f45615100aafdcc1734cc7c",
+    "missing_bridge/Statement.lean": "293d24854c4cf4c6463208c87eab0f2689b2b1796dda97265575beff6c97fffd",
+    "missing_bridge/argument.json": "05e333155cfe186f8b7d62d0d6212eb43b95387edd45f7752e26a76f27e41925",
+    "missing_bridge/checks.json": "5fe980f582be576d4ee3789ad50f14d63bd2bc3616f908863babad371d4c46cc",
+    "missing_bridge/review.md": "1f933516e109f78b31eea7ccfeb813498a68d5df31705a9db1b7261f3221dbee",
+    "missing_bridge/trace.json": "ab746d993bedee1f87734a9cc14ebc35d8c04b68589543e65234a71c25630676",
+    "modal/argument.json": "81bd236b6a90ee97dc7473642b44cbe5f0e540b82787684790c34627363e718a",
+    "modal/checks.json": "e91351efa5409da8f57ac826121cf32d00a373e0d940dabc1ddb4910d5f0128a",
+    "modal/review.md": "5de155ae7ab6a9ac484d6706a30eee37c67f5a040a1f26d63ed23cf3f2df3658",
+    "modal/trace.json": "eb33acce5f3e6a5bb9b0d7595c3ce4cdc03cd3fe17e2ba79f92c3518fa351712",
+    "summary.json": "1fc2ae8df6ef05fcff398d30c30e7ad46778c8eb8cfc0bf3d34c40e31f28ca29"
+  },
+  "note": "Hashes identify saved files, not independent validation of their claims."
+}

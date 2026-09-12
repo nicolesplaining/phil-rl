@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-09-12T22:34:17.898726+00:00",
+  "finished_at": "2026-09-12T22:34:55.662098+00:00",
+  "prompt_version": "0.3",
+  "prompt_sha256": {
+    "reconstruction": "daee2f02e50b2bbc4696d926bc8d2dcac5af58984d872cf3edcd9aef26b537e3",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"title\": \"Everyone Admires Someone Therefore Someone is Admired by Everyone\", \"claims\": [{\"id\": \"c1\", \"text\": \"Everyone admires someone.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"The premise states a universal claim about admiration.\"}, {\"id\": \"c2\", \"text\": \"Therefore, someone is admired by everyone.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"The conclusion is presented as a logical consequence of the premise, though this inference is logically invalid (the premise does not entail the conclusion in standard logic).\"}], \"relations\": [{\"premises\": [\"c1\"], \"conclusion\": \"c2\", \"kind\": \"supports\"}], \"conclusion_id\": \"c2\", \"ambiguities\": [{\"claim_id\": \"c2\", \"issue\": \"The logical validity of the inference from 'Everyone admires someone' to 'Someone is admired by everyone'\", \"alternatives\": [\"The argument assumes that the 'someone' admired by each person is the same individual\", \"The argument could be interpreted as a definitional equivalence between the two statements\", \"The argument might rely on an implicit assumption about the transitivity of admiration\"]}] }",
+      "usage": {
+        "prompt_tokens": 1454,
+        "total_tokens": 2015,
+        "completion_tokens": 561,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals in the domain of discourse\", \"symbols\": [{\"name\": \"Admires\", \"kind\": \"predicate\", \"arity\": 2, \"meaning\": \"Admires(x, y) is true when individual x admires individual y\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (exists y (Admires x y)))\", \"reason\": \"Translates 'Everyone admires someone' as universal quantification over individuals, with existential quantification for the admired person\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists y (forall x (Admires x y)))\", \"reason\": \"Translates 'Someone is admired by everyone' as existential quantification for the admired person, with universal quantification over admirers\"}], \"interpretation_notes\": [\"The premise allows each person to admire a different individual, while the conclusion requires a single individual admired by all\", \"The inference is logically invalid in classical first-order logic because ∃y∀x(Admires(x,y)) does not follow from ∀x∃y(Admires(x,y))\", \"The argument would require additional constraints (e.g., uniqueness or transitivity) to make the inference valid\"]}",
+      "usage": {
+        "prompt_tokens": 1648,
+        "total_tokens": 2484,
+        "completion_tokens": 836,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      25
+    ],
+    "c2": [
+      26,
+      68
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "449f9d1fb2071bac0434836b34627146555bc2987a5117e6ad3d5717c15969db",
+    "reconstruction_sha256": "4e1dab2c0242f15c16bc15e04737435eb5f70607b9a86aaa7d0127a4e5c3d95c",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Admires = [else ->\n            And(Not(And(Var(0) == Domain!val!4,\n                        Var(1) == Domain!val!3)),\n                Not(And(Var(0) == Domain!val!2,\n                        Not(Var(0) == Domain!val!4),\n                        Not(Var(1) == Domain!val!3))))]]",
+    "assignments": {}
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "449f9d1fb2071bac0434836b34627146555bc2987a5117e6ad3d5717c15969db",
+    "reconstruction_sha256": "4e1dab2c0242f15c16bc15e04737435eb5f70607b9a86aaa7d0127a4e5c3d95c",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Admires = [else ->\n            Or(And(Not(Var(0) == Domain!val!1),\n                   Var(1) == Domain!val!4),\n               And(Var(0) == Domain!val!1,\n                   Not(Var(1) == Domain!val!0),\n                   Not(Var(1) == Domain!val!4)))]]",
+    "assignments": {}
+  }
+}

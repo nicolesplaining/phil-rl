@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "ef032cc57f2cc4f26205be94195280970fd9efc5e737e5ffabe26574e7714e2a",
+  "generated_sha256": "f398bc8f77bea657b83d5117f7ac6e5e2dc38ca4fc9d9e54e8d9924d4c54b5e4",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "F": "F",
+    "R": "R"
+  },
+  "glossary_rationale": "Finality and revisability remain distinct; exclusivity is the source's explicit premise.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Finality and revisability remain distinct; exclusivity is the source's explicit premise.",
+  "domain_restriction": null
+}

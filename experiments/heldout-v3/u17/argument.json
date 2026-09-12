@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "If this recollection is invented, it is not evidence. This recollection is invented. Therefore this recollection is not evidence.",
+  "source_sha256": "beac22d99460afbfe71e133bb8debedbd250e4b3d3a1c96abdcb7c68f9457ef6",
+  "reconstruction": {
+    "title": "Invented Recollection and Evidence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this recollection is invented, it is not evidence.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this recollection is invented, it is not evidence.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This recollection is invented.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This recollection is invented.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This recollection is not evidence.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this recollection is not evidence.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "0a7226507278a27f5bd6b6cdcf4c08ef13b34c9479888132dfaccf98629de45f",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This recollection is invented"
+      },
+      {
+        "name": "E",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This recollection is evidence"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies R (not E))",
+        "reason": "Translates 'If this recollection is invented, it is not evidence' as material implication"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "R",
+        "reason": "Direct assertion of 'This recollection is invented'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not E)",
+        "reason": "Direct assertion of 'This recollection is not evidence'"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "71b2e070cb9dbc1dc6baf8e450e2f8553e47dc4d945eefcbb5d75b4bdc023284"
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "If this intention is authentic, this inquiry is relevant. If this intention is not authentic, this inquiry is relevant. Therefore this inquiry is relevant.",
+  "source_sha256": "3fd4e16ec9ee4d8d1672f09ac5537525ba266ecf104b1f05ff603345af8d60f6",
+  "reconstruction": {
+    "title": "Disjunction Argument for Inquiry Relevance",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this intention is authentic, this inquiry is relevant.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this intention is authentic, this inquiry is relevant.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "If this intention is not authentic, this inquiry is relevant.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this intention is not authentic, this inquiry is relevant.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this inquiry is relevant.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this inquiry is relevant.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d69714b7e389ff03d0db0ab52479579434085f8ee3728deb51e4c98203f17636",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This intention is authentic"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This inquiry is relevant"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies A R)",
+        "reason": "Direct translation of conditional statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies (not A) R)",
+        "reason": "Direct translation of conditional statement with negated antecedent"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "R",
+        "reason": "Direct translation of conclusion statement"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument uses a disjunction of antecedents (A ∨ ¬A) implicitly, since the two conditionals cover all possible truth values of A. The conclusion follows by constructive dilemma: (A→R) ∧ (¬A→R) entails R."
+    ]
+  },
+  "formalization_sha256": "fa2f5fb933f94a8f138d82bd360406f85c6909d8d9af75eb0d98605bf49a495c"
+}

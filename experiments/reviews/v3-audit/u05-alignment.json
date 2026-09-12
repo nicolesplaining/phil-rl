@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "07bc7178699d92343471f10c06ef8b463ba5fa0c43e67d7eb910eed3a6dfcf2e",
+  "generated_sha256": "7d9bdfb3ba97d94f2fa6064c05dd252fab0fc8c84f205c2338672301a31d14bb",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "R": "R",
+    "M": "M"
+  },
+  "glossary_rationale": "Revisability of the maxim and mistaken criticism align; disjunction remains inclusive.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Revisability of the maxim and mistaken criticism align; disjunction remains inclusive.",
+  "domain_restriction": null
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "Either the maxim is revisable or the criticism is mistaken, or both. The maxim is not revisable. Therefore the criticism is mistaken.",
+  "source_sha256": "2a337f77e73cbc9e15581926bbe250e9173e16c2d3f844622fe2f6c970cd711f",
+  "reconstruction": {
+    "title": "Disjunctive Syllogism Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Either the maxim is revisable or the criticism is mistaken, or both.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Either the maxim is revisable or the criticism is mistaken, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The maxim is not revisable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The maxim is not revisable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the criticism is mistaken.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the criticism is mistaken.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "7a1b0a89cc5927fd70c6111b367d88234163eeea6334ce0a2b6b712e60014753",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All propositions.",
+    "symbols": [
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The maxim is revisable"
+      },
+      {
+        "name": "M",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The criticism is mistaken"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(or R M)",
+        "reason": "The disjunction 'either R or M or both' is represented as (or R M) in classical propositional logic, which already includes the 'or both' case."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not R)",
+        "reason": "Direct negation of proposition R as stated."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "M",
+        "reason": "Direct assertion of proposition M as the conclusion."
+      }
+    ],
+    "interpretation_notes": [
+      "The classical disjunction (or R M) inherently allows for both disjuncts to be true, matching the 'or both' in the original statement. No additional symbols are needed to represent this."
+    ]
+  },
+  "formalization_sha256": "2f7848e90ad9d8f791809e9b03ecbe8d25ff07f8ac3caf7ede120b45c4828071"
+}
