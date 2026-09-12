@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "ac80bd5d1942560cac34785cd173743dad7e7b1b8d6d22db3e776e41d18e74fb",
+  "generated_sha256": "cf2c1adcab616f99910658b49a8c266023e74b030a19335b8abf8116ca937994",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "A": "A",
+    "C": "C"
+  },
+  "glossary_rationale": "Acceptability and coercion match the explicit definition of unless.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Acceptability and coercion match the explicit definition of unless.",
+  "domain_restriction": null
+}

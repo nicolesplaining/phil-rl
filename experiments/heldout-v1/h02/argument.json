@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1",
+  "source": "Consent is genuine only if it is informed. This consent is not informed. Therefore this consent is not genuine.",
+  "source_sha256": "2acacc18c5a536fb209028292d7782f179408a03f076e5fe6ffd93bd7fc8036e",
+  "reconstruction": {
+    "title": "Argument about the genuineness of consent",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Consent is genuine only if it is informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Consent is genuine only if it is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This consent is not informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This consent is not informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this consent is not genuine.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this consent is not genuine.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "aae2b71451bb528d5ee4826985e2a690d2551219573421eae010c473d4cc111f",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all consents. The constant 'c' refers to the specific consent under discussion.",
+    "symbols": [
+      {
+        "name": "Genuine",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "Genuine(x) is true when consent x is genuine"
+      },
+      {
+        "name": "Informed",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "Informed(x) is true when consent x is informed"
+      },
+      {
+        "name": "c",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The specific consent being evaluated"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Genuine x) (Informed x)))",
+        "reason": "Translates 'Consent is genuine only if it is informed' as a universal conditional statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not (Informed c))",
+        "reason": "Translates 'This consent is not informed' using the constant c for the specific consent"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not (Genuine c))",
+        "reason": "Translates 'This consent is not genuine' using the constant c for the specific consent"
+      }
+    ],
+    "interpretation_notes": [
+      "The universal quantifier in c1 captures the general principle about all consents",
+      "The constant 'c' represents the specific consent mentioned in premises c2 and conclusion c3",
+      "The argument structure follows modus tollens: from (P→Q) and ¬Q, infer ¬P applied to the specific consent c"
+    ]
+  },
+  "formalization_sha256": "776f58e392330509fe97a0de466ce427ab3655917902b075e7097a1ef3a256e5"
+}

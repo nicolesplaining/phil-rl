@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "Every reader admired a book. Therefore there is one book that every reader admired.",
+  "source_sha256": "9ca90f6317f930881e1eb785ed000088d352f1d11477ef4f318f3cd164bff4a6",
+  "reconstruction": {
+    "title": "Argument about Readers and a Book",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every reader admired a book.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every reader admired a book.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore there is one book that every reader admired.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore there is one book that every reader admired.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "Ambiguity in quantifier scope: Does 'a book' refer to a single book admired by all readers or multiple books each admired by individual readers?",
+        "alternatives": [
+          "Each reader admired at least one book (possibly different books)",
+          "There exists a single book that all readers admired"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "fcbda8b30d1bac7529f5cb54ce9b9f3d9b3213f52501e2a0352b961ebd2b8f16",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "A nonempty domain containing all readers and books mentioned in the argument. The exact composition is not specified, but it must include at least one reader and one book.",
+    "symbols": [
+      {
+        "name": "Reader",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a reader"
+      },
+      {
+        "name": "Book",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a book"
+      },
+      {
+        "name": "Admired",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x admired y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Reader x) (exists y (and (Book y) (Admired x y)))))",
+        "reason": "Translates 'Every reader admired a book' as universal quantification over readers, each with an existentially quantified book. This captures the first ambiguity alternative where each reader may have a different book."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (and (Book y) (forall x (implies (Reader x) (Admired x y)))))",
+        "reason": "Translates 'There is one book that every reader admired' as existential quantification over books, with universal quantification over readers for the same book."
+      }
+    ],
+    "interpretation_notes": [
+      "The premise (c1) has two possible readings: (1) Each reader has their own book (formalized), or (2) All readers share one book (formalized in conclusion). The argument is invalid because (1) does not entail (2).",
+      "The translation preserves the ambiguity by formalizing the premise with nested quantifiers (universal then existential), which is logically distinct from the conclusion's reversed quantifier order (existential then universal).",
+      "No modal or higher-order logic is needed despite the apparent 'there exists a single book' construction, which is expressible in standard FOL with quantifier scope distinctions."
+    ]
+  },
+  "formalization_sha256": "b7e729e639498840898a4a0a05def2ba182d302880655a42e8c3ee42ddf27b06"
+}

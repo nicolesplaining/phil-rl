@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1",
+  "source": "Every virtue is admirable. Everything admirable is valuable. Therefore every virtue is valuable.",
+  "source_sha256": "f66ff6d5c50a3b041b7eb06b06edb4c811465e2ac8fa108316d14c54a0ab7248",
+  "reconstruction": {
+    "title": "Virtue and Value Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every virtue is admirable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every virtue is admirable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Everything admirable is valuable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Everything admirable is valuable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Every virtue is valuable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore every virtue is valuable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "1d8e6cfefcd5bb1e1bf542faf714b287c9a813f0a070a618d071fc3196905a80",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All entities under consideration, including virtues, admirable things, and valuable things.",
+    "symbols": [
+      {
+        "name": "V",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a virtue"
+      },
+      {
+        "name": "A",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is admirable"
+      },
+      {
+        "name": "Val",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is valuable"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (V x) (A x)))",
+        "reason": "Translates universal statement 'Every virtue is admirable' using implication and universal quantifier"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall x (implies (A x) (Val x)))",
+        "reason": "Translates universal statement 'Everything admirable is valuable' using implication and universal quantifier"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(forall x (implies (V x) (Val x)))",
+        "reason": "Translates conclusion 'Every virtue is valuable' using implication and universal quantifier"
+      }
+    ],
+    "interpretation_notes": [
+      "Predicates V, A, and Val represent categorical properties rather than specific individuals",
+      "Domain includes abstract entities since we're reasoning about virtues and their properties",
+      "Standard hypothetical syllogism pattern preserved in FOL translation"
+    ]
+  },
+  "formalization_sha256": "1638f6401838c091bc607966f1386d011195acb2814a1a0fd6b5fd35a51e0195"
+}

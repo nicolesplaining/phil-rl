@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "It is not the case that the policy is fair and effective. The policy is fair. Therefore the policy is not effective.",
+  "source_sha256": "a65d81b9d3e3e4559e6bba8974700e74e03a041782262888a92749a9ef68cc26",
+  "reconstruction": {
+    "title": "Argument about Policy Fairness and Effectiveness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is not the case that the policy is fair and effective.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is not the case that the policy is fair and effective.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The policy is fair.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The policy is fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the policy is not effective.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the policy is not effective.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "ca9643d8b0a6b00d2544c09ad29820ac7a90582c87fcb5362db269e48474e715",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Non-empty domain of policies (though propositional logic doesn't require individual domain details)",
+    "symbols": [
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The policy is fair"
+      },
+      {
+        "name": "E",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The policy is effective"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (and F E))",
+        "reason": "Translates 'not (fair and effective)' as logical negation of conjunction"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "F",
+        "reason": "Direct assertion of policy fairness"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not E)",
+        "reason": "Direct assertion of policy ineffectiveness"
+      }
+    ],
+    "interpretation_notes": [
+      "Using propositional logic with two atomic propositions F and E",
+      "The argument structure is purely classical propositional: ¬(F∧E), F ⊢ ¬E",
+      "No need for first-order elements like predicates or quantifiers"
+    ]
+  },
+  "formalization_sha256": "a47413b513d6488ba4bcf53d9c3f1664488d7461861ccd9d3e872b9d1bf08229"
+}

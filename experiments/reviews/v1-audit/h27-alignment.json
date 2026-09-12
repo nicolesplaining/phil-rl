@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "9fe8e19f1b189c259d64d1f1b8fb2a17209713b4a6b0b2ec304e605977566f60",
+  "generated_sha256": "5e1dbc3f3318dbfaa72ff5fa3f203e6addcdcf252f28cb6e11c730e6e2c45355",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Coercive": "Coercive",
+    "Voluntary": "Voluntary"
+  },
+  "glossary_rationale": "The model explicitly quantifies over acts. Relativization restores Act guards; the existential source premise establishes that this class is nonempty.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The model explicitly quantifies over acts. Relativization restores Act guards; the existential source premise establishes that this class is nonempty.",
+  "domain_restriction": "Act"
+}

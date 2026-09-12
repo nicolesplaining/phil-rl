@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "source": "If the reason is conclusive, the doubt is defeated. If the doubt is defeated, the inquiry is settled. Therefore if the reason is conclusive, the inquiry is settled.",
+  "source_sha256": "8d0cc9be8adcf2b6669d529347aad6905100badbe9d15cf733af4c607fb8ae43",
+  "reconstruction": {
+    "title": "Argument about Conclusive Reasons and Settled Inquiries",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the reason is conclusive, the doubt is defeated.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the reason is conclusive, the doubt is defeated.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "If the doubt is defeated, the inquiry is settled.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the doubt is defeated, the inquiry is settled.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore if the reason is conclusive, the inquiry is settled.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore if the reason is conclusive, the inquiry is settled.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "dc8dd3de7a2c226137496b0724acc38fe4c0e18ad3846d155e1bf7297c9bd237",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Abstract domain of epistemic states and reasoning processes",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The reason is conclusive"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The doubt is defeated"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The inquiry is settled"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies P Q)",
+        "reason": "Direct translation of conditional statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies Q R)",
+        "reason": "Direct translation of conditional statement"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(implies P R)",
+        "reason": "Direct translation of conditional statement"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "cb717bbb85b5fe565d6ebf1fa62cc7586bb84bbf520dbaf0e6954c20669acf14"
+}

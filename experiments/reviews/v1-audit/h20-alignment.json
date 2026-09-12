@@ -1,0 +1,48 @@
+{
+  "reference_sha256": "0542f2b3b01bdf20567842df7ddfe26f93cd845354b7b514fafb1bf205ac0399",
+  "generated_sha256": "f6a845a8f870c93a3ce00205f561a08c445d08d458fa385c36355a16a06537a0",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "D": "D",
+    "U": "U",
+    "S": "T"
+  },
+  "glossary_rationale": "Dishonesty and unreliability retain their subjects. S is seminar background and remains context despite claim reordering.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c4"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r4"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Dishonesty and unreliability retain their subjects. S is seminar background and remains context despite claim reordering.",
+  "domain_restriction": null
+}

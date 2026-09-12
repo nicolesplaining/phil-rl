@@ -1,0 +1,157 @@
+{
+  "source": "The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable. The proposal is not coercive. So the proposal is acceptable.",
+  "source_sha256": "97552b88a1cf2cc459c00b5129d34e4e6cf56b5981c9688a5cb991fadff9ee1c",
+  "started_at": "2026-09-12T22:42:08.284311+00:00",
+  "prompt_version": "0.4",
+  "prompt_sha256": {
+    "reconstruction": "5e615ab502f9af64340fae278dad1570fdc275a72088b404fd501604f5fab828",
+    "formalization": "24a1d188d576786c39bc883d517a67f0f6d7d39917898eb02747de4e5f60bf38"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"title\": \"The Proposal's Acceptability Based on Non-Coercion\", \"claims\": [{\"id\": \"c1\", \"text\": \"The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"The proposal is not coercive.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"So the proposal is acceptable.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided a JSON with three source units. The task is to reconstruct the argument presented in the source. First, I need to determine if there's an argument here. The first unit (s1) defines the proposal as acceptable unless it's coercive, explaining that \"unless\" means if not coercive, then acceptable. The second unit (s2) states the proposal is not coercive. The third (s3) concludes it's acceptable.\n\nSo, the structure seems like a standard modus ponens. The first premise is a conditional: if not coercive, then acceptable. The second premise is the antecedent (not coercive). The conclusion is the consequent (acceptable). The author is using these two premises to derive the conclusion. \n\nI need to identify the claims. The first claim (s1) is the conditional statement. The second (s2) is the assertion that the antecedent is true. The third (s3) is the conclusion. The relations would be that the first two claims support the third. \n\nCheck for any ambiguities. The first unit uses \"unless\" which is clarified as a conditional. The user's note says to preserve the exact wording, so the claim text should include the \"unless\" part. The role of each claim: s1 is a premise, s2 is a premise, s3 is the conclusion. \n\nNo objections or replies here. The conclusion is explicitly stated in s3. The main conclusion is s3, so conclusion_id is c3. The relations would link c1 and c2 to c3 as supporting. \n\nNo implicit premises needed here. The argument is straightforward. The status is argument. The title could be something like \"The Proposal's Acceptability Based on Non-Coercion.\" \n\nI need to make sure the JSON structure is correct, with each claim having the right evidence_ids and roles. The interpretation notes should be empty unless there's an ambiguity. In this case, the \"unless\" is clarified, so no ambiguity. \n\nSo the final JSON should have three claims, two premises supporting the conclusion, and the conclusion_id set to c3. The status is argument, and the reason is empty since it's a valid argument. Ambiguities array is empty. That should cover it.\n",
+      "usage": {
+        "prompt_tokens": 1556,
+        "total_tokens": 2258,
+        "completion_tokens": 702,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"A single nonempty domain containing the proposal under consideration. Propositions represent claims about the proposal's acceptability and coerciveness.\", \"symbols\": [{\"name\": \"A\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The proposal is acceptable\"}, {\"name\": \"C\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The proposal is coercive\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(implies (not C) A)\", \"reason\": \"Translating 'unless C, A' as material implication per the explicit definition in the premise\"}, {\"claim_id\": \"c2\", \"formula\": \"(not C)\", \"reason\": \"Direct translation of 'The proposal is not coercive'\"}, {\"claim_id\": \"c3\", \"formula\": \"A\", \"reason\": \"Direct translation of 'The proposal is acceptable'\"}], \"interpretation_notes\": [\"The 'unless' operator was explicitly defined in the premise as material implication (if not C then A), so no modal or non-classical treatment is needed\", \"All claims are formalized as propositional variables since they make atomic claims about the proposal's properties\", \"The argument structure follows modus ponens: (implies (not C) A), (not C) therefore A\"]}",
+      "reasoning": "\nOkay, let's tackle this translation. The user provided a philosophical argument about a proposal's acceptability based on it not being coercive. The task is to translate this into a formal logic structure as per the given JSON schema.\n\nFirst, I need to determine the appropriate logic. The argument uses a conditional statement: \"unless it is coercive, the proposal is acceptable,\" which translates to \"if not coercive, then acceptable.\" This seems like a classical propositional logic scenario because it's dealing with implications between propositions without quantifiers or predicates over individuals. So, classical_propositional is the right choice here.\n\nNext, symbols. The key propositions here are the acceptability and coerciveness of the proposal. Let's assign \"A\" for \"The proposal is acceptable\" and \"C\" for \"The proposal is coercive.\" These are propositions with arity 0.\n\nFor the translations:\n- Claim c1 states that if not C, then A. So the formula is (implies (not C) A).\n- Claim c2 is simply (not C).\n- Claim c3 is A.\n\nThe domain description is straightforward since we're dealing with propositions about the proposal. No need for individual objects here.\n\nInterpretation notes: The \"unless\" in c1 is clarified to mean a material implication. The translation directly uses the given interpretation from the premise. No issues with modalities or other logics here, so all formulas are valid in propositional logic.\n",
+      "usage": {
+        "prompt_tokens": 1708,
+        "total_tokens": 2302,
+        "completion_tokens": 594,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "The Proposal's Acceptability Based on Non-Coercion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The proposal is not coercive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The proposal is not coercive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "So the proposal is acceptable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "So the proposal is acceptable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6ca5ea6ff51dd8859c606794f2ee3b906c502a4eae88e5ca757da2bad49c0868",
+  "finished_at": "2026-09-12T22:42:43.944632+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      118
+    ],
+    "c2": [
+      119,
+      148
+    ],
+    "c3": [
+      149,
+      179
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "3a0dd5abd037c96649c99ee7e8cf156a53914b5bf2c228f5ca581c7fafa664b2",
+    "reconstruction_sha256": "6ca5ea6ff51dd8859c606794f2ee3b906c502a4eae88e5ca757da2bad49c0868",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "3a0dd5abd037c96649c99ee7e8cf156a53914b5bf2c228f5ca581c7fafa664b2",
+    "reconstruction_sha256": "6ca5ea6ff51dd8859c606794f2ee3b906c502a4eae88e5ca757da2bad49c0868",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

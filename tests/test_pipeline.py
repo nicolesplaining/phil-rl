@@ -13,6 +13,7 @@ from phil_rl.source import source_units
 
 def grounded_json(reference):
     data = reference.reconstruction.model_dump()
+    data.update(status="argument", reason="")
     units = source_units(reference.source)
     for claim in data["claims"]:
         evidence = claim.pop("evidence")

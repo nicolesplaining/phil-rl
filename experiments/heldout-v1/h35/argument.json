@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "source": "Ada knows that the document is authentic. Therefore the document is authentic.",
+  "source_sha256": "dc7bc2728c03b03868a2fb9c65bff6f4c8cc402651ebfce77edcd1ec5fe41304",
+  "reconstruction": {
+    "title": "Argument from Ada's Knowledge to Document Authenticity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Ada knows that the document is authentic.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Ada knows that the document is authentic.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The document is authentic.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the document is authentic.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "f8e949bac2e956c3f909e633ea54a2289f2a5f6b14bf3d618c95948de6b62b8a",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "Non-empty set of possible entities (documents, knowledge bearers)",
+    "symbols": [
+      {
+        "name": "K_Ada_Doc",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "Ada knows that the document is authentic"
+      },
+      {
+        "name": "Authentic_Doc",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The document is authentic"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Requires epistemic operator 'knows that' which is not available in classical propositional/first-order logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "While propositionally expressible, its relationship to premise requires epistemic logic for proper formalization"
+      }
+    ],
+    "interpretation_notes": [
+      "The entire argument cannot be formalized in classical logic due to epistemic modality in premise",
+      "The implicit inference from knowledge to truth (Kp → p) requires epistemic logic axioms not available here",
+      "Both claims retain propositional symbols but lack formalizable connection in classical logic"
+    ]
+  },
+  "formalization_sha256": "f8537cac7f13daab434200f25a3c8b621cdc5e73ac5294e40293859ee048df87"
+}

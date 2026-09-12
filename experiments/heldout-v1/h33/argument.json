@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "source": "Necessarily, every truth is true. Therefore every truth is true.",
+  "source_sha256": "478dc9f551fc803b03aa54e4a78eef278a670e91910175cfa459a9413a4f8d36",
+  "reconstruction": {
+    "title": "Necessity of Truth",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Necessarily, every truth is true.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Necessarily, every truth is true.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore every truth is true.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore every truth is true.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "5313f200cb5a2daecdea2e9c0de6937ac02c021db038ec137b8138c4f3774377",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "The domain consists of all truths; however, the modal operator 'necessarily' cannot be expressed in classical first-order logic, requiring modal semantics which are unavailable here.",
+    "symbols": [
+      {
+        "name": "True",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a true statement"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Modal operator 'necessarily' requires modal logic, which is not supported in the available formalism."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Conclusion cannot be formalized without the modal context from the premise."
+      }
+    ],
+    "interpretation_notes": [
+      "Modal necessity operator is inexpressible in classical first-order logic",
+      "Both premise and conclusion require modal semantics for accurate formalization",
+      "The argument's structure depends on modal principles not representable in the target logic"
+    ]
+  },
+  "formalization_sha256": "f86b2d3fdfc56eaa4a21c07a474de474a8dd12ecf798bccb1502d21b35bb0d5b"
+}

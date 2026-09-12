@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "Being impartial is sufficient for this procedure to be fair. This procedure is impartial. Therefore this procedure is fair.",
+  "source_sha256": "b4ca06848d3e55c73339cb4902a49c0a0862d085f51b3327ee1cacb16e7f69b6",
+  "reconstruction": {
+    "title": "Argument for the fairness of the procedure based on impartiality",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Being impartial is sufficient for this procedure to be fair.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Being impartial is sufficient for this procedure to be fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This procedure is impartial.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This procedure is impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this procedure is fair.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this procedure is fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "b8a6e46d0a784b72b9582ca887ab8f564c540503e7864abaa90033256cbc2851",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Domain contains at least one procedure. Propositions about procedural impartiality and fairness.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This procedure is impartial"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This procedure is fair"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies P Q)",
+        "reason": "Sufficiency condition translated as material implication"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "P",
+        "reason": "Direct assertion of procedural impartiality"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Q",
+        "reason": "Direct assertion of procedural fairness"
+      }
+    ],
+    "interpretation_notes": [
+      "Treated as propositional logic since all claims are about specific propositions (impartiality and fairness of a single procedure) without quantification over individuals or predicates"
+    ]
+  },
+  "formalization_sha256": "fcec64ae65b942a38edfd95e6054c3f56bf5627fdba6b4602894099a5dbc1fee"
+}

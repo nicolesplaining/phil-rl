@@ -1,0 +1,285 @@
+{
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "cases": {
+    "h01": {
+      "approved": true,
+      "symbol_map": {
+        "J": "J",
+        "P": "P"
+      },
+      "notes": "Justification and proportionality retain the stated punishment as their subject."
+    },
+    "h02": {
+      "approved": false,
+      "category": "reference_issue",
+      "notes": "The reference scoped the conditional to this consent, but 'Consent is genuine only if ...' also supports the model's generic universal reading. Do not count this as a demonstrated model error or quietly edit the reference."
+    },
+    "h03": {
+      "approved": true,
+      "symbol_map": {
+        "A": "A",
+        "D": "D"
+      },
+      "notes": "Autonomy and deliberateness align; the consequent remains the second premise."
+    },
+    "h04": {
+      "approved": true,
+      "symbol_map": {
+        "P": "B",
+        "Q": "W"
+      },
+      "notes": "P is bindingness of the promise; Q is wrongness of breaking it. Both negations remain explicit."
+    },
+    "h05": {
+      "approved": true,
+      "symbol_map": {
+        "P": "I",
+        "Q": "F"
+      },
+      "notes": "P is theory incompleteness and Q is objection failure. The inclusive disjunction is preserved."
+    },
+    "h06": {
+      "approved": true,
+      "symbol_map": {
+        "S": "S",
+        "A": "A"
+      },
+      "notes": "Sincerity and accuracy are distinct; the conclusion denies accuracy. The extra ambiguity about exclusive or is unwarranted given 'or both', but the chosen formula preserves inclusivity."
+    },
+    "h07": {
+      "approved": true,
+      "symbol_map": {
+        "V": "V",
+        "I": "I"
+      },
+      "notes": "Voluntary and informed refer to the same act. The conjunction is explicit."
+    },
+    "h08": {
+      "approved": false,
+      "category": "unresolved_strict_alignment",
+      "notes": "The used formulas are faithful. An unused C3 declaration has a compound English meaning and cannot enter the protocol's injective renaming. This conservative non-pass is not evidence that the used formulas are wrong."
+    },
+    "h09": {
+      "approved": true,
+      "symbol_map": {
+        "F": "F",
+        "E": "E"
+      },
+      "notes": "Fairness and effectiveness refer to the policy; the first claim negates their conjunction."
+    },
+    "h10": {
+      "approved": false,
+      "category": "unresolved_strict_alignment",
+      "notes": "The model uses negative atoms for not complete and not circular, plus an unused duplicate declaration. This may be equivalent under a signed interpretation, but the frozen renaming-only protocol does not certify it."
+    },
+    "h11": {
+      "approved": true,
+      "symbol_map": {
+        "V": "C",
+        "S": "S"
+      },
+      "notes": "V means verdict correctness and S argument soundness; the biconditional is retained."
+    },
+    "h12": {
+      "approved": true,
+      "symbol_map": {
+        "A": "A",
+        "C": "C"
+      },
+      "notes": "Acceptability and coercion match the explicit definition of unless."
+    },
+    "h13": {
+      "approved": true,
+      "symbol_map": {
+        "DEF": "D",
+        "CON": "C"
+      },
+      "notes": "DEF is defensibility and CON consistency. The necessary-condition direction is preserved."
+    },
+    "h14": {
+      "approved": true,
+      "symbol_map": {
+        "P": "I",
+        "Q": "F"
+      },
+      "notes": "P is impartiality and Q fairness of this procedure, with the stated sufficient-condition direction."
+    },
+    "h15": {
+      "approved": true,
+      "symbol_map": {
+        "P": "R",
+        "Q": "F"
+      },
+      "notes": "P means rationality of this choice and Q freedom. The contrary premise is not removed."
+    },
+    "h16": {
+      "approved": true,
+      "symbol_map": {
+        "P": "R"
+      },
+      "notes": "Both occurrences assert reliability of the intuition and remain separate claims."
+    },
+    "h17": {
+      "approved": true,
+      "symbol_map": {
+        "W": "W",
+        "R": "R"
+      },
+      "notes": "Welfare maximization is not conflated with moral rightness, and no explicit bridge is added."
+    },
+    "h18": {
+      "approved": false,
+      "category": "unresolved_strict_alignment",
+      "notes": "The support chain is preserved, but N denotes not knowledge instead of the reference's positive K. Signed mapping could justify this; the strict protocol does not allow it. This is a normalization mismatch, not a proved logical error."
+    },
+    "h19": {
+      "approved": true,
+      "symbol_map": {
+        "FairContract": "F",
+        "CoercedContract": "C"
+      },
+      "notes": "The objector's fairness claim is not a premise. The author's coercion conditional and factual premise are retained."
+    },
+    "h20": {
+      "approved": true,
+      "symbol_map": {
+        "D": "D",
+        "U": "U",
+        "S": "T"
+      },
+      "notes": "Dishonesty and unreliability retain their subjects. S is seminar background and remains context despite claim reordering."
+    },
+    "h21": {
+      "approved": true,
+      "symbol_map": {
+        "E": "D",
+        "S": "S"
+      },
+      "notes": "E means decisive evidence, S a sound argument; the if-clause remains the antecedent."
+    },
+    "h22": {
+      "approved": true,
+      "symbol_map": {
+        "V": "V"
+      },
+      "notes": "V is validity of the mentioned inference, not validity of the outer argument. Double negation is explicit."
+    },
+    "h23": {
+      "approved": true,
+      "symbol_map": {
+        "O": "O",
+        "F": "F"
+      },
+      "notes": "Obligation and prohibition are atoms. The source itself asserts exclusivity, which is preserved without a deontic axiom."
+    },
+    "h24": {
+      "approved": true,
+      "symbol_map": {
+        "P": "C",
+        "Q": "D",
+        "R": "S"
+      },
+      "notes": "P is a conclusive reason, Q defeated doubt, R a settled inquiry. Conditional chaining keeps all three distinct."
+    },
+    "h25": {
+      "approved": true,
+      "symbol_map": {
+        "Consents": "Consents",
+        "Informed": "Informed",
+        "mira": "mira"
+      },
+      "domain_restriction": "Person",
+      "notes": "The generated domain explicitly says people; within it Consents denotes consenting. Relativize to Person and include Mira's membership and nonemptiness, which the reference's second premise establishes."
+    },
+    "h26": {
+      "approved": true,
+      "symbol_map": {
+        "PerfectJudge": "PerfectJudge",
+        "Impartial": "Impartial"
+      },
+      "notes": "The explicit universal and existential formulas match. The model additionally proposes an unsupported implicit existential premise; it is excluded from the explicit comparison and is a defect addressed by the explicit-only revision."
+    },
+    "h27": {
+      "approved": true,
+      "symbol_map": {
+        "Coercive": "Coercive",
+        "Voluntary": "Voluntary"
+      },
+      "domain_restriction": "Act",
+      "notes": "The model explicitly quantifies over acts. Relativization restores Act guards; the existential source premise establishes that this class is nonempty."
+    },
+    "h28": {
+      "approved": true,
+      "symbol_map": {
+        "Justified": "Justified"
+      },
+      "domain_restriction": "Belief",
+      "notes": "The model domain is beliefs. Relativization preserves both claims; the negated universal already entails a belief exists."
+    },
+    "h29": {
+      "approved": true,
+      "symbol_map": {
+        "T": "Trusts"
+      },
+      "domain_restriction": "Person",
+      "notes": "Trusts has subject-object order x trusts y. The model assumes a nonempty people domain, which the reference does not establish. The active-premise equivalence check must reject this extra assumption."
+    },
+    "h30": {
+      "approved": false,
+      "category": "meaning_error",
+      "notes": "Identical is an uninterpreted predicate instead of built-in equality. The generated encoding loses substitution and incorrectly receives an invalid result."
+    },
+    "h31": {
+      "approved": true,
+      "symbol_map": {
+        "V": "Virtue",
+        "A": "Admirable",
+        "Val": "Valuable"
+      },
+      "notes": "The three predicates retain virtue, admirability and value, with unrestricted individuals and explicit guards."
+    },
+    "h32": {
+      "approved": true,
+      "symbol_map": {
+        "R": "Respects"
+      },
+      "domain_restriction": "Person",
+      "notes": "R means x respects y. The person domain is explicitly stated and the source existential establishes its nonemptiness. Quantifier order and argument order match."
+    },
+    "h33": {
+      "approved": true,
+      "notes": "Abstains specifically because necessity is not available; neither claim is silently flattened."
+    },
+    "h34": {
+      "approved": true,
+      "notes": "Recognizes counterfactual dependence and abstains rather than replacing it with material implication."
+    },
+    "h35": {
+      "approved": true,
+      "notes": "Recognizes epistemic factivity and does not infer authenticity through an opaque knowledge atom."
+    },
+    "h36": {
+      "approved": true,
+      "notes": "Preserves possibility versus necessity in the extracted claims and abstains from modal translation."
+    },
+    "h37": {
+      "approved": false,
+      "category": "meaning_error",
+      "notes": "The formula replaces usually with a universal quantifier. A warning acknowledges the change but does not make it faithful; the valid result is spurious for the source."
+    },
+    "h38": {
+      "approved": true,
+      "notes": "Records the actual shared-witness versus potentially different-books ambiguity and states which reading its formula uses. The invalid result is conditional on that choice, not a unique source verdict."
+    },
+    "h39": {
+      "approved": false,
+      "category": "generation_failure",
+      "notes": "The optional status/reason fields were omitted on every attempt, preventing a valid no-argument outcome."
+    },
+    "h40": {
+      "approved": false,
+      "category": "generation_failure",
+      "notes": "The model recognized descriptive content but could not produce the no-argument schema. All attempts are retained."
+    }
+  }
+}

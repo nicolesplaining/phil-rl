@@ -1,0 +1,34 @@
+{
+  "explicit": {
+    "formalization_sha256": "b7e729e639498840898a4a0a05def2ba182d302880655a42e8c3ee42ddf27b06",
+    "reconstruction_sha256": "fcbda8b30d1bac7529f5cb54ce9b9f3d9b3213f52501e2a0352b961ebd2b8f16",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Reader = [else -> False], Book = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "b7e729e639498840898a4a0a05def2ba182d302880655a42e8c3ee42ddf27b06",
+    "reconstruction_sha256": "fcbda8b30d1bac7529f5cb54ce9b9f3d9b3213f52501e2a0352b961ebd2b8f16",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Reader = [else -> False], Book = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  }
+}

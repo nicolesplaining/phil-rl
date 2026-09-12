@@ -1,0 +1,32 @@
+{
+  "status": "not_passed",
+  "fidelity": "conditional_on_reviewer_alignment",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "active_premises": "not_equivalent",
+  "claim_groups": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ],
+      "roles_match": true,
+      "evidence_match": true,
+      "formula_comparison": "equivalent"
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ],
+      "roles_match": true,
+      "evidence_match": true,
+      "formula_comparison": "equivalent"
+    }
+  ],
+  "implicit_claims": [],
+  "qualification": "Formal correspondence depends on the reviewer's English interpretation."
+}

@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "09dc0438a990f2cad2fb6a923219109d724133046dd9a0f91d8eeb42a93911b7",
+  "generated_sha256": "35303d677612d3d269470a971d9491c7f5578308848d9b77f5954d135f0935cb",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "V": "V",
+    "I": "I"
+  },
+  "glossary_rationale": "Voluntary and informed refer to the same act. The conjunction is explicit.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Voluntary and informed refer to the same act. The conjunction is explicit.",
+  "domain_restriction": null
+}

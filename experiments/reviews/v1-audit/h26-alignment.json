@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "bb5a4bd0c6670806c8e6edb56c08cbcc15f9d1d6373968fafd156535e0621cac",
+  "generated_sha256": "b404f4a27db6332ec76c85222bacee6004dc362f59db4d8c5c53596c2b796e33",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "PerfectJudge": "PerfectJudge",
+    "Impartial": "Impartial"
+  },
+  "glossary_rationale": "The explicit universal and existential formulas match. The model additionally proposes an unsupported implicit existential premise; it is excluded from the explicit comparison and is a defect addressed by the explicit-only revision.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The explicit universal and existential formulas match. The model additionally proposes an unsupported implicit existential premise; it is excluded from the explicit comparison and is a defect addressed by the explicit-only revision.",
+  "domain_restriction": null
+}

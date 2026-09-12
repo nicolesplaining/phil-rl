@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1",
+  "source": "Every person who consents is informed. Mira is a person who consents. Therefore Mira is informed.",
+  "source_sha256": "404ebd83a203f12b9664682642e828f1c305efdea0f242976c5f858d62e32c7c",
+  "reconstruction": {
+    "title": "Mira's Informed Consent Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person who consents is informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person who consents is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Mira is a person who consents.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Mira is a person who consents.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Mira is informed.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Mira is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "31f1ac6e922bfb954876bc9784f127461bff3c4a58435343d1d6463e2271cac0",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "Nonempty set of individuals (people) in a context where consent and being informed are relevant properties",
+    "symbols": [
+      {
+        "name": "Consents",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person who consents"
+      },
+      {
+        "name": "Informed",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is informed"
+      },
+      {
+        "name": "mira",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual named Mira"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Consents x) (Informed x)))",
+        "reason": "Universal statement about all individuals who consent"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Consents mira)",
+        "reason": "Asserts that Mira satisfies the 'consents' predicate"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Informed mira)",
+        "reason": "Conclusion that Mira satisfies the 'informed' predicate"
+      }
+    ],
+    "interpretation_notes": [
+      "Domain contains at least one individual (Mira)",
+      "Predicates Consents and Informed are unary properties over the domain",
+      "Standard first-order material implication used for 'if...then' construction"
+    ]
+  },
+  "formalization_sha256": "6e188df654526eac1fb800c7de60dc0725fc061b66685aea406143d7111e5bb5"
+}

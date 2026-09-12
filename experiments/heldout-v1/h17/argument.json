@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "This action maximizes welfare. Therefore this action is morally right.",
+  "source_sha256": "14c5b3fa18ee563c77d6044e1333e3e35209e6ec0b586a76d22721970229fc2e",
+  "reconstruction": {
+    "title": "Argument for the Moral Rightness of an Action Based on Welfare Maximization",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This action maximizes welfare.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This action maximizes welfare.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This action is morally right.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this action is morally right.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "ed506f24eb77a5afd9316844bf6d36b18b482cdf730ffef305813fa0fc120545",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Non-empty set of possible actions",
+    "symbols": [
+      {
+        "name": "W",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This action maximizes welfare"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This action is morally right"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "W",
+        "reason": "Direct translation of atomic proposition about welfare maximization"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "R",
+        "reason": "Direct translation of atomic proposition about moral rightness"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument assumes an implicit premise that welfare maximization implies moral rightness, but this is not encoded as an explicit logical rule since the reconstruction only includes explicit claims",
+      "Both propositions are treated as atomic despite their normative content, following the instruction to use proposition symbols for whole atomic statements when internal structure doesn't affect logical relations"
+    ]
+  },
+  "formalization_sha256": "b4f9153c0fa4c11ba7a884ca0a5aacf954a4345940c9ca05b0d6945a0d9be5f9"
+}

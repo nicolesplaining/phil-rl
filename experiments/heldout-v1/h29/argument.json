@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "source": "Every person trusts some person. Therefore some person is trusted by every person.",
+  "source_sha256": "170eb1606b612650b9d9245e3cd4b78d92c736840e2b320a413a77768398599a",
+  "reconstruction": {
+    "title": "Argument about Trust",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person trusts some person.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person trusts some person.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore some person is trusted by every person.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some person is trusted by every person.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "c7775991c5ca8fcb7be0ebeb1934c9f5b84b8ea223bfdb0215aff429bb8ea6c7",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all people.",
+    "symbols": [
+      {
+        "name": "T",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x trusts y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (exists y (T x y)))",
+        "reason": "Universal quantifier over x (every person), existential quantifier over y (some person) for the trust relation."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (forall x (T x y)))",
+        "reason": "Existential quantifier over y (some person), universal quantifier over x (every person) for the trust relation."
+      }
+    ],
+    "interpretation_notes": [
+      "The premise allows each person to trust a different person (dependent choice), while the conclusion requires a single person trusted by all (independent choice). The formalization preserves this distinction in quantifier order.",
+      "The argument's validity depends on domain properties not specified here (e.g., whether the domain is finite)."
+    ]
+  },
+  "formalization_sha256": "4a5ec1490626f35bbb8111f443e4495065e441d98d0131c20bcb24d2dec6eb95"
+}

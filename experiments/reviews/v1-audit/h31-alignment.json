@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "442072a1189f76b7950d0ddb464f4111a552d86e6437a6e732e4a337ad6255c2",
+  "generated_sha256": "0790d047599131c451941b2f184b8510b9727e2a7bbc0cf2456496e58f2e97b6",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "V": "Virtue",
+    "A": "Admirable",
+    "Val": "Valuable"
+  },
+  "glossary_rationale": "The three predicates retain virtue, admirability and value, with unrestricted individuals and explicit guards.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The three predicates retain virtue, admirability and value, with unrestricted individuals and explicit guards.",
+  "domain_restriction": null
+}

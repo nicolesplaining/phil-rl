@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "f1a687b53d4ce1c6a98777d8d2a281279c93178af79b78c650494cda3a41d355",
+  "generated_sha256": "ffb851656a92a1a37df6fbde4d211a994be31db04ae85e83b0f00e6b1393fe0e",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Consents": "Consents",
+    "Informed": "Informed",
+    "mira": "mira"
+  },
+  "glossary_rationale": "The generated domain explicitly says people; within it Consents denotes consenting. Relativize to Person and include Mira's membership and nonemptiness, which the reference's second premise establishes.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The generated domain explicitly says people; within it Consents denotes consenting. Relativize to Person and include Mira's membership and nonemptiness, which the reference's second premise establishes.",
+  "domain_restriction": "Person"
+}

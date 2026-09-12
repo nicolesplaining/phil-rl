@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "bf8d6adc95e6b2cf4dc3200236ed5111e59e45fe896d1c1114323d646283d017",
+  "generated_sha256": "cfad73ebacbadbe35e89945d9a6c1ad85646f42df4b7705471314bea91b30118",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "R",
+    "Q": "F"
+  },
+  "glossary_rationale": "P means rationality of this choice and Q freedom. The contrary premise is not removed.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P means rationality of this choice and Q freedom. The contrary premise is not removed.",
+  "domain_restriction": null
+}

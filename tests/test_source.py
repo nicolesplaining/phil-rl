@@ -7,6 +7,7 @@ from phil_rl.source import GroundedReconstruction, source_units
 def draft_for(artifact):
     units = source_units(artifact.source)
     data = artifact.reconstruction.model_dump()
+    data.update(status="argument", reason="")
     for claim in data["claims"]:
         evidence = claim.pop("evidence")
         if evidence is None:

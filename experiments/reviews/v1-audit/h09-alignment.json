@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "b60890fbbb47f84b98a59ac0205999a321c167bc481f8ae8c4739a2e5972a57d",
+  "generated_sha256": "3b6b09a453d9129c4e8b1cff98032cbc45194583680d461c10a1317ba5b47220",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "F": "F",
+    "E": "E"
+  },
+  "glossary_rationale": "Fairness and effectiveness refer to the policy; the first claim negates their conjunction.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Fairness and effectiveness refer to the policy; the first claim negates their conjunction.",
+  "domain_restriction": null
+}

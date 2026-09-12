@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "Being consistent is necessary for this view to be defensible. This view is consistent. Therefore this view is defensible.",
+  "source_sha256": "c1c3be9e35cc37354793b22d85d4e589d74e41ebe1b07b535611041d3731622c",
+  "reconstruction": {
+    "title": "Consistency and Defensibility Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Being consistent is necessary for this view to be defensible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Being consistent is necessary for this view to be defensible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This view is consistent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This view is consistent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this view is defensible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this view is defensible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "be49b63997cf3dbd71be190a2f2b99d0b3cb6efa5a0934b1fa2a2cc1089447f0",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of the properties of the view in question, specifically its consistency and defensibility.",
+    "symbols": [
+      {
+        "name": "DEF",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The view is defensible"
+      },
+      {
+        "name": "CON",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The view is consistent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies DEF CON)",
+        "reason": "Translating 'necessary for' as material implication: If defensible then consistent"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "CON",
+        "reason": "Direct assertion of consistency"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "DEF",
+        "reason": "Direct assertion of defensibility as conclusion"
+      }
+    ],
+    "interpretation_notes": [
+      "The modal 'necessary' is rendered as material implication (→) per classical propositional logic conventions",
+      "This formalization preserves the argument's structure even though it commits the fallacy of affirming the consequent",
+      "No quantifiers are needed as the argument concerns general properties rather than specific individuals"
+    ]
+  },
+  "formalization_sha256": "f847dc559aa4d74477c52ab56935eb2bbdfc96ab7462b624655766578945a9de"
+}

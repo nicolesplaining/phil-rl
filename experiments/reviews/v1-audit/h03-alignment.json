@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "c876f7373dae1546c323e3e3d1acf8e036d69b7123d15a188d02714bdf0a47f0",
+  "generated_sha256": "f2d441e7eb81935fefd93cce8f2dc80992570218479cbe1b2241e346365045d1",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "A": "A",
+    "D": "D"
+  },
+  "glossary_rationale": "Autonomy and deliberateness align; the consequent remains the second premise.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Autonomy and deliberateness align; the consequent remains the second premise.",
+  "domain_restriction": null
+}

@@ -1,0 +1,30 @@
+{
+  "reference_sha256": "d71c72830743187d1bef56d346f07d7a39e249aa16331eb9bae62e56460350f5",
+  "generated_sha256": "98171f6ed64a60cccf31883a16c24629312e23168aaa311d67a68a636a6091b7",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "R": "Respects"
+  },
+  "glossary_rationale": "R means x respects y. The person domain is explicitly stated and the source existential establishes its nonemptiness. Quantifier order and argument order match.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "R means x respects y. The person domain is explicitly stated and the source existential establishes its nonemptiness. Quantifier order and argument order match.",
+  "domain_restriction": "Person"
+}

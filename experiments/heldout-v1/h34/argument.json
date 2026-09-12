@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent had chosen otherwise, the outcome would have changed. The outcome did not change. Therefore the agent did not choose otherwise.",
+  "source_sha256": "e9d4524838607063e721d6a1c893c0de43bcd880db3949f5d7d07469ac4133aa",
+  "reconstruction": {
+    "title": "Modus Tollens Argument on Agent's Choice",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent had chosen otherwise, the outcome would have changed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent had chosen otherwise, the outcome would have changed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The outcome did not change.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The outcome did not change.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the agent did not choose otherwise.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the agent did not choose otherwise.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is a modus tollens inference from c1 and c2"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "4f917c4cb9358421e23985a4a3f5689a51181934a0f37b0869386d6608066923",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "A non-empty set of possible scenarios involving an agent's choices and outcomes.",
+    "symbols": [
+      {
+        "name": "outcome_changed",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The outcome changed."
+      },
+      {
+        "name": "agent_chose_otherwise",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent chose otherwise."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Counterfactual conditionals require modal or possible-worlds semantics not supported in classical logic."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Simple proposition about outcome status cannot be formalized in classical logic when combined with counterfactual dependencies."
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "Negation of agent choice proposition cannot be formalized in classical logic when derived from counterfactual reasoning."
+      }
+    ],
+    "interpretation_notes": [
+      "All claims involve counterfactual or modal elements requiring non-classical semantics. The argument structure (modus tollens) is preserved but cannot be formalized in classical logic due to the counterfactual premise."
+    ]
+  },
+  "formalization_sha256": "ffef1e2879f22ec512ca7787c09b285d260d2485a52d2bf7c46d0f3934704703"
+}

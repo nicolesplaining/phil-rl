@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "source": "Either the testimony is sincere or it is accurate, or both. The testimony is sincere. So it is not accurate.",
+  "source_sha256": "6437afa2f317ba1d918634907913ce741dade23927abaf4adfa298fa34626303",
+  "reconstruction": {
+    "title": "Disjunction and Affirmation Fallacy",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Either the testimony is sincere or it is accurate, or both.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Either the testimony is sincere or it is accurate, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The testimony is sincere.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The testimony is sincere.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "So it is not accurate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "So it is not accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c3",
+        "issue": "The argument commits the fallacy of affirming one disjunct in an inclusive disjunction. From 'A or B or both' and 'A', one cannot validly infer 'not B'.",
+        "alternatives": [
+          "The argument assumes an exclusive disjunction (A or B but not both), which is not stated in the premise.",
+          "The argument could be valid if the disjunction were exclusive, but the premise explicitly allows for both."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "b2043e26e10174e47276045c112fc36fcdbbdcca656435dd0b7ec15307b57191",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of testimonies, with properties of being sincere or accurate.",
+    "symbols": [
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The testimony is sincere"
+      },
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The testimony is accurate"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(or S A)",
+        "reason": "Direct translation of the inclusive disjunction 'sincere or accurate or both'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "S",
+        "reason": "Direct translation of the assertion that the testimony is sincere"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not A)",
+        "reason": "Direct translation of the conclusion that the testimony is not accurate"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise uses an inclusive disjunction (S ∨ A), but the conclusion requires an exclusive disjunction (S ⊕ A) to be valid. This mismatch creates the fallacy of affirming one disjunct in an inclusive OR context.",
+      "The formalization preserves the original inclusive disjunction as stated in the premise, even though the argument's conclusion would only follow from an exclusive disjunction not explicitly asserted in the premises."
+    ]
+  },
+  "formalization_sha256": "3136132f7c37c8551c861cb726ff6262ac559dfdad6f4332d260a566d410a19c"
+}

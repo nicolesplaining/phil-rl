@@ -118,6 +118,8 @@ def test_incomplete_attempts_are_preserved(reply):
 
 def test_formalization_failure_preserves_frozen_reconstruction(tmp_path):
     draft = {
+        "status": "argument",
+        "reason": "",
         "title": "Circular",
         "claims": [
             {

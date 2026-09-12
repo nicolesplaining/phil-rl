@@ -1,0 +1,157 @@
+{
+  "source": "The argument is sound if the evidence is decisive. The evidence is decisive. Therefore the argument is sound.",
+  "source_sha256": "3708acf3fe135ce0c932ebb0c833ddd314a73ab115cbc58169dffbc93bda4711",
+  "started_at": "2026-09-12T22:43:37.029145+00:00",
+  "prompt_version": "0.4",
+  "prompt_sha256": {
+    "reconstruction": "5e615ab502f9af64340fae278dad1570fdc275a72088b404fd501604f5fab828",
+    "formalization": "24a1d188d576786c39bc883d517a67f0f6d7d39917898eb02747de4e5f60bf38"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"title\": \"Soundness of the Argument Based on Decisive Evidence\", \"claims\": [{\"id\": \"c1\", \"text\": \"The argument is sound if the evidence is decisive.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"The evidence is decisive.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"Therefore the argument is sound.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says, \"The argument is sound if the evidence is decisive.\" The second states, \"The evidence is decisive.\" The third is a conclusion: \"Therefore the argument is sound.\"\n\nI need to determine if this is an argument. The first unit is a conditional statement: if the evidence is decisive, then the argument is sound. The second unit asserts that the evidence is indeed decisive. The third is a conclusion derived from the first two. So, this looks like a classic modus ponens structure. \n\nThe main conclusion here is \"the argument is sound,\" which is in the third unit. The premises are the conditional statement and the assertion that the evidence is decisive. There are no objections or replies mentioned, so the relations would be the premises supporting the conclusion. \n\nI should check if there are any ambiguities. The conditional in the first unit is straightforward. The second unit directly supports the antecedent. The conclusion follows logically. I don't see any implicit premises here; everything is explicit. \n\nSo, the status is an argument. The claims are the three units, with the first two as premises and the third as the conclusion. The relations would link the premises to the conclusion. No ambiguities to note here. The conclusion_id is the third unit's ID, s3.\n",
+      "usage": {
+        "prompt_tokens": 1535,
+        "total_tokens": 2023,
+        "completion_tokens": 488,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"Propositional variables for claims about argument soundness and evidence decisiveness\", \"symbols\": [{\"name\": \"E\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The evidence is decisive\"}, {\"name\": \"S\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The argument is sound\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(implies E S)\", \"reason\": \"Conditional statement between evidence decisiveness and argument soundness\"}, {\"claim_id\": \"c2\", \"formula\": \"E\", \"reason\": \"Assertion of evidence decisiveness\"}, {\"claim_id\": \"c3\", \"formula\": \"S\", \"reason\": \"Conclusion about argument soundness\"}], \"interpretation_notes\": [\"Using propositional variables to represent atomic claims about argument properties\", \"No quantifiers needed since the argument structure is purely conditional\"]}",
+      "reasoning": "\nOkay, let's tackle this translation. The user provided a simple argument: If the evidence is decisive, then the argument is sound. The evidence is decisive. Therefore, the argument is sound. \n\nFirst, I need to determine the logic to use. Since the argument is a classic modus ponens, which is handled in classical propositional logic, I'll go with classical_propositional.\n\nNext, the symbols. There are two propositions here. Let me assign \"E\" for \"The evidence is decisive\" and \"S\" for \"The argument is sound.\" Both are propositions with arity 0.\n\nFor the translations: \n- Claim c1 is \"If E then S,\" which translates to (implies E S).\n- Claim c2 is E, so just E.\n- Claim c3 is S, so S.\n\nThe domain description is straightforward since it's propositional logic; there's no need for individual domains. The interpretation notes should mention that we're using propositional variables for the statements. No issues here, so the notes can be empty.\n\nI need to make sure all the JSON structure is correct, symbols are properly declared, and translations match the claims. No unsupported features here, so everything should be fine.\n",
+      "usage": {
+        "prompt_tokens": 1657,
+        "total_tokens": 2116,
+        "completion_tokens": 459,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Soundness of the Argument Based on Decisive Evidence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The argument is sound if the evidence is decisive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The argument is sound if the evidence is decisive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The evidence is decisive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The evidence is decisive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the argument is sound.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the argument is sound.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fd2643014283c334811482e0f5130576108c9c44952da11c36d113d3cfc841fc",
+  "finished_at": "2026-09-12T22:44:03.416401+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      50
+    ],
+    "c2": [
+      51,
+      76
+    ],
+    "c3": [
+      77,
+      109
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "aabf206d1990c88d8a747315b6d5ad0d93f4bbda9b6c487e7585dfa03f45f1b7",
+    "reconstruction_sha256": "fd2643014283c334811482e0f5130576108c9c44952da11c36d113d3cfc841fc",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "aabf206d1990c88d8a747315b6d5ad0d93f4bbda9b6c487e7585dfa03f45f1b7",
+    "reconstruction_sha256": "fd2643014283c334811482e0f5130576108c9c44952da11c36d113d3cfc841fc",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

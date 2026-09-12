@@ -1,0 +1,30 @@
+{
+  "reference_sha256": "c31a7bb6f8d34fdb276cff970bbd81262814a4ee488c3a0c06d6e19486445832",
+  "generated_sha256": "a07327cccee17018ccffeeb260d33b7004b3786ff2175d73ab8907c31da522d7",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "V": "V"
+  },
+  "glossary_rationale": "V is validity of the mentioned inference, not validity of the outer argument. Double negation is explicit.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "V is validity of the mentioned inference, not validity of the outer argument. Double negation is explicit.",
+  "domain_restriction": null
+}

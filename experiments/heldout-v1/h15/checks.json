@@ -1,0 +1,30 @@
+{
+  "explicit": {
+    "formalization_sha256": "c49abc87abbec2961b8162e60c599a4a75d453436b330afe734b262bdceb2429",
+    "reconstruction_sha256": "cb120b9d8351ebd9d026f43766bdbf5d6dcbcdd7d4103a194d114efe2094c440",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "inconsistent_premises",
+    "premises_satisfiable": false
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "c49abc87abbec2961b8162e60c599a4a75d453436b330afe734b262bdceb2429",
+    "reconstruction_sha256": "cb120b9d8351ebd9d026f43766bdbf5d6dcbcdd7d4103a194d114efe2094c440",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "inconsistent_premises",
+    "premises_satisfiable": false
+  }
+}

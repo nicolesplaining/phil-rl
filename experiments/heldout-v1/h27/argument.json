@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "No coercive act is voluntary. Some act is coercive. Hence some act is not voluntary.",
+  "source_sha256": "e9d962f6aafdd5a9ff1abd70039011f2d7b7c580401e0161bd6dc9a0a60fcafe",
+  "reconstruction": {
+    "title": "Argument about Coercive Acts and Voluntariness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "No coercive act is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No coercive act is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some act is coercive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some act is coercive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Hence some act is not voluntary.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence some act is not voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d33aff3de05a73d3ea515a2815e763e9ae4de1bd18fc87e5b96d4746a379ce11",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All possible acts",
+    "symbols": [
+      {
+        "name": "Coercive",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a coercive act"
+      },
+      {
+        "name": "Voluntary",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a voluntary act"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Coercive x) (not (Voluntary x))))",
+        "reason": "Universal statement: All coercive acts are non-voluntary"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (Coercive x))",
+        "reason": "Existential statement: There exists at least one coercive act"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(exists x (not (Voluntary x)))",
+        "reason": "Existential statement: There exists at least one non-voluntary act"
+      }
+    ],
+    "interpretation_notes": [
+      "The domain is explicitly defined as all possible acts to accommodate quantification over actions. Predicates Coercive and Voluntary are treated as first-order properties of acts. The universal quantifier in c1 captures the 'no...is' construction, while the existential quantifiers in c2 and c3 represent 'some' claims. No modal or deontic operators are needed for this straightforward first-order translation."
+    ]
+  },
+  "formalization_sha256": "0ee69cee1140d0690617d13973c6b5b1dd33351d3f83bd4fa03a5f872808df7b"
+}

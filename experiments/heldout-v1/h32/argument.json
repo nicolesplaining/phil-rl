@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.1",
+  "source": "Some person respects every person. Therefore every person is respected by some person.",
+  "source_sha256": "f28f7735fb85ee435a651d18b7773240f68d8307900178bf1513b2fa418734b3",
+  "reconstruction": {
+    "title": "Existential to Universal Respect Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Some person respects every person.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some person respects every person.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore every person is respected by some person.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore every person is respected by some person.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "63756ab479a696f439184a9255104c350b44c2c5134cc7b410184661522874d9",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all people.",
+    "symbols": [
+      {
+        "name": "R",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "R(x, y) means x respects y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(exists x (forall y (R x y)))",
+        "reason": "The premise states there exists a person x who respects every person y."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall y (exists x (R x y)))",
+        "reason": "The conclusion states that for every person y, there exists a person x who respects y."
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "2718de090973d9177880f1f826dab2e51ce533d46fad6f4b6a4cd7ef5096d0fe"
+}

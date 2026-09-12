@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "6da75c876c68904513d9a1a7673f3dddf7d19551e3efba6f2703bc6edcc87ef1",
+  "generated_sha256": "b2a469809d39b8fe5d79551ceca87287c318d21c95f9c66fad3eb2d9a44bc6d6",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "E": "D",
+    "S": "S"
+  },
+  "glossary_rationale": "E means decisive evidence, S a sound argument; the if-clause remains the antecedent.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "E means decisive evidence, S a sound argument; the if-clause remains the antecedent.",
+  "domain_restriction": null
+}

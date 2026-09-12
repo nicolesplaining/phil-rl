@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "The argument is sound if the evidence is decisive. The evidence is decisive. Therefore the argument is sound.",
+  "source_sha256": "3708acf3fe135ce0c932ebb0c833ddd314a73ab115cbc58169dffbc93bda4711",
+  "reconstruction": {
+    "title": "Soundness of the Argument Based on Decisive Evidence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The argument is sound if the evidence is decisive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The argument is sound if the evidence is decisive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The evidence is decisive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The evidence is decisive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the argument is sound.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the argument is sound.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fd2643014283c334811482e0f5130576108c9c44952da11c36d113d3cfc841fc",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Propositional variables for claims about argument soundness and evidence decisiveness",
+    "symbols": [
+      {
+        "name": "E",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The evidence is decisive"
+      },
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The argument is sound"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies E S)",
+        "reason": "Conditional statement between evidence decisiveness and argument soundness"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "E",
+        "reason": "Assertion of evidence decisiveness"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "S",
+        "reason": "Conclusion about argument soundness"
+      }
+    ],
+    "interpretation_notes": [
+      "Using propositional variables to represent atomic claims about argument properties",
+      "No quantifiers needed since the argument structure is purely conditional"
+    ]
+  },
+  "formalization_sha256": "aabf206d1990c88d8a747315b6d5ad0d93f4bbda9b6c487e7585dfa03f45f1b7"
+}

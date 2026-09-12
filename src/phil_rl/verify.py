@@ -63,7 +63,10 @@ def check(artifact: Artifact, include_implicit: bool = False, timeout_ms: int = 
         if witness:
             return {**base, **witness}
     compiler = Z3Compiler(formalization)
-    formulas = {c: compiler.compile(parse(translations[c])) for c in needed}
+    try:
+        formulas = {c: compiler.compile(parse(translations[c])) for c in needed}
+    except ValueError as error:
+        return {**base, "status": "unknown", "reason": str(error)}
     solver = z3.Solver()
     solver.set(timeout=timeout_ms)
     solver.add(*(formulas[c] for c in premise_ids))

@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "f2e26aaf8ce762c799d85d0439208a1d49f08b9b11824a25c8260c4b66844b15",
+  "generated_sha256": "cc59bf1d2974701b0030750360e5094933f46211d185a2f93b2ec548decc7c4c",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "S": "S",
+    "A": "A"
+  },
+  "glossary_rationale": "Sincerity and accuracy are distinct; the conclusion denies accuracy. The extra ambiguity about exclusive or is unwarranted given 'or both', but the chosen formula preserves inclusivity.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Sincerity and accuracy are distinct; the conclusion denies accuracy. The extra ambiguity about exclusive or is unwarranted given 'or both', but the chosen formula preserves inclusivity.",
+  "domain_restriction": null
+}

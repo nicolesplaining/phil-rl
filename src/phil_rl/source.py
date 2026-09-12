@@ -60,8 +60,8 @@ class GroundedClaim(Record):
 
 
 class GroundedReconstruction(Record):
-    status: Literal["argument", "no_argument"] = "argument"
-    reason: str = Field(default="", max_length=4000)
+    status: Literal["argument", "no_argument"]
+    reason: str = Field(max_length=4000)
     title: Text
     claims: list[GroundedClaim] = Field(max_length=64)
     relations: list[Relation] = Field(max_length=128)
@@ -75,11 +75,13 @@ class GroundedReconstruction(Record):
         if self.status == "no_argument" and (
             self.claims
             or self.relations
+            or self.ambiguities
             or self.conclusion_id is not None
             or not self.reason.strip()
         ):
             raise ValueError(
-                "No-argument outcomes need a reason, no claims/relations, and null conclusion."
+                "No-argument outcomes need a reason, empty claims/relations/ambiguities, "
+                "and null conclusion."
             )
         return self
 

@@ -106,8 +106,10 @@ The system rejects inconsistent premises before proof generation and checks for
 
 - Explicit claims require verbatim source evidence. This tests provenance, not
   whether the normalized claim faithfully paraphrases that evidence.
-- Proposed implicit premises remain separate and require an explanation. Checks
-  exclude them by default and label the augmented argument when included.
+- New reconstruction runs extract explicit claims only. They may flag missing
+  assumptions for review but cannot insert them into the graph. Historical and
+  manual artifacts can contain proposed implicit premises; checks exclude those
+  by default and label the augmented argument when included.
 - The formalizer must translate each reconstructed claim exactly once. It cannot
   add premises or remove the conclusion. Hashes detect accidental changes; they
   are not cryptographic attestations against an adversary who can rewrite hashes.
@@ -117,6 +119,10 @@ The system rejects inconsistent premises before proof generation and checks for
 - The language supports classical propositional logic and single-sorted FOL over
   a nonempty domain, with constants, relations, equality, and quantifiers. There
   are no unique-name or finite-domain assumptions.
+- New first-order runs use an unrestricted individual domain and explicit noun
+  predicates. This avoids assuming a class exists merely by quantifying over it.
+  Bounded model search can supply a finite counterexample, but failure to find one
+  never establishes validity. Explicit negation uses operators, not negative atoms.
 - Modal, epistemic, deontic, probabilistic, and counterfactual reasoning require
   additional semantics. The prompt requests abstention where these are essential.
   Detecting an incorrect decision to flatten such language still requires review.
@@ -163,3 +169,23 @@ disagreements remain in the report rather than triggering proof-driven repairs.
 
 The serving setup follows the [Qwen3 model card](https://huggingface.co/Qwen/Qwen3-32B)
 and [vLLM structured-output documentation](https://docs.vllm.ai/en/latest/features/structured_outputs/).
+
+## Frozen evaluation and review
+
+```bash
+uv run phil benchmark --suite benchmarks/heldout-v2.json --out outputs/evaluation
+uv run phil audit outputs/evaluation --decisions PATH_TO_REVIEW.json --out outputs/audit
+uv run phil verify-run outputs/evaluation --out outputs/lean-checks
+```
+
+`--workers 4` permits concurrent requests when the server can batch them. Each worker
+has an isolated solver process. The suite file is saved with the run and hashed;
+only each case's source text reaches the model. Review decisions are separate from
+the generated artifact. See [fidelity-review.md](fidelity-review.md) for the protocol
+and [acceptance.md](acceptance.md) for the completion gate.
+
+The normalization contracts are conservative, partly lexical guards, not a semantic
+classifier. They can reject an unusual but legitimate wording, and they do not catch
+every way of dropping an unsupported operator. A successful run still requires source
+review. Ambiguities, glossary notes and translation explanations are model proposals,
+not verified philosophical commentary.

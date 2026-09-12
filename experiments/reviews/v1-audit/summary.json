@@ -1,0 +1,291 @@
+{
+  "suite_sha256": "a83075c2b2252ed81e759d5c1726b494feb25aa7f15fb7967c2baa4ab9a786fe",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "supported_total": 32,
+  "supported_passed": 26,
+  "other_total": 8,
+  "other_passed": 5,
+  "cases": [
+    {
+      "case": "h01",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Justification and proportionality retain the stated punishment as their subject.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h02",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The reference scoped the conditional to this consent, but 'Consent is genuine only if ...' also supports the model's generic universal reading. Do not count this as a demonstrated model error or quietly edit the reference.",
+      "reason": "reference_issue"
+    },
+    {
+      "case": "h03",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Autonomy and deliberateness align; the consequent remains the second premise.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h04",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P is bindingness of the promise; Q is wrongness of breaking it. Both negations remain explicit.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h05",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P is theory incompleteness and Q is objection failure. The inclusive disjunction is preserved.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h06",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Sincerity and accuracy are distinct; the conclusion denies accuracy. The extra ambiguity about exclusive or is unwarranted given 'or both', but the chosen formula preserves inclusivity.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h07",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Voluntary and informed refer to the same act. The conjunction is explicit.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h08",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The used formulas are faithful. An unused C3 declaration has a compound English meaning and cannot enter the protocol's injective renaming. This conservative non-pass is not evidence that the used formulas are wrong.",
+      "reason": "unresolved_strict_alignment"
+    },
+    {
+      "case": "h09",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Fairness and effectiveness refer to the policy; the first claim negates their conjunction.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h10",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The model uses negative atoms for not complete and not circular, plus an unused duplicate declaration. This may be equivalent under a signed interpretation, but the frozen renaming-only protocol does not certify it.",
+      "reason": "unresolved_strict_alignment"
+    },
+    {
+      "case": "h11",
+      "supported": true,
+      "passed": true,
+      "review_notes": "V means verdict correctness and S argument soundness; the biconditional is retained.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h12",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Acceptability and coercion match the explicit definition of unless.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h13",
+      "supported": true,
+      "passed": true,
+      "review_notes": "DEF is defensibility and CON consistency. The necessary-condition direction is preserved.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h14",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P is impartiality and Q fairness of this procedure, with the stated sufficient-condition direction.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h15",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P means rationality of this choice and Q freedom. The contrary premise is not removed.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h16",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Both occurrences assert reliability of the intuition and remain separate claims.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h17",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Welfare maximization is not conflated with moral rightness, and no explicit bridge is added.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h18",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The support chain is preserved, but N denotes not knowledge instead of the reference's positive K. Signed mapping could justify this; the strict protocol does not allow it. This is a normalization mismatch, not a proved logical error.",
+      "reason": "unresolved_strict_alignment"
+    },
+    {
+      "case": "h19",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The objector's fairness claim is not a premise. The author's coercion conditional and factual premise are retained.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h20",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Dishonesty and unreliability retain their subjects. S is seminar background and remains context despite claim reordering.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h21",
+      "supported": true,
+      "passed": true,
+      "review_notes": "E means decisive evidence, S a sound argument; the if-clause remains the antecedent.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h22",
+      "supported": true,
+      "passed": true,
+      "review_notes": "V is validity of the mentioned inference, not validity of the outer argument. Double negation is explicit.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h23",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Obligation and prohibition are atoms. The source itself asserts exclusivity, which is preserved without a deontic axiom.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h24",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P is a conclusive reason, Q defeated doubt, R a settled inquiry. Conditional chaining keeps all three distinct.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h25",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The generated domain explicitly says people; within it Consents denotes consenting. Relativize to Person and include Mira's membership and nonemptiness, which the reference's second premise establishes.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h26",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The explicit universal and existential formulas match. The model additionally proposes an unsupported implicit existential premise; it is excluded from the explicit comparison and is a defect addressed by the explicit-only revision.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h27",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The model explicitly quantifies over acts. Relativization restores Act guards; the existential source premise establishes that this class is nonempty.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h28",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The model domain is beliefs. Relativization preserves both claims; the negated universal already entails a belief exists.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h29",
+      "supported": true,
+      "passed": false,
+      "review_notes": "Trusts has subject-object order x trusts y. The model assumes a nonempty people domain, which the reference does not establish. The active-premise equivalence check must reject this extra assumption.",
+      "comparison": "not_passed"
+    },
+    {
+      "case": "h30",
+      "supported": true,
+      "passed": false,
+      "review_notes": "Identical is an uninterpreted predicate instead of built-in equality. The generated encoding loses substitution and incorrectly receives an invalid result.",
+      "reason": "meaning_error"
+    },
+    {
+      "case": "h31",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The three predicates retain virtue, admirability and value, with unrestricted individuals and explicit guards.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h32",
+      "supported": true,
+      "passed": true,
+      "review_notes": "R means x respects y. The person domain is explicitly stated and the source existential establishes its nonemptiness. Quantifier order and argument order match.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "h33",
+      "supported": false,
+      "passed": true,
+      "review_notes": "Abstains specifically because necessity is not available; neither claim is silently flattened.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "h34",
+      "supported": false,
+      "passed": true,
+      "review_notes": "Recognizes counterfactual dependence and abstains rather than replacing it with material implication.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "h35",
+      "supported": false,
+      "passed": true,
+      "review_notes": "Recognizes epistemic factivity and does not infer authenticity through an opaque knowledge atom.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "h36",
+      "supported": false,
+      "passed": true,
+      "review_notes": "Preserves possibility versus necessity in the extracted claims and abstains from modal translation.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "h37",
+      "supported": false,
+      "passed": false,
+      "review_notes": "The formula replaces usually with a universal quantifier. A warning acknowledges the change but does not make it faithful; the valid result is spurious for the source.",
+      "reason": "meaning_error"
+    },
+    {
+      "case": "h38",
+      "supported": false,
+      "passed": true,
+      "review_notes": "Records the actual shared-witness versus potentially different-books ambiguity and states which reading its formula uses. The invalid result is conditional on that choice, not a unique source verdict.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "h39",
+      "supported": false,
+      "passed": false,
+      "review_notes": "The optional status/reason fields were omitted on every attempt, preventing a valid no-argument outcome.",
+      "reason": "Generation failed or result is missing."
+    },
+    {
+      "case": "h40",
+      "supported": false,
+      "passed": false,
+      "review_notes": "The model recognized descriptive content but could not produce the no-argument schema. All attempts are retained.",
+      "reason": "Generation failed or result is missing."
+    }
+  ],
+  "qualification": "Agent-authored references and glossary review, not human validation."
+}

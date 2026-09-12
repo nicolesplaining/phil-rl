@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "b4e4ca7276d3206c0eb7988e3444f7673a4ae6727468c5c7f741fbc78d18e391",
+  "generated_sha256": "93e6beee97751e75570c528a25621ca6f1d0538edb2a8928e9c0ea1778826ad0",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "W": "W",
+    "R": "R"
+  },
+  "glossary_rationale": "Welfare maximization is not conflated with moral rightness, and no explicit bridge is added.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Welfare maximization is not conflated with moral rightness, and no explicit bridge is added.",
+  "domain_restriction": null
+}

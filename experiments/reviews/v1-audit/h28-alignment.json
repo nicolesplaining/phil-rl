@@ -1,0 +1,30 @@
+{
+  "reference_sha256": "486d111ed0538122eb1233cb3fd97046b3fb84e28d851a612d14a6bbbef22a96",
+  "generated_sha256": "55e3dccb28381e0169780c58a00b196e620afedcb97201e34e659a5da6145ffd",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Justified": "Justified"
+  },
+  "glossary_rationale": "The model domain is beliefs. Relativization preserves both claims; the negated universal already entails a belief exists.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The model domain is beliefs. Relativization preserves both claims; the negated universal already entails a belief exists.",
+  "domain_restriction": "Belief"
+}

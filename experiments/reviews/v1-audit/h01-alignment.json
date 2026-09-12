@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "77c3784238db01cf66bba8fa66d900bd3b51063efb6e1affd80848bf11d0c778",
+  "generated_sha256": "a036fdfa64cc5bf91dde315ae0b4ca43760a06966fbb881dffa39cff928e1e75",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "J": "J",
+    "P": "P"
+  },
+  "glossary_rationale": "Justification and proportionality retain the stated punishment as their subject.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "C1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "C2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "C3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Justification and proportionality retain the stated punishment as their subject.",
+  "domain_restriction": null
+}

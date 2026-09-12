@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "source": "It is false that this inference is not valid. Therefore this inference is valid.",
+  "source_sha256": "a01cd884c2e77c378f9d1a4636aab00d2ae1f520bfa6a5bf5fe056eff3d205f5",
+  "reconstruction": {
+    "title": "Argument about the validity of an inference",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is false that this inference is not valid.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is false that this inference is not valid.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore this inference is valid.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this inference is valid.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "b72275264f43fffdc2e6044b62e69b03303f84a87083c8e91b0d947ce631ff30",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of logical propositions about the validity of inferences.",
+    "symbols": [
+      {
+        "name": "V",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This inference is valid"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (not V))",
+        "reason": "Double negation of proposition V represents 'it is false that this inference is not valid'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "V",
+        "reason": "Direct assertion of proposition V for 'this inference is valid'"
+      }
+    ],
+    "interpretation_notes": [
+      "Treated the meta-logical claim about validity as a proposition V in classical logic",
+      "Double negation elimination is valid in classical propositional logic",
+      "No modal or higher-order semantics are required for this translation"
+    ]
+  },
+  "formalization_sha256": "35338bde5002b456c226b4a1b26abe6d679c9ebc8bf38efd7a5df5e99126305a"
+}

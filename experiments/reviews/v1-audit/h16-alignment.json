@@ -1,0 +1,30 @@
+{
+  "reference_sha256": "dba74f0a2afb0e9c6fd1a0d9182434ebdb8905cf9cf573dd84736fcb5c43023e",
+  "generated_sha256": "4860d6691a26012c6ac3bb0ee8acb1ef6bf680bec299734835116c254e8aab03",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "R"
+  },
+  "glossary_rationale": "Both occurrences assert reliability of the intuition and remain separate claims.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Both occurrences assert reliability of the intuition and remain separate claims.",
+  "domain_restriction": null
+}

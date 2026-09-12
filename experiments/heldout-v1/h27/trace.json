@@ -1,0 +1,157 @@
+{
+  "source": "No coercive act is voluntary. Some act is coercive. Hence some act is not voluntary.",
+  "source_sha256": "e9d962f6aafdd5a9ff1abd70039011f2d7b7c580401e0161bd6dc9a0a60fcafe",
+  "started_at": "2026-09-12T22:44:40.124719+00:00",
+  "prompt_version": "0.4",
+  "prompt_sha256": {
+    "reconstruction": "5e615ab502f9af64340fae278dad1570fdc275a72088b404fd501604f5fab828",
+    "formalization": "24a1d188d576786c39bc883d517a67f0f6d7d39917898eb02747de4e5f60bf38"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"title\": \"Argument about Coercive Acts and Voluntariness\", \"claims\": [{\"id\": \"c1\", \"text\": \"No coercive act is voluntary.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"Some act is coercive.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"Hence some act is not voluntary.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says \"No coercive act is voluntary.\" The second is \"Some act is coercive.\" The third is \"Hence some act is not voluntary.\" I need to determine if this is an argument.\n\nFirst, I should check if there's a conclusion. The third sentence starts with \"Hence,\" which is a conclusion indicator. So the conclusion is \"some act is not voluntary.\" The premises would be the first two statements. \n\nThe first premise is a universal negative: no coercive act is voluntary. The second premise is an existential: some act is coercive. The conclusion is that some act is not voluntary. \n\nSo the structure is: All coercive acts are non-voluntary (from the first premise). There exists at least one coercive act (second premise). Therefore, there exists an act that is not voluntary. \n\nThis seems like a valid syllogism. The conclusion follows logically from the premises. The author is using the two premises to derive the conclusion. There's no objection or reply mentioned here. The argument is straightforward. \n\nI need to make sure there are no ambiguities. The terms are clear: coercive, voluntary. The logical structure is clear. The conclusion is directly supported by the premises. \n\nSo the status is \"argument.\" The claims are the three statements, with the third being the conclusion. The relations are that the first two premises support the conclusion. \n\nNo implicit premises are needed here. The argument is explicit. The evidence IDs for each claim are their respective source units. \n\nI think that's all. Let me structure the JSON accordingly.\n",
+      "usage": {
+        "prompt_tokens": 1534,
+        "total_tokens": 2086,
+        "completion_tokens": 552,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All possible acts\", \"symbols\": [{\"name\": \"Coercive\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a coercive act\"}, {\"name\": \"Voluntary\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a voluntary act\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (Coercive x) (not (Voluntary x))))\", \"reason\": \"Universal statement: All coercive acts are non-voluntary\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists x (Coercive x))\", \"reason\": \"Existential statement: There exists at least one coercive act\"}, {\"claim_id\": \"c3\", \"formula\": \"(exists x (not (Voluntary x)))\", \"reason\": \"Existential statement: There exists at least one non-voluntary act\"}], \"interpretation_notes\": [\"The domain is explicitly defined as all possible acts to accommodate quantification over actions. Predicates Coercive and Voluntary are treated as first-order properties of acts. The universal quantifier in c1 captures the 'no...is' construction, while the existential quantifiers in c2 and c3 represent 'some' claims. No modal or deontic operators are needed for this straightforward first-order translation.\"]}",
+      "reasoning": "\nOkay, let's tackle this translation. The argument is about coercive acts and voluntariness. The first premise is \"No coercive act is voluntary.\" The second premise is \"Some act is coercive.\" The conclusion is \"Hence some act is not voluntary.\"\n\nFirst, I need to determine the appropriate logic. Since the argument involves quantifiers like \"no\" and \"some,\" classical first-order logic (FOL) seems suitable. Propositional logic can't handle these quantifiers, so FOL is the way to go.\n\nNext, the domain. The argument talks about acts, so the domain should be all possible acts. I'll define the domain as \"All possible acts.\"\n\nNow, symbols. I need predicates for \"coercive\" and \"voluntary.\" Let's use Coercive(x) to mean x is a coercive act, and Voluntary(x) for x is a voluntary act. The constants aren't needed here since we're dealing with predicates and quantifiers.\n\nFor the first premise, \"No coercive act is voluntary.\" In FOL, this translates to ∀x (Coercive(x) → ¬Voluntary(x)). This universal statement says that if an act is coercive, then it's not voluntary.\n\nSecond premise: \"Some act is coercive.\" This is an existential statement: ∃x Coercive(x). There exists at least one act that is coercive.\n\nConclusion: \"Hence some act is not voluntary.\" This would be ∃x ¬Voluntary(x). The conclusion is that there's at least one act that isn't voluntary.\n\nNow, checking if the translation is accurate. The original argument uses standard quantifiers and logical structure. There's no need for modal or other logics here. The translation should preserve the structure. The premises and conclusion are straightforward in FOL.\n\nNo ambiguities are mentioned in the reconstruction, so the translations should be direct. The symbols are properly defined, and the formulas use the correct quantifiers and predicates. The domain is appropriately set to all acts. I don't see any issues here. The logic is classical first-order, and the translations are correct.\n",
+      "usage": {
+        "prompt_tokens": 1656,
+        "total_tokens": 2401,
+        "completion_tokens": 745,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Argument about Coercive Acts and Voluntariness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "No coercive act is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No coercive act is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some act is coercive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some act is coercive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Hence some act is not voluntary.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence some act is not voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d33aff3de05a73d3ea515a2815e763e9ae4de1bd18fc87e5b96d4746a379ce11",
+  "finished_at": "2026-09-12T22:45:15.748531+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      29
+    ],
+    "c2": [
+      30,
+      51
+    ],
+    "c3": [
+      52,
+      84
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "0ee69cee1140d0690617d13973c6b5b1dd33351d3f83bd4fa03a5f872808df7b",
+    "reconstruction_sha256": "d33aff3de05a73d3ea515a2815e763e9ae4de1bd18fc87e5b96d4746a379ce11",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "0ee69cee1140d0690617d13973c6b5b1dd33351d3f83bd4fa03a5f872808df7b",
+    "reconstruction_sha256": "d33aff3de05a73d3ea515a2815e763e9ae4de1bd18fc87e5b96d4746a379ce11",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

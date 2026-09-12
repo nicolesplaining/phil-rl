@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1",
+  "source": "Usually honest witnesses speak truthfully. Rowan is an honest witness. Therefore Rowan speaks truthfully.",
+  "source_sha256": "871a0c6ca8bab861e79ca2c468cd162eba5d12930ac03e6f4767d6dbf7012c4f",
+  "reconstruction": {
+    "title": "Argument about Rowan's honesty",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Usually honest witnesses speak truthfully.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Usually honest witnesses speak truthfully.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Rowan is an honest witness.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Rowan is an honest witness.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Rowan speaks truthfully.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Rowan speaks truthfully.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "The use of 'usually' implies exceptions but the argument treats it as a universal rule",
+        "alternatives": [
+          "Treat 'usually' as a probabilistic generalization",
+          "Interpret 'usually' as a strict universal statement"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "e2b0af34aa810657b951fd9a2a6ef6ef8c0298ee4d2fd1595cf1ecbb3ab88e2a",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals who are witnesses, with a focus on their honesty and truthfulness",
+    "symbols": [
+      {
+        "name": "Honest",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is an honest witness"
+      },
+      {
+        "name": "Truthful",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x speaks truthfully"
+      },
+      {
+        "name": "Rowan",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The specific individual named Rowan"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Honest x) (Truthful x)))",
+        "reason": "The statement 'usually' is treated as a universal quantifier for formalization purposes, despite the ambiguity note indicating probabilistic interpretation might be more accurate"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Honest Rowan)",
+        "reason": "Direct translation of 'Rowan is an honest witness' as a predicate applied to the constant Rowan"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Truthful Rowan)",
+        "reason": "Direct translation of the conclusion 'Rowan speaks truthfully' as a predicate applied to the constant Rowan"
+      }
+    ],
+    "interpretation_notes": [
+      "The ambiguity in 'usually' from c1 was resolved by treating it as a universal quantifier (Honest → Truthful) rather than a probabilistic generalization",
+      "The formalization assumes a non-empty domain containing at least Rowan and other potential witnesses",
+      "The translation preserves the logical structure of applying a general rule to a specific case"
+    ]
+  },
+  "formalization_sha256": "a9df2b21237c4d15789ad6572e060d549bf84fd8b542325afedf8a7d14492a9a"
+}

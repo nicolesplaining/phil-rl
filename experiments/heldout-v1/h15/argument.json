@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "source": "This choice is rational. This choice is not rational. Therefore this choice is free.",
+  "source_sha256": "9ea75f94c29fa1d58fc5bc209bea28c2bc93a08d8e1981b43b38cfa11655def1",
+  "reconstruction": {
+    "title": "Contradictory Premises Leading to a Conclusion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This choice is rational.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This choice is rational.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This choice is not rational.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This choice is not rational.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this choice is free.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this choice is free.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c3",
+        "issue": "The conclusion follows from contradictory premises (c1 and c2), which is logically invalid but preserved as presented.",
+        "alternatives": [
+          "The author may intend to use a paradoxical reasoning structure",
+          "The author may have made an error in argumentation"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "cb120b9d8351ebd9d026f43766bdbf5d6dcbcdd7d4103a194d114efe2094c440",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Abstract domain containing propositions about choices",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This choice is rational"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This choice is free"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "P",
+        "reason": "Direct translation of 'This choice is rational' as proposition P"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not P)",
+        "reason": "Direct translation of 'This choice is not rational' as negation of P"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Q",
+        "reason": "Direct translation of 'This choice is free' as proposition Q"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument contains contradictory premises (P and not P) which logically entail any conclusion (Q) in classical logic, but this translation preserves the original structure without resolving the contradiction",
+      "The conclusion 'this choice is free' is treated as a separate proposition Q with no defined logical connection to P in this formalization",
+      "No additional premises or implicit assumptions are introduced beyond what's explicitly stated in the source text"
+    ]
+  },
+  "formalization_sha256": "c49abc87abbec2961b8162e60c599a4a75d453436b330afe734b262bdceb2429"
+}

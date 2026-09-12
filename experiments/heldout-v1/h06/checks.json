@@ -1,0 +1,40 @@
+{
+  "explicit": {
+    "formalization_sha256": "3136132f7c37c8551c861cb726ff6262ac559dfdad6f4332d260a566d410a19c",
+    "reconstruction_sha256": "b2043e26e10174e47276045c112fc36fcdbbdcca656435dd0b7ec15307b57191",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[A = True, S = True]",
+    "assignments": {
+      "S": "True",
+      "A": "True"
+    }
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "3136132f7c37c8551c861cb726ff6262ac559dfdad6f4332d260a566d410a19c",
+    "reconstruction_sha256": "b2043e26e10174e47276045c112fc36fcdbbdcca656435dd0b7ec15307b57191",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[A = True, S = True]",
+    "assignments": {
+      "S": "True",
+      "A": "True"
+    }
+  }
+}

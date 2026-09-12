@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "If this punishment is justified, it is proportionate. This punishment is justified. So it is proportionate.",
+  "source_sha256": "abeee0ed6399b69ccb569baee5bd6eed887c7cba67e4c693a0b15f57a18f9d0a",
+  "reconstruction": {
+    "title": "Argument for the Proportionality of a Justified Punishment",
+    "claims": [
+      {
+        "id": "C1",
+        "text": "If this punishment is justified, it is proportionate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this punishment is justified, it is proportionate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "C2",
+        "text": "This punishment is justified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This punishment is justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "C3",
+        "text": "So it is proportionate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "So it is proportionate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "C1",
+          "C2"
+        ],
+        "conclusion": "C3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "C3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "a109f082ba16b827947e0439a776412f74d3ce0f5f4ffb9e3a1bb118928b6eee",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Abstract domain containing a single punishment under consideration",
+    "symbols": [
+      {
+        "name": "J",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This punishment is justified"
+      },
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This punishment is proportionate"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "C1",
+        "formula": "(implies J P)",
+        "reason": "Translating conditional statement as material implication between propositions"
+      },
+      {
+        "claim_id": "C2",
+        "formula": "J",
+        "reason": "Direct translation of atomic proposition"
+      },
+      {
+        "claim_id": "C3",
+        "formula": "P",
+        "reason": "Direct translation of atomic proposition"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "14b07c35012056f98d894bc6f8ba096c79e62175adfe0d2f26683b431996648d"
+}

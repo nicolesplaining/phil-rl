@@ -163,7 +163,24 @@ def main(argv=None) -> int:
     benchmark.add_argument("--suite", type=Path, required=True)
     benchmark.add_argument("--out", type=Path, required=True)
     benchmark.add_argument("--workers", type=int, default=1)
+    benchmark.add_argument("--cases", nargs="+")
     model_arguments(benchmark)
+    archive = sub.add_parser("archive", help="Copy a research run with a checksum manifest.")
+    archive.add_argument("input", type=Path)
+    archive.add_argument("--out", type=Path, required=True)
+    archive.add_argument("--run-commit", required=True)
+    audit = sub.add_parser(
+        "audit", help="Check a saved suite under recorded source/glossary review."
+    )
+    audit.add_argument("input", type=Path)
+    audit.add_argument("--decisions", type=Path, required=True)
+    audit.add_argument("--out", type=Path, required=True)
+    batch_lean = sub.add_parser(
+        "verify-run", help="Kernel-check proofs or statements for a saved run."
+    )
+    batch_lean.add_argument("input", type=Path)
+    batch_lean.add_argument("--out", type=Path, required=True)
+    batch_lean.add_argument("--lean-bin", default="lean")
     validate = sub.add_parser("check", help="Check an existing frozen artifact with Z3.")
     validate.add_argument("artifact", type=Path)
     validate.add_argument("--include-implicit", action="store_true")
@@ -226,10 +243,24 @@ def main(argv=None) -> int:
             from phil_rl.benchmark import evaluate_suite
 
             result = evaluate_suite(
-                ChatClient(model_config(args)), args.out, args.suite, args.workers
+                ChatClient(model_config(args)), args.out, args.suite, args.workers, args.cases
             )
             print(json.dumps(result, indent=2))
             return 0 if all(row["generated"] for row in result["cases"]) else 1
+        elif args.command == "archive":
+            from phil_rl.archive import archive_run
+
+            print(json.dumps(archive_run(args.input, args.out, args.run_commit), indent=2))
+        elif args.command == "audit":
+            from phil_rl.audit import audit_run
+
+            print(json.dumps(audit_run(args.input, args.decisions, args.out), indent=2))
+        elif args.command == "verify-run":
+            from phil_rl.audit import verify_run
+
+            result = verify_run(args.input, args.out, args.lean_bin)
+            print(json.dumps(result, indent=2))
+            return 0 if result["failures"] == 0 else 1
         elif args.command == "check":
             print(
                 json.dumps(

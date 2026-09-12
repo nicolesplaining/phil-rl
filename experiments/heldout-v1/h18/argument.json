@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1",
+  "source": "If the evidence is misleading, this belief is unjustified. The evidence is misleading. Thus this belief is unjustified. If this belief is unjustified, it is not knowledge. Therefore this belief is not knowledge.",
+  "source_sha256": "2f0cc978e9f55156625dd74df9272bfa7576180dc303f867dd3b81a42dba3964",
+  "reconstruction": {
+    "title": "Argument about Unjustified Belief and Knowledge",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the evidence is misleading, this belief is unjustified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the evidence is misleading, this belief is unjustified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The evidence is misleading.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The evidence is misleading.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This belief is unjustified.",
+        "role": "subconclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus this belief is unjustified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "If this belief is unjustified, it is not knowledge.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this belief is unjustified, it is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "This belief is not knowledge.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this belief is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c3",
+          "c4"
+        ],
+        "conclusion": "c5",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c5",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "631e5d0d00c61891d7baefe67ee89289a45e72cc3b1aa9f308a05c1cfe6518bb",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Nonempty domain of beliefs and evidence",
+    "symbols": [
+      {
+        "name": "E",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The evidence is misleading"
+      },
+      {
+        "name": "U",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This belief is unjustified"
+      },
+      {
+        "name": "N",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This belief is not knowledge"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies E U)",
+        "reason": "Translating conditional as material implication between propositions"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "E",
+        "reason": "Direct proposition statement"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "U",
+        "reason": "Direct proposition statement"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(implies U N)",
+        "reason": "Translating conditional as material implication between propositions"
+      },
+      {
+        "claim_id": "c5",
+        "formula": "N",
+        "reason": "Direct proposition statement"
+      }
+    ],
+    "interpretation_notes": [
+      "All claims translated using propositional logic since the argument involves only atomic propositions and conditionals without quantification or predicates. The domain remains nonempty but unconstrained."
+    ]
+  },
+  "formalization_sha256": "f3af5a26fd82bbb320120bf2a11f376d2948a46de8e0f1e3d71f7c93569a9880"
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "0.1",
+  "source": "An objector claims that the contract is fair. I reject that claim: if the contract is coerced, it is not fair. The contract is coerced. Therefore the contract is not fair.",
+  "source_sha256": "400bafd285f418c496b34f41b1d9f56b346f4894106e5a1d0a46a516c46a38c9",
+  "reconstruction": {
+    "title": "Rebuttal to Objector's Claim About Contract Fairness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "An objector claims that the contract is fair.",
+        "role": "objection",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "An objector claims that the contract is fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "If the contract is coerced, it is not fair.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "I reject that claim: if the contract is coerced, it is not fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "The contract is coerced.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The contract is coerced.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "Therefore the contract is not fair.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the contract is not fair.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c2",
+          "c3"
+        ],
+        "conclusion": "c4",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c4",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "dc2a4c4b044cbd45c55f1b695bc1c5cac50670491487730633e205d45533cf5e",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain is not applicable as we are using propositional logic with atomic propositions about the contract's fairness and coercion.",
+    "symbols": [
+      {
+        "name": "FairContract",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The contract is fair."
+      },
+      {
+        "name": "CoercedContract",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The contract is coerced."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "FairContract",
+        "reason": "The objector's claim is that the contract is fair, which is directly represented as the proposition 'FairContract'."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies CoercedContract (not FairContract))",
+        "reason": "The conditional statement 'If the contract is coerced, it is not fair' is formalized as an implication between the two propositions."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "CoercedContract",
+        "reason": "The assertion 'The contract is coerced' is directly represented as the proposition 'CoercedContract'."
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(not FairContract)",
+        "reason": "The conclusion 'Therefore the contract is not fair' is the negation of the proposition 'FairContract'."
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "1ad2bdc59d62ba9972814e1e7fb97bf3ad5fbf665825b18304e15db90a6cc69e"
+}

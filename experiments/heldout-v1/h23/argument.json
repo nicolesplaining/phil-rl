@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "Exactly one of these claims holds: the action is obligatory, or the action is forbidden. The action is obligatory. Therefore the action is not forbidden.",
+  "source_sha256": "d390fabdef23b106b8cad6a45ef6c2a01560bc9490f8727c72f3bef64c2274f8",
+  "reconstruction": {
+    "title": "Logical Deduction from Disjunction",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Exactly one of these claims holds: the action is obligatory, or the action is forbidden.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Exactly one of these claims holds: the action is obligatory, or the action is forbidden.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The action is obligatory.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The action is obligatory.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the action is not forbidden.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the action is not forbidden.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "14ba6b4deaa6e3ca6bc8a3e62280cf069a5e6ee31a880d15556c1c28a93aca28",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Abstract domain containing propositions about action obligations",
+    "symbols": [
+      {
+        "name": "O",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The action is obligatory"
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The action is forbidden"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(and (or O F) (not (and O F)))",
+        "reason": "Translating 'exactly one of these claims holds' as exclusive disjunction (O ∨ F) ∧ ¬(O ∧ F)"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "O",
+        "reason": "Direct translation of 'The action is obligatory' as proposition O"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not F)",
+        "reason": "Direct translation of 'the action is not forbidden' as ¬F"
+      }
+    ],
+    "interpretation_notes": [
+      "The exclusive disjunction in c1 ensures exactly one proposition is true",
+      "Standard material implication applies between premises and conclusion",
+      "No need for first-order quantifiers as all claims are propositional"
+    ]
+  },
+  "formalization_sha256": "b61f32da8cf86ddea1d42a26b943a5f23c94abb26956f4377f74c1957bd9d9db"
+}

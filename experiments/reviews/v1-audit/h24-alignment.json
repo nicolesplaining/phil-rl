@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "ca5bdf38b5f89f1019b79b1e1838f022c4dea3c896a91e2b39b3b085bad519f5",
+  "generated_sha256": "ffba4d2412a3555e71fe0dd7ffd411f67616c43770af6f0f596c08fab47b3224",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "C",
+    "Q": "D",
+    "R": "S"
+  },
+  "glossary_rationale": "P is a conclusive reason, Q defeated doubt, R a settled inquiry. Conditional chaining keeps all three distinct.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is a conclusive reason, Q defeated doubt, R a settled inquiry. Conditional chaining keeps all three distinct.",
+  "domain_restriction": null
+}

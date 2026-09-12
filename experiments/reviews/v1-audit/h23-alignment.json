@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "5b8ed88bc9aafb5a4aadc38a56a5b261fdbc9ab9c6e4ce3086f747a3cce497ac",
+  "generated_sha256": "145c6dec6e3f38735006de31942d41ece3fe441ddc5bfb1f21f0ce9bf7d8296f",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "O": "O",
+    "F": "F"
+  },
+  "glossary_rationale": "Obligation and prohibition are atoms. The source itself asserts exclusivity, which is preserved without a deontic axiom.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Obligation and prohibition are atoms. The source itself asserts exclusivity, which is preserved without a deontic axiom.",
+  "domain_restriction": null
+}

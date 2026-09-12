@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "2f98b0920931de724172f6b87022eeaa8fb8131ae21b9277568a6b2649f3779a",
+  "generated_sha256": "00793078eecdf04e84ffea159dae08dc0d22fe667be41ab50c1601d290e4174b",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "V": "C",
+    "S": "S"
+  },
+  "glossary_rationale": "V means verdict correctness and S argument soundness; the biconditional is retained.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "V means verdict correctness and S argument soundness; the biconditional is retained.",
+  "domain_restriction": null
+}

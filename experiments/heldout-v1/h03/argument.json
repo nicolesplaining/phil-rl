@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "If this decision is autonomous, it is deliberate. This decision is deliberate. Hence it is autonomous.",
+  "source_sha256": "83c270aba45478e0ccc9b9595fbb360b75f45ca06c7582aae5936af9f926ebd2",
+  "reconstruction": {
+    "title": "Argument about Autonomy and Deliberation",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this decision is autonomous, it is deliberate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this decision is autonomous, it is deliberate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This decision is deliberate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This decision is deliberate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Hence it is autonomous.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence it is autonomous.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "1f686955292576523d1af5784adcfe29a4016ebc62317291f80d048c36012fc5",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of a single decision under consideration.",
+    "symbols": [
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This decision is autonomous"
+      },
+      {
+        "name": "D",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This decision is deliberate"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies A D)",
+        "reason": "Translates the conditional statement 'If this decision is autonomous, it is deliberate' as a material implication between propositions A and D"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "D",
+        "reason": "Directly represents the assertion 'This decision is deliberate' as proposition D"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "A",
+        "reason": "Directly represents the conclusion 'Hence it is autonomous' as proposition A"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument structure uses propositional logic with two atomic propositions. The translation preserves the logical form of the conditional premise and the asserted conclusion without evaluating the argument's validity."
+    ]
+  },
+  "formalization_sha256": "9a4ef53ae5a7113aae07888f4fe065222c1ebaf725c01edaf1cedf6a930ca4a6"
+}

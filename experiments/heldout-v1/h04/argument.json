@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "If the promise is binding, breaking it is wrong. The promise is not binding. Thus breaking it is not wrong.",
+  "source_sha256": "0aafc9e5af94ec0c38f8090039a5854a16a63cd77cd1aca9518783ca4446483e",
+  "reconstruction": {
+    "title": "Argument about the binding nature of a promise",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the promise is binding, breaking it is wrong.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the promise is binding, breaking it is wrong.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The promise is not binding.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The promise is not binding.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Thus breaking it is not wrong.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus breaking it is not wrong.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "ebf688ac71e5ac35edf0df6c2eb1bf318a673522d0c776445bc50edea68e81a8",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of truth values (true/false) for propositional statements about promises and moral status.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The promise is binding"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "Breaking the promise is wrong"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies P Q)",
+        "reason": "Direct translation of the conditional statement 'If P then Q'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not P)",
+        "reason": "Direct negation of proposition P"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not Q)",
+        "reason": "Direct negation of proposition Q"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument uses propositional logic with P representing the binding nature of the promise and Q representing the moral status of breaking it",
+      "The logical form follows the structure: (P → Q), ¬P ⊢ ¬Q",
+      "This translation preserves the surface-level logical structure without evaluating its validity (which would be an instance of the fallacy of denying the antecedent)"
+    ]
+  },
+  "formalization_sha256": "5dc34cb5b90a684945c790c29653d0bfc27ed1268b547890a0161c216e43974d"
+}

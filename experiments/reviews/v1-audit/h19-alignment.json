@@ -1,0 +1,47 @@
+{
+  "reference_sha256": "b0bcb54626ee2702d3ea52cfb8baa3e2c37fa0da1e647c0ac90d23838392d526",
+  "generated_sha256": "912aa40e00b4d833b14fd96cac76d8e03e81cc3882e7240f005e92de4bcd85a5",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "FairContract": "F",
+    "CoercedContract": "C"
+  },
+  "glossary_rationale": "The objector's fairness claim is not a premise. The author's coercion conditional and factual premise are retained.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r4"
+      ],
+      "generated_ids": [
+        "c4"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The objector's fairness claim is not a premise. The author's coercion conditional and factual premise are retained.",
+  "domain_restriction": null
+}

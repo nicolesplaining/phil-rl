@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "a3d0fca8042bdeaddbc1315b8f7c7b16ecb088d8d35625b52b0e503c6fbde0e2",
+  "generated_sha256": "b80ad349f4c00a80abb96ea3dbbf083d0ffd3d408f20035a39dcf79ca610014d",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "I",
+    "Q": "F"
+  },
+  "glossary_rationale": "P is theory incompleteness and Q is objection failure. The inclusive disjunction is preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is theory incompleteness and Q is objection failure. The inclusive disjunction is preserved.",
+  "domain_restriction": null
+}

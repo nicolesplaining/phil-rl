@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.1",
+  "source": "This seminar concerns moral testimony. If the witness is dishonest, this report is unreliable. The witness is dishonest. Hence this report is unreliable.",
+  "source_sha256": "db0cfcf763d6ac693b6ce6c5c7143781774b06d7e4ab1be7e6b4df0153e3bb15",
+  "reconstruction": {
+    "title": "Argument about the Unreliability of a Report Based on Witness Dishonesty",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the witness is dishonest, this report is unreliable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the witness is dishonest, this report is unreliable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The witness is dishonest.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The witness is dishonest.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Hence this report is unreliable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this report is unreliable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "This seminar concerns moral testimony.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This seminar concerns moral testimony.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2dbbad2e1556640a67eb7a30de4a96deba3d359fdb420d16621d38703eff2278",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Non-empty domain of discourse (irrelevant in propositional logic)",
+    "symbols": [
+      {
+        "name": "D",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The witness is dishonest"
+      },
+      {
+        "name": "U",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This report is unreliable"
+      },
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This seminar concerns moral testimony"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies D U)",
+        "reason": "Direct translation of conditional statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "D",
+        "reason": "Direct translation of atomic proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "U",
+        "reason": "Direct translation of atomic proposition"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "S",
+        "reason": "Direct translation of atomic proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "The context statement (c4) is encoded as a proposition but plays no role in the logical argument structure",
+      "Using propositional logic since all claims can be adequately represented as atomic propositions or their combinations without needing predicates or quantifiers"
+    ]
+  },
+  "formalization_sha256": "6c14cecc136f9d4971706305565e2d9c9a286a59023309c1f0a9c4a1c5e35843"
+}

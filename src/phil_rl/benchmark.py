@@ -96,7 +96,7 @@ def _generate_case(config, source):
         )
 
 
-def evaluate_suite(client, directory: Path, suite_path: Path, workers: int = 1):
+def evaluate_suite(client, directory: Path, suite_path: Path, workers: int = 1, cases=None):
     # Import here to keep CLI serialization in one place without a module cycle.
     import sys
     from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -105,6 +105,11 @@ def evaluate_suite(client, directory: Path, suite_path: Path, workers: int = 1):
     from phil_rl.cli import save, write_json
 
     suite = load_suite(suite_path)
+    selected = suite["cases"]
+    if cases is not None:
+        if len(set(cases)) != len(cases) or not set(cases) <= {c["id"] for c in selected}:
+            raise ValueError("Select unique case ids from the suite.")
+        selected = [c for c in selected if c["id"] in cases]
     if not 1 <= workers <= 4:
         raise ValueError("Use one through four evaluation workers.")
     directory.mkdir(parents=True, exist_ok=False)
@@ -114,8 +119,7 @@ def evaluate_suite(client, directory: Path, suite_path: Path, workers: int = 1):
     # between concurrent Python threads is unsafe.
     with ProcessPoolExecutor(max_workers=workers, mp_context=get_context("spawn")) as pool:
         pending = {
-            pool.submit(_generate_case, client.config, case["source"]): case
-            for case in suite["cases"]
+            pool.submit(_generate_case, client.config, case["source"]): case for case in selected
         }
         for future in as_completed(pending):
             case = pending[future]
@@ -142,7 +146,8 @@ def evaluate_suite(client, directory: Path, suite_path: Path, workers: int = 1):
                 "suite_sha256": fingerprint(suite),
                 "model_config": client.config.public(),
                 "workers": workers,
-                "total": len(suite["cases"]),
+                "total": len(selected),
+                "selected_cases": [c["id"] for c in selected],
                 "completed": len(rows),
                 "cases": sorted(rows, key=lambda r: r["case"]),
                 "fidelity": "not_assessed",

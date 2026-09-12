@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "07dd3721708b8e6fb16fec0456c888262ddfbe2b8f15b7dde80944def25877d3",
+  "generated_sha256": "28b2c4f2b1992f75eae2287f2f3f10fbfdcda0d40fdc0e055329dc2a14419bf0",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "I",
+    "Q": "F"
+  },
+  "glossary_rationale": "P is impartiality and Q fairness of this procedure, with the stated sufficient-condition direction.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is impartiality and Q fairness of this procedure, with the stated sufficient-condition direction.",
+  "domain_restriction": null
+}

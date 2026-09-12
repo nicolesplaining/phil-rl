@@ -1,0 +1,36 @@
+{
+  "explicit": {
+    "formalization_sha256": "efe60a0a2e4764e9dfd7f85969d62b9a42e2a9e0909c72ff942d16f001c2784f",
+    "reconstruction_sha256": "1627415388ae2e1ed03da197fe3d315d6e3e1c3ee267a29bf4798a832f824641",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[witness = FiniteDomain_91a72df797f84ad1801834f24a86f673_0,\n lina = FiniteDomain_91a72df797f84ad1801834f24a86f673_1,\n Identical = [else -> True],\n Honest = [FiniteDomain_91a72df797f84ad1801834f24a86f673_1 ->\n           False,\n           else -> True]]",
+    "countermodel_domain_size": 2,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "efe60a0a2e4764e9dfd7f85969d62b9a42e2a9e0909c72ff942d16f001c2784f",
+    "reconstruction_sha256": "1627415388ae2e1ed03da197fe3d315d6e3e1c3ee267a29bf4798a832f824641",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[lina = FiniteDomain_4a3890868cd04b91a2679152a91c6c8a_1,\n witness = FiniteDomain_4a3890868cd04b91a2679152a91c6c8a_0,\n Honest = [FiniteDomain_4a3890868cd04b91a2679152a91c6c8a_1 ->\n           False,\n           else -> True],\n Identical = [else -> True]]",
+    "countermodel_domain_size": 2,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  }
+}

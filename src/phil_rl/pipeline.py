@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 
 from phil_rl.client import ChatClient, GenerationError
 from phil_rl.logic import validate_formalization
+from phil_rl.policy import POLICY_VERSION, explicit_only, normalized_formalization
 from phil_rl.prompts import FORMALIZE, PROMPT_VERSION, RECONSTRUCT, RECONSTRUCT_UNITS
 from phil_rl.schema import Artifact, Formalization, Reconstruction, fingerprint
 from phil_rl.source import GroundedReconstruction, source_units
@@ -29,6 +30,13 @@ def run(
         "source_sha256": fingerprint(source),
         "started_at": started,
         "prompt_version": PROMPT_VERSION,
+        "policy_version": POLICY_VERSION,
+        "schema_sha256": {
+            "reconstruction": fingerprint(
+                (Reconstruction if legacy_quotes else GroundedReconstruction).model_json_schema()
+            ),
+            "formalization": fingerprint(Formalization.model_json_schema()),
+        },
         "prompt_sha256": {
             "reconstruction": fingerprint(reconstruction_prompt),
             "formalization": fingerprint(FORMALIZE),
@@ -64,14 +72,17 @@ def run(
             validate=lambda result: result.validate_source(source),
         )
     else:
+
+        def validate_grounded(result):
+            if result.status == "argument":
+                explicit_only(result.materialize(source, units))
+
         grounded, reconstruction_attempts = generate(
             "reconstruction",
             GroundedReconstruction,
             reconstruction_prompt,
             {"source_units": [unit.model_dump() for unit in units]},
-            validate=lambda result: (
-                result.materialize(source, units) if result.status == "argument" else None
-            ),
+            validate=validate_grounded,
         )
         if grounded.status == "no_argument":
             return None, {
@@ -97,7 +108,9 @@ def run(
         Formalization,
         FORMALIZE,
         {"source": source, "frozen_reconstruction": reconstruction.model_dump(mode="json")},
-        validate=lambda result: validate_formalization(reconstruction, result),
+        validate=lambda result: (
+            validate_formalization if legacy_quotes else normalized_formalization
+        )(reconstruction, result),
     )
     if fingerprint(reconstruction) != reconstruction_hash:
         raise ValueError("Reconstruction changed during formalization.")

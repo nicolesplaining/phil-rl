@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "6d1b0b4cf7e01ef272ddc018b812e281f025bba22275282a23e6e0eeb9ae8369",
+  "generated_sha256": "d7537af14fde869de328c637461095a78cd02a4756ffe13a3b9adb07ec50a4fe",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "B",
+    "Q": "W"
+  },
+  "glossary_rationale": "P is bindingness of the promise; Q is wrongness of breaking it. Both negations remain explicit.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is bindingness of the promise; Q is wrongness of breaking it. Both negations remain explicit.",
+  "domain_restriction": null
+}

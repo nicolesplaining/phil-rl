@@ -1,0 +1,157 @@
+{
+  "source": "Every person who consents is informed. Mira is a person who consents. Therefore Mira is informed.",
+  "source_sha256": "404ebd83a203f12b9664682642e828f1c305efdea0f242976c5f858d62e32c7c",
+  "started_at": "2026-09-12T22:44:17.220287+00:00",
+  "prompt_version": "0.4",
+  "prompt_sha256": {
+    "reconstruction": "5e615ab502f9af64340fae278dad1570fdc275a72088b404fd501604f5fab828",
+    "formalization": "24a1d188d576786c39bc883d517a67f0f6d7d39917898eb02747de4e5f60bf38"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"title\": \"Mira's Informed Consent Argument\", \"claims\": [{\"id\": \"c1\", \"text\": \"Every person who consents is informed.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"Mira is a person who consents.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"Therefore Mira is informed.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says, \"Every person who consents is informed.\" The second is \"Mira is a person who consents.\" The third is \"Therefore Mira is informed.\" I need to determine if this is an argument.\n\nFirst, I check if there's a conclusion. The third sentence starts with \"Therefore,\" which is a conclusion indicator. So the conclusion is \"Mira is informed.\" The premises would be the first two statements. The first is a general statement about all people who consent being informed. The second states that Mira is such a person. \n\nSo the argument structure is: All A are B. C is A. Therefore, C is B. That's a classic syllogism. The conclusion follows logically from the premises. \n\nNow, I need to map this into the JSON structure. The status should be \"argument\" because there's a clear conclusion derived from premises. The claims are the three statements. The first two are premises, the third is the conclusion. The relations would link the premises to the conclusion. \n\nI need to assign IDs to each claim. Let's say c1 for the first premise, c2 for the second, and c3 for the conclusion. The relations would have premises c1 and c2 supporting c3. The conclusion_id is c3. \n\nNo ambiguities here since the structure is straightforward. The evidence_ids for each claim are the corresponding source units. The interpretation notes can be left empty as there's no ambiguity in the claims. \n\nI should make sure that the JSON follows the schema provided. Each claim has the correct role, origin is explicit, and the relations are properly listed. The title can be something like \"Mira's Informed Consent Argument.\"\n",
+      "usage": {
+        "prompt_tokens": 1536,
+        "total_tokens": 2110,
+        "completion_tokens": 574,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"Nonempty set of individuals (people) in a context where consent and being informed are relevant properties\", \"symbols\": [{\"name\": \"Consents\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a person who consents\"}, {\"name\": \"Informed\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is informed\"}, {\"name\": \"mira\", \"kind\": \"constant\", \"arity\": 0, \"meaning\": \"The individual named Mira\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (Consents x) (Informed x)))\", \"reason\": \"Universal statement about all individuals who consent\"}, {\"claim_id\": \"c2\", \"formula\": \"(Consents mira)\", \"reason\": \"Asserts that Mira satisfies the 'consents' predicate\"}, {\"claim_id\": \"c3\", \"formula\": \"(Informed mira)\", \"reason\": \"Conclusion that Mira satisfies the 'informed' predicate\"}], \"interpretation_notes\": [\"Domain contains at least one individual (Mira)\", \"Predicates Consents and Informed are unary properties over the domain\", \"Standard first-order material implication used for 'if...then' construction\"]}",
+      "reasoning": "\nOkay, let's tackle this translation. The argument is about Mira being informed because she consents, based on the premise that every consenting person is informed.\n\nFirst, I need to determine the logic. The argument involves a universal statement (\"Every person who consents is informed\") and a specific instance (\"Mira is a person who consents\"), leading to a conclusion about Mira. This seems like a classic first-order logic scenario with a universal quantifier. So, the logic should be classical_first_order.\n\nNext, the domain. The domain here is people, specifically those who consent and their informed status. The domain description should mention that it's a nonempty set of individuals, possibly people in a context where consent and being informed are relevant.\n\nNow, symbols. I need predicates for \"consents\" and \"informed\", and a constant for \"Mira\". Let's define:\n- Predicate Consents(x): x is a person who consents.\n- Predicate Informed(x): x is informed.\n- Constant mira: represents Mira.\n\nFor the claims:\n- c1: \"Every person who consents is informed.\" Translates to ∀x (Consents(x) → Informed(x)).\n- c2: \"Mira is a person who consents.\" Translates to Consents(mira).\n- c3: \"Therefore Mira is informed.\" Translates to Informed(mira).\n\nEach of these should be straightforward. The translation uses standard FOL with implications and universal quantification. No modal or other complex logics are needed here. The interpretation notes can mention that the domain is nonempty and the predicates are as defined. No issues with the translations, so the reasons are straightforward.\n",
+      "usage": {
+        "prompt_tokens": 1659,
+        "total_tokens": 2292,
+        "completion_tokens": 633,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Mira's Informed Consent Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person who consents is informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person who consents is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Mira is a person who consents.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Mira is a person who consents.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Mira is informed.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Mira is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "31f1ac6e922bfb954876bc9784f127461bff3c4a58435343d1d6463e2271cac0",
+  "finished_at": "2026-09-12T22:44:50.640126+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      38
+    ],
+    "c2": [
+      39,
+      69
+    ],
+    "c3": [
+      70,
+      97
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "6e188df654526eac1fb800c7de60dc0725fc061b66685aea406143d7111e5bb5",
+    "reconstruction_sha256": "31f1ac6e922bfb954876bc9784f127461bff3c4a58435343d1d6463e2271cac0",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "6e188df654526eac1fb800c7de60dc0725fc061b66685aea406143d7111e5bb5",
+    "reconstruction_sha256": "31f1ac6e922bfb954876bc9784f127461bff3c4a58435343d1d6463e2271cac0",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

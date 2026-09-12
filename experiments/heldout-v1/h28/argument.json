@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "source": "Not every belief is justified. Therefore some belief is not justified.",
+  "source_sha256": "71bf34b5182214b175f521d155066959268499cf4490105f3162f031d0ef179b",
+  "reconstruction": {
+    "title": "Not Every Belief is Justified",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Not every belief is justified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Not every belief is justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore some belief is not justified.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some belief is not justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "c1eb847ab654e159f30769ce3baba23e5dce22cff6e3705004790222b0cd10f2",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all beliefs.",
+    "symbols": [
+      {
+        "name": "Justified",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a justified belief"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (forall x (Justified x)))",
+        "reason": "Translates 'Not every belief is justified' as the negation of a universal quantifier over beliefs"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (not (Justified x)))",
+        "reason": "Translates 'Some belief is not justified' as an existential quantifier"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise 'Not every belief is justified' is formalized as ¬∀x Justified(x), which is logically equivalent to ∃x ¬Justified(x) in classical logic. Both forms are preserved to maintain the original phrasing's structure.",
+      "The conclusion directly expresses the existential form that is classically equivalent to the premise's negated universal form."
+    ]
+  },
+  "formalization_sha256": "4ae351a814800f1bde8d7f2f87f54549ac8707ff6dbb173a7ccd673343cf512f"
+}

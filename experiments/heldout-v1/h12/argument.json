@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable. The proposal is not coercive. So the proposal is acceptable.",
+  "source_sha256": "97552b88a1cf2cc459c00b5129d34e4e6cf56b5981c9688a5cb991fadff9ee1c",
+  "reconstruction": {
+    "title": "The Proposal's Acceptability Based on Non-Coercion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The proposal is acceptable unless it is coercive, where unless means that if it is not coercive then it is acceptable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The proposal is not coercive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The proposal is not coercive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "So the proposal is acceptable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "So the proposal is acceptable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6ca5ea6ff51dd8859c606794f2ee3b906c502a4eae88e5ca757da2bad49c0868",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "A single nonempty domain containing the proposal under consideration. Propositions represent claims about the proposal's acceptability and coerciveness.",
+    "symbols": [
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The proposal is acceptable"
+      },
+      {
+        "name": "C",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The proposal is coercive"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies (not C) A)",
+        "reason": "Translating 'unless C, A' as material implication per the explicit definition in the premise"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not C)",
+        "reason": "Direct translation of 'The proposal is not coercive'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "A",
+        "reason": "Direct translation of 'The proposal is acceptable'"
+      }
+    ],
+    "interpretation_notes": [
+      "The 'unless' operator was explicitly defined in the premise as material implication (if not C then A), so no modal or non-classical treatment is needed",
+      "All claims are formalized as propositional variables since they make atomic claims about the proposal's properties",
+      "The argument structure follows modus ponens: (implies (not C) A), (not C) therefore A"
+    ]
+  },
+  "formalization_sha256": "3a0dd5abd037c96649c99ee7e8cf156a53914b5bf2c228f5ca581c7fafa664b2"
+}

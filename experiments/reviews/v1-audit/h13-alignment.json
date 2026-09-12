@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "dee3ac02ff1eb87f967ad9c094b681dec44268249d8e9fba5180071cc69f6cd6",
+  "generated_sha256": "3d189519856927bea9169955effdf797a6f67ef33e470c3f07947a4c5ec25ca2",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "DEF": "D",
+    "CON": "C"
+  },
+  "glossary_rationale": "DEF is defensibility and CON consistency. The necessary-condition direction is preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "DEF is defensibility and CON consistency. The necessary-condition direction is preserved.",
+  "domain_restriction": null
+}

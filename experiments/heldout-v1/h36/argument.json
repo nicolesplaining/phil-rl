@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "This outcome is possible. Therefore this outcome is necessary.",
+  "source_sha256": "bd7b615394160fe9c93f255cbd257713f3b53fe89f62f8e3902dc22e8a2b0ed5",
+  "reconstruction": {
+    "title": "Argument from Possibility to Necessity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This outcome is possible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This outcome is possible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore this outcome is necessary.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this outcome is necessary.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "647451ffd8411109402015968fd4d6e78b59fe5856536515719b1fc66f1d799b",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "Nonempty domain of possible outcomes",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This outcome is possible"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This outcome is necessary"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Modal operator 'possible' requires modal logic not available in classical formalism"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Modal operator 'necessary' requires modal logic not available in classical formalism"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on modal reasoning (possibility → necessity) which cannot be expressed in classical propositional/first-order logic",
+      "In classical logic, P → Q would require an explicit premise linking possibility to necessity, which is absent here"
+    ]
+  },
+  "formalization_sha256": "e5fe17f33f2f5ff263bb6578c75df20395bf0e9d6b92bfa17278134c64f879bd"
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "The verdict is correct if and only if the argument is sound. The argument is sound. Consequently the verdict is correct.",
+  "source_sha256": "1ffe54bcbcc60f2c16bf310c6a70ee32af30ceee7d0a9ebb90b3883b52c9564b",
+  "reconstruction": {
+    "title": "Verdict Correctness Based on Argument Soundness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The verdict is correct if and only if the argument is sound.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The verdict is correct if and only if the argument is sound.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The argument is sound.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The argument is sound.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Consequently the verdict is correct.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Consequently the verdict is correct.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "93a7d71257cfa7a938fc9f486feb6130c8cf71c570e0b0229937fbed87ebece6",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Propositional domain with no individual objects; all claims are atomic propositions.",
+    "symbols": [
+      {
+        "name": "V",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The verdict is correct"
+      },
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The argument is sound"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(iff V S)",
+        "reason": "Biconditional between verdict correctness and argument soundness"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "S",
+        "reason": "Direct assertion of argument soundness"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "V",
+        "reason": "Conclusion follows from c1 and c2 via biconditional elimination and modus ponens"
+      }
+    ],
+    "interpretation_notes": [
+      "The biconditional (iff) directly captures the 'if and only if' relationship in c1",
+      "The argument uses classical propositional logic with no quantifiers or predicates",
+      "No semantic ambiguities detected in the frozen reconstruction"
+    ]
+  },
+  "formalization_sha256": "faeec27db54d2f6890d429d7fa6eba7496c33d4349632b2f72beb9f84947a65a"
+}
