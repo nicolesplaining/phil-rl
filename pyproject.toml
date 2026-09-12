@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "phil-rl"
+version = "0.1.0"
+description = "Reconstruct philosophical arguments and audit their formalizations."
+requires-python = ">=3.11"
+authors = [{name = "Nicole Ma", email = "ma06nicole@gmail.com"}]
+dependencies = ["pydantic>=2.10,<3", "httpx>=0.28,<1", "z3-solver>=4.13,<5"]
+
+[project.scripts]
+phil = "phil_rl.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/phil_rl"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
