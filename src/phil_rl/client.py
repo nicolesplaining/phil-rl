@@ -47,6 +47,8 @@ class ModelConfig:
             "seed": self.seed,
             "structured": self.structured,
             "qwen_nonthinking": self.qwen_nonthinking,
+            "retries": self.retries,
+            "timeout_seconds": self.timeout,
         }
 
 
@@ -63,8 +65,9 @@ class ChatClient:
             {"role": "system", "content": system},
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
         ]
-        if not config.structured:
-            messages[0]["content"] += "\nJSON schema:\n" + json.dumps(schema.model_json_schema())
+        # Constrained decoding enforces shape but does not necessarily put the schema in
+        # the model's context. Show it in both modes so the model can plan field meanings.
+        messages[0]["content"] += "\nJSON schema:\n" + json.dumps(schema.model_json_schema())
         attempts = []
         headers = {"Authorization": f"Bearer {config.api_key}"} if config.api_key else {}
         with httpx.Client(timeout=config.timeout, transport=self.transport) as client:

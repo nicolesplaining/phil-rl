@@ -42,7 +42,15 @@ def review(artifact: Artifact, checks: dict, provenance: str) -> str:
     lines.extend(["", "## Argument relations", ""])
     for relation in artifact.reconstruction.relations:
         lines.append(f"- {', '.join(relation.premises)} {relation.kind} {relation.conclusion}")
-    lines.extend(["", "## Interpretation choices", ""])
+    lines.extend(
+        [
+            "",
+            "## Interpretation choices",
+            "",
+            "The following notes are model or fixture annotations, not verified checker results.",
+            "",
+        ]
+    )
     lines.extend(
         [
             f"Logic: {artifact.formalization.logic}.",
