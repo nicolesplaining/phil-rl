@@ -1,0 +1,288 @@
+{
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "cases": {
+    "q01": {
+      "approved": true,
+      "symbol_map": {
+        "S": "S",
+        "A": "A"
+      },
+      "notes": "S refers to this apology's sincerity; the subject of A is the same apology acknowledging the injury."
+    },
+    "q02": {
+      "approved": true,
+      "symbol_map": {
+        "L": "L",
+        "V": "V"
+      },
+      "notes": "Legitimacy and voluntariness concern this bargain; only-if direction and both negations remain explicit."
+    },
+    "q03": {
+      "approved": true,
+      "symbol_map": {
+        "CausalExplanation": "C",
+        "InformativeExplanation": "I"
+      },
+      "notes": "The causal and informative properties remain distinct, preserving the invalid converse inference."
+    },
+    "q04": {
+      "approved": true,
+      "symbol_map": {
+        "E": "E",
+        "B": "B"
+      },
+      "notes": "Explicitness and bindingness of this agreement align; denial of the antecedent is not repaired."
+    },
+    "q05": {
+      "approved": true,
+      "symbol_map": {
+        "P": "R",
+        "Q": "M"
+      },
+      "notes": "P is principle revisability and Q the misleading example. Inclusive or and negation match."
+    },
+    "q06": {
+      "approved": true,
+      "symbol_map": {
+        "A": "A",
+        "P": "P"
+      },
+      "notes": "Authenticity and prudence concern the same desire. 'Or both' is preserved."
+    },
+    "q07": {
+      "approved": true,
+      "symbol_map": {
+        "C1": "I",
+        "C2": "T"
+      },
+      "notes": "C1 is impartiality and C2 transparency of this assessment. The conclusion combines them."
+    },
+    "q08": {
+      "approved": true,
+      "symbol_map": {
+        "V": "V",
+        "A": "A"
+      },
+      "notes": "Vividness and accuracy of the memory align. Negated disjunction is equivalent to the reference's conjunction of negations."
+    },
+    "q09": {
+      "approved": true,
+      "symbol_map": {
+        "Informed": "I",
+        "Impartial": "P"
+      },
+      "notes": "The symbols preserve the verdict's two properties and the negated conjunction."
+    },
+    "q10": {
+      "approved": true,
+      "symbol_map": {
+        "D": "D",
+        "J": "J"
+      },
+      "notes": "The conditional as a whole is negated; D is decisive evidence and J justified doubt."
+    },
+    "q11": {
+      "approved": true,
+      "symbol_map": {
+        "P": "P",
+        "Q": "C"
+      },
+      "notes": "P denotes being a promise and Q creating a commitment for this utterance; the biconditional and negations match."
+    },
+    "q12": {
+      "approved": false,
+      "category": "unresolved_notation",
+      "notes": "The ground first-order encoding with one named institution is a legitimate alternative to propositional atoms. The original strict protocol rejects the fragment mismatch; this is not a demonstrated mistranslation."
+    },
+    "q13": {
+      "approved": true,
+      "symbol_map": {
+        "G": "H",
+        "W": "W"
+      },
+      "notes": "G is gratuitous harm and W wrongness of this intervention. Sufficiency is not reversed."
+    },
+    "q14": {
+      "approved": false,
+      "category": "unresolved_notation",
+      "notes": "The model uses Equitable(Policy) and Popular(Policy). These are faithful ground atoms, but the original protocol expects propositions. The contradiction is correctly preserved."
+    },
+    "q15": {
+      "approved": true,
+      "symbol_map": {
+        "P": "M"
+      },
+      "notes": "Both occurrences assert that the distinction is meaningful; source positions remain separate."
+    },
+    "q16": {
+      "approved": false,
+      "category": "unresolved_notation",
+      "notes": "EqualDistribution(distribution) and JustDistribution(distribution) are faithful ground atoms, but not accepted by the original same-fragment protocol. No bridge was invented."
+    },
+    "q17": {
+      "approved": true,
+      "symbol_map": {
+        "F": "F",
+        "K": "K"
+      },
+      "notes": "F means fabricated recollection, K knowledge; not knowledge is now a logical negation."
+    },
+    "q18": {
+      "approved": true,
+      "symbol_map": {
+        "E": "E",
+        "P": "P"
+      },
+      "notes": "Equal and proportional allocations remain separate; exclusivity is an explicit source claim."
+    },
+    "q19": {
+      "approved": true,
+      "symbol_map": {
+        "P": "O",
+        "Q": "F"
+      },
+      "notes": "P means this inquiry is open and Q this conclusion is final. The inclusive disjunction is preserved."
+    },
+    "q20": {
+      "approved": true,
+      "symbol_map": {
+        "F": "F",
+        "J": "J"
+      },
+      "notes": "Fairness of the rule and justification of the exception match both complementary conditionals."
+    },
+    "q21": {
+      "approved": true,
+      "symbol_map": {
+        "CommitteeDiscussing": "C",
+        "Deception": "D",
+        "Informed": "I",
+        "Legitimate": "L"
+      },
+      "notes": "Context, deceptive waiver, informed status and legitimacy align. The intermediate negated claim and its support chain are retained."
+    },
+    "q22": {
+      "approved": false,
+      "category": "meaning_error",
+      "notes": "The background sentence is missing, and the objection is encoded as CriticSaysTrustworthy rather than its content Trustworthy. The main premises are right, but the full reconstruction fails the annotation."
+    },
+    "q23": {
+      "approved": true,
+      "symbol_map": {
+        "Person": "Person",
+        "Deliberates": "Deliberates",
+        "Reflective": "Reflective",
+        "Neri": "neri"
+      },
+      "notes": "Person and deliberation are separate predicates, and the constant denotes Neri. Relative-clause conjunction and quantifier restriction match."
+    },
+    "q24": {
+      "approved": true,
+      "symbol_map": {
+        "FlawlessArgument": "FlawlessArgument",
+        "Persuasive": "Persuasive"
+      },
+      "notes": "The two predicates match and no existence premise is inserted."
+    },
+    "q25": {
+      "approved": true,
+      "symbol_map": {
+        "Statement": "Statement",
+        "Deceptive": "Deceptive",
+        "Sincere": "Sincere"
+      },
+      "notes": "Deception and sincerity are used only with explicit Statement guards. Within those guards the glossary's 'deceptive statement' and 'sincere statement' wording has the reference meaning."
+    },
+    "q26": {
+      "approved": true,
+      "symbol_map": {
+        "Interpretation": "Interpretation",
+        "Coherent": "Coherent"
+      },
+      "notes": "Interpretation and coherence predicates match; the negated universal preserves its scope."
+    },
+    "q27": {
+      "approved": true,
+      "symbol_map": {
+        "Agent": "Agent",
+        "Defers": "Defers"
+      },
+      "notes": "Defers(x,y) has the correct direction and agent restrictions are explicit. No nonempty Agent class is assumed."
+    },
+    "q28": {
+      "approved": true,
+      "symbol_map": {
+        "Ivo": "ivo",
+        "author": "author",
+        "Candid": "Candid"
+      },
+      "notes": "The constants denote Ivo and the author. Identity uses built-in equality and candidness is unary."
+    },
+    "q29": {
+      "approved": true,
+      "symbol_map": {
+        "Speaker": "speaker",
+        "Visitor": "visitor"
+      },
+      "notes": "The constants retain their references and the source identity is reversed in the conclusion using equality."
+    },
+    "q30": {
+      "approved": true,
+      "symbol_map": {
+        "Commitment": "Commitment",
+        "Reason": "Reason",
+        "Sensation": "Sensation"
+      },
+      "notes": "The three classes and the two negative universal claims retain their scope."
+    },
+    "q31": {
+      "approved": true,
+      "symbol_map": {
+        "Scholar": "Scholar",
+        "Challenges": "Challenges"
+      },
+      "notes": "Challenges(x,y) means x challenges y. Existential and universal order, plus scholar guards, match."
+    },
+    "q32": {
+      "approved": true,
+      "symbol_map": {
+        "Person": "Person",
+        "Fallible": "Fallible"
+      },
+      "notes": "Infallibility is represented by the stated definition, not by an unrelated predicate. The vacuous restricted conclusion is preserved."
+    },
+    "q33": {
+      "approved": true,
+      "notes": "The model preserves necessity and abstains from its formalization."
+    },
+    "q34": {
+      "approved": false,
+      "category": "meaning_error",
+      "notes": "The counterfactual 'had remained ... would have continued' became material implication. This is operator loss despite an expected-looking modus-tollens proof pattern."
+    },
+    "q35": {
+      "approved": true,
+      "notes": "The knowledge assertion and factual conclusion remain distinct and the model abstains for epistemic semantics."
+    },
+    "q36": {
+      "approved": true,
+      "notes": "Typicality is retained and triggers abstention; it is not strengthened to universality."
+    },
+    "q37": {
+      "approved": true,
+      "notes": "The probable premise is not replaced by the unqualified conclusion."
+    },
+    "q38": {
+      "approved": true,
+      "notes": "The actual different-theories versus one-shared-theory scope ambiguity is explicitly recorded with both alternatives."
+    },
+    "q39": {
+      "approved": true,
+      "notes": "The outcome explicitly identifies questions without asserted premises or conclusion."
+    },
+    "q40": {
+      "approved": true,
+      "notes": "The outcome explicitly identifies descriptive details without an inference."
+    }
+  }
+}

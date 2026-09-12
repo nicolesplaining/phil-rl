@@ -1,0 +1,162 @@
+{
+  "source": "Either the principle is revisable or the example is misleading, or both. The principle is not revisable. Thus the example is misleading.",
+  "source_sha256": "203d793deecad40a5a62879c5d54ec2cd1f7107bcb59e68f47c2a834dfb753dd",
+  "started_at": "2026-09-12T23:03:47.667614+00:00",
+  "prompt_version": "0.5",
+  "policy_version": "0.1",
+  "schema_sha256": {
+    "reconstruction": "ca7c4c1161462826af43517b2ac9714444dd463f0227c377a2b13088aee7a6a6",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The text presents a disjunctive syllogism: (1) 'Either A or B or both' (2) 'Not A' (3) 'Therefore B'. This matches the logical structure of an argument with a disjunction as a premise, a negation of one disjunct, and a conclusion affirming the remaining disjunct.\", \"title\": \"Disjunctive Syllogism on Principle and Example\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"Either the principle is revisable or the example is misleading, or both.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"The principle is not revisable.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Thus the example is misleading.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided a JSON with three source units. The task is to determine if there's an argument here and reconstruct it according to the specified schema.\n\nFirst, I need to check if the passage asserts an argument. The first sentence is a disjunction: \"Either the principle is revisable or the example is misleading, or both.\" The second states that the principle is not revisable. The third concludes that the example is misleading. \n\nThis looks like a logical structure. The first premise is an \"either/or\" statement. The second premise negates one part of the disjunction. The conclusion then affirms the other part. That's a classic disjunctive syllogism. So, there's an argument here.\n\nNow, I need to break it down into claims. The first source unit (s1) is the disjunction. The second (s2) is the negation of the first part. The third (s3) is the conclusion. \n\nEach of these should be a claim. The first is a premise, the second is another premise, and the third is the conclusion. The relation between them would be that the two premises support the conclusion via disjunctive syllogism. \n\nI need to assign IDs to each claim. Let's say c1 for the disjunction, c2 for the negation, and c3 for the conclusion. The relations would be that c1 and c2 together support c3. \n\nCheck for ambiguities. The disjunction in s1 is clear. The negation in s2 is straightforward. The conclusion in s3 follows logically. I don't see any ambiguities here. \n\nSo the status is \"argument\", the reason is that it's a disjunctive syllogism. The claims are the three statements, each with their evidence IDs. The relations link the premises to the conclusion. The conclusion ID is c3.\n",
+      "usage": {
+        "prompt_tokens": 1527,
+        "total_tokens": 2264,
+        "completion_tokens": 737,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All propositions.\", \"symbols\": [{\"name\": \"P\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The principle is revisable\"}, {\"name\": \"Q\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The example is misleading\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(or P Q)\", \"reason\": \"The disjunction 'either...or...or both' is represented as logical OR in propositional logic\"}, {\"claim_id\": \"c2\", \"formula\": \"(not P)\", \"reason\": \"Direct negation of the proposition about revisability\"}, {\"claim_id\": \"c3\", \"formula\": \"Q\", \"reason\": \"The conclusion asserts the second disjunct directly\"}], \"interpretation_notes\": []}",
+      "reasoning": "\nOkay, let's tackle this. The user provided a philosophical argument and wants it translated into a formal logic structure. The argument is a disjunctive syllogism. The first premise is \"Either the principle is revisable or the example is misleading, or both.\" The second premise is \"The principle is not revisable.\" The conclusion is \"Thus the example is misleading.\"\n\nFirst, I need to determine the logic type. Since the argument uses logical connectives (either/or) and the structure is propositional, classical propositional logic is appropriate here. There's no need for first-order logic because there are no quantifiers or predicates over individuals mentioned.\n\nNext, the domain description. Since it's propositional logic, the domain isn't about individuals but statements. So the domain description is straightforward: \"All propositions.\"\n\nNow, symbols. The propositions here are \"The principle is revisable\" and \"The example is misleading.\" Let's assign them symbols. Let's use P for \"The principle is revisable\" and Q for \"The example is misleading.\" These are both propositions with arity 0.\n\nFor the translations:\n- Claim c1: \"Either P or Q or both.\" In propositional logic, this is (or P Q). Since \"or both\" is redundant in classical logic (because or is inclusive), we can just use (or P Q).\n- Claim c2: \"The principle is not revisable.\" That's (not P).\n- Claim c3: \"Thus the example is misleading.\" That's Q.\n\nThe relations are straightforward: premises c1 and c2 support conclusion c3 via disjunctive syllogism. The formula for c3 would be Q, derived from (or P Q) and (not P).\n\nNo interpretation notes are needed here because the translation is straightforward. The logic is classical propositional, and all symbols are properly declared. There's no ambiguity in the original argument, so the translations are direct.\n",
+      "usage": {
+        "prompt_tokens": 1949,
+        "total_tokens": 2542,
+        "completion_tokens": 593,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Disjunctive Syllogism on Principle and Example",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Either the principle is revisable or the example is misleading, or both.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Either the principle is revisable or the example is misleading, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The principle is not revisable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The principle is not revisable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Thus the example is misleading.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus the example is misleading.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2194aec50abf22911545ddea36b03b11061005d703c66741dd256477ef2a0c7c",
+  "finished_at": "2026-09-12T23:04:24.213706+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      72
+    ],
+    "c2": [
+      73,
+      104
+    ],
+    "c3": [
+      105,
+      136
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "16ba127ce0ac74c94ac7e86f5133c9544eb2460c93b4a225d69d04b9d2b7b77c",
+    "reconstruction_sha256": "2194aec50abf22911545ddea36b03b11061005d703c66741dd256477ef2a0c7c",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "16ba127ce0ac74c94ac7e86f5133c9544eb2460c93b4a225d69d04b9d2b7b77c",
+    "reconstruction_sha256": "2194aec50abf22911545ddea36b03b11061005d703c66741dd256477ef2a0c7c",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

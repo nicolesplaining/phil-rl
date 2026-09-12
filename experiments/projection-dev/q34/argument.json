@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "If the witness had remained silent, the dispute would have continued. The dispute did not continue. Therefore the witness did not remain silent.",
+  "source_sha256": "d805a59aba9405997509bee217ea80b189872098c305ea4f076f47c92c90d05a",
+  "reconstruction": {
+    "title": "Argument about the witness and the dispute",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the witness had remained silent, the dispute would have continued.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the witness had remained silent, the dispute would have continued.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The dispute did not continue.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The dispute did not continue.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the witness did not remain silent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the witness did not remain silent.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Derived via modus tollens from c1 and c2."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8953143c3065296e0a696dbba02ef415c8f42da46ea825d4b2db480ffe018b3d",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "DisputeContinued",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The dispute continued"
+      },
+      {
+        "name": "WitnessSilent",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The witness remained silent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Counterfactual conditional requires modal semantics not available in classical logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Negation of dispute continuation is part of a counterfactual argument requiring modal logic"
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "Conclusion depends on counterfactual reasoning not expressible in classical logic"
+      }
+    ],
+    "interpretation_notes": [
+      "All claims involve counterfactual conditionals requiring modal semantics",
+      "The argument structure (counterfactual modus tollens) cannot be formalized in classical first-order or propositional logic",
+      "No formulas can be assigned due to fundamental reliance on unimplemented modal operators"
+    ]
+  },
+  "formalization_sha256": "6cb114b4f47033265173dc699825bd6f2ee21840b38148a456de382b7a4b4e77"
+}

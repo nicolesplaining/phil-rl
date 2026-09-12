@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "d449c966bc0cc6b2c7228fbcdd0a603157cdec45db898f372f810ebd20d42239",
+  "generated_sha256": "15a53e9427727b4adb3984b04333b81680cdb3afd76693a3cecea68b9e5769ea",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Informed": "I",
+    "Impartial": "P"
+  },
+  "glossary_rationale": "The symbols preserve the verdict's two properties and the negated conjunction.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The symbols preserve the verdict's two properties and the negated conjunction.",
+  "domain_restriction": null
+}

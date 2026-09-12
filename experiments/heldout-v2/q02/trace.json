@@ -1,0 +1,162 @@
+{
+  "source": "This bargain is legitimate only if it is voluntary. This bargain is not voluntary. Hence it is not legitimate.",
+  "source_sha256": "beefb8c7262432ec0f67f77dd4b0202abf43b6457744ed47cfe5dc7da88572ab",
+  "started_at": "2026-09-12T23:03:07.512565+00:00",
+  "prompt_version": "0.5",
+  "policy_version": "0.1",
+  "schema_sha256": {
+    "reconstruction": "ca7c4c1161462826af43517b2ac9714444dd463f0227c377a2b13088aee7a6a6",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a deductive argument using modus tollens: if legitimacy requires voluntariness (s1), and voluntariness is denied (s2), then legitimacy must also be denied (s3).\", \"title\": \"Legitimacy of a Bargain\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"This bargain is legitimate only if it is voluntary.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"Conditional statement establishing a necessary condition for legitimacy.\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"This bargain is not voluntary.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"Denial of the necessary condition established in c1.\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Hence it is not legitimate.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"Conclusion derived via modus tollens from c1 and c2.\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says, \"This bargain is legitimate only if it is voluntary.\" The second states, \"This bargain is not voluntary.\" The third is a conclusion: \"Hence it is not legitimate.\"\n\nI need to determine if this is an argument. The first step is to check if there's a conclusion being drawn from premises. The third sentence starts with \"Hence,\" which is a conclusion indicator. So the conclusion here is that the bargain is not legitimate. \n\nLooking at the premises, the first unit is a conditional statement: legitimacy depends on voluntariness. The second unit negates the condition (not voluntary). Using modus tollens, if the condition is false, then the conclusion (legitimacy) must also be false. \n\nSo the premises are s1 and s2, leading to the conclusion in s3. The argument structure is valid. There are no objections or replies mentioned. The roles are premise for s1 and s2, and conclusion for s3. The relations would be that s1 and s2 support s3. \n\nI need to make sure there are no ambiguities. The conditional in s1 is clear. The negation in s2 is straightforward. The conclusion follows logically. No alternative interpretations seem necessary here. \n\nSo the status is \"argument,\" with the conclusion being s3. The claims are each of the source units, and the relations link the premises to the conclusion. No ambiguities to note.\n",
+      "usage": {
+        "prompt_tokens": 1520,
+        "total_tokens": 2163,
+        "completion_tokens": 643,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"L\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This bargain is legitimate\"}, {\"name\": \"V\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This bargain is voluntary\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(implies L V)\", \"reason\": \"'Only if' is translated as material implication (→) in classical logic\"}, {\"claim_id\": \"c2\", \"formula\": \"(not V)\", \"reason\": \"Direct negation of the voluntary proposition\"}, {\"claim_id\": \"c3\", \"formula\": \"(not L)\", \"reason\": \"Direct negation of the legitimacy proposition\"}], \"interpretation_notes\": [\"'Only if' was formalized as material implication (L → V) per standard logical convention\", \"The argument uses propositional logic with two atomic propositions about the bargain's properties\"]}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate a philosophical argument into a formal logic structure using the specified JSON schema. The argument given is about the legitimacy of a bargain based on its voluntariness.\n\nFirst, I need to determine the logic type. The argument uses a conditional statement and modus tollens. Since it's a simple propositional argument without quantifiers or predicates, classical propositional logic is appropriate here.\n\nNext, the domain description. Since there are no individuals or predicates involved, just propositions, the domain description can be a generic statement. But according to the normalization contract, for propositional logic, maybe it's just \"All propositions.\" But the example might have \"All individuals,\" but since there are no individuals here, perhaps it's okay to leave it as \"All individuals.\" Wait, the instructions say that in first-order logic, domain_description must be \"All individuals,\" but for propositional, maybe it's not required. However, the schema requires domain_description regardless. Hmm. Since we're using classical_propositional, maybe the domain is not applicable, but the schema still needs a string. Maybe just \"All propositions\" or \"All claims.\" But the example in the user's mind might expect \"All individuals.\" Let me check the instructions again. The normalization contract says for first-order, domain_description must be exactly \"All individuals.\" For propositional, maybe it's acceptable to have a placeholder. I'll go with \"All individuals.\" since the schema requires it, even though it's propositional. Maybe it's a formality.\n\nNow, symbols. The argument has two propositions: \"This bargain is legitimate\" and \"This bargain is voluntary.\" Let's assign them proposition symbols. Let's use L for Legitimate and V for Voluntary. But according to the instructions, propositions should be named with symbols. So maybe L and V as proposition symbols. Each has arity 0. Their meanings are \"This bargain is legitimate\" and \"This bargain is voluntary.\"\n\nThe claims are:\nc1: L only if V. In logic, \"only if\" translates to L → V. Because \"A only if B\" is A → B.\nc2: ¬V (This bargain is not voluntary)\nc3: ¬L (Hence, not legitimate)\n\nSo the formulas would be:\nc1: (implies L V)\nc2: (not V)\nc3: (not L)\n\nThe translations array will map each claim to its formula and a reason. For c1, the reason is translating the \"only if\" as implication. For c2 and c3, straightforward negations.\n\nInterpretation notes: Since the argument uses modus tollens, but the user said not to comment on validity. The note should mention how \"only if\" was translated. Also, since it's propositional logic, no need for predicates or individuals.\n\nCheck if any symbols are needed. The propositions L and V are declared. No constants or predicates here.\n\nMake sure all formulas are in the correct syntax. For example, (implies L V) is correct. Also, ensure that the JSON structure follows the schema, with symbols array, translations array, etc.\n\nNo ambiguities in the original argument, so the interpretation_notes can mention the translation of \"only if\" and that the logic is propositional.\n",
+      "usage": {
+        "prompt_tokens": 1962,
+        "total_tokens": 2863,
+        "completion_tokens": 901,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Legitimacy of a Bargain",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This bargain is legitimate only if it is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This bargain is legitimate only if it is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a necessary condition for legitimacy."
+      },
+      {
+        "id": "c2",
+        "text": "This bargain is not voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This bargain is not voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Denial of the necessary condition established in c1."
+      },
+      {
+        "id": "c3",
+        "text": "Hence it is not legitimate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence it is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived via modus tollens from c1 and c2."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8876778469b5bc95e25de02e59434ed62cfa87708451f9f6d8f83d84c8053e75",
+  "finished_at": "2026-09-12T23:03:49.750880+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      51
+    ],
+    "c2": [
+      52,
+      82
+    ],
+    "c3": [
+      83,
+      110
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "3771d184ea0cb3618c2c013c496a2c9919443ae26f865877b26709c62f1d67a5",
+    "reconstruction_sha256": "8876778469b5bc95e25de02e59434ed62cfa87708451f9f6d8f83d84c8053e75",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "3771d184ea0cb3618c2c013c496a2c9919443ae26f865877b26709c62f1d67a5",
+    "reconstruction_sha256": "8876778469b5bc95e25de02e59434ed62cfa87708451f9f6d8f83d84c8053e75",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "50f9046dbe32622892f3918af862f46a3f38206b31c6fffa70e8d1b1d6a788ec",
+  "generated_sha256": "9776e6bd4c7c581a9fefab05a980a94ef6992c2c1ffcd4686ba43511bd33e977",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "FlawlessArgument": "FlawlessArgument",
+    "Persuasive": "Persuasive"
+  },
+  "glossary_rationale": "The two predicates match and no existence premise is inserted.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The two predicates match and no existence premise is inserted.",
+  "domain_restriction": null
+}

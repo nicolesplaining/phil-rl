@@ -1,0 +1,34 @@
+{
+  "explicit": {
+    "formalization_sha256": "2db69a0b07f9dce6ffa12dc7bebd7b807be43bd20603ee4cd802fefc3b59691c",
+    "reconstruction_sha256": "3bf2b842c5a5825ab745c8ae53a56f41d38a4a9f4d3741683aa3c6fda8a5ee7f",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[PerfectJudge = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "2db69a0b07f9dce6ffa12dc7bebd7b807be43bd20603ee4cd802fefc3b59691c",
+    "reconstruction_sha256": "3bf2b842c5a5825ab745c8ae53a56f41d38a4a9f4d3741683aa3c6fda8a5ee7f",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[PerfectJudge = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  }
+}

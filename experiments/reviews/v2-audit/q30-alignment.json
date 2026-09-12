@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "b41ae841122c3125a58723073cecbbdd0bae6ec1150f4a5382f089ef60727050",
+  "generated_sha256": "52960449ba6905686954e53f0c2136a02c1923d61a0e70ed8f842b0401f7f85b",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Commitment": "Commitment",
+    "Reason": "Reason",
+    "Sensation": "Sensation"
+  },
+  "glossary_rationale": "The three classes and the two negative universal claims retain their scope.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The three classes and the two negative universal claims retain their scope.",
+  "domain_restriction": null
+}

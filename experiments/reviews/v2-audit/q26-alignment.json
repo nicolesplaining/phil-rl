@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "8840fe497b0132590cedbe3e8a9bfa380a5059d523ce512c63e5fd3c5f0e516f",
+  "generated_sha256": "0954a79a59a9e10ecfff4a565cdbffc9fa3603378737d547fb12da1bc14e7334",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Interpretation": "Interpretation",
+    "Coherent": "Coherent"
+  },
+  "glossary_rationale": "Interpretation and coherence predicates match; the negated universal preserves its scope.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Interpretation and coherence predicates match; the negated universal preserves its scope.",
+  "domain_restriction": null
+}

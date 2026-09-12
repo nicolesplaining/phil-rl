@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "0abaa5d49957d222db62e0881cbe038dcce79be64c2e9680eabe215b91c47a8c",
+  "generated_sha256": "25db69deed8cc9482e648b696928c519c5542d540a6ee35b8af1a275c0b9f50f",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "G": "H",
+    "W": "W"
+  },
+  "glossary_rationale": "G is gratuitous harm and W wrongness of this intervention. Sufficiency is not reversed.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "G is gratuitous harm and W wrongness of this intervention. Sufficiency is not reversed.",
+  "domain_restriction": null
+}

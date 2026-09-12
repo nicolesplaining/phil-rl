@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "Either the desire is authentic or it is prudent, or both. The desire is authentic. Hence the desire is not prudent.",
+  "source_sha256": "848b5051d1e3e6d25535bca1dae68408c8c85dd537bb11c66b8bec37ed7c6530",
+  "reconstruction": {
+    "title": "Authenticity and Prudence Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Either the desire is authentic or it is prudent, or both.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Either the desire is authentic or it is prudent, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The desire is authentic.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The desire is authentic.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Hence the desire is not prudent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence the desire is not prudent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "5d1445f37c56a0341f6e4cd640de5f96ea5422834b4c5722269a40ba973749ea",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The desire is authentic"
+      },
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The desire is prudent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(or A P)",
+        "reason": "The disjunction 'either authentic or prudent or both' is represented as a logical OR between propositions A and P."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "A",
+        "reason": "The premise 'the desire is authentic' is directly represented as proposition A."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not P)",
+        "reason": "The conclusion 'the desire is not prudent' is represented as the negation of proposition P."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument uses an inclusive disjunction (A ∨ P), so affirming A does not logically entail ¬P in classical logic. However, the translation remains faithful to the original structure without altering logical validity."
+    ]
+  },
+  "formalization_sha256": "1919f3d4321a5599df16da8bfae94dd3a8a2fd40c2c6696a222b87ddbef11af0"
+}

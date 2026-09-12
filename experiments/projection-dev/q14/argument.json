@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "This policy is equitable. This policy is not equitable. Therefore this policy is popular.",
+  "source_sha256": "69d8dec2add17415b47f52c49bd1f0505b2a4a6b7246f176f4e5612a59832de5",
+  "reconstruction": {
+    "title": "Contradictory premises leading to a conclusion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This policy is equitable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This policy is equitable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This policy is not equitable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This policy is not equitable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This policy is popular.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this policy is popular.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "3d15108ed8c90dbb4d0dde1f1d49576cafa78f26164820024f4a72c357e74407",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "Ground statements with original predicate meanings retained.",
+    "symbols": [
+      {
+        "name": "GroundAtom1",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "(Equitable Policy). Predicate meaning: x is equitable. Arguments: Policy: the specific policy in question"
+      },
+      {
+        "name": "GroundAtom2",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "(Popular Policy). Predicate meaning: x is popular. Arguments: Policy: the specific policy in question"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "GroundAtom1",
+        "reason": "Direct translation of 'This policy is equitable' using predicate applied to constant"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not GroundAtom1)",
+        "reason": "Direct translation of 'This policy is not equitable' using negation"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "GroundAtom2",
+        "reason": "Direct translation of 'This policy is popular' using predicate applied to constant"
+      }
+    ],
+    "interpretation_notes": [
+      "Premises c1 and c2 are explicit logical contradictions (P and not P) as presented in the source text. The conclusion c3 is formally represented as a separate atomic claim with no logical connection enforced in the formalization itself. The argument structure follows the frozen reconstruction's explicit relations, with no additional assumptions about how premises support the conclusion."
+    ]
+  },
+  "formalization_sha256": "d5634fdf0eb6337202dfff21cb9d0b043dc07b20316d531d06b01bd32fa4578e"
+}

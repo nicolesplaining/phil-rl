@@ -1,0 +1,980 @@
+{
+  "version": "heldout-v2",
+  "annotation_provenance": "Agent-authored engineering references frozen before inference. New wording and some new structures, not independently sampled philosophy or human expert annotation. V1 is now development data.",
+  "cases": [
+    {
+      "id": "q01",
+      "source": "If this apology is sincere, it acknowledges the injury. This apology is sincere. Therefore it acknowledges the injury.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "S": "This apology is sincere.",
+        "A": "This apology acknowledges the injury."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies S A)"
+        ],
+        [
+          "s2",
+          "premise",
+          "S"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "A"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q02",
+      "source": "This bargain is legitimate only if it is voluntary. This bargain is not voluntary. Hence it is not legitimate.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "L": "This bargain is legitimate.",
+        "V": "This bargain is voluntary."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies L V)"
+        ],
+        [
+          "s2",
+          "premise",
+          "(not V)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not L)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q03",
+      "source": "If this explanation is causal, it is informative. This explanation is informative. Therefore this explanation is causal.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "C": "This explanation is causal.",
+        "I": "This explanation is informative."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies C I)"
+        ],
+        [
+          "s2",
+          "premise",
+          "I"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "C"
+        ]
+      ],
+      "status": "invalid"
+    },
+    {
+      "id": "q04",
+      "source": "If the agreement is explicit, it is binding. The agreement is not explicit. Therefore the agreement is not binding.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "E": "The agreement is explicit.",
+        "B": "The agreement is binding."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies E B)"
+        ],
+        [
+          "s2",
+          "premise",
+          "(not E)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not B)"
+        ]
+      ],
+      "status": "invalid"
+    },
+    {
+      "id": "q05",
+      "source": "Either the principle is revisable or the example is misleading, or both. The principle is not revisable. Thus the example is misleading.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "R": "The principle is revisable.",
+        "M": "The example is misleading."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(or R M)"
+        ],
+        [
+          "s2",
+          "premise",
+          "(not R)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "M"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q06",
+      "source": "Either the desire is authentic or it is prudent, or both. The desire is authentic. Hence the desire is not prudent.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "A": "The desire is authentic.",
+        "P": "The desire is prudent."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(or A P)"
+        ],
+        [
+          "s2",
+          "premise",
+          "A"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not P)"
+        ]
+      ],
+      "status": "invalid"
+    },
+    {
+      "id": "q07",
+      "source": "The assessment is impartial. The assessment is transparent. Therefore the assessment is impartial and transparent.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "I": "The assessment is impartial.",
+        "T": "The assessment is transparent."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "I"
+        ],
+        [
+          "s2",
+          "premise",
+          "T"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(and I T)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q08",
+      "source": "The memory is neither vivid nor accurate. Therefore the memory is not accurate.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "V": "The memory is vivid.",
+        "A": "The memory is accurate."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(and (not V) (not A))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(not A)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q09",
+      "source": "It is not the case that the verdict is both informed and impartial. The verdict is informed. Therefore the verdict is not impartial.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "I": "The verdict is informed.",
+        "P": "The verdict is impartial."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(not (and I P))"
+        ],
+        [
+          "s2",
+          "premise",
+          "I"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not P)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q10",
+      "source": "It is not the case that, if this evidence is decisive, this doubt is justified. Therefore this evidence is decisive and this doubt is not justified.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "D": "This evidence is decisive.",
+        "J": "This doubt is justified."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(not (implies D J))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(and D (not J))"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q11",
+      "source": "This utterance is a promise if and only if it creates a commitment. This utterance does not create a commitment. Consequently it is not a promise.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "P": "This utterance is a promise.",
+        "C": "This utterance creates a commitment."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(iff P C)"
+        ],
+        [
+          "s2",
+          "premise",
+          "(not C)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not P)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q12",
+      "source": "Being transparent is necessary for this institution to be accountable. This institution is transparent. Therefore this institution is accountable.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "T": "This institution is transparent.",
+        "A": "This institution is accountable."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies A T)"
+        ],
+        [
+          "s2",
+          "premise",
+          "T"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "A"
+        ]
+      ],
+      "status": "invalid"
+    },
+    {
+      "id": "q13",
+      "source": "Being gratuitously harmful is sufficient for this intervention to be wrong. This intervention is gratuitously harmful. Therefore this intervention is wrong.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "H": "This intervention is gratuitously harmful.",
+        "W": "This intervention is wrong."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies H W)"
+        ],
+        [
+          "s2",
+          "premise",
+          "H"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "W"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q14",
+      "source": "This policy is equitable. This policy is not equitable. Therefore this policy is popular.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "E": "This policy is equitable.",
+        "P": "This policy is popular."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "E"
+        ],
+        [
+          "s2",
+          "premise",
+          "(not E)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "P"
+        ]
+      ],
+      "status": "inconsistent_premises"
+    },
+    {
+      "id": "q15",
+      "source": "The distinction is meaningful. It follows that the distinction is meaningful.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "M": "The distinction is meaningful."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "M"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "M"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q16",
+      "source": "This distribution is equal. Therefore this distribution is just.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "E": "This distribution is equal.",
+        "J": "This distribution is just."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "E"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "J"
+        ]
+      ],
+      "status": "invalid",
+      "note": "No equality-to-justice bridge is explicitly asserted."
+    },
+    {
+      "id": "q17",
+      "source": "If this recollection is fabricated, it is not knowledge. This recollection is fabricated. Therefore this recollection is not knowledge.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "F": "This recollection is fabricated.",
+        "K": "This recollection is knowledge."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies F (not K))"
+        ],
+        [
+          "s2",
+          "premise",
+          "F"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not K)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q18",
+      "source": "Exactly one of these descriptions is true: this allocation is equal, or this allocation is proportional. This allocation is proportional. Therefore this allocation is not equal.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "E": "This allocation is equal.",
+        "P": "This allocation is proportional."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(and (or E P) (not (and E P)))"
+        ],
+        [
+          "s2",
+          "premise",
+          "P"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(not E)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q19",
+      "source": "This inquiry is open. Therefore either this inquiry is open or this conclusion is final, or both.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "O": "This inquiry is open.",
+        "F": "This conclusion is final."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "O"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(or O F)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q20",
+      "source": "If this rule is fair, this exception is justified. If this rule is not fair, this exception is justified. Therefore this exception is justified.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "F": "This rule is fair.",
+        "J": "This exception is justified."
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(implies F J)"
+        ],
+        [
+          "s2",
+          "premise",
+          "(implies (not F) J)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "J"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q21",
+      "source": "The committee is discussing a particular waiver. If the waiver was obtained by deception, it is not informed. The waiver was obtained by deception. So the waiver is not informed. If the waiver is not informed, it is not legitimate. Therefore the waiver is not legitimate.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "C": "The committee is discussing a particular waiver.",
+        "D": "The waiver was obtained by deception.",
+        "I": "The waiver is informed.",
+        "L": "The waiver is legitimate."
+      },
+      "claims": [
+        [
+          "s1",
+          "context",
+          "C"
+        ],
+        [
+          "s2",
+          "premise",
+          "(implies D (not I))"
+        ],
+        [
+          "s3",
+          "premise",
+          "D"
+        ],
+        [
+          "s4",
+          "subconclusion",
+          "(not I)"
+        ],
+        [
+          "s5",
+          "premise",
+          "(implies (not I) (not L))"
+        ],
+        [
+          "s6",
+          "conclusion",
+          "(not L)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q22",
+      "source": "Our dispute concerns the credibility of this recollection. A critic says the recollection is trustworthy. My response begins with a conditional: if the recollection is fabricated, it is not trustworthy. The recollection is fabricated. These premises establish that the recollection is not trustworthy.",
+      "logic": "classical_propositional",
+      "symbols": {
+        "D": "Our dispute concerns the credibility of this recollection.",
+        "T": "The recollection is trustworthy.",
+        "F": "The recollection is fabricated."
+      },
+      "claims": [
+        [
+          "s1",
+          "context",
+          "D"
+        ],
+        [
+          "s2",
+          "objection",
+          "T"
+        ],
+        [
+          "s3",
+          "premise",
+          "(implies F (not T))"
+        ],
+        [
+          "s4",
+          "premise",
+          "F"
+        ],
+        [
+          "s5",
+          "conclusion",
+          "(not T)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q23",
+      "source": "Every person who deliberates is reflective. Neri is a person who deliberates. Therefore Neri is reflective.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Person": [
+          1,
+          "x is a person"
+        ],
+        "Deliberates": [
+          1,
+          "x deliberates"
+        ],
+        "Reflective": [
+          1,
+          "x is reflective"
+        ],
+        "neri": [
+          0,
+          "Neri"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(forall x (implies (and (Person x) (Deliberates x)) (Reflective x)))"
+        ],
+        [
+          "s2",
+          "premise",
+          "(and (Person neri) (Deliberates neri))"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(Reflective neri)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q24",
+      "source": "Every flawless argument is persuasive. Therefore some flawless argument is persuasive.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "FlawlessArgument": [
+          1,
+          "x is a flawless argument"
+        ],
+        "Persuasive": [
+          1,
+          "x is persuasive"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(forall x (implies (FlawlessArgument x) (Persuasive x)))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(exists x (and (FlawlessArgument x) (Persuasive x)))"
+        ]
+      ],
+      "status": "invalid"
+    },
+    {
+      "id": "q25",
+      "source": "No deceptive statement is sincere. At least one statement is deceptive. Therefore at least one statement is not sincere.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Statement": [
+          1,
+          "x is a statement"
+        ],
+        "Deceptive": [
+          1,
+          "x is deceptive"
+        ],
+        "Sincere": [
+          1,
+          "x is sincere"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(forall x (implies (and (Statement x) (Deceptive x)) (not (Sincere x))))"
+        ],
+        [
+          "s2",
+          "premise",
+          "(exists x (and (Statement x) (Deceptive x)))"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(exists x (and (Statement x) (not (Sincere x))))"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q26",
+      "source": "Not every interpretation is coherent. Hence some interpretation is not coherent.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Interpretation": [
+          1,
+          "x is an interpretation"
+        ],
+        "Coherent": [
+          1,
+          "x is coherent"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(not (forall x (implies (Interpretation x) (Coherent x))))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(exists x (and (Interpretation x) (not (Coherent x))))"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q27",
+      "source": "Every agent defers to some agent. Therefore there is an agent to whom every agent defers.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Agent": [
+          1,
+          "x is an agent"
+        ],
+        "Defers": [
+          2,
+          "x defers to y"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(forall x (implies (Agent x) (exists y (and (Agent y) (Defers x y)))))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(exists y (and (Agent y) (forall x (implies (Agent x) (Defers x y)))))"
+        ]
+      ],
+      "status": "invalid"
+    },
+    {
+      "id": "q28",
+      "source": "Ivo is identical to the author. The author is candid. Therefore Ivo is candid.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "ivo": [
+          0,
+          "Ivo"
+        ],
+        "author": [
+          0,
+          "the author"
+        ],
+        "Candid": [
+          1,
+          "x is candid"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(eq ivo author)"
+        ],
+        [
+          "s2",
+          "premise",
+          "(Candid author)"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(Candid ivo)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q29",
+      "source": "The speaker is identical to the visitor. Therefore the visitor is identical to the speaker.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "speaker": [
+          0,
+          "the speaker"
+        ],
+        "visitor": [
+          0,
+          "the visitor"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(eq speaker visitor)"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(eq visitor speaker)"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q30",
+      "source": "Every commitment is a reason. No reason is a sensation. Therefore no commitment is a sensation.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Commitment": [
+          1,
+          "x is a commitment"
+        ],
+        "Reason": [
+          1,
+          "x is a reason"
+        ],
+        "Sensation": [
+          1,
+          "x is a sensation"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(forall x (implies (Commitment x) (Reason x)))"
+        ],
+        [
+          "s2",
+          "premise",
+          "(forall x (implies (Reason x) (not (Sensation x))))"
+        ],
+        [
+          "s3",
+          "conclusion",
+          "(forall x (implies (Commitment x) (not (Sensation x))))"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q31",
+      "source": "Some scholar challenges every scholar. Therefore every scholar is challenged by some scholar.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Scholar": [
+          1,
+          "x is a scholar"
+        ],
+        "Challenges": [
+          2,
+          "x challenges y"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(exists x (and (Scholar x) (forall y (implies (Scholar y) (Challenges x y)))))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(forall y (implies (Scholar y) (exists x (and (Scholar x) (Challenges x y)))))"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q32",
+      "source": "Every person is fallible. Therefore every infallible person is fallible, where infallible means not fallible.",
+      "logic": "classical_first_order",
+      "symbols": {
+        "Person": [
+          1,
+          "x is a person"
+        ],
+        "Fallible": [
+          1,
+          "x is fallible"
+        ]
+      },
+      "claims": [
+        [
+          "s1",
+          "premise",
+          "(forall x (implies (Person x) (Fallible x)))"
+        ],
+        [
+          "s2",
+          "conclusion",
+          "(forall x (implies (and (Person x) (not (Fallible x))) (Fallible x)))"
+        ]
+      ],
+      "status": "valid"
+    },
+    {
+      "id": "q33",
+      "source": "Necessarily, this identity holds. Hence this identity holds.",
+      "logic": "unsupported",
+      "status": "unsupported",
+      "reason": "Modal necessity cannot be dropped from the premise."
+    },
+    {
+      "id": "q34",
+      "source": "If the witness had remained silent, the dispute would have continued. The dispute did not continue. Therefore the witness did not remain silent.",
+      "logic": "unsupported",
+      "status": "unsupported",
+      "reason": "Counterfactual dependence is not a material conditional."
+    },
+    {
+      "id": "q35",
+      "source": "Sel knows that the letter is genuine. Therefore the letter is genuine.",
+      "logic": "unsupported",
+      "status": "unsupported",
+      "reason": "Epistemic factivity requires semantics beyond this fragment."
+    },
+    {
+      "id": "q36",
+      "source": "Typically reflective agents reconsider their judgments. Tavi is a reflective agent. Therefore Tavi reconsiders their judgments.",
+      "logic": "unsupported",
+      "status": "unsupported",
+      "reason": "A defeasible typicality claim is not an exceptionless rule."
+    },
+    {
+      "id": "q37",
+      "source": "Probably this testimony is accurate. Therefore this testimony is accurate.",
+      "logic": "unsupported",
+      "status": "unsupported",
+      "reason": "Probability must not be erased from the premise."
+    },
+    {
+      "id": "q38",
+      "source": "Every critic considered a theory. Therefore there is a single theory that every critic considered.",
+      "logic": "unsupported",
+      "status": "review_required",
+      "reason": "The first sentence admits different versus shared witnesses; scope must be reviewed.",
+      "ambiguity_required": true
+    },
+    {
+      "id": "q39",
+      "source": "Is forgiveness compatible with resentment? What would count as an answer?",
+      "logic": "no_argument",
+      "status": "no_argument",
+      "reason": "Questions without an asserted argument."
+    },
+    {
+      "id": "q40",
+      "source": "The discussion took place on Tuesday. Six participants attended. The handout contained a bibliography.",
+      "logic": "no_argument",
+      "status": "no_argument",
+      "reason": "Descriptive statements without an inference."
+    }
+  ]
+}

@@ -13,14 +13,22 @@ else
   phil_server=(uvx --python 3.12 --from "vllm==${VLLM_VERSION:-0.19.1}" vllm)
 fi
 
+phil_revision_args=()
+if [[ -n "${PHIL_REVISION:-}" ]]; then
+  phil_revision_args=(--revision "$PHIL_REVISION")
+elif [[ "${PHIL_MODEL:-Qwen/Qwen3-32B}" == "Qwen/Qwen3-32B" ]]; then
+  phil_revision_args=(--revision 9216db5781bf21249d130ec9da846c4624c16137)
+fi
+
 exec "${phil_server[@]}" serve \
   "${PHIL_MODEL:-Qwen/Qwen3-32B}" \
+  "${phil_revision_args[@]}" \
   --host 127.0.0.1 \
   --port "${PHIL_PORT:-8011}" \
   --tensor-parallel-size 1 \
   --dtype bfloat16 \
   --max-model-len "${PHIL_CONTEXT:-16384}" \
-  --max-num-seqs 1 \
+  --max-num-seqs "${PHIL_MAX_SEQS:-1}" \
   --gpu-memory-utilization 0.90 \
   --reasoning-parser qwen3 \
   --generation-config vllm \

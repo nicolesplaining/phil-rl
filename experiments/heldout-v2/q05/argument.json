@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "Either the principle is revisable or the example is misleading, or both. The principle is not revisable. Thus the example is misleading.",
+  "source_sha256": "203d793deecad40a5a62879c5d54ec2cd1f7107bcb59e68f47c2a834dfb753dd",
+  "reconstruction": {
+    "title": "Disjunctive Syllogism on Principle and Example",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Either the principle is revisable or the example is misleading, or both.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Either the principle is revisable or the example is misleading, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The principle is not revisable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The principle is not revisable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Thus the example is misleading.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus the example is misleading.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2194aec50abf22911545ddea36b03b11061005d703c66741dd256477ef2a0c7c",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All propositions.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The principle is revisable"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The example is misleading"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(or P Q)",
+        "reason": "The disjunction 'either...or...or both' is represented as logical OR in propositional logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not P)",
+        "reason": "Direct negation of the proposition about revisability"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Q",
+        "reason": "The conclusion asserts the second disjunct directly"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "16ba127ce0ac74c94ac7e86f5133c9544eb2460c93b4a225d69d04b9d2b7b77c"
+}

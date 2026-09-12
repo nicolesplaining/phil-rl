@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1",
+  "source": "This policy is equitable. This policy is not equitable. Therefore this policy is popular.",
+  "source_sha256": "69d8dec2add17415b47f52c49bd1f0505b2a4a6b7246f176f4e5612a59832de5",
+  "reconstruction": {
+    "title": "Contradictory premises leading to popularity conclusion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This policy is equitable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This policy is equitable.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Direct assertion of equity as a property of the policy."
+      },
+      {
+        "id": "c2",
+        "text": "This policy is not equitable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This policy is not equitable.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Direct negation of the equity claim."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this policy is popular.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this policy is popular.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion marked by 'therefore', derived from the preceding statements."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "Contradiction between c1 and c2",
+        "alternatives": [
+          "The author may have made a typographical error in one of the premises.",
+          "The author may be using a reductio ad absurdum argument form, though this is not explicitly indicated."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "41bac65c0fa6ae9f6d7512aed729773e6777d437e5e08846596b57273dd4ef6f",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Policy",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The specific policy under discussion"
+      },
+      {
+        "name": "Equitable",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is an equitable policy"
+      },
+      {
+        "name": "Popular",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a popular policy"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(Equitable Policy)",
+        "reason": "Direct atomic predicate application to the policy constant"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not (Equitable Policy))",
+        "reason": "Explicit negation of the same atomic predicate"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Popular Policy)",
+        "reason": "Direct atomic predicate application to the policy constant"
+      }
+    ],
+    "interpretation_notes": [
+      "The premises c1 and c2 contain contradictory claims about the policy's equity status, which is preserved in the formalization as (Equitable Policy) and (not (Equitable Policy))",
+      "The conclusion c3 asserts popularity independently of the contradictory premises, maintaining the original argument structure without introducing additional logical connections"
+    ]
+  },
+  "formalization_sha256": "e74a6a0a060d7ff17c4621d3ec612ad48aca95b6361a5f274d91ef00ff68c779"
+}

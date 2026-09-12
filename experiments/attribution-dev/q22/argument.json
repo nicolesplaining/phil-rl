@@ -1,0 +1,109 @@
+{
+  "schema_version": "0.1",
+  "source": "Our dispute concerns the credibility of this recollection. A critic says the recollection is trustworthy. My response begins with a conditional: if the recollection is fabricated, it is not trustworthy. The recollection is fabricated. These premises establish that the recollection is not trustworthy.",
+  "source_sha256": "6e710fdaefd7ac5bac5310d8e49f866495e5db1d44c72c7f8f3615c93786b373",
+  "reconstruction": {
+    "title": "Argument about Recollection's Trustworthiness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The recollection is trustworthy.",
+        "role": "objection",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "A critic says the recollection is trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Attributed to a critic in the source text."
+      },
+      {
+        "id": "c2",
+        "text": "If the recollection is fabricated, it is not trustworthy.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "My response begins with a conditional: if the recollection is fabricated, it is not trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional premise presented by the author."
+      },
+      {
+        "id": "c3",
+        "text": "The recollection is fabricated.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The recollection is fabricated.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Asserted as a factual premise by the author."
+      },
+      {
+        "id": "c4",
+        "text": "The recollection is not trustworthy.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "These premises establish that the recollection is not trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Main conclusion derived from premises c2 and c3."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c2",
+          "c3"
+        ],
+        "conclusion": "c4",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c4",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "a6a88238d6eed1c3f4d41b3a9deca2fb947985e735d397470f01406cb776a9c5",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Trustworthy",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The recollection is trustworthy"
+      },
+      {
+        "name": "Fabricated",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The recollection is fabricated"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "Trustworthy",
+        "reason": "Direct atomic proposition about recollection's trustworthiness"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies Fabricated (not Trustworthy))",
+        "reason": "Conditional statement connecting fabrication to untrustworthiness"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Fabricated",
+        "reason": "Direct atomic proposition about recollection's fabrication status"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(not Trustworthy)",
+        "reason": "Logical consequence of premises c2 and c3 via modus ponens"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "cd2b0866233b9c4039434b1eb36dfd58dce71b50cd2c428270686a662a2f2b34"
+}

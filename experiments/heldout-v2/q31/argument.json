@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "source": "Some scholar challenges every scholar. Therefore every scholar is challenged by some scholar.",
+  "source_sha256": "eb4a30995902a9f8d291f0607ff3ece65d2081ea24f5e01ae66521cb1b3a7590",
+  "reconstruction": {
+    "title": "Existential to Universal Challenge Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Some scholar challenges every scholar.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Some scholar challenges every scholar.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Existential quantifier ('some scholar') followed by universal quantifier ('every scholar')"
+      },
+      {
+        "id": "c2",
+        "text": "Therefore every scholar is challenged by some scholar.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore every scholar is challenged by some scholar.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Universal quantifier ('every scholar') with existential quantifier ('some scholar') in passive voice"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2245f27b6fdcde1cd8328a1a53e0d277e37f4a78d913beec3f206edba6fdec9d",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Scholar",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a scholar"
+      },
+      {
+        "name": "Challenges",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x challenges y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(exists x (and (Scholar x) (forall y (implies (Scholar y) (Challenges x y)))))",
+        "reason": "Existential quantifier for the challenger, universal quantifier for all scholars being challenged"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall y (implies (Scholar y) (exists x (and (Scholar x) (Challenges x y)))))",
+        "reason": "Universal quantifier for each scholar being challenged, existential quantifier for the challenger"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise uses an existential quantifier followed by a universal quantifier (∃x∀y), while the conclusion reverses this order (∀y∃x). This quantifier order reversal is a known source of invalidity in first-order logic."
+    ]
+  },
+  "formalization_sha256": "75c1fb4e25a1debbeedc3876e35f7a67d590fbd0a0aff06b41112c07d4563e64"
+}

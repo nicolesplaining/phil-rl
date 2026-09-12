@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1",
+  "source": "This distribution is equal. Therefore this distribution is just.",
+  "source_sha256": "ab2020f567d1ea6605727d4174bf8314cb44fd45ed5935455a61f0e41aba1618",
+  "reconstruction": {
+    "title": "Argument from Equality to Justice",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This distribution is equal.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This distribution is equal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This distribution is just.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this distribution is just.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "904d4b44a570aeb551645dbe66b8c72b55626fb870af0838f9af653f2358e87f",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "EqualDistribution",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "A distribution that is equal"
+      },
+      {
+        "name": "JustDistribution",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "A distribution that is just"
+      },
+      {
+        "name": "distribution",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The specific distribution under discussion"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(EqualDistribution distribution)",
+        "reason": "Direct translation of 'This distribution is equal' using predicate and constant"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(JustDistribution distribution)",
+        "reason": "Direct translation of 'This distribution is just' using predicate and constant"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument assumes a direct implication from equality to justice without specifying the logical connection",
+      "No quantifiers are needed since the claims refer to a specific distribution constant",
+      "Predicates are used to represent the properties of distributions rather than propositions"
+    ]
+  },
+  "formalization_sha256": "2c1d8cce2556c69fef00c6b4a3a152e9c20f4a456f56f36e66c202ef892aef56"
+}

@@ -1,0 +1,36 @@
+{
+  "explicit": {
+    "formalization_sha256": "b601d8be6f20b4995a80e8e80fd40cde4580b24b4a241751c99eea5d2eafc36d",
+    "reconstruction_sha256": "839a0638d4c1b44b1a2c6cd5c34bd8774e3ebab20fbfafb9c3df1d7d9c31cd0e",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [
+      "Premise c1 repeats the conclusion's formula."
+    ],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "b601d8be6f20b4995a80e8e80fd40cde4580b24b4a241751c99eea5d2eafc36d",
+    "reconstruction_sha256": "839a0638d4c1b44b1a2c6cd5c34bd8774e3ebab20fbfafb9c3df1d7d9c31cd0e",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [
+      "Premise c1 repeats the conclusion's formula."
+    ],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

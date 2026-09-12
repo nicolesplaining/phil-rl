@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1",
+  "source": "If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible. An objector claims that every responsible action requires alternative possibilities. But consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated. The agent acted on their own reasons and the intervener never acted. The agent could not have done otherwise. Nevertheless, the agent is morally responsible. Therefore, moral responsibility does not always require alternative possibilities.\n",
+  "source_sha256": "e1f13ca64b89c72d5461c674885eb7255f081f67b0fd2bee6ae3eaa581597252",
+  "reconstruction": {
+    "title": "Moral Responsibility and Alternative Possibilities",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a general principle."
+      },
+      {
+        "id": "c2",
+        "text": "An objector claims that every responsible action requires alternative possibilities.",
+        "role": "objection",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "An objector claims that every responsible action requires alternative possibilities.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Attributed to an objector, not the author's position."
+      },
+      {
+        "id": "c3",
+        "text": "Consider a case where a hidden intervener would have forced the agent to act if the agent had hesitated.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "But consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Setup for the counterexample scenario."
+      },
+      {
+        "id": "c4",
+        "text": "The agent acted on their own reasons and the intervener never acted.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent acted on their own reasons and the intervener never acted.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Describes the actual scenario that occurred."
+      },
+      {
+        "id": "c5",
+        "text": "The agent could not have done otherwise.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent could not have done otherwise.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Key claim about the agent's lack of alternative possibilities."
+      },
+      {
+        "id": "c6",
+        "text": "Nevertheless, the agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Nevertheless, the agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Contradicts the objector's position by asserting responsibility despite lack of alternatives."
+      },
+      {
+        "id": "c7",
+        "text": "Therefore, moral responsibility does not always require alternative possibilities.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, moral responsibility does not always require alternative possibilities.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Main conclusion derived from the counterexample."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c5",
+          "c6"
+        ],
+        "conclusion": "c7",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c5",
+          "c6"
+        ],
+        "conclusion": "c7",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c2"
+        ],
+        "conclusion": "c7",
+        "kind": "attacks"
+      }
+    ],
+    "conclusion_id": "c7",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "34056418a0a812891ef84a7325efe804e2bb1382d13d7e378004741c4ade9d94",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "MRRequiresAP",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "Moral responsibility requires alternative possibilities (general principle)"
+      },
+      {
+        "name": "MoralResponsibility",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is morally responsible"
+      },
+      {
+        "name": "AlternativePossibilities",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x has alternative possibilities"
+      },
+      {
+        "name": "AgentA",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The agent in the counterexample scenario"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies MRRequiresAP (forall x (implies (not (AlternativePossibilities x)) (not (MoralResponsibility x)))))",
+        "reason": "Translates the conditional principle: If MR requires AP, then any agent without AP is not responsible."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall x (implies (MoralResponsibility x) (AlternativePossibilities x)))",
+        "reason": "Formalizes the objector's universal claim that all responsible actions require AP."
+      },
+      {
+        "claim_id": "c5",
+        "formula": "(not (AlternativePossibilities AgentA))",
+        "reason": "States the counterexample agent lacks alternative possibilities."
+      },
+      {
+        "claim_id": "c6",
+        "formula": "(MoralResponsibility AgentA)",
+        "reason": "States the counterexample agent is morally responsible despite lacking AP."
+      },
+      {
+        "claim_id": "c7",
+        "formula": "(exists x (and (MoralResponsibility x) (not (AlternativePossibilities x))))",
+        "reason": "Concludes that there exists a case of moral responsibility without AP, contradicting the objector's universal claim."
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "Scenario setup with hypothetical intervener does not directly translate to a logical formula in this formalization."
+      },
+      {
+        "claim_id": "c4",
+        "formula": null,
+        "reason": "Descriptive context about the scenario's actual outcome does not directly translate to a logical formula in this formalization."
+      }
+    ],
+    "interpretation_notes": [
+      "The counterexample agent (AgentA) demonstrates an instance where moral responsibility exists without alternative possibilities, directly contradicting the objector's universal claim (c2).",
+      "The conclusion (c7) is logically derived from the specific case (c5 and c6) using existential generalization.",
+      "The conditional premise (c1) establishes a general principle that is used to support the conclusion through modus tollens reasoning when combined with the counterexample."
+    ]
+  },
+  "formalization_sha256": "168284534948d33906ec6cdfb9d4ad5b7b97977e828276d5f8df9d46adb4210a"
+}

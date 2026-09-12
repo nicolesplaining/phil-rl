@@ -1,0 +1,161 @@
+{
+  "schema_version": "0.1",
+  "source": "The committee is discussing a particular waiver. If the waiver was obtained by deception, it is not informed. The waiver was obtained by deception. So the waiver is not informed. If the waiver is not informed, it is not legitimate. Therefore the waiver is not legitimate.",
+  "source_sha256": "89ac6b7e8043406e0650cfadd2049ec293f0152d9aa84bb712ef3706ad10a7f8",
+  "reconstruction": {
+    "title": "Waiver Legitimacy Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The committee is discussing a particular waiver.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The committee is discussing a particular waiver.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "If the waiver was obtained by deception, it is not informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the waiver was obtained by deception, it is not informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "The waiver was obtained by deception.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The waiver was obtained by deception.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "The waiver is not informed.",
+        "role": "subconclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "So the waiver is not informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "If the waiver is not informed, it is not legitimate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the waiver is not informed, it is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c6",
+        "text": "The waiver is not legitimate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the waiver is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c2",
+          "c3"
+        ],
+        "conclusion": "c4",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c4",
+          "c5"
+        ],
+        "conclusion": "c6",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c6",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fa81bccbe945a6040055404ba8e11676de7d0c0563328f7bb7187614ff448e4b",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "CommitteeDiscussing",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The committee is discussing a particular waiver."
+      },
+      {
+        "name": "Deception",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The waiver was obtained by deception."
+      },
+      {
+        "name": "Informed",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The waiver is informed."
+      },
+      {
+        "name": "Legitimate",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The waiver is legitimate."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "CommitteeDiscussing",
+        "reason": "Direct atomic proposition about the committee's discussion"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies Deception (not Informed))",
+        "reason": "Translating conditional statement as material implication with explicit negation"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Deception",
+        "reason": "Direct atomic proposition about deception"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(not Informed)",
+        "reason": "Negation of the informed proposition"
+      },
+      {
+        "claim_id": "c5",
+        "formula": "(implies (not Informed) (not Legitimate))",
+        "reason": "Translating conditional statement as material implication with explicit negation"
+      },
+      {
+        "claim_id": "c6",
+        "formula": "(not Legitimate)",
+        "reason": "Negation of the legitimate proposition"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "0dabc5b85ae11c67fe654fb7b2034462431e922cb4329067a3adbb048319e8ee"
+}

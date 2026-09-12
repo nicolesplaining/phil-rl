@@ -1,0 +1,33 @@
+{
+  "archived_at": "2026-09-12T23:30:16.005518+00:00",
+  "run_code_commit": "uncommitted development after 5a003635e96765f4675da275d098f5a4f9d44a33",
+  "sha256": {
+    "q12/Statement.lean": "a7f266c1f6cd4df28a7cf564a8cddac5bf5d292c45deac24fd82cd0f46926502",
+    "q12/argument.json": "b86963faf8b6d292cbcac78d4449a95219e1e1d00305780ea0a0dc6fb295283e",
+    "q12/checks.json": "6f4ab3fbfa867c2e77119fc3103629f00cb8a464e28bdc18ab01761db3648529",
+    "q12/review.md": "fc6db27329e58a40f8797651469959a779426b82461a7412a16c2a650a1b8732",
+    "q12/trace.json": "1bc42d925eee1a0739908efa383a6aafb550cf39ae5bcf427fa84438924a3b42",
+    "q14/Statement.lean": "8ab4a016548c4f59345a825937a61d18fce6d60cdfaf23e0db178ad1a0d9e7e2",
+    "q14/argument.json": "33c43555de2f5a730620a5c1e3bd236ef9cce1839bb005787af4e5262f05ee30",
+    "q14/checks.json": "4df0ead72f8ee96ece60092df725b8f271bbdd5ff23a7bc34c2f86c1b0a23e3c",
+    "q14/review.md": "f3b9236092003bb2f137ef2a56f4ac400f48a1f3df36f8cbb9ddff1da5eeba7c",
+    "q14/trace.json": "6d9aef96b8e60ef315092e0780f0c94bc8592f6151b9212bc63175670e2e0c40",
+    "q16/Statement.lean": "cdda34ad4eca41b41cc8a7263213223697233d953b884cad7ace61795e1665f6",
+    "q16/argument.json": "df86bb35005b0d9be6f4d16656d593d8675c0052f8b011e909b7ae38693ee32a",
+    "q16/checks.json": "6d67a50d59b4d4655a3cd393bc8b8f253ff02b18e5c3f2c55240922ae10d00fd",
+    "q16/review.md": "8d351efa17fb5ea18f31da17ddf8992a3831bc7a443dcdb837fac7b3d983dbae",
+    "q16/trace.json": "50fc7db655dcb6ec1e1b11e4332671e38e786f4559d1a1e0b5a98065882e5476",
+    "q22/Statement.lean": "59b0b922314aeef1266d3766c4abc1ff784cc3d4bb109d62e20c2ba74948f59b",
+    "q22/argument.json": "cf4f6452088e55e6a17228532711ea9b4ef45a96e448bb80cb305ebe79000a70",
+    "q22/checks.json": "086e18fced938167e076f812be7c3e7e8bf171274a51e84b301d8360167a5c07",
+    "q22/review.md": "31663f5acceb40551ca7e8051784675181304193db385bd2f9cb3d6e3585b537",
+    "q22/trace.json": "b1cf76fefe93089bdb388f6a638ea2196c54029e0ad019891dc20e39c27e510c",
+    "q34/argument.json": "dad0077b104bec7a59cb090632027819d58708b637dfe69a3d2edf5135609fe6",
+    "q34/checks.json": "a2f4c570ec251d834e1776b1291315a877a39824e1405aa233f2661c6ad15930",
+    "q34/review.md": "21e1daf7336ba08c8d5b08fd8d0850d802eb4078d0e467abad43a89b904ca186",
+    "q34/trace.json": "8783ae54f6637f097adce504a5be858d2a7ed7f0e30128852526f87351c3f549",
+    "suite.json": "41e84fbb98dfff9009b4ced064645326e6a284e65e915d50212e1d70e65acb4d",
+    "summary.json": "e11182e688f87d21d14441d27cd7ef397ad23470176a860206a7e643dfd7cf9d"
+  },
+  "note": "Hashes identify saved files, not independent validation of their claims."
+}

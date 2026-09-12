@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "The speaker is identical to the visitor. Therefore the visitor is identical to the speaker.",
+  "source_sha256": "042bdb06e46a103aa174ad9f35826df2edb93352d4f293c7f487730bdd07c3b0",
+  "reconstruction": {
+    "title": "Identity Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The speaker is identical to the visitor.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The speaker is identical to the visitor.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The visitor is identical to the speaker.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the visitor is identical to the speaker.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "03ee95e86bc5926a30b5eb25cd89ceadc021ddfd642cb559e2ce8e29900becf3",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Speaker",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "the speaker"
+      },
+      {
+        "name": "Visitor",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "the visitor"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(eq Speaker Visitor)",
+        "reason": "Direct translation of identity statement using built-in equality"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(eq Visitor Speaker)",
+        "reason": "Direct translation of identity statement using built-in equality"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "bb03731681a2500213699a5c304517bd810009579d69c100ca4108ececdbb885"
+}

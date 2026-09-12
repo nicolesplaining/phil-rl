@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "Exactly one of these descriptions is true: this allocation is equal, or this allocation is proportional. This allocation is proportional. Therefore this allocation is not equal.",
+  "source_sha256": "ba1a4aa67104ab405ee740c583937f96df5c7f49132d6a1f46c177df8c62ce65",
+  "reconstruction": {
+    "title": "Disjunctive Syllogism on Allocation Properties",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Exactly one of these descriptions is true: this allocation is equal, or this allocation is proportional.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Exactly one of these descriptions is true: this allocation is equal, or this allocation is proportional.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Exclusive disjunction asserting mutual exclusivity between equality and proportionality"
+      },
+      {
+        "id": "c2",
+        "text": "This allocation is proportional.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This allocation is proportional.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Affirms one disjunct in the exclusive OR"
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this allocation is not equal.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this allocation is not equal.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Logical consequence derived from the premises"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "29140c35685b0c41fce8373dd01457d2148d65e9eeb4bb85c51b205444207aa3",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All atomic propositions.",
+    "symbols": [
+      {
+        "name": "E",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This allocation is equal"
+      },
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This allocation is proportional"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(and (or E P) (not (and E P)))",
+        "reason": "Exclusive disjunction requires both disjuncts to be true and their conjunction to be false"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "P",
+        "reason": "Direct assertion of the proportional allocation proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not E)",
+        "reason": "Logical consequence derived from the exclusive disjunction and affirmed disjunct"
+      }
+    ],
+    "interpretation_notes": [
+      "Exclusive OR is encoded as (E ∨ P) ∧ ¬(E ∧ P) to ensure exactly one disjunct is true",
+      "The conclusion follows by combining the exclusive disjunction with the affirmed disjunct P"
+    ]
+  },
+  "formalization_sha256": "38b2151e0a0a8387b8cca94fbc6a66255f35bc723ea2983f3972e06eccfe6946"
+}

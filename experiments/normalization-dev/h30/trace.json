@@ -1,0 +1,157 @@
+{
+  "source": "Lina is identical to the witness. The witness is honest. Therefore Lina is honest.",
+  "source_sha256": "da528a5eb1dbf25c6edb2ca3c4eb2d88709d8bfc2db664cf785991b179f7aec5",
+  "started_at": "2026-09-12T22:51:10.583494+00:00",
+  "prompt_version": "0.5",
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a deductive argument concluding that Lina is honest based on two premises: (1) Lina is identical to the witness, and (2) the witness is honest.\", \"title\": \"Lina's Honesty Based on Witness Identity\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"Lina is identical to the witness.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"The witness is honest.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Therefore Lina is honest.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided a JSON with three source units. The task is to determine if there's an argument here and reconstruct it according to the specified schema.\n\nFirst, I need to check if the passage asserts an argument. The first two sentences are statements: \"Lina is identical to the witness.\" and \"The witness is honest.\" The third one is \"Therefore Lina is honest.\" The word \"therefore\" is a clear indicator of a conclusion. So, this looks like an argument where the conclusion is that Lina is honest, based on the premises that Lina is the witness and the witness is honest.\n\nNext, I need to identify the claims. Each source unit is a separate claim. The first two are premises, and the third is the conclusion. The structure is straightforward: if A = B and B is C, then A is C. That's a valid syllogism here.\n\nNow, assigning roles. The first two claims (s1 and s2) are premises. The third (s3) is the conclusion. The relation between them is that the premises support the conclusion. The conclusion_id should be s3.\n\nI need to make sure there are no ambiguities. The argument seems clear. The premises are explicit, and the conclusion follows logically. No need for ambiguity entries here.\n\nSo, the JSON should have status \"argument\", the claims listed with their roles and evidence_ids, and the relations showing the premises supporting the conclusion. The conclusion_id is s3. No objections or replies mentioned, so those aren't needed. The title can be something like \"Lina's Honesty Based on Witness Identity\".\n",
+      "usage": {
+        "prompt_tokens": 1515,
+        "total_tokens": 2145,
+        "completion_tokens": 630,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"lina\", \"kind\": \"constant\", \"arity\": 0, \"meaning\": \"Lina, an individual\"}, {\"name\": \"witness\", \"kind\": \"constant\", \"arity\": 0, \"meaning\": \"The witness, an individual\"}, {\"name\": \"Honest\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is honest\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(eq lina witness)\", \"reason\": \"Identity relation between constants lina and witness using built-in equality\"}, {\"claim_id\": \"c2\", \"formula\": \"(Honest witness)\", \"reason\": \"Predicate application to constant witness\"}, {\"claim_id\": \"c3\", \"formula\": \"(Honest lina)\", \"reason\": \"Predicate application to constant lina\"}], \"interpretation_notes\": []}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate a philosophical argument into a formal logic structure using the specified JSON schema. The argument given is about Lina being identical to the witness, the witness being honest, and concluding that Lina is honest.\n\nFirst, I need to determine the logic type. Since the argument involves identity and predicates, it's likely first-order logic. The premises use identity (Lina is the witness) and properties (honesty), so classical_first_order seems appropriate.\n\nNext, the domain description. The argument mentions individuals: Lina and the witness. The domain should be all individuals, as per the normalization contract. So domain_description is \"All individuals.\"\n\nNow, symbols. We need constants for Lina and the witness. Let's name them 'lina' and 'witness', both constants with arity 0. Then, a predicate for honesty, say 'Honest', which takes one argument (arity 1).\n\nFor the translations of each claim:\n- c1: \"Lina is identical to the witness.\" translates to (eq lina witness). Since eq is built-in, we don't declare it as a symbol. The formula is straightforward.\n- c2: \"The witness is honest.\" becomes (Honest witness). \n- c3: \"Therefore Lina is honest.\" is (Honest lina).\n\nI need to check if any claims require modal or other logics. The argument uses simple identity and predicates, so no issues there. All formulas can be expressed in first-order logic with the given symbols.\n\nInterpretation notes: The key here is that the conclusion follows from the premises via the transitivity of identity and the predicate. Since identity is reflexive, symmetric, and transitive, and Honest is a property of the witness, substituting lina for witness gives the conclusion. But according to the instructions, I shouldn't mention validity. The notes should only explain translation choices. Since the translation is straightforward, maybe no notes are needed. But the user said to record debatable choices. However, in this case, everything seems clear. So interpretation_notes can be empty.\n\nWait, the user said to use empty notes for straightforward translations. So no interpretation_notes are necessary here. The symbols are declared correctly, and the formulas are direct translations. The only thing to note is that 'eq' is used for identity, which is built-in, so no need to declare it as a symbol.\n\nDouble-checking the JSON structure: logic is classical_first_order, domain_description is correct, symbols include lina, witness, and Honest. Translations for each claim are correct. No formulas are null. All set.\n",
+      "usage": {
+        "prompt_tokens": 1919,
+        "total_tokens": 2673,
+        "completion_tokens": 754,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Lina's Honesty Based on Witness Identity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Lina is identical to the witness.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Lina is identical to the witness.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The witness is honest.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The witness is honest.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Lina is honest.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Lina is honest.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "97e49ab0a8be6a2d3b24e54fb789ba88e1508b143d2cf0e8745e3f62c304a281",
+  "finished_at": "2026-09-12T22:51:48.534159+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      33
+    ],
+    "c2": [
+      34,
+      56
+    ],
+    "c3": [
+      57,
+      82
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "1fb5065c90e4fef050725a292a9d8f840de9ed834ef12bcd512e70e8704b3675",
+    "reconstruction_sha256": "97e49ab0a8be6a2d3b24e54fb789ba88e1508b143d2cf0e8745e3f62c304a281",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "1fb5065c90e4fef050725a292a9d8f840de9ed834ef12bcd512e70e8704b3675",
+    "reconstruction_sha256": "97e49ab0a8be6a2d3b24e54fb789ba88e1508b143d2cf0e8745e3f62c304a281",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

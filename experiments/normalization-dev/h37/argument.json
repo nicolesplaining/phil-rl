@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1",
+  "source": "Usually honest witnesses speak truthfully. Rowan is an honest witness. Therefore Rowan speaks truthfully.",
+  "source_sha256": "871a0c6ca8bab861e79ca2c468cd162eba5d12930ac03e6f4767d6dbf7012c4f",
+  "reconstruction": {
+    "title": "Rowan speaks truthfully",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Usually honest witnesses speak truthfully.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Usually honest witnesses speak truthfully.",
+          "occurrence": 0
+        },
+        "interpretation_note": "General rule about honest witnesses with probabilistic force ('usually')"
+      },
+      {
+        "id": "c2",
+        "text": "Rowan is an honest witness.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Rowan is an honest witness.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Specific case assertion"
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Rowan speaks truthfully.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Rowan speaks truthfully.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from premises c1 and c2"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "The probabilistic modifier 'usually' creates tension with the definite conclusion",
+        "alternatives": [
+          "The conclusion should be probabilistic ('Rowan probably speaks truthfully')",
+          "The 'usually' is a generalization that allows exceptions but still supports the conclusion"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "10e1ede56e9c8a70d3d832643812c2ae5f0bd07c3bf9920d2090d2bcf15c3771",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "HonestWitness",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is an honest witness"
+      },
+      {
+        "name": "SpeaksTruthfully",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x speaks truthfully"
+      },
+      {
+        "name": "Rowan",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual named Rowan"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The probabilistic modifier 'usually' cannot be expressed in classical first-order logic without additional modal or probabilistic semantics"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "This claim requires non-classical logic to interface with the probabilistic premise (c1) in an unsupported argument structure"
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "The conclusion relies on probabilistic reasoning that cannot be formalized in classical first-order logic"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument uses a probabilistic generalization ('usually') that cannot be faithfully represented in classical first-order logic",
+      "The conclusion treats a probabilistic premise as a strict implication, creating a logical gap in classical logic",
+      "The formalization is unsupported because the argument's reasoning pattern (probabilistic generalization to definite conclusion) cannot be validated in the available logical framework"
+    ]
+  },
+  "formalization_sha256": "bc9f64072d60608aa6da941cd0e74d9b2d1a8fc3ecb29a3967fad6d33275b716"
+}

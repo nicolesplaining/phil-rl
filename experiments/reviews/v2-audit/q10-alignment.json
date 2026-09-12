@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "a1a3b9901bf9320671063e898677cc14cbdf84ca71a9796fb4614775a15a6d3f",
+  "generated_sha256": "44e77d52a63b0d6186f2e53a33ab5fc2896aa3ed4b9d27a81b0d12c094c312bf",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "D": "D",
+    "J": "J"
+  },
+  "glossary_rationale": "The conditional as a whole is negated; D is decisive evidence and J justified doubt.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The conditional as a whole is negated; D is decisive evidence and J justified doubt.",
+  "domain_restriction": null
+}

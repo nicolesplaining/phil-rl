@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1",
+  "source": "Every person is fallible. Therefore every infallible person is fallible, where infallible means not fallible.",
+  "source_sha256": "736c5661e59306ea1640baca07817ab0380eed168d58169f1985f4993c6ac97f",
+  "reconstruction": {
+    "title": "Contradiction in 'Infallible Person'",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person is fallible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person is fallible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Universal statement about human fallibility."
+      },
+      {
+        "id": "c2",
+        "text": "Every infallible person is fallible, where infallible means not fallible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore every infallible person is fallible, where infallible means not fallible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Self-contradictory conclusion derived from the premise and definition of 'infallible'."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The conclusion contains a logical contradiction (an 'infallible person' cannot be both fallible and not fallible).",
+        "alternatives": [
+          "The author is using reductio ad absurdum to show that the concept of an 'infallible person' is impossible under the premise that all people are fallible.",
+          "The author is highlighting a definitional inconsistency in the term 'infallible person'."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "6ea0374cc0dacd89c442f6263200d5fc03575e2800665fb5a3e063988a92e5bc",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person"
+      },
+      {
+        "name": "Fallible",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is fallible"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Person x) (Fallible x)))",
+        "reason": "Universal quantification over 'person' with implication to 'fallible'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall x (implies (and (Person x) (not (Fallible x))) (Fallible x)))",
+        "reason": "Translates 'infallible person' as (Person x ∧ ¬Fallible x) implying Fallible x, preserving the contradictory structure from the definition"
+      }
+    ],
+    "interpretation_notes": [
+      "The term 'infallible' is treated as a defined abbreviation for 'not fallible', leading to the contradictory antecedent (Person x ∧ ¬Fallible x) → Fallible x in c2",
+      "The domain includes all individuals but does not assume existence of any particular type of entity",
+      "The formalization uses first-order logic with explicit predicates for 'person' and 'fallible' rather than assuming closed domains or special classes"
+    ]
+  },
+  "formalization_sha256": "946b5512c7959534225f6237f0d276af63135304c409e000a015585cfd7ef06f"
+}

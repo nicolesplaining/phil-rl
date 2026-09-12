@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "d452d97b5914c57eb099e20b4d974e3cd7783c813f5c267834c2fcfb521626ce",
+  "generated_sha256": "7bd99db35cded0cca941866d36e2494a0ac19d256bbbaf27dfd3d2404672a489",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Person": "Person",
+    "Fallible": "Fallible"
+  },
+  "glossary_rationale": "Infallibility is represented by the stated definition, not by an unrelated predicate. The vacuous restricted conclusion is preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Infallibility is represented by the stated definition, not by an unrelated predicate. The vacuous restricted conclusion is preserved.",
+  "domain_restriction": null
+}

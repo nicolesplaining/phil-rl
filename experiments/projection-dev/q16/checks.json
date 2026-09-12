@@ -1,0 +1,38 @@
+{
+  "explicit": {
+    "formalization_sha256": "a0235b4d9d542e4c53f6c720d9f0865a8b15b15dd792fc14c60a759bbd3e7eba",
+    "reconstruction_sha256": "fb827f2c4c820a854bcbcabeaffa6a23a86cde0086c7b2ecc5e767e647d74052",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[EqualDistribution = True, JustDistribution = False]",
+    "assignments": {
+      "EqualDistribution": "True",
+      "JustDistribution": "False"
+    }
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "a0235b4d9d542e4c53f6c720d9f0865a8b15b15dd792fc14c60a759bbd3e7eba",
+    "reconstruction_sha256": "fb827f2c4c820a854bcbcabeaffa6a23a86cde0086c7b2ecc5e767e647d74052",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[EqualDistribution = True, JustDistribution = False]",
+    "assignments": {
+      "EqualDistribution": "True",
+      "JustDistribution": "False"
+    }
+  }
+}

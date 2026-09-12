@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "If the witness had remained silent, the dispute would have continued. The dispute did not continue. Therefore the witness did not remain silent.",
+  "source_sha256": "d805a59aba9405997509bee217ea80b189872098c305ea4f076f47c92c90d05a",
+  "reconstruction": {
+    "title": "Modus Tollens Argument about Witness Silence",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the witness had remained silent, the dispute would have continued.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the witness had remained silent, the dispute would have continued.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a hypothetical relationship between witness silence and dispute continuation."
+      },
+      {
+        "id": "c2",
+        "text": "The dispute did not continue.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The dispute did not continue.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Factual assertion contradicting the consequent of the conditional in c1."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the witness did not remain silent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the witness did not remain silent.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from c1 and c2 using modus tollens reasoning."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "095f17e0ba0720e8dad5a106d575bf6d6ce7ed0dbbed7b5039f063688b4b6728",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The witness remained silent"
+      },
+      {
+        "name": "D",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The dispute continued"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies S D)",
+        "reason": "Translating the conditional 'If the witness had remained silent, the dispute would have continued' as material implication between propositions S and D"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not D)",
+        "reason": "Direct negation of proposition D corresponding to 'The dispute did not continue'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not S)",
+        "reason": "Direct negation of proposition S corresponding to 'The witness did not remain silent'"
+      }
+    ],
+    "interpretation_notes": [
+      "The counterfactual conditional in c1 is treated as material implication (S → D) per the reconstruction's explicit interpretation",
+      "No modal operators are used despite the hypothetical phrasing 'had remained' since the reconstruction presents this as a straightforward conditional relationship"
+    ]
+  },
+  "formalization_sha256": "70c54d96eeaae358aadc3528105484d8e7857e1dd3b1d87ac60939a82fe621ec"
+}

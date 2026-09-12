@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1",
+  "source": "Probably this testimony is accurate. Therefore this testimony is accurate.",
+  "source_sha256": "e684a3aa16196e3e9401f836fff379a37f94ab543d0f538c454807ac73cf7932",
+  "reconstruction": {
+    "title": "Argument for the accuracy of the testimony",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Probably this testimony is accurate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Probably this testimony is accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The premise states a probabilistic assertion about the testimony's accuracy"
+      },
+      {
+        "id": "c2",
+        "text": "Therefore this testimony is accurate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this testimony is accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The conclusion asserts definitive accuracy based on the premise"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The logical connection between probabilistic ('probably') and definitive ('is') assertions",
+        "alternatives": [
+          "The author assumes that 'probably' entails certainty",
+          "The author is using 'therefore' to indicate a best estimate rather than logical necessity"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "2e3fc5f80742ecb45268e950ab25a3c2359419979148f1e76b665d3f90a46820",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The probabilistic operator 'probably' cannot be expressed in classical propositional or first-order logic without additional modal or probabilistic semantics."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The conclusion's definitive assertion cannot be logically derived from the probabilistic premise within classical logic frameworks."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument relies on a probabilistic-to-definitive inference that requires non-classical semantics (e.g., probabilistic logic) which are not available in the target formalism.",
+      "The ambiguity in the original about whether 'therefore' indicates logical necessity or a best estimate cannot be resolved in classical logic, as both interpretations fail to bridge probabilistic and definitive claims."
+    ]
+  },
+  "formalization_sha256": "c92b93dbe94e497def05a0cb834bcbfa7d6919b386faf6b120e9a50da038bfd1"
+}

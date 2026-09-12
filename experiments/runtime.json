@@ -1,0 +1,29 @@
+{
+  "model":"Qwen/Qwen3-32B",
+  "model_revision":"9216db5781bf21249d130ec9da846c4624c16137",
+  "revision_evidence":"The Hugging Face cached main ref was checked before and after loading. These runs did not pass an explicit revision flag; the serving script now pins this revision for reproductions.",
+  "hardware":"One NVIDIA H100 80GB HBM3, physical GPU 1 on a shared node",
+  "driver":"580.105.08",
+  "vllm":"0.19.1",
+  "torch":"2.10.0",
+  "transformers":"5.17.0",
+  "server":{
+    "dtype":"bfloat16",
+    "tensor_parallel_size":1,
+    "max_model_len":16384,
+    "max_num_seqs":4,
+    "gpu_memory_utilization":0.9,
+    "enforce_eager":true,
+    "reasoning_parser":"qwen3",
+    "generation_config":"vllm",
+    "seed":0,
+    "OMP_NUM_THREADS":4,
+    "bind":"127.0.0.1:8011"
+  },
+  "runs":{
+    "heldout-v1":{"run_code_commit":"76c99b1035ed0aec1a8d458cb091e585eadc46bc","prompt_version":"0.4","workers":4},
+    "heldout-v2":{"run_code_commit":"5a003635e96765f4675da275d098f5a4f9d44a33","prompt_version":"0.5","policy_version":"0.1","workers":4}
+  },
+  "client_note":"Each saved trace records sampling, token limits, retries, schemas and prompt fingerprints. Temperature zero and a seed do not promise bit-identical GPU results across batching or software changes.",
+  "credentials":"Public weights were downloaded anonymously. No supplied Hugging Face token was used or stored."
+}

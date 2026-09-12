@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "1c3b5e4d53532a2d9bef026eb363d429b515aad3832a41749fea529cf7188916",
+  "generated_sha256": "6549eaeeadf2261fd7c68c745eef1614fe5ab7c44d89025b8643b8fa9d45de5c",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "A": "A",
+    "P": "P"
+  },
+  "glossary_rationale": "Authenticity and prudence concern the same desire. 'Or both' is preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Authenticity and prudence concern the same desire. 'Or both' is preserved.",
+  "domain_restriction": null
+}

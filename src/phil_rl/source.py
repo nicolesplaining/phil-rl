@@ -52,7 +52,9 @@ def source_units(source: str) -> list[SourceUnit]:
 
 class GroundedClaim(Record):
     id: Identifier
-    text: Text
+    text: Text = Field(
+        description="Asserted content; put an objector's attribution in interpretation_note."
+    )
     role: Literal["premise", "subconclusion", "conclusion", "objection", "reply", "context"]
     origin: Literal["explicit", "implicit"]
     evidence_ids: list[Identifier] = Field(max_length=32)
@@ -89,6 +91,16 @@ class GroundedReconstruction(Record):
         if self.status != "argument":
             raise ValueError("Cannot materialize a no-argument outcome.")
         positions = {unit.id: i for i, unit in enumerate(units)}
+        cited = {
+            key for claim in self.claims if claim.origin == "explicit" for key in claim.evidence_ids
+        }
+        missing = set(positions) - cited
+        if missing:
+            raise ValueError(
+                f"Source units {', '.join(sorted(missing))} have no claim. Retain background "
+                "as context instead of dropping it. Each citation must support the claim "
+                "it accompanies; do not attach omitted text to an unrelated claim."
+            )
         claims = []
         for draft in self.claims:
             if draft.origin == "implicit":

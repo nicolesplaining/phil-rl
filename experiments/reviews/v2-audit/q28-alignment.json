@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "1fc75b3347e61333ec6a1b6b2905a9624d88954106dc0be7623b7ac57ac5b605",
+  "generated_sha256": "06267114c949515e10997ddee3ea71f9bce37e2d4bcddc4bb7a7774a52cb1bd5",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Ivo": "ivo",
+    "author": "author",
+    "Candid": "Candid"
+  },
+  "glossary_rationale": "The constants denote Ivo and the author. Identity uses built-in equality and candidness is unary.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The constants denote Ivo and the author. Identity uses built-in equality and candidness is unary.",
+  "domain_restriction": null
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "Being gratuitously harmful is sufficient for this intervention to be wrong. This intervention is gratuitously harmful. Therefore this intervention is wrong.",
+  "source_sha256": "6b29bf4ff8e4950be50bfd99f11ca2d7aef38201675a503c1f014c3668853625",
+  "reconstruction": {
+    "title": "Argument Against the Intervention Based on Gratuitous Harm",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Being gratuitously harmful is sufficient for this intervention to be wrong.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Being gratuitously harmful is sufficient for this intervention to be wrong.",
+          "occurrence": 0
+        },
+        "interpretation_note": "States a general sufficient condition for wrongness."
+      },
+      {
+        "id": "c2",
+        "text": "This intervention is gratuitously harmful.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This intervention is gratuitously harmful.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Asserts the specific case meets the sufficient condition."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this intervention is wrong.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this intervention is wrong.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Directly follows from the two premises via modus ponens."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "7a5b91659ba3e51fb8e53323c094a9498d0ed64ed60a32d784ca46c960673723",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "G",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This intervention is gratuitously harmful"
+      },
+      {
+        "name": "W",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This intervention is wrong"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies G W)",
+        "reason": "The first premise establishes a sufficient condition: if G (gratuitous harm) then W (wrongness)."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "G",
+        "reason": "Direct assertion of the antecedent condition in the specific case."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "W",
+        "reason": "Conclusion derived via modus ponens from (implies G W) and G."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument uses material implication to model sufficiency. No first-order quantifiers are needed since the scope is a single specific intervention.",
+      "Modus ponens applies directly: (G → W) ∧ G ⊢ W"
+    ]
+  },
+  "formalization_sha256": "56a362ac14334f06338f8be983723307ccae5acac5b44bc5d1c66f0270c09535"
+}

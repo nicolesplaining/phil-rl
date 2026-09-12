@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1",
+  "source": "Being transparent is necessary for this institution to be accountable. This institution is transparent. Therefore this institution is accountable.",
+  "source_sha256": "15348e15b846512212eaa9da7159ceafe97abbb0b8f3764b978dcc4eedf5d56e",
+  "reconstruction": {
+    "title": "Argument for the Accountability of the Institution Based on Transparency",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Being transparent is necessary for this institution to be accountable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Being transparent is necessary for this institution to be accountable.",
+          "occurrence": 0
+        },
+        "interpretation_note": "States a necessary condition: transparency is required for accountability."
+      },
+      {
+        "id": "c2",
+        "text": "This institution is transparent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This institution is transparent.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Asserts the fulfillment of the necessary condition."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this institution is accountable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this institution is accountable.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Concludes accountability based on the premises."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2aee857684e69505963be5b03b54e8a821751633ebb0abe4d8a4f476f678ab15",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Institution",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The specific institution under discussion"
+      },
+      {
+        "name": "Transparent",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is transparent"
+      },
+      {
+        "name": "Accountable",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is accountable"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies (Accountable Institution) (Transparent Institution))",
+        "reason": "Necessary condition 'transparent is required for accountable' becomes material implication: if accountable then transparent"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Transparent Institution)",
+        "reason": "Direct assertion of transparency for the institution"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Accountable Institution)",
+        "reason": "Direct assertion of accountability for the institution"
+      }
+    ],
+    "interpretation_notes": [
+      "Translated 'necessary for' as material implication (A → T) rather than modal necessity operator, since classical first-order logic lacks modal semantics. This captures the logical form 'to be accountable, it must be transparent' as a definitional constraint rather than metaphysical necessity."
+    ]
+  },
+  "formalization_sha256": "00adb96b5e188561c7c5ca0b735b8a6db6bbc9ad15071f7e5887f8cac3e3f0b4"
+}

@@ -1,0 +1,32 @@
+{
+  "suite_version": "heldout-v2",
+  "suite_sha256": "bbdc9b0299d7d720ba1e4d062aec9b6567547cd8886d4509030bd48e79aa1955",
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "workers": 1,
+  "total": 1,
+  "selected_cases": [
+    "q22"
+  ],
+  "completed": 1,
+  "cases": [
+    {
+      "case": "q22",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    }
+  ],
+  "fidelity": "not_assessed",
+  "note": "Review source meaning and symbol alignment before scoring fidelity."
+}

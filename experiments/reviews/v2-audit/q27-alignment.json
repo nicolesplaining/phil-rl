@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "927891275e168077baa30909bae90510322479d0d8c16739dc62b25c7876b6e1",
+  "generated_sha256": "5504f63834321f94ec3ab783a5709ee0736709d4c605ae6d82474071fe7b49e6",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Agent": "Agent",
+    "Defers": "Defers"
+  },
+  "glossary_rationale": "Defers(x,y) has the correct direction and agent restrictions are explicit. No nonempty Agent class is assumed.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Defers(x,y) has the correct direction and agent restrictions are explicit. No nonempty Agent class is assumed.",
+  "domain_restriction": null
+}

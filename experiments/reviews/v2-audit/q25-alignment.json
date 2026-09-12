@@ -1,0 +1,40 @@
+{
+  "reference_sha256": "50271f51ef70ecb04485ec919b291b2d9d67f8ed6523cc701641b0059a57e345",
+  "generated_sha256": "c0e41f27b98882523b20cdb8ac31548c02e26a3df7e250105b9657d5e414f488",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Statement": "Statement",
+    "Deceptive": "Deceptive",
+    "Sincere": "Sincere"
+  },
+  "glossary_rationale": "Deception and sincerity are used only with explicit Statement guards. Within those guards the glossary's 'deceptive statement' and 'sincere statement' wording has the reference meaning.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Deception and sincerity are used only with explicit Statement guards. Within those guards the glossary's 'deceptive statement' and 'sincere statement' wording has the reference meaning.",
+  "domain_restriction": null
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "Every critic considered a theory. Therefore there is a single theory that every critic considered.",
+  "source_sha256": "5063673597c89037a4321b4ab06c323884990f18d0ba80cc5b44098e7c898acd",
+  "reconstruction": {
+    "title": "Argument about critics and theories",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every critic considered a theory.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every critic considered a theory.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Ambiguous between 'each critic considered some theory (possibly different)' and 'there exists a single theory all critics considered'."
+      },
+      {
+        "id": "c2",
+        "text": "Therefore there is a single theory that every critic considered.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore there is a single theory that every critic considered.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Assumes the conclusion is validly derived from the premise, though this requires an unstated assumption about the scope of 'a theory'."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "Ambiguity in quantifier scope: does 'a theory' refer to a single shared theory or individual theories for each critic?",
+        "alternatives": [
+          "Each critic considered some theory (possibly different theories)",
+          "There exists a single theory that all critics considered"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "bbe78358e4f1bb40b0afc98018300e211a35067294a9f0e66985773bce8c9c39",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Critic",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a critic"
+      },
+      {
+        "name": "Theory",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a theory"
+      },
+      {
+        "name": "Considered",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x considered y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Critic x) (exists y (and (Theory y) (Considered x y)))))",
+        "reason": "Translates 'Every critic considered a theory' as universal quantification over critics with existential quantification over theories per critic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (and (Theory y) (forall x (implies (Critic x) (Considered x y)))))",
+        "reason": "Translates 'There is a single theory that every critic considered' as existential quantification for the shared theory followed by universal quantification over critics"
+      }
+    ],
+    "interpretation_notes": [
+      "The premise (c1) allows different theories per critic while the conclusion (c2) requires a single shared theory, reflecting the original ambiguity",
+      "The translation preserves the quantifier scope distinction without assuming the conclusion's validity",
+      "No function symbols or identity needed since the argument doesn't require individual constants"
+    ]
+  },
+  "formalization_sha256": "64ad706cb874f225b3f311246e2c10f301e2cc61b30f90860b52ca339bd088b6"
+}

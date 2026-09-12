@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "af0667a48e173475c7e5c5dd28ca8fa0cb7644481c587ba8b27ab82e75b4fff9",
+  "generated_sha256": "292aa36a55c0c7eecec56e7c22b53653ead8afb46d73c67c28cc835b2ea17842",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Speaker": "speaker",
+    "Visitor": "visitor"
+  },
+  "glossary_rationale": "The constants retain their references and the source identity is reversed in the conclusion using equality.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The constants retain their references and the source identity is reversed in the conclusion using equality.",
+  "domain_restriction": null
+}

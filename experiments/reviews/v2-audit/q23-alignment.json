@@ -1,0 +1,41 @@
+{
+  "reference_sha256": "2287bee66eb809e34222cccc29ead399911aee4068734daa29c38260fda5042f",
+  "generated_sha256": "52d92b21728d486ef66fee2d9e47741b36e0a040cdb87aab6ea5bd3ed98b3643",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Person": "Person",
+    "Deliberates": "Deliberates",
+    "Reflective": "Reflective",
+    "Neri": "neri"
+  },
+  "glossary_rationale": "Person and deliberation are separate predicates, and the constant denotes Neri. Relative-clause conjunction and quantifier restriction match.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Person and deliberation are separate predicates, and the constant denotes Neri. Relative-clause conjunction and quantifier restriction match.",
+  "domain_restriction": null
+}

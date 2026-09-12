@@ -50,3 +50,12 @@ def test_adjacent_evidence_can_span_abbreviation_splits():
     data["claims"][0]["evidence_ids"] = ["s1", "s2"]
     result = GroundedReconstruction.model_validate(data).materialize(artifact.source, units)
     assert result.claims[0].evidence.quote == artifact.source[: units[1].end]
+
+
+def test_default_reconstruction_cannot_drop_a_source_unit():
+    artifact = fixtures()["modus_ponens"][0]
+    draft, units = draft_for(artifact)
+    data = draft.model_dump()
+    data["claims"][0]["evidence_ids"] = ["s2"]
+    with pytest.raises(ValueError, match="Source units s1 have no claim"):
+        GroundedReconstruction.model_validate(data).materialize(artifact.source, units)

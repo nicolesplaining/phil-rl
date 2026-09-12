@@ -83,6 +83,17 @@ its paraphrase preserves the quote's meaning. Non-argument inputs produce a
 a trace, including the frozen reconstruction when formalization failed. Transient
 network retries are bounded separately from structural retries.
 
+Complete reconstruction requires evidence coverage of every source unit, including
+background. Coverage is only a structural check; it does not prove that each claim
+faithfully interprets its citation. Attribution stays in the role and notes, while an
+objection's claim text states the opponent's asserted content.
+
+Ground first-order formulas without quantifiers or equality are deterministically
+abbreviated as propositions. The trace retains the original formulas, predicate and
+argument meanings, and the inverse substitution map. Exact structural round-trip
+checks prevent this normalization from changing a formula. Quantified and equality
+formulas are not abstracted this way.
+
 ## Lean
 
 Install [Lean through elan](https://lean-lang.org/install/). `lean-toolchain` pins

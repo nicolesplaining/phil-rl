@@ -1,0 +1,291 @@
+{
+  "suite_sha256": "bbdc9b0299d7d720ba1e4d062aec9b6567547cd8886d4509030bd48e79aa1955",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "supported_total": 32,
+  "supported_passed": 28,
+  "other_total": 8,
+  "other_passed": 7,
+  "cases": [
+    {
+      "case": "q01",
+      "supported": true,
+      "passed": true,
+      "review_notes": "S refers to this apology's sincerity; the subject of A is the same apology acknowledging the injury.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q02",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Legitimacy and voluntariness concern this bargain; only-if direction and both negations remain explicit.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q03",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The causal and informative properties remain distinct, preserving the invalid converse inference.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q04",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Explicitness and bindingness of this agreement align; denial of the antecedent is not repaired.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q05",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P is principle revisability and Q the misleading example. Inclusive or and negation match.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q06",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Authenticity and prudence concern the same desire. 'Or both' is preserved.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q07",
+      "supported": true,
+      "passed": true,
+      "review_notes": "C1 is impartiality and C2 transparency of this assessment. The conclusion combines them.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q08",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Vividness and accuracy of the memory align. Negated disjunction is equivalent to the reference's conjunction of negations.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q09",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The symbols preserve the verdict's two properties and the negated conjunction.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q10",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The conditional as a whole is negated; D is decisive evidence and J justified doubt.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q11",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P denotes being a promise and Q creating a commitment for this utterance; the biconditional and negations match.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q12",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The ground first-order encoding with one named institution is a legitimate alternative to propositional atoms. The original strict protocol rejects the fragment mismatch; this is not a demonstrated mistranslation.",
+      "reason": "unresolved_notation"
+    },
+    {
+      "case": "q13",
+      "supported": true,
+      "passed": true,
+      "review_notes": "G is gratuitous harm and W wrongness of this intervention. Sufficiency is not reversed.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q14",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The model uses Equitable(Policy) and Popular(Policy). These are faithful ground atoms, but the original protocol expects propositions. The contradiction is correctly preserved.",
+      "reason": "unresolved_notation"
+    },
+    {
+      "case": "q15",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Both occurrences assert that the distinction is meaningful; source positions remain separate.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q16",
+      "supported": true,
+      "passed": false,
+      "review_notes": "EqualDistribution(distribution) and JustDistribution(distribution) are faithful ground atoms, but not accepted by the original same-fragment protocol. No bridge was invented.",
+      "reason": "unresolved_notation"
+    },
+    {
+      "case": "q17",
+      "supported": true,
+      "passed": true,
+      "review_notes": "F means fabricated recollection, K knowledge; not knowledge is now a logical negation.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q18",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Equal and proportional allocations remain separate; exclusivity is an explicit source claim.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q19",
+      "supported": true,
+      "passed": true,
+      "review_notes": "P means this inquiry is open and Q this conclusion is final. The inclusive disjunction is preserved.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q20",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Fairness of the rule and justification of the exception match both complementary conditionals.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q21",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Context, deceptive waiver, informed status and legitimacy align. The intermediate negated claim and its support chain are retained.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q22",
+      "supported": true,
+      "passed": false,
+      "review_notes": "The background sentence is missing, and the objection is encoded as CriticSaysTrustworthy rather than its content Trustworthy. The main premises are right, but the full reconstruction fails the annotation.",
+      "reason": "meaning_error"
+    },
+    {
+      "case": "q23",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Person and deliberation are separate predicates, and the constant denotes Neri. Relative-clause conjunction and quantifier restriction match.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q24",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The two predicates match and no existence premise is inserted.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q25",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Deception and sincerity are used only with explicit Statement guards. Within those guards the glossary's 'deceptive statement' and 'sincere statement' wording has the reference meaning.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q26",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Interpretation and coherence predicates match; the negated universal preserves its scope.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q27",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Defers(x,y) has the correct direction and agent restrictions are explicit. No nonempty Agent class is assumed.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q28",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The constants denote Ivo and the author. Identity uses built-in equality and candidness is unary.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q29",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The constants retain their references and the source identity is reversed in the conclusion using equality.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q30",
+      "supported": true,
+      "passed": true,
+      "review_notes": "The three classes and the two negative universal claims retain their scope.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q31",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Challenges(x,y) means x challenges y. Existential and universal order, plus scholar guards, match.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q32",
+      "supported": true,
+      "passed": true,
+      "review_notes": "Infallibility is represented by the stated definition, not by an unrelated predicate. The vacuous restricted conclusion is preserved.",
+      "comparison": "passed_under_reviewed_alignment"
+    },
+    {
+      "case": "q33",
+      "supported": false,
+      "passed": true,
+      "review_notes": "The model preserves necessity and abstains from its formalization.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "q34",
+      "supported": false,
+      "passed": false,
+      "review_notes": "The counterfactual 'had remained ... would have continued' became material implication. This is operator loss despite an expected-looking modus-tollens proof pattern.",
+      "reason": "meaning_error"
+    },
+    {
+      "case": "q35",
+      "supported": false,
+      "passed": true,
+      "review_notes": "The knowledge assertion and factual conclusion remain distinct and the model abstains for epistemic semantics.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "q36",
+      "supported": false,
+      "passed": true,
+      "review_notes": "Typicality is retained and triggers abstention; it is not strengthened to universality.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "q37",
+      "supported": false,
+      "passed": true,
+      "review_notes": "The probable premise is not replaced by the unqualified conclusion.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "q38",
+      "supported": false,
+      "passed": true,
+      "review_notes": "The actual different-theories versus one-shared-theory scope ambiguity is explicitly recorded with both alternatives.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "q39",
+      "supported": false,
+      "passed": true,
+      "review_notes": "The outcome explicitly identifies questions without asserted premises or conclusion.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    },
+    {
+      "case": "q40",
+      "supported": false,
+      "passed": true,
+      "review_notes": "The outcome explicitly identifies descriptive details without an inference.",
+      "method": "agent-reviewed source outcome, not formula equivalence"
+    }
+  ],
+  "qualification": "Agent-authored references and glossary review, not human validation."
+}

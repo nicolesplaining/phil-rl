@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "This inquiry is open. Therefore either this inquiry is open or this conclusion is final, or both.",
+  "source_sha256": "5daa606ceb0922c62d6e90b08d7b585f60607da380cdbdaf7be055c339776385",
+  "reconstruction": {
+    "title": "Argument about the status of an inquiry and its conclusion",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This inquiry is open.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This inquiry is open.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Stated as a factual assertion about the inquiry's status."
+      },
+      {
+        "id": "c2",
+        "text": "Either this inquiry is open or this conclusion is final, or both.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore either this inquiry is open or this conclusion is final, or both.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Presented as a logical consequence of the premise using disjunction."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "b7d947de486c3bf17e3c2d21ae1b0e3c825debab73603280bcf2213ceff85e1e",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All propositions.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This inquiry is open"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This conclusion is final"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "P",
+        "reason": "Direct atomic proposition about the inquiry's status"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(or P Q)",
+        "reason": "Logical disjunction of the premise with another proposition"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "aaefc9dca0ba8a72925265c300d05155fa3c58610f9438c1b58f26890470bb5d"
+}

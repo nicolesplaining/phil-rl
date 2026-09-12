@@ -1,0 +1,122 @@
+{
+  "schema_version": "0.1",
+  "source": "Our dispute concerns the credibility of this recollection. A critic says the recollection is trustworthy. My response begins with a conditional: if the recollection is fabricated, it is not trustworthy. The recollection is fabricated. These premises establish that the recollection is not trustworthy.",
+  "source_sha256": "6e710fdaefd7ac5bac5310d8e49f866495e5db1d44c72c7f8f3615c93786b373",
+  "reconstruction": {
+    "title": "Argument Against the Trustworthiness of a Recollection",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "A critic says the recollection is trustworthy.",
+        "role": "objection",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "A critic says the recollection is trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "If the recollection is fabricated, it is not trustworthy.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "My response begins with a conditional: if the recollection is fabricated, it is not trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "The recollection is fabricated.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The recollection is fabricated.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "The recollection is not trustworthy.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "These premises establish that the recollection is not trustworthy.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c2",
+          "c3"
+        ],
+        "conclusion": "c4",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c4"
+        ],
+        "conclusion": "c1",
+        "kind": "attacks"
+      }
+    ],
+    "conclusion_id": "c4",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d4b7489f385afe1c57943198c2b814f4b55ef60dc806cc49d375099e8e20985e",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "CriticSaysTrustworthy",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "A critic says the recollection is trustworthy."
+      },
+      {
+        "name": "RecollectionFabricated",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The recollection is fabricated."
+      },
+      {
+        "name": "RecollectionTrustworthy",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The recollection is trustworthy."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "CriticSaysTrustworthy",
+        "reason": "Direct translation of the critic's assertion as a proposition."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies RecollectionFabricated (not RecollectionTrustworthy))",
+        "reason": "Conditional statement translated as material implication."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "RecollectionFabricated",
+        "reason": "Direct translation of the assertion that the recollection is fabricated."
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(not RecollectionTrustworthy)",
+        "reason": "Direct translation of the conclusion that the recollection is not trustworthy."
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "9ec16ce9c53883a92f2b5fe7568dda8ce244843852939e8384cbd2bf5ab84c36"
+}

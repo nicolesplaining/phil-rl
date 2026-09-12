@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "source": "This distribution is equal. Therefore this distribution is just.",
+  "source_sha256": "ab2020f567d1ea6605727d4174bf8314cb44fd45ed5935455a61f0e41aba1618",
+  "reconstruction": {
+    "title": "Equality Implies Justice",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This distribution is equal.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This distribution is equal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This distribution is just.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this distribution is just.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fb827f2c4c820a854bcbcabeaffa6a23a86cde0086c7b2ecc5e767e647d74052",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "EqualDistribution",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This distribution is equal"
+      },
+      {
+        "name": "JustDistribution",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This distribution is just"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "EqualDistribution",
+        "reason": "Direct translation of atomic proposition about distribution equality"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "JustDistribution",
+        "reason": "Direct translation of atomic proposition about distribution justice"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument assumes a conceptual link between equality and justice not captured in propositional logic",
+      "No hidden premises are formalized beyond the explicitly stated claims",
+      "The logical structure only represents the atomic propositions, not any implicit entailment relation between them"
+    ]
+  },
+  "formalization_sha256": "a0235b4d9d542e4c53f6c720d9f0865a8b15b15dd792fc14c60a759bbd3e7eba"
+}

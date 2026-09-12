@@ -1,0 +1,179 @@
+{
+  "source": "No deceptive statement is sincere. At least one statement is deceptive. Therefore at least one statement is not sincere.",
+  "source_sha256": "51f9ff6682ce665fea11878e7d5cf9b41c673e48b06608c5162742250c5fc374",
+  "started_at": "2026-09-12T23:08:34.448850+00:00",
+  "prompt_version": "0.5",
+  "policy_version": "0.1",
+  "schema_sha256": {
+    "reconstruction": "ca7c4c1161462826af43517b2ac9714444dd463f0227c377a2b13088aee7a6a6",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a deductive argument with two premises supporting a conclusion.\", \"title\": \"Deceptive Statements and Sincerity\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"No deceptive statement is sincere.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"At least one statement is deceptive.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c3\",\n        \"text\": \"Therefore at least one statement is not sincere.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s3\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\", \"c2\"],\n        \"conclusion\": \"c3\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says, \"No deceptive statement is sincere.\" The second is \"At least one statement is deceptive.\" And the third is \"Therefore at least one statement is not sincere.\" \n\nI need to determine if this is an argument. The first step is to check if there's a conclusion. The third sentence starts with \"Therefore,\" which is a clear indicator of a conclusion. So the conclusion is \"at least one statement is not sincere.\"\n\nNow, looking at the premises. The first premise is \"No deceptive statement is sincere.\" That's a universal statement. The second premise is \"At least one statement is deceptive.\" So combining these two, if all deceptive statements are not sincere, and there's at least one deceptive statement, then that one must not be sincere. That's a valid syllogism.\n\nThe author is using these two premises to support the conclusion. There's no mention of any objections or replies here. The structure is straightforward: two premises leading to a conclusion. \n\nI need to make sure there are no ambiguities. The terms \"deceptive\" and \"sincere\" are used consistently. The first premise is a universal negative, the second is an existential affirmative. The conclusion follows logically. \n\nSo the status is \"argument.\" The claims are the three sentences. The relations are that the first two premises support the conclusion. The conclusion ID is the third claim. No ambiguities here since the structure is clear and there's no conflicting interpretation.\n",
+      "usage": {
+        "prompt_tokens": 1519,
+        "total_tokens": 2100,
+        "completion_tokens": 581,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": false,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All statements.\", \"symbols\": [{\"name\": \"Deceptive\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a deceptive statement\"}, {\"name\": \"Sincere\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a sincere statement\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (Deceptive x) (not (Sincere x))))\", \"reason\": \"Universal quantification over statements: All deceptive statements are not sincere\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists x (Deceptive x))\", \"reason\": \"Existential quantification: There exists at least one deceptive statement\"}, {\"claim_id\": \"c3\", \"formula\": \"(exists x (not (Sincere x)))\", \"reason\": \"Existential quantification: There exists at least one statement that is not sincere\"}], \"interpretation_notes\": [\"The argument uses standard first-order quantifiers over the domain of statements. The universal premise establishes a conditional relationship between Deceptive and Sincere predicates, while the existential premises assert the existence of instances satisfying these predicates.\"]}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate the given philosophical argument into a formal logic structure using the specified JSON schema. The argument is about deceptive statements and sincerity.\n\nFirst, I need to determine the logic type. The argument involves quantifiers like \"No\" and \"At least one,\" which suggests first-order logic (FOL) rather than propositional logic. So, the logic should be classical_first_order.\n\nNext, the domain description. The argument talks about statements, so the domain is all statements. The domain_description will be \"All statements.\"\n\nNow, symbols. I need to declare predicates for \"deceptive\" and \"sincere.\" Let's use Deceptive and Sincere as predicates with arity 1, each taking a statement as an argument. There's no need for constants here since the argument is general about statements.\n\nFor the translations:\n- Claim c1: \"No deceptive statement is sincere.\" In FOL, this translates to ∀x (Deceptive(x) → ¬Sincere(x)). The universal quantifier covers all statements, and if a statement is deceptive, it's not sincere.\n- Claim c2: \"At least one statement is deceptive.\" This is ∃x Deceptive(x), asserting the existence of at least one deceptive statement.\n- Claim c3: \"Therefore at least one statement is not sincere.\" This becomes ∃x ¬Sincere(x), which follows from the premises.\n\nI need to check if these translations are accurate. The first premise is a universal statement, the second an existential, and the conclusion another existential. The structure seems correct. There are no ambiguities mentioned, so the translations should be straightforward without needing additional notes.\n\nInterpretation notes: Since the argument uses standard FOL quantifiers and predicates, there's no need for special notes here. The logic handles the structure properly.\n",
+      "usage": {
+        "prompt_tokens": 1926,
+        "total_tokens": 2573,
+        "completion_tokens": 647,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B",
+      "validation_error": "Use domain_description 'All individuals.'. Encode noun restrictions with unary predicates inside quantifiers, not by restricting the domain. A nonempty individual domain does not imply any person, act, belief, or judge exists."
+    },
+    {
+      "attempt": 2,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"Statement\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a statement\"}, {\"name\": \"Deceptive\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a deceptive statement\"}, {\"name\": \"Sincere\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a sincere statement\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (and (Statement x) (Deceptive x)) (not (Sincere x))))\", \"reason\": \"Universal quantification with domain restriction: All deceptive statements are not sincere\"}, {\"claim_id\": \"c2\", \"formula\": \"(exists x (and (Statement x) (Deceptive x)))\", \"reason\": \"Existential quantification with domain restriction: There exists at least one deceptive statement\"}, {\"claim_id\": \"c3\", \"formula\": \"(exists x (and (Statement x) (not (Sincere x))))\", \"reason\": \"Existential quantification with domain restriction: There exists at least one statement that is not sincere\"}], \"interpretation_notes\": [\"The domain is explicitly set to 'All individuals.' with noun restrictions encoded via the Statement predicate. The universal premise now includes an explicit conjunction with Statement(x) to restrict scope. The existential claims similarly combine Statement(x) with their properties. This preserves the original meaning while conforming to the required domain normalization.\"]}",
+      "reasoning": "\nOkay, let's see. The user provided a JSON that failed validation because the domain_description was set to \"All statements.\" instead of the required \"All individuals.\" The error message says that noun restrictions should be encoded with unary predicates inside quantifiers, not by restricting the domain. So I need to adjust the domain_description to \"All individuals.\" and then modify the predicates to handle the restrictions.\n\nFirst, the original domain was \"All statements.\" But according to the rules, the domain must be \"All individuals.\" So I'll change that. Then, the predicates Deceptive and Sincere were applied to statements. Since the domain is now all individuals, I need to introduce a predicate for \"x is a statement\" to restrict the quantifiers properly.\n\nLooking at the translations: the first premise was (forall x (implies (Deceptive x) (not (Sincere x)))). Now, since the domain includes all individuals, I should add a condition that x is a statement. So the formula becomes (forall x (implies (and (Statement x) (Deceptive x)) (not (Sincere x)))). Similarly, the second premise (exists x (Deceptive x)) becomes (exists x (and (Statement x) (Deceptive x))). The conclusion (exists x (not (Sincere x))) should also include that x is a statement: (exists x (and (Statement x) (not (Sincere x)))).\n\nI need to add the \"Statement\" predicate to the symbols list. The symbols were previously Deceptive and Sincere, both with arity 1. Now adding Statement as a unary predicate meaning \"x is a statement.\"\n\nCheck if all changes are made. The domain_description is now \"All individuals.\" The symbols include Statement, Deceptive, and Sincere. The translations have been updated to include the Statement predicate in the quantifiers. The interpretation notes should mention that the domain is all individuals, and the predicates handle the restrictions. That should fix the validation error.\n",
+      "usage": {
+        "prompt_tokens": 2266,
+        "total_tokens": 3016,
+        "completion_tokens": 750,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Deceptive Statements and Sincerity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "No deceptive statement is sincere.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No deceptive statement is sincere.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "At least one statement is deceptive.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "At least one statement is deceptive.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore at least one statement is not sincere.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore at least one statement is not sincere.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d0073a90b603486fcfdd531c13b798b789661b0558a011a277e1aab4d4255af2",
+  "finished_at": "2026-09-12T23:09:29.218367+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      34
+    ],
+    "c2": [
+      35,
+      71
+    ],
+    "c3": [
+      72,
+      120
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "56d836698be5ff071ed82e9b3222e11d5a5454bce5d9fe93893363e429f5a548",
+    "reconstruction_sha256": "d0073a90b603486fcfdd531c13b798b789661b0558a011a277e1aab4d4255af2",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "56d836698be5ff071ed82e9b3222e11d5a5454bce5d9fe93893363e429f5a548",
+    "reconstruction_sha256": "d0073a90b603486fcfdd531c13b798b789661b0558a011a277e1aab4d4255af2",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "b8565395da162cdcd06074011eff554116fdefdad56946006c1e04985e001028",
+  "generated_sha256": "1cba9db33bf75a5bd59c56c5bb9c1c6a7e0815c6b04291d48fa59219c4944d19",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "S": "S",
+    "A": "A"
+  },
+  "glossary_rationale": "S refers to this apology's sincerity; the subject of A is the same apology acknowledging the injury.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "C1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "C2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "C3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "S refers to this apology's sincerity; the subject of A is the same apology acknowledging the injury.",
+  "domain_restriction": null
+}

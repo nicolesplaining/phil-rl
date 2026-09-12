@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "source": "Lina is identical to the witness. The witness is honest. Therefore Lina is honest.",
+  "source_sha256": "da528a5eb1dbf25c6edb2ca3c4eb2d88709d8bfc2db664cf785991b179f7aec5",
+  "reconstruction": {
+    "title": "Lina's Honesty Based on Witness Identity",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Lina is identical to the witness.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Lina is identical to the witness.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The witness is honest.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The witness is honest.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Lina is honest.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Lina is honest.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "97e49ab0a8be6a2d3b24e54fb789ba88e1508b143d2cf0e8745e3f62c304a281",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "lina",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "Lina, an individual"
+      },
+      {
+        "name": "witness",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The witness, an individual"
+      },
+      {
+        "name": "Honest",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is honest"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(eq lina witness)",
+        "reason": "Identity relation between constants lina and witness using built-in equality"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Honest witness)",
+        "reason": "Predicate application to constant witness"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Honest lina)",
+        "reason": "Predicate application to constant lina"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "1fb5065c90e4fef050725a292a9d8f840de9ed834ef12bcd512e70e8704b3675"
+}

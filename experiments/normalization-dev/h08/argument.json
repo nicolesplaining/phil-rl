@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "This preference is coherent. This preference is stable. Thus this preference is coherent and stable.",
+  "source_sha256": "998793fe2e3ce2b38bd1ac1228676ff7b36a3a4462ed66e076e5e0e9dcafc0b2",
+  "reconstruction": {
+    "title": "Coherence and Stability of a Preference",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This preference is coherent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This preference is coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This preference is stable.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This preference is stable.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This preference is coherent and stable.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus this preference is coherent and stable.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The conclusion combines the two premises using 'and' to assert both properties simultaneously."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "9f923f7345ed7a2f0b1c177c4058463f74ab4bfeb2eb70914674a8c69859e077",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All propositions.",
+    "symbols": [
+      {
+        "name": "c1",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This preference is coherent."
+      },
+      {
+        "name": "c2",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This preference is stable."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "c1",
+        "reason": "Direct translation of atomic proposition."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "c2",
+        "reason": "Direct translation of atomic proposition."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(and c1 c2)",
+        "reason": "Logical conjunction of premises c1 and c2 as stated in the conclusion."
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "246f533ae797c8e37effe0335510cf9c95d266891ea9665af709913368f7c27a"
+}

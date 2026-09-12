@@ -1,0 +1,162 @@
+{
+  "source": "This utterance is a promise if and only if it creates a commitment. This utterance does not create a commitment. Consequently it is not a promise.",
+  "source_sha256": "b962e039b87887d0619df69d5c2581d0c6b4b49ed6a72f30fa7e6d08646a9777",
+  "started_at": "2026-09-12T23:04:34.382526+00:00",
+  "prompt_version": "0.5",
+  "policy_version": "0.1",
+  "schema_sha256": {
+    "reconstruction": "ca7c4c1161462826af43517b2ac9714444dd463f0227c377a2b13088aee7a6a6",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a conditional argument using a definition and a negation to derive a conclusion.\", \"title\": \"Argument that the utterance is not a promise\", \"claims\": [{\"id\": \"c1\", \"text\": \"This utterance is a promise if and only if it creates a commitment.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"Biconditional definition of a promise in terms of commitment creation\"}, {\"id\": \"c2\", \"text\": \"This utterance does not create a commitment.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"Negation of the necessary condition for a promise\"}, {\"id\": \"c3\", \"text\": \"Consequently it is not a promise.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"Logical consequence derived from premises\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided a JSON with three source units. The task is to determine if there's an argument here and reconstruct it according to the specified schema.\n\nFirst, I need to check if the passage asserts an argument. The first sentence (s1) states a definition: an utterance is a promise iff it creates a commitment. The second (s2) says the utterance doesn't create a commitment. The third (s3) concludes it's not a promise. \n\nSo, the structure seems to be: if a promise requires a commitment (premise), and the utterance lacks that commitment (premise), then it's not a promise (conclusion). That's a valid argument structure. \n\nNow, I need to identify the claims. The first is a premise (s1), the second is another premise (s2), and the third is the conclusion (s3). The author is using the definition from s1 and the negation in s2 to derive the conclusion in s3. \n\nCheck for any ambiguities. The main conclusion is clearly stated in s3. The premises are straightforward. No objections or replies here. The relations would be s1 and s2 supporting s3. \n\nNo need for ambiguities here since the argument is clear. The conclusion_id would be the id of s3. The status is \"argument\" because there's a clear conclusion derived from premises. \n\nSo, the JSON should list the three claims with their roles, the relations between premises and conclusion, and the conclusion_id pointing to s3. The title can be something like \"Argument that the utterance is not a promise\".\n",
+      "usage": {
+        "prompt_tokens": 1531,
+        "total_tokens": 2145,
+        "completion_tokens": 614,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"P\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This utterance is a promise\"}, {\"name\": \"Q\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"This utterance creates a commitment\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(iff P Q)\", \"reason\": \"Direct translation of biconditional statement\"}, {\"claim_id\": \"c2\", \"formula\": \"(not Q)\", \"reason\": \"Direct translation of negation\"}, {\"claim_id\": \"c3\", \"formula\": \"(not P)\", \"reason\": \"Logical consequence derived from premises using modus tollens\"}], \"interpretation_notes\": [\"Biconditional (iff) is treated as material equivalence in classical propositional logic\", \"Negation is explicitly encoded as (not Q) rather than lexical negation in predicate meaning\", \"Conclusion follows via modus tollens: from (iff P Q) and (not Q) entails (not P)\"]}",
+      "reasoning": "\nOkay, let's tackle this. The user wants me to translate a philosophical argument into a formal JSON structure based on the given schema. The argument is about whether an utterance is a promise based on creating a commitment.\n\nFirst, I need to determine the logic type. The argument uses a biconditional (if and only if) and modus tollens reasoning. Since it's a propositional logic structure with atomic propositions, classical_propositional seems appropriate. There's no need for predicates or quantifiers here.\n\nNext, the domain description. Since it's propositional, the domain is just \"All individuals.\" but in propositional logic, we don't have individuals, so maybe that's just a placeholder. Wait, the schema says for classical_propositional, the domain_description should be \"All individuals.\" as per the normalization contract. So I'll set it to that.\n\nNow, symbols. The argument has three claims. Each can be represented as propositions. Let's name them P, Q, R. \n\n- c1: \"This utterance is a promise if and only if it creates a commitment.\" translates to (iff P Q), where P is \"This utterance is a promise\" and Q is \"This utterance creates a commitment.\"\n- c2: \"This utterance does not create a commitment.\" is (not Q).\n- c3: \"Consequently it is not a promise.\" is (not P).\n\nSo the symbols are three propositions: P, Q, R (though R isn't used here; maybe just P and Q? Wait, the conclusion is (not P), so maybe R is (not P). But according to the schema, each symbol must be declared. So I'll have three propositions: P, Q, and R where R is (not P). Wait, but in the formalization, the formulas will reference these symbols. Let me check:\n\nc1's formula is (iff P Q). So P and Q are propositions. c2 is (not Q). c3 is (not P). So symbols are P and Q. Wait, but the conclusion is (not P), which is a proposition. So maybe R is (not P). But in the symbols, we can have P and Q as propositions, and then the formulas use them. The conclusion is (not P), which is a negation of P. So symbols are P and Q. The conclusion is a formula that uses P, but since P is already declared, that's okay.\n\nWait, the symbols should include all propositions used in the formulas. The formulas are (iff P Q), (not Q), and (not P). So the symbols are P and Q. Each is a proposition with arity 0. Their meanings are as per the claims.\n\nSo symbols array will have two entries: P and Q. Their meanings are \"This utterance is a promise\" and \"This utterance creates a commitment\" respectively.\n\nTranslations for each claim:\n\nc1: formula is (iff P Q), reason is straightforward.\nc2: formula is (not Q), reason straightforward.\nc3: formula is (not P), reason is derived from premises.\n\nInterpretation notes: Maybe note that the argument uses modus tollens. But the user said not to comment on validity, just translation choices. So perhaps note that the biconditional is treated as a material biconditional, and the negation is explicit.\n\nCheck if any claims need to be null. The argument is in propositional logic, so all formulas can be translated. No need for unsupported.\n\nSo putting it all together: logic is classical_propositional, domain_description is \"All individuals.\" (as per the schema for propositional), symbols are P and Q as propositions, translations for each claim with their formulas, and interpretation notes about the biconditional and negation.\n",
+      "usage": {
+        "prompt_tokens": 1985,
+        "total_tokens": 3018,
+        "completion_tokens": 1033,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Argument that the utterance is not a promise",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This utterance is a promise if and only if it creates a commitment.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This utterance is a promise if and only if it creates a commitment.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Biconditional definition of a promise in terms of commitment creation"
+      },
+      {
+        "id": "c2",
+        "text": "This utterance does not create a commitment.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This utterance does not create a commitment.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Negation of the necessary condition for a promise"
+      },
+      {
+        "id": "c3",
+        "text": "Consequently it is not a promise.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Consequently it is not a promise.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Logical consequence derived from premises"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "eefc43dc1147825439c8b84acdc4b3984ecd986e2c617032657eb387ae9a01c7",
+  "finished_at": "2026-09-12T23:05:52.745137+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      67
+    ],
+    "c2": [
+      68,
+      112
+    ],
+    "c3": [
+      113,
+      146
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "39275e79afd6a00d663ed27c68df94d7030cb9a6143bd541343da6343a274e1f",
+    "reconstruction_sha256": "eefc43dc1147825439c8b84acdc4b3984ecd986e2c617032657eb387ae9a01c7",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "39275e79afd6a00d663ed27c68df94d7030cb9a6143bd541343da6343a274e1f",
+    "reconstruction_sha256": "eefc43dc1147825439c8b84acdc4b3984ecd986e2c617032657eb387ae9a01c7",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

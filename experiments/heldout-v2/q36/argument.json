@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1",
+  "source": "Typically reflective agents reconsider their judgments. Tavi is a reflective agent. Therefore Tavi reconsiders their judgments.",
+  "source_sha256": "8fc488a43968ec37252cedb3d01105fea17e8c78972f12c197ec6804d3d4fa90",
+  "reconstruction": {
+    "title": "Tavi Reconsiders Judgments",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Typically reflective agents reconsider their judgments.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Typically reflective agents reconsider their judgments.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The term 'typically' suggests a general tendency but not a universal rule."
+      },
+      {
+        "id": "c2",
+        "text": "Tavi is a reflective agent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Tavi is a reflective agent.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Direct assertion about Tavi's classification."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Tavi reconsiders their judgments.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Tavi reconsiders their judgments.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from premises c1 and c2."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c1",
+        "issue": "Whether 'typically' implies a probabilistic or universal claim",
+        "alternatives": [
+          "General tendency with possible exceptions",
+          "Universal rule without exceptions"
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "764e98a4fb46e53c412ae3ff3428c8fef51a4fa1393d5b34182f6afb26552e70",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "ReflectiveAgent",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a reflective agent"
+      },
+      {
+        "name": "ReconsidersJudgments",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x reconsiders their judgments"
+      },
+      {
+        "name": "Tavi",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual named Tavi"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The term 'typically' requires probabilistic or defeasible logic semantics not available in classical first-order logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Argument requires unsupported logic due to premise c1's use of 'typically'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "Conclusion depends on untranslatable premise c1; argument requires non-classical treatment"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument contains 'typically', which cannot be expressed in classical first-order logic",
+      "All claims are marked null because the logic is unsupported",
+      "The presence of defeasible reasoning blocks formalization in classical logic"
+    ]
+  },
+  "formalization_sha256": "5945fe1125b47afcf341f030f0c796bbf5e9e9700e5cfad88a5f7a61cb88cfbb"
+}

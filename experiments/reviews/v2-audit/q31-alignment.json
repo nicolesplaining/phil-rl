@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "5f69d6e3f010050c140220f17f032ff33c179a8e68ca93d08e0f25148ff2a9a1",
+  "generated_sha256": "1ad377a5a1d1e9fc7969fe641e0313e0ec9ef0b29a55d1b372c047503984ecee",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "Scholar": "Scholar",
+    "Challenges": "Challenges"
+  },
+  "glossary_rationale": "Challenges(x,y) means x challenges y. Existential and universal order, plus scholar guards, match.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Challenges(x,y) means x challenges y. Existential and universal order, plus scholar guards, match.",
+  "domain_restriction": null
+}

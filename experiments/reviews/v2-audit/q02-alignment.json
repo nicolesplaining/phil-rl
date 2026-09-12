@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "42b5e5f5f839ec099b3579af904acfeea1151ad258413d5ef8b65684681d58e1",
+  "generated_sha256": "a03fc430065959ab4ae01983ca68fa402ab20a692cc6e4d59d6c6c323cdb19dd",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "L": "L",
+    "V": "V"
+  },
+  "glossary_rationale": "Legitimacy and voluntariness concern this bargain; only-if direction and both negations remain explicit.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Legitimacy and voluntariness concern this bargain; only-if direction and both negations remain explicit.",
+  "domain_restriction": null
+}

@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "a8b7707c85d43582c1719a1c49d93c260dcbc0f7bfc6ac789f52aefb47648a1c",
+  "generated_sha256": "3a4017a54f5c25c2f3b83d1c54aa1b761a71a917d0cb385ae5bd816969fee062",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "F": "F",
+    "J": "J"
+  },
+  "glossary_rationale": "Fairness of the rule and justification of the exception match both complementary conditionals.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Fairness of the rule and justification of the exception match both complementary conditionals.",
+  "domain_restriction": null
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "source": "Necessarily, this identity holds. Hence this identity holds.",
+  "source_sha256": "187eaa10158fd2f922b0cb3b29f6cdb2f2cc335cf1d21d7b99df78eafd429160",
+  "reconstruction": {
+    "title": "Necessity and Identity Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Necessarily, this identity holds.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Necessarily, this identity holds.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The modal operator 'Necessarily' indicates a necessary condition for the identity's validity."
+      },
+      {
+        "id": "c2",
+        "text": "Hence this identity holds.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence this identity holds.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The conclusion marker 'Hence' shows this follows from the premise."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "1f69d39650e4261af2e15ff58e14bbc864719f5e7bbe7e1e64c5edf626d69135",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "IdentityHolds",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This identity holds."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The modal operator 'Necessarily' requires modal logic, which is not supported in the available classical first-order or propositional logic frameworks."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The argument's logic is unsupported due to modal operators, so all claims must abstain from formalization."
+      }
+    ],
+    "interpretation_notes": [
+      "The premise contains a modal operator (Necessarily) that cannot be expressed in classical logic. Both claims are excluded from formalization as required when logic is unsupported. The inferential connection between necessity and actuality cannot be represented in the available frameworks."
+    ]
+  },
+  "formalization_sha256": "35ac1540b81d57f9e8eb2d66751018dd72ae3ede6166c7d6093697de4af739bb"
+}

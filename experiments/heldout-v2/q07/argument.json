@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "The assessment is impartial. The assessment is transparent. Therefore the assessment is impartial and transparent.",
+  "source_sha256": "5c23198c593a2230be39c0f25244233f73e4f387b8c988be89d483f8d3342935",
+  "reconstruction": {
+    "title": "Argument for the impartiality and transparency of the assessment",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The assessment is impartial.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The assessment is impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The assessment is transparent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The assessment is transparent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "The assessment is impartial and transparent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the assessment is impartial and transparent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "a8dd6845ce6b36d98cf2728aebf93f1dea714c81067fb164d6685f9cfd623ee6",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All assessments.",
+    "symbols": [
+      {
+        "name": "C1",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The assessment is impartial"
+      },
+      {
+        "name": "C2",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The assessment is transparent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "C1",
+        "reason": "Direct translation of atomic proposition"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "C2",
+        "reason": "Direct translation of atomic proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(and C1 C2)",
+        "reason": "Logical conjunction of premises c1 and c2"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "08482fb61f0a71cc487492a8371a0e307fec1d43a0b8a01b6a1bf27d504ef47e"
+}

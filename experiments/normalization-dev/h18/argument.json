@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.1",
+  "source": "If the evidence is misleading, this belief is unjustified. The evidence is misleading. Thus this belief is unjustified. If this belief is unjustified, it is not knowledge. Therefore this belief is not knowledge.",
+  "source_sha256": "2f0cc978e9f55156625dd74df9272bfa7576180dc303f867dd3b81a42dba3964",
+  "reconstruction": {
+    "title": "Argument about Unjustified Belief and Knowledge",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the evidence is misleading, this belief is unjustified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the evidence is misleading, this belief is unjustified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The evidence is misleading.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The evidence is misleading.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This belief is unjustified.",
+        "role": "subconclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus this belief is unjustified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "If this belief is unjustified, it is not knowledge.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this belief is unjustified, it is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "This belief is not knowledge.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this belief is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c3",
+          "c4"
+        ],
+        "conclusion": "c5",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c5",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "631e5d0d00c61891d7baefe67ee89289a45e72cc3b1aa9f308a05c1cfe6518bb",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The evidence is misleading"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This belief is unjustified"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This belief is not knowledge"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies P Q)",
+        "reason": "Translating conditional statement as material implication"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "P",
+        "reason": "Direct assertion of proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Q",
+        "reason": "Direct assertion of proposition"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(implies Q R)",
+        "reason": "Translating conditional statement as material implication"
+      },
+      {
+        "claim_id": "c5",
+        "formula": "R",
+        "reason": "Direct assertion of proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "Treated all claims as atomic propositions since no first-order structure or modal elements were present in the original argument",
+      "Used material implication (implies) for all conditional statements",
+      "No need for quantifiers or predicates since the argument operates at the propositional level"
+    ]
+  },
+  "formalization_sha256": "882515576b9ba781d165dc9850df83db7f40ddcdc82b129f026cd42ceea4a640"
+}

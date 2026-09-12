@@ -1,0 +1,104 @@
+{
+  "suite_version": "heldout-v1",
+  "suite_sha256": "a83075c2b2252ed81e759d5c1726b494feb25aa7f15fb7967c2baa4ab9a786fe",
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "workers": 4,
+  "total": 10,
+  "selected_cases": [
+    "h08",
+    "h10",
+    "h18",
+    "h25",
+    "h26",
+    "h29",
+    "h30",
+    "h37",
+    "h39",
+    "h40"
+  ],
+  "completed": 10,
+  "cases": [
+    {
+      "case": "h08",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h10",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h18",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h25",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h26",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "h29",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h30",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h37",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "h39",
+      "expected": "no_argument",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "h40",
+      "expected": "no_argument",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    }
+  ],
+  "fidelity": "not_assessed",
+  "note": "Review source meaning and symbol alignment before scoring fidelity."
+}

@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "59ac98aa99dcf37d27fff652dbeac0b3367138df0ede51dd3139c3f2ce18af93",
+  "generated_sha256": "aa9d0bfa9d0de77db665f1121cdca90815dbe31df12deef411255dfcdfa0664a",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "F": "F",
+    "K": "K"
+  },
+  "glossary_rationale": "F means fabricated recollection, K knowledge; not knowledge is now a logical negation.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "F means fabricated recollection, K knowledge; not knowledge is now a logical negation.",
+  "domain_restriction": null
+}

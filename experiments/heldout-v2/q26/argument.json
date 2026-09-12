@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "Not every interpretation is coherent. Hence some interpretation is not coherent.",
+  "source_sha256": "9a606fea6d81d871045cf26cc459090a1ca276d31b28b6df4b013b8ff949bb4d",
+  "reconstruction": {
+    "title": "Incoherent Interpretations Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Not every interpretation is coherent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Not every interpretation is coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Universal negative statement about interpretations"
+      },
+      {
+        "id": "c2",
+        "text": "Hence some interpretation is not coherent.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence some interpretation is not coherent.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Existential statement derived from the premise"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8a66910e451fd95d0a2e7f1b41067248898eceff977eeef6c5202fccc48cce23",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Interpretation",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is an interpretation"
+      },
+      {
+        "name": "Coherent",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is coherent"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (forall x (implies (Interpretation x) (Coherent x))))",
+        "reason": "Translates 'Not every interpretation is coherent' as the negation of a universal statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (and (Interpretation x) (not (Coherent x))))",
+        "reason": "Translates 'Some interpretation is not coherent' as an existential statement"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "a88c877ad00617c108ec4be0dcaa6d8ff15877208122df736f24baf726d1117e"
+}

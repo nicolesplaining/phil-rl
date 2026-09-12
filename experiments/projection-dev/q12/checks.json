@@ -1,0 +1,40 @@
+{
+  "explicit": {
+    "formalization_sha256": "deb664d0f2d98326595a1b63d2634994394edad2be85c38b8b621310b38fcab9",
+    "reconstruction_sha256": "71ea8464d7e4cd9d583701795ee4a6f2bce504fde069a0d463b7260987f53671",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Accountability = False, Transparency = True]",
+    "assignments": {
+      "Accountability": "False",
+      "Transparency": "True"
+    }
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "deb664d0f2d98326595a1b63d2634994394edad2be85c38b8b621310b38fcab9",
+    "reconstruction_sha256": "71ea8464d7e4cd9d583701795ee4a6f2bce504fde069a0d463b7260987f53671",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Accountability = False, Transparency = True]",
+    "assignments": {
+      "Accountability": "False",
+      "Transparency": "True"
+    }
+  }
+}

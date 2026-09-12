@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "If this rule is fair, this exception is justified. If this rule is not fair, this exception is justified. Therefore this exception is justified.",
+  "source_sha256": "2b1e2a2b02456c94f7e38c7dad9bba60452243b4bb3108fde51633dc8409a546",
+  "reconstruction": {
+    "title": "Justification of an Exception Based on Rule Fairness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this rule is fair, this exception is justified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this rule is fair, this exception is justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement where the fairness of the rule leads to the exception being justified."
+      },
+      {
+        "id": "c2",
+        "text": "If this rule is not fair, this exception is justified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this rule is not fair, this exception is justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement where the unfairness of the rule also leads to the exception being justified."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this exception is justified.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this exception is justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from the two premises covering both possible states of the rule's fairness."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "0b51ca855628107f189a7e36bffb7cec0a7fdb5fd15a1a7795d85f6a94c84081",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This rule is fair"
+      },
+      {
+        "name": "J",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This exception is justified"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies F J)",
+        "reason": "Translates the conditional 'If this rule is fair, this exception is justified' using propositional implication"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(implies (not F) J)",
+        "reason": "Translates the conditional 'If this rule is not fair, this exception is justified' using propositional implication with explicit negation"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "J",
+        "reason": "Direct translation of the conclusion 'This exception is justified' as a proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument structure demonstrates that J is entailed in both possible truth values of F (fair/unfair), making the conclusion necessarily true in classical propositional logic",
+      "No first-order elements are present since the argument concerns specific propositions rather than quantified predicates"
+    ]
+  },
+  "formalization_sha256": "6bcc4ac57ec7151d0b03ac111f1213747a7829a8db03dd6bdbd6f21351623038"
+}

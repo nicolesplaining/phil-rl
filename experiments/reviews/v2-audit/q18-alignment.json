@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "dd538b97dae995ba069eaed96f8b4dd3c96917c7e691b4ddb564dbf56a5acf60",
+  "generated_sha256": "bbdc7079842425f4c881f10e7377ec45c093ac7d85a7c7f919f32373b2215679",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "E": "E",
+    "P": "P"
+  },
+  "glossary_rationale": "Equal and proportional allocations remain separate; exclusivity is an explicit source claim.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Equal and proportional allocations remain separate; exclusivity is an explicit source claim.",
+  "domain_restriction": null
+}

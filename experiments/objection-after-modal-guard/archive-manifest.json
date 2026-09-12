@@ -1,0 +1,11 @@
+{
+  "archived_at": "2026-09-12T23:30:16.423144+00:00",
+  "run_code_commit": "uncommitted development after 5a003635e96765f4675da275d098f5a4f9d44a33",
+  "sha256": {
+    "argument.json": "0631ab626e98d0aa4195bc0f408647e4bb084ef55c293a438f1d053b4a815d55",
+    "checks.json": "bcae5b36ec057ed6594735b101309892bb14131031493ce9ced601fde3193905",
+    "review.md": "a2dd1c84ec7c6be64fdde56356e85ec43991b46a761c49b2f0316d5019689cb4",
+    "trace.json": "ea4085e7e39e376b9ed7649a3760066f209b8865083040dde678e9a6cdfb4bda"
+  },
+  "note": "Hashes identify saved files, not independent validation of their claims."
+}

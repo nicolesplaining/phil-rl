@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "If this explanation is causal, it is informative. This explanation is informative. Therefore this explanation is causal.",
+  "source_sha256": "3b0069fb0bf2730710c37477d1ae29e0d89b0beed7e9ad3f4782fc438d0620fa",
+  "reconstruction": {
+    "title": "Affirming the Consequent in Explanation Causality",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this explanation is causal, it is informative.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this explanation is causal, it is informative.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a sufficient condition for informativeness."
+      },
+      {
+        "id": "c2",
+        "text": "This explanation is informative.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This explanation is informative.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Assertion of the consequent in the conditional statement."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this explanation is causal.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this explanation is causal.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from the premises, committing the fallacy of affirming the consequent."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "c84243811870db1b025aa4f0ad43abfcfc7ccb4c1c2938923d4fb50c8bc3f2c0",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "CausalExplanation",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This explanation is causal"
+      },
+      {
+        "name": "InformativeExplanation",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This explanation is informative"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies CausalExplanation InformativeExplanation)",
+        "reason": "Translating the conditional 'If this explanation is causal, it is informative' as material implication between atomic propositions"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "InformativeExplanation",
+        "reason": "Direct translation of the assertion 'This explanation is informative' as an atomic proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "CausalExplanation",
+        "reason": "Direct translation of the conclusion 'This explanation is causal' as an atomic proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "Treated 'causal' and 'informative' as atomic propositions since no internal logical structure is present in the source claims",
+      "The argument structure corresponds to the formal fallacy of affirming the consequent (from (P→Q) and Q, concluding P)"
+    ]
+  },
+  "formalization_sha256": "1bb758a8c3c4ac1eb5c95b6362005a0a75972e4d5786b017b24131fb110cb52d"
+}

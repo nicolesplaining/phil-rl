@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "2ca9c66ab7e6af26bac83a7b5994238bd93d5aed956b7442378f64ce65fa370d",
+  "generated_sha256": "2e9674cca50fb55fbb495c0a03cfd5a2b2ae32f56f1b886d875921a5d70b7c56",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "E": "E",
+    "B": "B"
+  },
+  "glossary_rationale": "Explicitness and bindingness of this agreement align; denial of the antecedent is not repaired.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Explicitness and bindingness of this agreement align; denial of the antecedent is not repaired.",
+  "domain_restriction": null
+}

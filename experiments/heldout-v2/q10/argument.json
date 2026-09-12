@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "It is not the case that, if this evidence is decisive, this doubt is justified. Therefore this evidence is decisive and this doubt is not justified.",
+  "source_sha256": "f6e5f182e0f92ed4faec621bc50f09137842df479b42e892ee00037f27f73ce5",
+  "reconstruction": {
+    "title": "Negation of Conditional Leading to Conjunction",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is not the case that, if this evidence is decisive, this doubt is justified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is not the case that, if this evidence is decisive, this doubt is justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is a negation of a conditional statement (¬(A → B)), which is logically equivalent to A ∧ ¬B."
+      },
+      {
+        "id": "c2",
+        "text": "Therefore this evidence is decisive and this doubt is not justified.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this evidence is decisive and this doubt is not justified.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is the conclusion derived from the negation of the conditional in c1."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6c7d4e3c3ed83c49ff1e67cfc58e6c9b47f2ab5a9ab26d3f3fc170a6c07c107b",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "D",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This evidence is decisive"
+      },
+      {
+        "name": "J",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This doubt is justified"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (implies D J))",
+        "reason": "The premise negates the conditional 'if D then J', which is formalized as ¬(D → J) in propositional logic."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(and D (not J))",
+        "reason": "The conclusion asserts the conjunction of D and ¬J, which is logically equivalent to the negation of the conditional in c1."
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "4d94e2f04339173b0dcc75da4e2809d405e711393f5b84e987739f477c06a6a3"
+}

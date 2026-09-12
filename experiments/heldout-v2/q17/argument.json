@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1",
+  "source": "If this recollection is fabricated, it is not knowledge. This recollection is fabricated. Therefore this recollection is not knowledge.",
+  "source_sha256": "960338b0e0734b76bdec995dbced30908d7b97774018481b9c5d31a49e122f06",
+  "reconstruction": {
+    "title": "Argument about Fabricated Recollection and Knowledge",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If this recollection is fabricated, it is not knowledge.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this recollection is fabricated, it is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "This recollection is fabricated.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This recollection is fabricated.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore this recollection is not knowledge.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this recollection is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d741a2cc5c6062bb0b9585f65dff2c15356c3361056bfd558c3ff141f589a6b5",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This recollection is fabricated"
+      },
+      {
+        "name": "K",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This recollection is knowledge"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies F (not K))",
+        "reason": "Conditional statement between fabrication and knowledge status"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "F",
+        "reason": "Direct assertion of fabrication"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not K)",
+        "reason": "Negation of knowledge status derived from premises"
+      }
+    ],
+    "interpretation_notes": [
+      "Treated as propositional logic since argument structure involves only conditional relationships between atomic propositions",
+      "No quantifiers or predicates needed for this simple modus ponens structure",
+      "Fabricated and knowledge status are represented as atomic propositions rather than predicates"
+    ]
+  },
+  "formalization_sha256": "caf94642fc62c5668df8b4e55da27fa94cd9d61d56bad5a4ed1d6fd082c0c7e7"
+}

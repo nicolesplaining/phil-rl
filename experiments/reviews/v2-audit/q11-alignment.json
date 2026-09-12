@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "2920fe97fae1407e2fb89196f328b4cb396367d7fb3bf7a88cad8a7f788319e7",
+  "generated_sha256": "4fdf30ca54d6148df74337877323d8b266de888283dc2c81a293f98b43d0d9b0",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "P",
+    "Q": "C"
+  },
+  "glossary_rationale": "P denotes being a promise and Q creating a commitment for this utterance; the biconditional and negations match.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P denotes being a promise and Q creating a commitment for this utterance; the biconditional and negations match.",
+  "domain_restriction": null
+}

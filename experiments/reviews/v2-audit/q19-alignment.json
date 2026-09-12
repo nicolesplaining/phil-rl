@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "47e2501d0f964fc3f66aadba8e0fc8b2d9ccf386a35cf5aefed9aa299e62cb20",
+  "generated_sha256": "44f7e3b410421e98468d1ba9a1bda8d211d57de03e36b18fce3c78ad197e6cf1",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "O",
+    "Q": "F"
+  },
+  "glossary_rationale": "P means this inquiry is open and Q this conclusion is final. The inclusive disjunction is preserved.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P means this inquiry is open and Q this conclusion is final. The inclusive disjunction is preserved.",
+  "domain_restriction": null
+}

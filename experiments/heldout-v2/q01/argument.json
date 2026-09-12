@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "If this apology is sincere, it acknowledges the injury. This apology is sincere. Therefore it acknowledges the injury.",
+  "source_sha256": "00e068b61a4cbc9d4f57147145a70c6a65c1d9e273059673f1213f04e4fff7d9",
+  "reconstruction": {
+    "title": "Sincere Apology Acknowledges Injury",
+    "claims": [
+      {
+        "id": "C1",
+        "text": "If this apology is sincere, it acknowledges the injury.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this apology is sincere, it acknowledges the injury.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "C2",
+        "text": "This apology is sincere.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This apology is sincere.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "C3",
+        "text": "Therefore it acknowledges the injury.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore it acknowledges the injury.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "C1",
+          "C2"
+        ],
+        "conclusion": "C3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "C3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6ccee786b08aa24e85dda2823aecab65bb261c0f5b170b998372c811761b5dea",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "S",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This apology is sincere"
+      },
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "It acknowledges the injury"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "C1",
+        "formula": "(implies S A)",
+        "reason": "Direct translation of the conditional statement"
+      },
+      {
+        "claim_id": "C2",
+        "formula": "S",
+        "reason": "Direct assertion of the antecedent"
+      },
+      {
+        "claim_id": "C3",
+        "formula": "A",
+        "reason": "Direct assertion of the consequent as conclusion"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "94aca8d6db2f93ffb35f206c9581904e4e6ed9f2fa990deb681985cada7d0994"
+}

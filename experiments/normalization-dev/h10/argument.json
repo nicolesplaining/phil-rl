@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "The explanation is neither complete nor circular. Therefore it is not circular.",
+  "source_sha256": "5b8a1f8eb444bf367ecaaca39e7c3c87baaf521420581dd933fc2e57595c307b",
+  "reconstruction": {
+    "title": "Non-circularity Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The explanation is neither complete nor circular.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The explanation is neither complete nor circular.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conjunctive claim asserting two properties of the explanation"
+      },
+      {
+        "id": "c2",
+        "text": "Therefore it is not circular.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore it is not circular.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from the first claim"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "cd0ed297db7c586d3d6c5958f14d11ad4714e53ec5eefd8ea676cfc8fc0a002b",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Complete",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The explanation is complete"
+      },
+      {
+        "name": "Circular",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The explanation is circular"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(and (not Complete) (not Circular))",
+        "reason": "Translates 'neither complete nor circular' as conjunction of negations"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not Circular)",
+        "reason": "Direct negation of circularity as stated in conclusion"
+      }
+    ],
+    "interpretation_notes": [
+      "Original conjunctive premise (c1) asserts both ¬Complete and ¬Circular simultaneously",
+      "Conclusion (c2) follows directly from the second conjunct of c1"
+    ]
+  },
+  "formalization_sha256": "c5f1440d4690ef10005223e6c857f62aa6b081471a3a417294548d1bea2b0ae9"
+}

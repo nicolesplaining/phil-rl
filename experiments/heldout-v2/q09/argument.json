@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "source": "It is not the case that the verdict is both informed and impartial. The verdict is informed. Therefore the verdict is not impartial.",
+  "source_sha256": "1b8c231b7a67fdfd8cd60ef0d26a12cdac19848e234be7161c052c2a4940de72",
+  "reconstruction": {
+    "title": "Argument about the verdict's impartiality",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "It is not the case that the verdict is both informed and impartial.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "It is not the case that the verdict is both informed and impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is a negation of a conjunction, serving as the first premise."
+      },
+      {
+        "id": "c2",
+        "text": "The verdict is informed.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The verdict is informed.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This affirms one disjunct, serving as the second premise."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the verdict is not impartial.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the verdict is not impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": "This is the conclusion derived via disjunctive syllogism from premises c1 and c2."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "587fa878751954d75fc5279e4a23281ea2309cdc3d6a538e0e1762fe0154517a",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Informed",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The verdict is informed"
+      },
+      {
+        "name": "Impartial",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The verdict is impartial"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (and Informed Impartial))",
+        "reason": ""
+      },
+      {
+        "claim_id": "c2",
+        "formula": "Informed",
+        "reason": ""
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not Impartial)",
+        "reason": ""
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "9f2772a7e96bf96f9ebf444f0e76f2824fcb2ca3a38acbc23b7316a5632fff7e"
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agreement is explicit, it is binding. The agreement is not explicit. Therefore the agreement is not binding.",
+  "source_sha256": "1a3913b038caa95935e3fa9544a8e195c55f01c8597aaea3441d1289a2ba5e11",
+  "reconstruction": {
+    "title": "Argument about the binding nature of an agreement based on explicitness",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agreement is explicit, it is binding.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agreement is explicit, it is binding.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a sufficient condition for binding agreements."
+      },
+      {
+        "id": "c2",
+        "text": "The agreement is not explicit.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agreement is not explicit.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Negation of the antecedent in the conditional statement."
+      },
+      {
+        "id": "c3",
+        "text": "Therefore the agreement is not binding.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the agreement is not binding.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived from the premises using logical inference."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2c7bd9db306a29e93f1ab1f62a3dedf5ead10f4435acadb155e548edf7da0adc",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All propositions.",
+    "symbols": [
+      {
+        "name": "E",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agreement is explicit"
+      },
+      {
+        "name": "B",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agreement is binding"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies E B)",
+        "reason": "Translates the conditional 'If the agreement is explicit, it is binding' as material implication between propositions E and B"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not E)",
+        "reason": "Direct negation of the proposition 'The agreement is explicit'"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not B)",
+        "reason": "Direct negation of the proposition 'The agreement is binding'"
+      }
+    ],
+    "interpretation_notes": [
+      "The argument commits the fallacy of denying the antecedent (E → B, ¬E ⊢ ¬B), but this is a formal representation preserving the original structure without evaluating validity",
+      "All claims refer to a single agreement, so no quantifiers or individual variables are needed"
+    ]
+  },
+  "formalization_sha256": "018c56cf31e1e323882b64966fe69ecd39ac62583b0170163c84e379ff7aaceb"
+}

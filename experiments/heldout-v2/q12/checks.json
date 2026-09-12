@@ -1,0 +1,36 @@
+{
+  "explicit": {
+    "formalization_sha256": "00adb96b5e188561c7c5ca0b735b8a6db6bbc9ad15071f7e5887f8cac3e3f0b4",
+    "reconstruction_sha256": "2aee857684e69505963be5b03b54e8a821751633ebb0abe4d8a4f476f678ab15",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Institution = FiniteDomain_3bd6a1f5da454c59a6dd4215acf689dd_0,\n Transparent = [else -> True],\n Accountable = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "00adb96b5e188561c7c5ca0b735b8a6db6bbc9ad15071f7e5887f8cac3e3f0b4",
+    "reconstruction_sha256": "2aee857684e69505963be5b03b54e8a821751633ebb0abe4d8a4f476f678ab15",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Institution = FiniteDomain_6c8dbe14d83d4df78488dc4b8832f886_0,\n Transparent = [else -> True],\n Accountable = [else -> False]]",
+    "countermodel_domain_size": 1,
+    "countermodel_search": "finite witness, without assuming the domain is finite"
+  }
+}

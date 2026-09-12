@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "source": "Every person trusts some person. Therefore some person is trusted by every person.",
+  "source_sha256": "170eb1606b612650b9d9245e3cd4b78d92c736840e2b320a413a77768398599a",
+  "reconstruction": {
+    "title": "Argument about Trust",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person trusts some person.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person trusts some person.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Some person is trusted by every person.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore some person is trusted by every person.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "309ccaa8f1705507df695c25834077df493382dd22d89fd7b9c889d80e9d90eb",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person"
+      },
+      {
+        "name": "Trusts",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x trusts y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Person x) (exists y (and (Person y) (Trusts x y)))))",
+        "reason": "Universal quantifier over people, existential quantifier for trusted person"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (and (Person y) (forall x (implies (Person x) (Trusts x y)))))",
+        "reason": "Existential quantifier for trusted person, universal quantifier over people"
+      }
+    ],
+    "interpretation_notes": [
+      "Assumed trusted individuals are persons to align with conclusion's requirement"
+    ]
+  },
+  "formalization_sha256": "a63f5af30dcc90793be5d877b4ae8a3d3f9d6f922379b564ef4ad745c0b61d75"
+}

@@ -1,0 +1,344 @@
+{
+  "suite_version": "heldout-v2",
+  "suite_sha256": "bbdc9b0299d7d720ba1e4d062aec9b6567547cd8886d4509030bd48e79aa1955",
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "workers": 4,
+  "total": 40,
+  "selected_cases": [
+    "q01",
+    "q02",
+    "q03",
+    "q04",
+    "q05",
+    "q06",
+    "q07",
+    "q08",
+    "q09",
+    "q10",
+    "q11",
+    "q12",
+    "q13",
+    "q14",
+    "q15",
+    "q16",
+    "q17",
+    "q18",
+    "q19",
+    "q20",
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q30",
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40"
+  ],
+  "completed": 40,
+  "cases": [
+    {
+      "case": "q01",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q02",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q03",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q04",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q05",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q06",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q07",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q08",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q09",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q10",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q11",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q12",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q13",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q14",
+      "expected": "inconsistent_premises",
+      "generated": true,
+      "actual": "inconsistent_premises",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q15",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q16",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q17",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q18",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q19",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q20",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q21",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q22",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q23",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q24",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q25",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q26",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q27",
+      "expected": "invalid",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q28",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q29",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q30",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q31",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q32",
+      "expected": "valid",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q33",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q34",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "valid",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q35",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q36",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q37",
+      "expected": "unsupported",
+      "generated": true,
+      "actual": "unsupported",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q38",
+      "expected": "review_required",
+      "generated": true,
+      "actual": "invalid",
+      "ambiguity_recorded": true
+    },
+    {
+      "case": "q39",
+      "expected": "no_argument",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    },
+    {
+      "case": "q40",
+      "expected": "no_argument",
+      "generated": true,
+      "actual": "no_argument",
+      "ambiguity_recorded": false
+    }
+  ],
+  "fidelity": "not_assessed",
+  "note": "Review source meaning and symbol alignment before scoring fidelity."
+}

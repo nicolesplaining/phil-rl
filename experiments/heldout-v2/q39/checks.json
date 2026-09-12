@@ -1,0 +1,14 @@
+{
+  "explicit": {
+    "status": "no_argument",
+    "reason": "The text contains only questions without any asserted claims or conclusions.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  },
+  "with_proposed_implicit": {
+    "status": "no_argument",
+    "reason": "The text contains only questions without any asserted claims or conclusions.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  }
+}

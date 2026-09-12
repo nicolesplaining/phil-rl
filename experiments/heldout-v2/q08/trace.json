@@ -1,0 +1,144 @@
+{
+  "source": "The memory is neither vivid nor accurate. Therefore the memory is not accurate.",
+  "source_sha256": "82c4f8adcde00f9f0a6173b720a4dd6387dc77b48d0bd32e3ee79af6eab54f7b",
+  "started_at": "2026-09-12T23:03:52.993138+00:00",
+  "prompt_version": "0.5",
+  "policy_version": "0.1",
+  "schema_sha256": {
+    "reconstruction": "ca7c4c1161462826af43517b2ac9714444dd463f0227c377a2b13088aee7a6a6",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a logical inference from a disjunctive premise to a specific conclusion.\", \"title\": \"Inference from a disjunctive negation\", \"claims\": [\n    {\n        \"id\": \"c1\",\n        \"text\": \"The memory is neither vivid nor accurate.\",\n        \"role\": \"premise\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s1\"],\n        \"interpretation_note\": \"\"\n    },\n    {\n        \"id\": \"c2\",\n        \"text\": \"The memory is not accurate.\",\n        \"role\": \"conclusion\",\n        \"origin\": \"explicit\",\n        \"evidence_ids\": [\"s2\"],\n        \"interpretation_note\": \"\"\n    }\n], \"relations\": [\n    {\n        \"premises\": [\"c1\"],\n        \"conclusion\": \"c2\",\n        \"kind\": \"supports\"\n    }\n], \"conclusion_id\": \"c2\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided two source units. The first one says, \"The memory is neither vivid nor accurate.\" The second one is \"Therefore the memory is not accurate.\" \n\nI need to determine if this is an argument. The first step is to check if there's a conclusion. The second sentence starts with \"Therefore,\" which is a conclusion indicator. So the conclusion here is \"the memory is not accurate.\" \n\nNow, looking at the premises. The first sentence states that the memory is neither vivid nor accurate. That's a conjunction of two negations. The conclusion is just one part of that conjunction. \n\nSo the argument is using the first part (neither vivid nor accurate) to support the conclusion that it's not accurate. The structure here is that if something is neither A nor B, then it's not B. That's a valid logical step. \n\nI need to make sure that the premises are correctly identified. The first claim is the premise, and the second is the conclusion. The relation between them is that the premise supports the conclusion. \n\nNo objections or replies are present here. The author is directly stating the premise and then the conclusion. \n\nAmbiguities? The first sentence uses \"neither...nor,\" which is clear. The conclusion is straightforward. I don't see any ambiguity here. \n\nSo the status is \"argument,\" the conclusion is the second sentence, and the premise is the first. The relations would link the premise to the conclusion with a \"supports\" kind. \n\nI should structure the JSON accordingly, making sure to reference the correct source IDs and roles. Also, check that the interpretation notes are empty since there's no ambiguity.\n",
+      "usage": {
+        "prompt_tokens": 1485,
+        "total_tokens": 2044,
+        "completion_tokens": 559,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_propositional\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"V\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The memory is vivid\"}, {\"name\": \"A\", \"kind\": \"proposition\", \"arity\": 0, \"meaning\": \"The memory is accurate\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(not (or V A))\", \"reason\": \"The premise 'neither vivid nor accurate' is formalized as the negation of the disjunction of V and A\"}, {\"claim_id\": \"c2\", \"formula\": \"(not A)\", \"reason\": \"The conclusion 'not accurate' is directly expressed as the negation of proposition A\"}], \"interpretation_notes\": []}",
+      "reasoning": "\nOkay, let's tackle this translation. The user provided a philosophical argument and wants it translated into a formal logic structure. The source argument is: \"The memory is neither vivid nor accurate. Therefore the memory is not accurate.\" The frozen reconstruction has two claims, c1 as the premise and c2 as the conclusion.\n\nFirst, I need to determine the appropriate logic. Since the argument involves a disjunction and negation, classical propositional logic should suffice. There's no need for first-order logic here because there are no quantifiers or predicates over individuals. The domain description is straightforward as all individuals, but since we're using propositional logic, the domain isn't really relevant here. \n\nNext, the symbols. The key propositions here are \"The memory is vivid\" and \"The memory is accurate.\" Let's denote them as V and A respectively. The premise c1 states that neither V nor A is true, which translates to ¬(V ∨ A). The conclusion c2 is ¬A. \n\nWait, but in propositional logic, \"neither V nor A\" is equivalent to ¬V ∧ ¬A. However, the user's note says that explicit logical negation should be in (not ...), not in the atom's meaning. So, the original statement \"neither vivid nor accurate\" should be translated as the negation of the disjunction. So, ¬(V ∨ A). But in classical logic, that's equivalent to ¬V ∧ ¬A. However, the user's instruction says to preserve internal logical structure wherever it matters. Since the premise is a negation of a disjunction, I should represent it as such. \n\nSo, the symbols would be two propositions: V for \"The memory is vivid\" and A for \"The memory is accurate\". The premise c1 is ¬(V ∨ A), and the conclusion c2 is ¬A. \n\nNow, checking the translation. The premise is a negation of a disjunction, and the conclusion is one of the negated parts. In propositional logic, from ¬(V ∨ A), we can derive ¬V and ¬A via De Morgan's laws. But the argument here is directly concluding ¬A from ¬(V ∨ A). However, in formal terms, the conclusion is valid because if the disjunction is false, both parts must be false. So the translation is correct. \n\nI need to make sure that the symbols are declared properly. The propositions V and A are atomic. The formulas for c1 and c2 are (not (or V A)) and (not A) respectively. \n\nNo ambiguities are mentioned in the frozen reconstruction, so the interpretation notes can be empty. The logic is classical propositional. The domain description is \"All individuals.\" but since we're using propositional logic, the domain isn't actually used here. \n\nSo the final JSON should have the logic as classical_propositional, the domain description as \"All individuals.\", symbols for V and A as propositions, and the translations for c1 and c2 with their respective formulas. The interpretation notes can be empty since there are no translation choices to explain beyond what's already captured.\n",
+      "usage": {
+        "prompt_tokens": 1857,
+        "total_tokens": 2682,
+        "completion_tokens": 825,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Inference from a disjunctive negation",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The memory is neither vivid nor accurate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The memory is neither vivid nor accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The memory is not accurate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the memory is not accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "627ffc4c7148ebed3223ab109a814ab5d723f68d638b269d995f4a65ffb60ef2",
+  "finished_at": "2026-09-12T23:04:30.927933+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      41
+    ],
+    "c2": [
+      42,
+      79
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "33be70c511dbb56b3b8230adfd341a20e17f50f3dad4eae0aa12ec80a1a3145e",
+    "reconstruction_sha256": "627ffc4c7148ebed3223ab109a814ab5d723f68d638b269d995f4a65ffb60ef2",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "33be70c511dbb56b3b8230adfd341a20e17f50f3dad4eae0aa12ec80a1a3145e",
+    "reconstruction_sha256": "627ffc4c7148ebed3223ab109a814ab5d723f68d638b269d995f4a65ffb60ef2",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

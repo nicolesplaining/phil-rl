@@ -1,0 +1,14 @@
+{
+  "explicit": {
+    "status": "no_argument",
+    "reason": "The passage contains only descriptive statements about a lecture's timing, topic, and room setup, with no asserted conclusion or argumentative structure.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  },
+  "with_proposed_implicit": {
+    "status": "no_argument",
+    "reason": "The passage contains only descriptive statements about a lecture's timing, topic, and room setup, with no asserted conclusion or argumentative structure.",
+    "included_premise_ids": [],
+    "fidelity": "not_assessed"
+  }
+}

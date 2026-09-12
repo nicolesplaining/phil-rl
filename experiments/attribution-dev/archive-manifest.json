@@ -1,0 +1,14 @@
+{
+  "archived_at": "2026-09-12T23:30:16.149632+00:00",
+  "run_code_commit": "uncommitted development after 5a003635e96765f4675da275d098f5a4f9d44a33",
+  "sha256": {
+    "q22/Statement.lean": "d1ba18c194e83476899ef1e6e457a68ce6992ca231435ce9340ba657e6da78b1",
+    "q22/argument.json": "245cee5e51f45857ec0bf4bd8ccdd6e522dc912c623d764ecdc99c3d597310db",
+    "q22/checks.json": "edf7922f1bb28741a8e778468a6a9b522a084a8f0c6316384b0f17bf7b111f0b",
+    "q22/review.md": "cb1318b15b608dd9f14fb9e78beaf5d268cca78dd140a17af5244850d209a1c5",
+    "q22/trace.json": "b2a8d833aecd9e841194ca4a2647b8cd6de0b29536ac46ab7ec087985a101cf5",
+    "suite.json": "41e84fbb98dfff9009b4ced064645326e6a284e65e915d50212e1d70e65acb4d",
+    "summary.json": "76fef5d720c6a07f52314ddc552ed33db8a3dfa925299897f2a96f5b5d502f1a"
+  },
+  "note": "Hashes identify saved files, not independent validation of their claims."
+}

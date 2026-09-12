@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "Every agent defers to some agent. Therefore there is an agent to whom every agent defers.",
+  "source_sha256": "1690e86adbe1b104ccdc2198ba17e2817d38928fd4cfda614f4132dd7704d381",
+  "reconstruction": {
+    "title": "Deferral Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every agent defers to some agent.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every agent defers to some agent.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore there is an agent to whom every agent defers.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore there is an agent to whom every agent defers.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "5b3b47107352c7af07c7d1fdff38c0943d800270563dd3ecd06f638ce96bc037",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Agent",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is an agent"
+      },
+      {
+        "name": "Defers",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "x defers to y"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Agent x) (exists y (and (Agent y) (Defers x y)))))",
+        "reason": "Translates 'Every agent defers to some agent' using universal and existential quantifiers with Agent and Defers predicates."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (and (Agent y) (forall x (implies (Agent x) (Defers x y)))))",
+        "reason": "Translates 'There is an agent to whom every agent defers' using existential and universal quantifiers with Agent and Defers predicates."
+      }
+    ],
+    "interpretation_notes": [
+      "The domain includes all individuals, with Agent(x) restricting quantification to agents. The argument's validity depends on logical properties of quantifiers, not on the content of 'defers' or 'agent' predicates.",
+      "The translation preserves the original quantifier structure: premise c1 uses ∀∃ and conclusion c2 uses ∃∀, which is a classic case of invalid inference in classical logic (converse of the converse of a universal quantifier)."
+    ]
+  },
+  "formalization_sha256": "2997bd3ceb0588175ea6a76628fa4c2ca0fba0d81f98cb6a1450ecbce61cbb85"
+}

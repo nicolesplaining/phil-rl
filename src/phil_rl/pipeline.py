@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 
 from phil_rl.client import ChatClient, GenerationError
 from phil_rl.logic import validate_formalization
+from phil_rl.normalize import ground_abstraction
 from phil_rl.policy import POLICY_VERSION, explicit_only, normalized_formalization
 from phil_rl.prompts import FORMALIZE, PROMPT_VERSION, RECONSTRUCT, RECONSTRUCT_UNITS
 from phil_rl.schema import Artifact, Formalization, Reconstruction, fingerprint
@@ -114,6 +115,9 @@ def run(
     )
     if fingerprint(reconstruction) != reconstruction_hash:
         raise ValueError("Reconstruction changed during formalization.")
+    if not legacy_quotes:
+        formalization, projection = ground_abstraction(formalization)
+        trace["normalization"] = projection
     artifact = Artifact.create(source, reconstruction, formalization)
     trace = {
         **trace,

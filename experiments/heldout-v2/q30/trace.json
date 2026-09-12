@@ -1,0 +1,162 @@
+{
+  "source": "Every commitment is a reason. No reason is a sensation. Therefore no commitment is a sensation.",
+  "source_sha256": "d6f4c4332940bc68e5e03c46987b7a1f1a554560cd088c13568c6deeb56cf706",
+  "started_at": "2026-09-12T23:09:26.056385+00:00",
+  "prompt_version": "0.5",
+  "policy_version": "0.1",
+  "schema_sha256": {
+    "reconstruction": "ca7c4c1161462826af43517b2ac9714444dd463f0227c377a2b13088aee7a6a6",
+    "formalization": "a9af5a152a71fd3f1a3f311a51daaf103dfc437bf511599b1329af7056bae5a0"
+  },
+  "prompt_sha256": {
+    "reconstruction": "e8f1a91f07bafff83c4046dfbe38c945596d7d21446d8fc4c722fdf70ec25ec3",
+    "formalization": "31ae118474248e6fafa906bdcddfed5712c1dc99df107d33a266c33c0a478f11"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": false,
+    "retries": 2,
+    "transport_retries": 2,
+    "timeout_seconds": 360.0
+  },
+  "provenance": "llm_generated",
+  "evidence_mode": "source_units",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"status\": \"argument\", \"reason\": \"The passage presents a syllogism with two premises and a conclusion marked by 'Therefore'.\", \"title\": \"Syllogism on Commitments and Sensations\", \"claims\": [{\"id\": \"c1\", \"text\": \"Every commitment is a reason.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s1\"], \"interpretation_note\": \"\"}, {\"id\": \"c2\", \"text\": \"No reason is a sensation.\", \"role\": \"premise\", \"origin\": \"explicit\", \"evidence_ids\": [\"s2\"], \"interpretation_note\": \"\"}, {\"id\": \"c3\", \"text\": \"Therefore no commitment is a sensation.\", \"role\": \"conclusion\", \"origin\": \"explicit\", \"evidence_ids\": [\"s3\"], \"interpretation_note\": \"\"}], \"relations\": [{\"premises\": [\"c1\", \"c2\"], \"conclusion\": \"c3\", \"kind\": \"supports\"}], \"conclusion_id\": \"c3\", \"ambiguities\": []}",
+      "reasoning": "\nOkay, let's see. The user provided three source units. The first one says \"Every commitment is a reason.\" The second is \"No reason is a sensation.\" The third is \"Therefore no commitment is a sensation.\" \n\nI need to determine if this is an argument. The first two statements are premises, and the third is the conclusion. The structure seems like a syllogism. The first premise is a universal affirmative: all commitments are reasons. The second is a universal negative: no reasons are sensations. The conclusion is a universal negative: no commitments are sensations. \n\nSo, the author is using these two premises to derive the conclusion. The conclusion is marked by \"Therefore,\" which is a clear indicator. The premises are both stated as facts, and the conclusion follows logically. \n\nNow, I need to map this into the JSON structure. The status should be \"argument\" because there's a clear conclusion derived from premises. The title can be something like \"Syllogism on Commitments and Sensations.\" \n\nFor the claims, each source unit is a separate claim. The first two are premises, the third is the conclusion. The relations would be that the first and second premises support the conclusion. \n\nI need to check if there are any ambiguities. The terms \"commitment,\" \"reason,\" and \"sensation\" are used, but there's no indication of ambiguity in their meanings here. The structure is straightforward, so no ambiguities to note. \n\nEach claim's evidence_id is the corresponding source unit. The interpretation notes can be left empty since there's no ambiguity. The conclusion_id is the third claim's id. \n\nI think that's all. Let me structure the JSON accordingly.\n",
+      "usage": {
+        "prompt_tokens": 1515,
+        "total_tokens": 2102,
+        "completion_tokens": 587,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "accepted": true,
+      "http_status": 200,
+      "response": "{\"logic\": \"classical_first_order\", \"domain_description\": \"All individuals.\", \"symbols\": [{\"name\": \"Commitment\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a commitment\"}, {\"name\": \"Reason\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a reason\"}, {\"name\": \"Sensation\", \"kind\": \"predicate\", \"arity\": 1, \"meaning\": \"x is a sensation\"}], \"translations\": [{\"claim_id\": \"c1\", \"formula\": \"(forall x (implies (Commitment x) (Reason x)))\", \"reason\": \"Universal statement about commitments being reasons\"}, {\"claim_id\": \"c2\", \"formula\": \"(forall x (implies (Reason x) (not (Sensation x))))\", \"reason\": \"Universal statement about reasons not being sensations\"}, {\"claim_id\": \"c3\", \"formula\": \"(forall x (implies (Commitment x) (not (Sensation x))))\", \"reason\": \"Conclusion derived from transitivity of the two premises\"}], \"interpretation_notes\": [\"Standard first-order syllogism structure preserved\", \"Predicates used consistently for categorical claims\", \"No need for constants since argument remains general\"]}",
+      "reasoning": "\nOkay, let's tackle this problem. The user wants me to translate the given philosophical argument into a formal logical structure using the specified JSON schema. The argument is a syllogism about commitments, reasons, and sensations.\n\nFirst, I need to determine the logic type. The argument uses universal statements (\"Every commitment is a reason\" and \"No reason is a sensation\") and draws a conclusion about commitments and sensations. This seems like a classic syllogism, which can be represented in classical first-order logic. So, the logic should be classical_first_order.\n\nNext, the domain description. The argument talks about commitments, reasons, and sensations. Since these are all entities in the domain, the domain description should be \"All individuals.\" as per the normalization contract.\n\nNow, the symbols. I need to declare predicates for each category. Let's see:\n\n- Commitment(x): A predicate indicating x is a commitment.\n- Reason(x): A predicate indicating x is a reason.\n- Sensation(x): A predicate indicating x is a sensation.\n\nEach of these is a unary predicate (arity 1). There are no constants mentioned, so no need for those.\n\nFor the translations of each claim:\n\nClaim c1: \"Every commitment is a reason.\" In FOL, this is a universal statement. So, ∀x (Commitment(x) → Reason(x)).\n\nClaim c2: \"No reason is a sensation.\" This translates to ∀x (Reason(x) → ¬Sensation(x)).\n\nClaim c3: \"Therefore no commitment is a sensation.\" The conclusion would be ∀x (Commitment(x) → ¬Sensation(x)).\n\nI need to check if there are any ambiguities or issues. The premises are straightforward universal statements. The conclusion follows logically using hypothetical syllogism. Since the user mentioned not to comment on validity, just translation, I can proceed.\n\nNo symbols need to be declared as propositions since they are predicates. The formulas are all in the correct FOL syntax. There are no modal or other complex operators here, so the logic is supported.\n\nInterpretation notes: I don't see any issues here. The translation is straightforward. The predicates are correctly applied, and the quantifiers are properly used. No need for additional notes unless there's a debatable choice, but in this case, it's standard.\n",
+      "usage": {
+        "prompt_tokens": 1920,
+        "total_tokens": 2666,
+        "completion_tokens": 746,
+        "prompt_tokens_details": null
+      },
+      "finish_reason": "stop",
+      "served_model": "Qwen/Qwen3-32B"
+    }
+  ],
+  "frozen_reconstruction": {
+    "title": "Syllogism on Commitments and Sensations",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every commitment is a reason.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every commitment is a reason.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "No reason is a sensation.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "No reason is a sensation.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore no commitment is a sensation.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore no commitment is a sensation.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "441cbfd860ff895bc98b26fd0a728b01feeb7d2eb3f3bcfa60f825eb467839e1",
+  "finished_at": "2026-09-12T23:10:02.809867+00:00",
+  "source_spans": {
+    "c1": [
+      0,
+      29
+    ],
+    "c2": [
+      30,
+      55
+    ],
+    "c3": [
+      56,
+      95
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "e49d97ba50d363b64de2586c4a9ea3e3e29137f5a5393a48bfc9494571060604",
+    "reconstruction_sha256": "441cbfd860ff895bc98b26fd0a728b01feeb7d2eb3f3bcfa60f825eb467839e1",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "e49d97ba50d363b64de2586c4a9ea3e3e29137f5a5393a48bfc9494571060604",
+    "reconstruction_sha256": "441cbfd860ff895bc98b26fd0a728b01feeb7d2eb3f3bcfa60f825eb467839e1",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

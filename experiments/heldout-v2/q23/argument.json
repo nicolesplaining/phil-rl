@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.1",
+  "source": "Every person who deliberates is reflective. Neri is a person who deliberates. Therefore Neri is reflective.",
+  "source_sha256": "8858646fb40deec1632e3a24d37072b9ea3101e5350ef678b271ef2fe4f7c0d2",
+  "reconstruction": {
+    "title": "Neri is Reflective Based on Deliberation",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every person who deliberates is reflective.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every person who deliberates is reflective.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Neri is a person who deliberates.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Neri is a person who deliberates.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore Neri is reflective.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore Neri is reflective.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "033470dfd1560908351b75ecb51f2f8d90ff974f5f0e99db9e6ba40abe33ad76",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a person"
+      },
+      {
+        "name": "Deliberates",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x deliberates"
+      },
+      {
+        "name": "Reflective",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is reflective"
+      },
+      {
+        "name": "Neri",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "the individual Neri"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (and (Person x) (Deliberates x)) (Reflective x)))",
+        "reason": "Universal quantification over individuals, combining Person and Deliberates predicates to capture 'every person who deliberates'"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(and (Person Neri) (Deliberates Neri))",
+        "reason": "Conjunction of Person and Deliberates predicates applied to the constant Neri"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Reflective Neri)",
+        "reason": "Direct application of the Reflective predicate to the constant Neri"
+      }
+    ],
+    "interpretation_notes": [
+      "The Person predicate is used to restrict the domain of 'every person who deliberates' while maintaining the nonempty individual domain requirement"
+    ]
+  },
+  "formalization_sha256": "7e5fa1e08e95af45f13263b0a0f828b7aefbb4099cbad9db05f10bb393c0d025"
+}

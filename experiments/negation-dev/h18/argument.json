@@ -1,0 +1,144 @@
+{
+  "schema_version": "0.1",
+  "source": "If the evidence is misleading, this belief is unjustified. The evidence is misleading. Thus this belief is unjustified. If this belief is unjustified, it is not knowledge. Therefore this belief is not knowledge.",
+  "source_sha256": "2f0cc978e9f55156625dd74df9272bfa7576180dc303f867dd3b81a42dba3964",
+  "reconstruction": {
+    "title": "Unjustified Belief and Lack of Knowledge",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the evidence is misleading, this belief is unjustified.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the evidence is misleading, this belief is unjustified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The evidence is misleading.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The evidence is misleading.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "This belief is unjustified.",
+        "role": "subconclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Thus this belief is unjustified.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "If this belief is unjustified, it is not knowledge.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If this belief is unjustified, it is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "This belief is not knowledge.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore this belief is not knowledge.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      },
+      {
+        "premises": [
+          "c3",
+          "c4"
+        ],
+        "conclusion": "c5",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c5",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "e6998cd394710a0727ee3b4488062bb4f09b888fba7c9f54e61a901c499cba1a",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "P",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The evidence is misleading"
+      },
+      {
+        "name": "Q",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This belief is unjustified"
+      },
+      {
+        "name": "R",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This belief is knowledge"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies P Q)",
+        "reason": "Direct translation of conditional statement"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "P",
+        "reason": "Atomic proposition about evidence"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "Q",
+        "reason": "Atomic proposition about belief justification"
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(implies Q (not R))",
+        "reason": "Conditional with explicit negation in consequent"
+      },
+      {
+        "claim_id": "c5",
+        "formula": "(not R)",
+        "reason": "Negation of knowledge proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "Revised R to positive proposition 'This belief is knowledge' with negation in formulas",
+      "Logical structure preserves modus ponens inferences (c1+c2→c3 and c3+c4→c5)",
+      "Original negation in 'not knowledge' now expressed as (not R)",
+      "No ambiguity in scope or meaning detected in original text"
+    ]
+  },
+  "formalization_sha256": "16e97bcf835ee2580cf0c2d4042f303bf319cbf3acc5e24c0792a03fcc471c8a"
+}

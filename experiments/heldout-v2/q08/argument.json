@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "source": "The memory is neither vivid nor accurate. Therefore the memory is not accurate.",
+  "source_sha256": "82c4f8adcde00f9f0a6173b720a4dd6387dc77b48d0bd32e3ee79af6eab54f7b",
+  "reconstruction": {
+    "title": "Inference from a disjunctive negation",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The memory is neither vivid nor accurate.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The memory is neither vivid nor accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The memory is not accurate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the memory is not accurate.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "627ffc4c7148ebed3223ab109a814ab5d723f68d638b269d995f4a65ffb60ef2",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "V",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The memory is vivid"
+      },
+      {
+        "name": "A",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The memory is accurate"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(not (or V A))",
+        "reason": "The premise 'neither vivid nor accurate' is formalized as the negation of the disjunction of V and A"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not A)",
+        "reason": "The conclusion 'not accurate' is directly expressed as the negation of proposition A"
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "33be70c511dbb56b3b8230adfd341a20e17f50f3dad4eae0aa12ec80a1a3145e"
+}

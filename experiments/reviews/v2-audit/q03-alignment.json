@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "b94e043f201e7cff83f913aac77033106577b032cc3783a0ce733e33aa78891f",
+  "generated_sha256": "5bd93d8f52b0fbb8ee95c03920e4b01cee3763e8a93edccd451430205ce43df6",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "CausalExplanation": "C",
+    "InformativeExplanation": "I"
+  },
+  "glossary_rationale": "The causal and informative properties remain distinct, preserving the invalid converse inference.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "The causal and informative properties remain distinct, preserving the invalid converse inference.",
+  "domain_restriction": null
+}

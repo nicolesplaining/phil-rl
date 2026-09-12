@@ -1,0 +1,65 @@
+{
+  "reference_sha256": "4ca152ac044c276cb91d29c96469bcd105f14ffe9e8feddf2399b005ca3520dd",
+  "generated_sha256": "5a95f212a37cc9fbff64b458576a06589faf1ca99d7b08d8450166b3e50566a8",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "CommitteeDiscussing": "C",
+    "Deception": "D",
+    "Informed": "I",
+    "Legitimate": "L"
+  },
+  "glossary_rationale": "Context, deceptive waiver, informed status and legitimacy align. The intermediate negated claim and its support chain are retained.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r4"
+      ],
+      "generated_ids": [
+        "c4"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r5"
+      ],
+      "generated_ids": [
+        "c5"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r6"
+      ],
+      "generated_ids": [
+        "c6"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Context, deceptive waiver, informed status and legitimacy align. The intermediate negated claim and its support chain are retained.",
+  "domain_restriction": null
+}

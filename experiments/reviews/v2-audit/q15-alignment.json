@@ -1,0 +1,30 @@
+{
+  "reference_sha256": "3175de130f1fc820ba4e4f12c411fa0dfe9f78dc0ca08930377cd574ef381c35",
+  "generated_sha256": "ed8d6827ce29fc5629bb561f5a8300b0f227b8dbfbecdd64487d5e47c38d4ca2",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "M"
+  },
+  "glossary_rationale": "Both occurrences assert that the distinction is meaningful; source positions remain separate.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "Both occurrences assert that the distinction is meaningful; source positions remain separate.",
+  "domain_restriction": null
+}

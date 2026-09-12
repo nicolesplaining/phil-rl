@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "Sel knows that the letter is genuine. Therefore the letter is genuine.",
+  "source_sha256": "e412042fbb87d62b881d9b6380b72a9bf0ebb641a7dd11c5fc1b98234566d292",
+  "reconstruction": {
+    "title": "Knowledge implies truth argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Sel knows that the letter is genuine.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Sel knows that the letter is genuine.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Standard epistemic claim about knowledge"
+      },
+      {
+        "id": "c2",
+        "text": "The letter is genuine.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore the letter is genuine.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Asserted as conclusion via 'Therefore'"
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "4a0e298c9846a6e845207af7cae85d4bcde95e49914fde122cf004a054e8ba88",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "K",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "Sel knows that the letter is genuine"
+      },
+      {
+        "name": "G",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The letter is genuine"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "Epistemic 'knows that' requires modal logic unavailable in the formalism"
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "Simple proposition about letter's genuineness"
+      }
+    ],
+    "interpretation_notes": [
+      "The epistemic knowledge operator cannot be expressed in classical propositional/first-order logic without modal semantics",
+      "Argument structure K → G is informally represented but formally inexpressible in available logics"
+    ]
+  },
+  "formalization_sha256": "c0df11e166ebc24d3bf68f62b0c8a3a3e93b2a270fc127f415d14fb152e3f7d0"
+}

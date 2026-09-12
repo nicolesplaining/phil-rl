@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "This bargain is legitimate only if it is voluntary. This bargain is not voluntary. Hence it is not legitimate.",
+  "source_sha256": "beefb8c7262432ec0f67f77dd4b0202abf43b6457744ed47cfe5dc7da88572ab",
+  "reconstruction": {
+    "title": "Legitimacy of a Bargain",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "This bargain is legitimate only if it is voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This bargain is legitimate only if it is voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conditional statement establishing a necessary condition for legitimacy."
+      },
+      {
+        "id": "c2",
+        "text": "This bargain is not voluntary.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "This bargain is not voluntary.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Denial of the necessary condition established in c1."
+      },
+      {
+        "id": "c3",
+        "text": "Hence it is not legitimate.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Hence it is not legitimate.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Conclusion derived via modus tollens from c1 and c2."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "8876778469b5bc95e25de02e59434ed62cfa87708451f9f6d8f83d84c8053e75",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "L",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This bargain is legitimate"
+      },
+      {
+        "name": "V",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "This bargain is voluntary"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies L V)",
+        "reason": "'Only if' is translated as material implication (→) in classical logic"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(not V)",
+        "reason": "Direct negation of the voluntary proposition"
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(not L)",
+        "reason": "Direct negation of the legitimacy proposition"
+      }
+    ],
+    "interpretation_notes": [
+      "'Only if' was formalized as material implication (L → V) per standard logical convention",
+      "The argument uses propositional logic with two atomic propositions about the bargain's properties"
+    ]
+  },
+  "formalization_sha256": "3771d184ea0cb3618c2c013c496a2c9919443ae26f865877b26709c62f1d67a5"
+}

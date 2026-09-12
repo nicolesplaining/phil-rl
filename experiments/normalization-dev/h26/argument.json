@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "source": "Every perfect judge is impartial. Therefore at least one perfect judge is impartial.",
+  "source_sha256": "ca2b8e0ca4b7dba4be8998ddda99b8f5a65cb3242b87650a9a087aeb834fa79f",
+  "reconstruction": {
+    "title": "Argument about Perfect Judges",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every perfect judge is impartial.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every perfect judge is impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Universal statement about perfect judges."
+      },
+      {
+        "id": "c2",
+        "text": "Therefore at least one perfect judge is impartial.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore at least one perfect judge is impartial.",
+          "occurrence": 0
+        },
+        "interpretation_note": "Existential conclusion derived from the premise."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The conclusion does not logically follow from the premise unless there is an implicit assumption that at least one perfect judge exists.",
+        "alternatives": [
+          "The argument assumes the existence of at least one perfect judge.",
+          "The argument is invalid as stated without additional premises."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "3bf2b842c5a5825ab745c8ae53a56f41d38a4a9f4d3741683aa3c6fda8a5ee7f",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "All individuals.",
+    "symbols": [
+      {
+        "name": "PerfectJudge",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a perfect judge"
+      },
+      {
+        "name": "Impartial",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is impartial"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (PerfectJudge x) (Impartial x)))",
+        "reason": "Universal statement about all perfect judges implying impartiality"
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (and (PerfectJudge x) (Impartial x)))",
+        "reason": "Existential claim asserting at least one perfect judge exists and is impartial"
+      }
+    ],
+    "interpretation_notes": [
+      "The conclusion does not logically follow from the premise unless there is an implicit assumption that at least one perfect judge exists. The premise establishes a conditional relationship but does not assert existence, while the conclusion requires both the conditional and existence to be true."
+    ]
+  },
+  "formalization_sha256": "2db69a0b07f9dce6ffa12dc7bebd7b807be43bd20603ee4cd802fefc3b59691c"
+}

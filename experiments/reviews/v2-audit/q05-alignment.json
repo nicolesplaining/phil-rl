@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "7a54a1d317a143d33647e6080119491ed8d4d93837f3b1c9e7c785241ea8b8ef",
+  "generated_sha256": "2a5b509fdca50f8aebfce7987a753c0ba2f836d55d5e4e92669caef79a9f61fa",
+  "reviewer_kind": "agent, same implementation task; not an independent human reviewer",
+  "symbol_map": {
+    "P": "R",
+    "Q": "M"
+  },
+  "glossary_rationale": "P is principle revisability and Q the misleading example. Inclusive or and negation match.",
+  "claims": [
+    {
+      "reference_ids": [
+        "r1"
+      ],
+      "generated_ids": [
+        "c1"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r2"
+      ],
+      "generated_ids": [
+        "c2"
+      ]
+    },
+    {
+      "reference_ids": [
+        "r3"
+      ],
+      "generated_ids": [
+        "c3"
+      ]
+    }
+  ],
+  "source_meaning_approved": true,
+  "source_review_notes": "P is principle revisability and Q the misleading example. Inclusive or and negation match.",
+  "domain_restriction": null
+}
