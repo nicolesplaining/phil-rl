@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "source": "Everyone admires someone. Therefore, someone is admired by everyone.",
+  "source_sha256": "7c2e3e4b98e6b9bb31532ad2cca5579aaf394663790bee44752abb144208e607",
+  "reconstruction": {
+    "title": "Everyone Admires Someone",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Everyone admires someone.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Everyone admires someone.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, someone is admired by everyone.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, someone is admired by everyone.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "4deb7d6f850ae74ff28a1562f9f6147d47ee8bd195f8bc6da7051c29bd18e16e",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "A nonempty domain of individuals (people).",
+    "symbols": [
+      {
+        "name": "Admires",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "Admires(x, y) means x admires y."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (exists y (Admires x y)))",
+        "reason": "Translates 'Everyone admires someone' as a universal quantifier over individuals, each of whom has at least one admired individual."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (forall x (Admires x y)))",
+        "reason": "Translates 'Someone is admired by everyone' as the existence of an individual who is admired by all others."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is invalid in classical first-order logic. The premise (forall x (exists y (Admires x y))) does not entail the conclusion (exists y (forall x (Admires x y))). The former allows for each person to admire a different person, while the latter requires a single person to be admired by all."
+    ]
+  },
+  "formalization_sha256": "16ca53f250ccee994d8617e0b4e83a9cff93c585a59bd01bc46304f4ccaa460f"
+}

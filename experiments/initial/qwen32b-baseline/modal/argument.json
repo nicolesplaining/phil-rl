@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "source": "Necessarily, every person is self-identical. Therefore, every person is self-identical.",
+  "source_sha256": "3c7db4bfa9caedf479f810f4b97c625b021f6989f1cd44b77a2ccf55b52053d0",
+  "reconstruction": {
+    "title": "Self-Identity of Persons",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Necessarily, every person is self-identical.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Necessarily, every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, every person is self-identical.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "edb3f830a139241880d4bea2314fba7f6eaff8f64a1b1bef0e10b8c89e93fb2a",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all individuals, including persons. The term 'person' is interpreted as a predicate over this domain.",
+    "symbols": [
+      {
+        "name": "Person",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "True of any individual that is a person."
+      },
+      {
+        "name": "SelfIdentical",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "True of any individual that is self-identical (equal to itself)."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Person x) (SelfIdentical x)))",
+        "reason": "The claim 'Necessarily, every person is self-identical' is translated as a universal statement asserting that for all individuals x, if x is a person, then x is self-identical."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(forall x (implies (Person x) (SelfIdentical x)))",
+        "reason": "The claim 'Therefore, every person is self-identical' is logically equivalent to the premise and is also translated as a universal statement asserting that for all individuals x, if x is a person, then x is self-identical."
+      }
+    ],
+    "interpretation_notes": [
+      "The modal operator 'necessarily' is omitted in the translation because the argument does not rely on modal logic and the conclusion follows directly from the premise in classical first-order logic.",
+      "The equality relation is replaced with a predicate 'SelfIdentical' to avoid using a reserved logical operator name."
+    ]
+  },
+  "formalization_sha256": "17997c27a10c85a8758a570881f93f6bb7e71699abf8e51f2993b2d76a720011"
+}

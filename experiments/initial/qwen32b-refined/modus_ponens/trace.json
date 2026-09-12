@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-09-12T22:06:06.909321+00:00",
+  "finished_at": "2026-09-12T22:06:24.053320+00:00",
+  "prompt_version": "0.2",
+  "prompt_sha256": {
+    "reconstruction": "7082661e2630dd3a7052490a4b909b3f6a0dc777ccd9c69abd64815908590bbe",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true,
+    "retries": 2,
+    "timeout_seconds": 240.0
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Argument for Free Action\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"If the agent is morally responsible, the agent acted freely.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"If the agent is morally responsible, the agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"The agent is morally responsible.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent is morally responsible.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c3\",\n      \"text\": \"Therefore, the agent acted freely.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, the agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\", \"c2\"],\n      \"conclusion\": \"c3\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c3\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 1470,
+        "total_tokens": 1778,
+        "completion_tokens": 308,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"classical_propositional\",\n  \"domain_description\": \"A single abstract domain representing the logical relationships between moral responsibility and free action.\",\n  \"symbols\": [\n    {\n      \"name\": \"M\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent is morally responsible.\"\n    },\n    {\n      \"name\": \"F\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent acted freely.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"(implies M F)\",\n      \"reason\": \"The claim is a conditional statement: if the agent is morally responsible, then the agent acted freely.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"M\",\n      \"reason\": \"The claim is a direct assertion that the agent is morally responsible.\"\n    },\n    {\n      \"claim_id\": \"c3\",\n      \"formula\": \"F\",\n      \"reason\": \"The claim is the conclusion that the agent acted freely, derived from the premises.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument is formalized in classical propositional logic because it involves only atomic propositions and logical implications.\",\n    \"The propositions M and F represent the atomic claims about moral responsibility and free action, respectively.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1602,
+        "total_tokens": 1902,
+        "completion_tokens": 300,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      60
+    ],
+    "c2": [
+      61,
+      94
+    ],
+    "c3": [
+      95,
+      129
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "1b40e668c61e82cf1d929dac9b49eec59d291d991ce69b242f005d5688b3a492",
+    "reconstruction_sha256": "6347fa3d0e29e2c75c6328da164d12e84de9c45d546fc7844dc26315af8ff4c7",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "1b40e668c61e82cf1d929dac9b49eec59d291d991ce69b242f005d5688b3a492",
+    "reconstruction_sha256": "6347fa3d0e29e2c75c6328da164d12e84de9c45d546fc7844dc26315af8ff4c7",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

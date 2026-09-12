@@ -1,0 +1,185 @@
+{
+  "schema_version": "0.1",
+  "source": "If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible. An objector claims that every responsible action requires alternative possibilities. But consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated. The agent acted on their own reasons and the intervener never acted. The agent could not have done otherwise. Nevertheless, the agent is morally responsible. Therefore, moral responsibility does not always require alternative possibilities.\n",
+  "source_sha256": "e1f13ca64b89c72d5461c674885eb7255f081f67b0fd2bee6ae3eaa581597252",
+  "reconstruction": {
+    "title": "Moral Responsibility and Alternative Possibilities",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "An objector claims that every responsible action requires alternative possibilities.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "An objector claims that every responsible action requires alternative possibilities.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "But consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "The agent acted on their own reasons and the intervener never acted.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent acted on their own reasons and the intervener never acted.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c5",
+        "text": "The agent could not have done otherwise.",
+        "role": "context",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent could not have done otherwise.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c6",
+        "text": "Nevertheless, the agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Nevertheless, the agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c7",
+        "text": "Moral responsibility does not always require alternative possibilities.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, moral responsibility does not always require alternative possibilities.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c6"
+        ],
+        "conclusion": "c7",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c7",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "2a3a8deb38c16e7508997a69a476fa77b7a9eb6ea6f67bf5b5b1704dadd2a20f",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "The domain consists of agents and their actions, with a focus on moral responsibility and the presence or absence of alternative possibilities.",
+    "symbols": [
+      {
+        "name": "MoralResponsibility",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent is morally responsible for an action."
+      },
+      {
+        "name": "AlternativePossibilities",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent has alternative possibilities for an action."
+      },
+      {
+        "name": "CouldNotHaveDoneOtherwise",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent could not have done otherwise in a given situation."
+      },
+      {
+        "name": "IntervenerForced",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "An intervener would have forced the agent to act in a given situation."
+      },
+      {
+        "name": "AgentActedOnOwnReasons",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent acted on their own reasons."
+      },
+      {
+        "name": "IntervenerNeverActed",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "The intervener never acted in a given situation."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The claim involves a conditional statement about moral responsibility and alternative possibilities, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The claim involves a general statement about responsible actions and alternative possibilities, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "The claim involves a hypothetical scenario involving a hidden intervener, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      },
+      {
+        "claim_id": "c4",
+        "formula": null,
+        "reason": "The claim involves a statement about the agent acting on their own reasons and the intervener never acting, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      },
+      {
+        "claim_id": "c5",
+        "formula": null,
+        "reason": "The claim involves a statement about the agent's inability to have done otherwise, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      },
+      {
+        "claim_id": "c6",
+        "formula": null,
+        "reason": "The claim involves a statement about the agent's moral responsibility, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      },
+      {
+        "claim_id": "c7",
+        "formula": null,
+        "reason": "The claim involves a conclusion about moral responsibility not always requiring alternative possibilities, which cannot be directly formalized in classical first-order logic without modal or deontic semantics."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument involves modal and deontic concepts (e.g., 'could not have done otherwise', 'moral responsibility') that cannot be directly formalized in classical first-order logic.",
+      "The argument relies on hypothetical scenarios and counterfactual reasoning, which are not directly expressible in classical first-order logic.",
+      "The argument's structure and logical dependencies cannot be fully captured in classical first-order logic due to the need for modal or deontic semantics."
+    ]
+  },
+  "formalization_sha256": "f97523372d410d1af7e85b28dead5d2bbf2e256e422f70a09c7f3347d6b5c57e"
+}

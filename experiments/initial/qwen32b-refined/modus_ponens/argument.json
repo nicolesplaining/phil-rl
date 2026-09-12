@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent is morally responsible, the agent acted freely. The agent is morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "57c0e12edc98567a2e737ba20dd288f0b293b1e39fe52534a37b4d35a011352d",
+  "reconstruction": {
+    "title": "Argument for Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent is morally responsible, the agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent is morally responsible, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6347fa3d0e29e2c75c6328da164d12e84de9c45d546fc7844dc26315af8ff4c7",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "A single abstract domain representing the logical relationships between moral responsibility and free action.",
+    "symbols": [
+      {
+        "name": "M",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible."
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies M F)",
+        "reason": "The claim is a conditional statement: if the agent is morally responsible, then the agent acted freely."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "M",
+        "reason": "The claim is a direct assertion that the agent is morally responsible."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "F",
+        "reason": "The claim is the conclusion that the agent acted freely, derived from the premises."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is formalized in classical propositional logic because it involves only atomic propositions and logical implications.",
+      "The propositions M and F represent the atomic claims about moral responsibility and free action, respectively."
+    ]
+  },
+  "formalization_sha256": "1b40e668c61e82cf1d929dac9b49eec59d291d991ce69b242f005d5688b3a492"
+}

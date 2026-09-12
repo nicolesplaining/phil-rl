@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent is morally responsible, the agent acted freely. The agent acted freely. Therefore, the agent is morally responsible.",
+  "source_sha256": "c670cb85906a3c4f8a6820bf965cd936ce295c446238b47fd7bea98c0ecc459b",
+  "reconstruction": {
+    "title": "Argument for Moral Responsibility",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent is morally responsible, the agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent is morally responsible, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent is morally responsible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c4",
+        "text": "If the agent acted freely, then the agent is morally responsible.",
+        "role": "premise",
+        "origin": "implicit",
+        "evidence": null,
+        "interpretation_note": "This is a proposed implicit premise to bridge the gap between the given premises and the conclusion. The argument assumes that acting freely is sufficient for moral responsibility, which is not explicitly stated in the source."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2",
+          "c4"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "e9553369eb709a6536305417bc9e1720198b18a6fcaef4da7639c30dc4134370",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of a single agent, and the propositions concern the agent's moral responsibility and freedom of action.",
+    "symbols": [
+      {
+        "name": "M",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible."
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies M F)",
+        "reason": "The claim 'If the agent is morally responsible, the agent acted freely' is translated as a material implication between the propositions M and F."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "F",
+        "reason": "The claim 'The agent acted freely' is directly translated as the proposition F."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "M",
+        "reason": "The claim 'Therefore, the agent is morally responsible' is directly translated as the proposition M."
+      },
+      {
+        "claim_id": "c4",
+        "formula": "(implies F M)",
+        "reason": "The implicit claim 'If the agent acted freely, then the agent is morally responsible' is translated as a material implication between the propositions F and M."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is logically invalid because the conclusion M does not follow from the premises (implies M F), F, and (implies F M). The conclusion M would only follow if the premises included a biconditional (iff M F) or a direct assertion of M.",
+      "The implicit premise (implies F M) is necessary to bridge the gap between the given premises and the conclusion, but it is not explicitly stated in the source."
+    ]
+  },
+  "formalization_sha256": "04f87eda73611623a4cdd4445a236e06ab899cc1f0a41832136c214c35139297"
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent is morally responsible, the agent acted freely. The agent acted freely. Therefore, the agent is morally responsible.",
+  "source_sha256": "c670cb85906a3c4f8a6820bf965cd936ce295c446238b47fd7bea98c0ecc459b",
+  "reconstruction": {
+    "title": "Moral Responsibility and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent is morally responsible, the agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent is morally responsible, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent is morally responsible.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": "The inference from c2 to c3 is invalid (affirming the consequent). An implicit premise may be required to justify the conclusion."
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": [
+      {
+        "claim_id": "c3",
+        "issue": "The inference from c2 to c3 is invalid (affirming the consequent).",
+        "alternatives": [
+          "Add an implicit premise that 'If the agent acted freely, then the agent is morally responsible.'",
+          "Treat the argument as invalid and reject the conclusion."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "920ca0bf9b3ae245018c299f05f99d5e5beeeed6a7f14b246e9c701ac4633938",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain consists of a single agent and their actions related to moral responsibility and freedom.",
+    "symbols": [
+      {
+        "name": "M",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible."
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies M F)",
+        "reason": "The claim 'If the agent is morally responsible, the agent acted freely' is translated as a material implication between the propositions M and F."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "F",
+        "reason": "The claim 'The agent acted freely' is directly represented as the proposition F."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "M",
+        "reason": "The claim 'Therefore, the agent is morally responsible' is directly represented as the proposition M."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument commits the logical fallacy of affirming the consequent. From (implies M F) and F, it is invalid to infer M. The conclusion M does not logically follow from the premises.",
+      "The reconstruction is faithful to the original argument, preserving the structure and content of the claims as given."
+    ]
+  },
+  "formalization_sha256": "b0b7e4f301653c9735d5ad4ec014eebb1e258b2f6006d93500fb3c0e5cbda4d9"
+}

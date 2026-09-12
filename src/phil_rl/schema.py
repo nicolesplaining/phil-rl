@@ -110,7 +110,15 @@ class Reconstruction(Record):
     def validate_source(self, source: str) -> None:
         for claim in self.claims:
             if claim.evidence:
-                claim.evidence.locate(source)
+                try:
+                    claim.evidence.locate(source)
+                except ValueError as error:
+                    raise ValueError(
+                        f"Claim {claim.id}: evidence.quote {claim.evidence.quote!r}, occurrence "
+                        f"{claim.evidence.occurrence}, is absent from the source. "
+                        "Quotes are case-sensitive. Copy the source's exact capitalization "
+                        "and punctuation; do not substitute the normalized claim text."
+                    ) from error
 
     def premise_ids(self, include_implicit: bool = False) -> list[str]:
         """Only premises on a support path to the selected conclusion are assumptions.

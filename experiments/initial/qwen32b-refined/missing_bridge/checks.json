@@ -1,0 +1,28 @@
+{
+  "explicit": {
+    "formalization_sha256": "5c6ba3e37e7a926e3a29a38baf85ffb79bf7b7845732413fd640ddb7f73adc44",
+    "reconstruction_sha256": "d8f62467b3534e1becd4236af4f0460a0263afe148b34b33bd022017d68c06c3",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "5c6ba3e37e7a926e3a29a38baf85ffb79bf7b7845732413fd640ddb7f73adc44",
+    "reconstruction_sha256": "d8f62467b3534e1becd4236af4f0460a0263afe148b34b33bd022017d68c06c3",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  }
+}

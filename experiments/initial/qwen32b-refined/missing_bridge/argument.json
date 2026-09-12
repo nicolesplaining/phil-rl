@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent is morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "d58f743140bd3ad3885209782d30ca95d2cc35697840bcafa531b584a9c36c95",
+  "reconstruction": {
+    "title": "Moral Responsibility and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "d8f62467b3534e1becd4236af4f0460a0263afe148b34b33bd022017d68c06c3",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "The domain consists of agents and their actions, but the relationship between moral responsibility and free action requires a normative or modal logic not supported by the current formalism.",
+    "symbols": [],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The claim 'The agent is morally responsible' cannot be formalized in classical propositional or first-order logic without a normative or modal framework."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The claim 'The agent acted freely' cannot be formalized in classical propositional or first-order logic without a normative or modal framework."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument assumes a normative or modal bridge from moral responsibility to free action, which cannot be formalized in classical propositional or first-order logic. The inference 'Therefore, the agent acted freely' is not logically valid in classical logic without additional premises or a richer logical framework."
+    ]
+  },
+  "formalization_sha256": "5c6ba3e37e7a926e3a29a38baf85ffb79bf7b7845732413fd640ddb7f73adc44"
+}

@@ -185,3 +185,12 @@ def test_server_script_defaults_to_gpu_one(tmp_path):
     subprocess.run(["bash", "-n", str(path)], check=True)
     assert "export CUDA_VISIBLE_DEVICES=1" in path.read_text()
     assert "--tensor-parallel-size 1" in path.read_text()
+
+
+def test_source_error_identifies_the_claim_and_case_sensitivity():
+    reference = fixtures()["modal"][0]
+    data = reference.reconstruction.model_dump()
+    data["claims"][1]["evidence"]["quote"] = "Every person is self-identical."
+    reconstruction = Reconstruction.model_validate(data)
+    with pytest.raises(ValueError, match="Claim c2:.*case-sensitive"):
+        reconstruction.validate_source(reference.source)

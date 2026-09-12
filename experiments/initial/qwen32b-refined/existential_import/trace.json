@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-09-12T22:08:48.449664+00:00",
+  "finished_at": "2026-09-12T22:09:05.875201+00:00",
+  "prompt_version": "0.2",
+  "prompt_sha256": {
+    "reconstruction": "7082661e2630dd3a7052490a4b909b3f6a0dc777ccd9c69abd64815908590bbe",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true,
+    "retries": 2,
+    "timeout_seconds": 240.0
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Existence of Humans\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"Every human is mortal.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Every human is mortal.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Therefore, a human exists.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, a human exists.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": [\n    {\n      \"claim_id\": \"c2\",\n      \"issue\": \"The inference from 'Every human is mortal' to 'A human exists' is invalid unless an implicit premise is added.\",\n      \"alternatives\": [\n        \"Add an implicit premise that there is at least one human.\",\n        \"Interpret the argument as a logical fallacy and reject the conclusion.\"\n      ]\n    }\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1456,
+        "total_tokens": 1754,
+        "completion_tokens": 298,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"classical_first_order\",\n  \"domain_description\": \"The domain consists of all individuals, including humans and other entities. It is nonempty but not necessarily finite.\",\n  \"symbols\": [\n    {\n      \"name\": \"Human\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An individual is a human.\"\n    },\n    {\n      \"name\": \"Mortal\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An individual is mortal.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"(forall x (implies (Human x) (Mortal x)))\",\n      \"reason\": \"The statement 'Every human is mortal' is formalized as a universal quantification over all individuals, stating that if an individual is a human, then it is mortal.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"(exists x (Human x))\",\n      \"reason\": \"The statement 'A human exists' is formalized as an existential quantification over all individuals, asserting that there is at least one individual who is a human.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The inference from 'Every human is mortal' to 'A human exists' is invalid in classical first-order logic unless an implicit premise asserting the existence of at least one human is added. The current reconstruction does not include such a premise, and the conclusion does not logically follow from the premise alone.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1579,
+        "total_tokens": 1910,
+        "completion_tokens": 331,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      22
+    ],
+    "c2": [
+      23,
+      49
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "8737a837931b6457a6958f05a3be8e071f9c7089a374ebc536fbbfa4f55ccb43",
+    "reconstruction_sha256": "3af12cf209713c73af377e6c8297018a81fa6dd2a67c31bb0a2460309aba3e28",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Mortal = [else -> False], Human = [else -> False]]",
+    "assignments": {}
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "8737a837931b6457a6958f05a3be8e071f9c7089a374ebc536fbbfa4f55ccb43",
+    "reconstruction_sha256": "3af12cf209713c73af377e6c8297018a81fa6dd2a67c31bb0a2460309aba3e28",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Mortal = [else -> False], Human = [else -> False]]",
+    "assignments": {}
+  }
+}

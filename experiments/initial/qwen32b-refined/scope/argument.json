@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1",
+  "source": "Everyone admires someone. Therefore, someone is admired by everyone.",
+  "source_sha256": "7c2e3e4b98e6b9bb31532ad2cca5579aaf394663790bee44752abb144208e607",
+  "reconstruction": {
+    "title": "Everyone Admires Someone",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Everyone admires someone.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Everyone admires someone.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, someone is admired by everyone.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, someone is admired by everyone.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The inference from 'Everyone admires someone' to 'Someone is admired by everyone' is invalid without an additional premise.",
+        "alternatives": [
+          "Assume that the domain is finite and that admiration is symmetric.",
+          "Treat the argument as a logical fallacy and reject the conclusion."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "bbe57930a514473d670a821158776ea3c45411ec256cdae64beeadbd821d112e",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of individuals who can admire or be admired by others. It is not assumed to be finite or to have any special properties like symmetry of admiration.",
+    "symbols": [
+      {
+        "name": "Admires",
+        "kind": "predicate",
+        "arity": 2,
+        "meaning": "Admires(x, y) means that individual x admires individual y."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (exists y (Admires x y)))",
+        "reason": "The statement 'Everyone admires someone' is formalized as a universal quantifier over individuals x, asserting that for each x, there exists a y such that x admires y."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists y (forall x (Admires x y)))",
+        "reason": "The statement 'Someone is admired by everyone' is formalized as an existential quantifier over individuals y, asserting that there exists a y such that for all x, x admires y."
+      }
+    ],
+    "interpretation_notes": [
+      "The inference from c1 to c2 is invalid in classical first-order logic without additional premises. The premise c1 only guarantees that each individual admires someone, but it does not ensure that there is a single individual admired by all. This is a classic example of a logical fallacy known as the 'converse error.'"
+    ]
+  },
+  "formalization_sha256": "a5215afa80a0db89b081926f71c41e014aff5306f50e6f959d69a45517d7811c"
+}

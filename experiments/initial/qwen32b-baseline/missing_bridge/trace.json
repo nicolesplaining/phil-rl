@@ -1,0 +1,80 @@
+{
+  "started_at": "2026-09-12T22:02:52.210290+00:00",
+  "finished_at": "2026-09-12T22:03:08.583518+00:00",
+  "prompt_version": "0.1",
+  "prompt_sha256": {
+    "reconstruction": "351136405eb50abc4125cf0d7784fc8e363a8bb2795aa9922f78db54f9e98a13",
+    "formalization": "a27c89f1a0ad2ff1da1bd187fd07fa435170a100c1c13135611cfc5dd08c3595"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Moral Responsibility and Free Action\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"The agent is morally responsible.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent is morally responsible.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Therefore, the agent acted freely.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, the agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\"\n    ,\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 404,
+        "total_tokens": 629,
+        "completion_tokens": 225,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"unsupported\",\n  \"domain_description\": \"A domain of agents and their actions.\",\n  \"symbols\": [\n    {\n      \"name\": \"MorallyResponsible\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An agent is morally responsible.\"\n    },\n    {\n      \"name\": \"ActedFreely\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An agent acted freely.\"\n    },\n    {\n      \"name\": \"agent\",\n      \"kind\": \"constant\",\n      \"arity\": 0,\n      \"meaning\": \"A specific agent in the domain.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": null,\n      \"reason\": \"The claim 'The agent is morally responsible' involves a normative predicate 'MorallyResponsible' which cannot be directly translated into classical first-order logic without additional normative semantics.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": null,\n      \"reason\": \"The claim 'The agent acted freely' involves a predicate 'ActedFreely' which cannot be directly translated into classical first-order logic without additional modal or causal semantics.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument assumes a connection between moral responsibility and free action, but the logic required to express this connection (e.g., modal or deontic logic) is not supported in the current formalism.\",\n    \"The predicates 'MorallyResponsible' and 'ActedFreely' are treated as uninterpreted predicates due to the lack of normative or modal semantics in the available logic.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 781,
+        "total_tokens": 1141,
+        "completion_tokens": 360,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      33
+    ],
+    "c2": [
+      34,
+      68
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "d628d97700659949257958b2b89fed4ea162380239332acde2a6a7ad9cd506ae",
+    "reconstruction_sha256": "7015ced35dcaf171b81535e946cdaae733d5b5951ac8bf7f91f40e5baac2be11",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "d628d97700659949257958b2b89fed4ea162380239332acde2a6a7ad9cd506ae",
+    "reconstruction_sha256": "7015ced35dcaf171b81535e946cdaae733d5b5951ac8bf7f91f40e5baac2be11",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  }
+}

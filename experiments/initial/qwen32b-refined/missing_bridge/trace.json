@@ -1,0 +1,94 @@
+{
+  "started_at": "2026-09-12T22:06:45.001610+00:00",
+  "finished_at": "2026-09-12T22:07:06.175564+00:00",
+  "prompt_version": "0.2",
+  "prompt_sha256": {
+    "reconstruction": "7082661e2630dd3a7052490a4b909b3f6a0dc777ccd9c69abd64815908590bbe",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true,
+    "retries": 2,
+    "timeout_seconds": 240.0
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Moral Responsibility and Free Action\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"The agent is morally responsible.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent is morally responsible.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Therefore, the agent acted freely.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"the agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 1458,
+        "total_tokens": 1678,
+        "completion_tokens": 220,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"unsupported\",\n  \"domain_description\": \"The domain consists of agents and their actions, but the relationship between moral responsibility and free action requires a normative or modal logic not supported by the current formalism.\",\n  \"symbols\": [\n    {\n      \"name\": \"MorallyResponsible\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent is morally responsible.\"\n    },\n    {\n      \"name\": \"ActedFreely\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent acted freely.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"MorallyResponsible\",\n      \"reason\": \"The claim 'The agent is morally responsible' is directly translated as a proposition.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"ActedFreely\",\n      \"reason\": \"The claim 'The agent acted freely' is directly translated as a proposition.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument assumes a normative or modal bridge from moral responsibility to free action, which cannot be formalized in classical propositional or first-order logic. The inference 'Therefore, the agent acted freely' is not logically valid in classical logic without additional premises or a richer logical framework.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1516,
+        "total_tokens": 1812,
+        "completion_tokens": 296,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "Unsupported logic must abstain from formalization."
+    },
+    {
+      "attempt": 2,
+      "response": "{\n  \"logic\": \"unsupported\",\n  \"domain_description\": \"The domain consists of agents and their actions, but the relationship between moral responsibility and free action requires a normative or modal logic not supported by the current formalism.\",\n  \"symbols\": [],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": null,\n      \"reason\": \"The claim 'The agent is morally responsible' cannot be formalized in classical propositional or first-order logic without a normative or modal framework.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": null,\n      \"reason\": \"The claim 'The agent acted freely' cannot be formalized in classical propositional or first-order logic without a normative or modal framework.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument assumes a normative or modal bridge from moral responsibility to free action, which cannot be formalized in classical propositional or first-order logic. The inference 'Therefore, the agent acted freely' is not logically valid in classical logic without additional premises or a richer logical framework.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1856,
+        "total_tokens": 2089,
+        "completion_tokens": 233,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      33
+    ],
+    "c2": [
+      45,
+      68
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "5c6ba3e37e7a926e3a29a38baf85ffb79bf7b7845732413fd640ddb7f73adc44",
+    "reconstruction_sha256": "d8f62467b3534e1becd4236af4f0460a0263afe148b34b33bd022017d68c06c3",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "5c6ba3e37e7a926e3a29a38baf85ffb79bf7b7845732413fd640ddb7f73adc44",
+    "reconstruction_sha256": "d8f62467b3534e1becd4236af4f0460a0263afe148b34b33bd022017d68c06c3",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  }
+}

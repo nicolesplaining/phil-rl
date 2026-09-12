@@ -1,0 +1,41 @@
+{
+  "error": "No structurally valid Reconstruction after 3 attempts.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Self-Identity Argument\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"Necessarily, every person is self-identical.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Necessarily, every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Every person is self-identical.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 1466,
+        "total_tokens": 1698,
+        "completion_tokens": 232,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "Evidence quote/occurrence is absent from the source."
+    },
+    {
+      "attempt": 2,
+      "response": "{\n  \"title\": \"Self-Identity Argument\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"Necessarily, every person is self-identical.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Necessarily, every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Every person is self-identical.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 1744,
+        "total_tokens": 1976,
+        "completion_tokens": 232,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "Evidence quote/occurrence is absent from the source."
+    },
+    {
+      "attempt": 3,
+      "response": "{\n  \"title\": \"Self-Identity Argument\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"Necessarily, every person is self-identical.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Necessarily, every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Every person is self-identical.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 2022,
+        "total_tokens": 2254,
+        "completion_tokens": 232,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "Evidence quote/occurrence is absent from the source."
+    }
+  ]
+}

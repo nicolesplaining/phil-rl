@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-09-12T22:04:33.352332+00:00",
+  "finished_at": "2026-09-12T22:05:00.847692+00:00",
+  "prompt_version": "0.1",
+  "prompt_sha256": {
+    "reconstruction": "351136405eb50abc4125cf0d7784fc8e363a8bb2795aa9922f78db54f9e98a13",
+    "formalization": "a27c89f1a0ad2ff1da1bd187fd07fa435170a100c1c13135611cfc5dd08c3595"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Self-Identity of Persons\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"Necessarily, every person is self-identical.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Necessarily, every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Therefore, every person is self-identical.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, every person is self-identical.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\"\n    ,\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 412,
+        "total_tokens": 652,
+        "completion_tokens": 240,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"classical_first_order\",\n  \"domain_description\": \"The domain consists of all individuals, including persons. The term 'person' is interpreted as a predicate over this domain.\",\n  \"symbols\": [\n    {\n      \"name\": \"Person\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"True of any individual that is a person.\"\n    },\n    {\n      \"name\": \"eq\",\n      \"kind\": \"predicate\",\n      \"arity\": 2,\n      \"meaning\": \"Equality relation between two individuals.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"(forall x (implies (Person x) (eq x x)))\",\n      \"reason\": \"The claim 'Necessarily, every person is self-identical' is translated as a universal statement asserting that for all individuals x, if x is a person, then x is equal to x.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"(forall x (implies (Person x) (eq x x)))\",\n      \"reason\": \"The claim 'Therefore, every person is self-identical' is logically equivalent to the premise and is also translated as a universal statement asserting that for all individuals x, if x is a person, then x is equal to x.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The modal operator 'necessarily' is omitted in the translation because the argument does not rely on modal logic and the conclusion follows directly from the premise in classical first-order logic.\",\n    \"The equality relation 'eq' is used to express self-identity, which is a standard interpretation in classical first-order logic.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 804,
+        "total_tokens": 1173,
+        "completion_tokens": 369,
+        "prompt_tokens_details": null
+      },
+      "accepted": false,
+      "validation_error": "[{\"type\": \"value_error\", \"loc\": [\"symbols\", 1], \"msg\": \"Value error, Symbol name is a reserved logical operator.\"}]"
+    },
+    {
+      "attempt": 2,
+      "response": "{\n  \"logic\": \"classical_first_order\",\n  \"domain_description\": \"The domain consists of all individuals, including persons. The term 'person' is interpreted as a predicate over this domain.\",\n  \"symbols\": [\n    {\n      \"name\": \"Person\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"True of any individual that is a person.\"\n    },\n    {\n      \"name\": \"SelfIdentical\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"True of any individual that is self-identical (equal to itself).\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"(forall x (implies (Person x) (SelfIdentical x)))\",\n      \"reason\": \"The claim 'Necessarily, every person is self-identical' is translated as a universal statement asserting that for all individuals x, if x is a person, then x is self-identical.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"(forall x (implies (Person x) (SelfIdentical x)))\",\n      \"reason\": \"The claim 'Therefore, every person is self-identical' is logically equivalent to the premise and is also translated as a universal statement asserting that for all individuals x, if x is a person, then x is self-identical.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The modal operator 'necessarily' is omitted in the translation because the argument does not rely on modal logic and the conclusion follows directly from the premise in classical first-order logic.\",\n    \"The equality relation is replaced with a predicate 'SelfIdentical' to avoid using a reserved logical operator name.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1239,
+        "total_tokens": 1620,
+        "completion_tokens": 381,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      44
+    ],
+    "c2": [
+      45,
+      87
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "17997c27a10c85a8758a570881f93f6bb7e71699abf8e51f2993b2d76a720011",
+    "reconstruction_sha256": "edb3f830a139241880d4bea2314fba7f6eaff8f64a1b1bef0e10b8c89e93fb2a",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [
+      "Premise c1 repeats the conclusion's formula."
+    ],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "17997c27a10c85a8758a570881f93f6bb7e71699abf8e51f2993b2d76a720011",
+    "reconstruction_sha256": "edb3f830a139241880d4bea2314fba7f6eaff8f64a1b1bef0e10b8c89e93fb2a",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [
+      "Premise c1 repeats the conclusion's formula."
+    ],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}

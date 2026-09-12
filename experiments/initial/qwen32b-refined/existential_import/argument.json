@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "source": "Every human is mortal. Therefore, a human exists.",
+  "source_sha256": "c6f9946f2eec7f6227d259aafcd204e51047dcaf61acafb62bf9989ff393f8c2",
+  "reconstruction": {
+    "title": "Existence of Humans",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every human is mortal.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every human is mortal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, a human exists.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, a human exists.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": [
+      {
+        "claim_id": "c2",
+        "issue": "The inference from 'Every human is mortal' to 'A human exists' is invalid unless an implicit premise is added.",
+        "alternatives": [
+          "Add an implicit premise that there is at least one human.",
+          "Interpret the argument as a logical fallacy and reject the conclusion."
+        ]
+      }
+    ]
+  },
+  "reconstruction_sha256": "3af12cf209713c73af377e6c8297018a81fa6dd2a67c31bb0a2460309aba3e28",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all individuals, including humans and other entities. It is nonempty but not necessarily finite.",
+    "symbols": [
+      {
+        "name": "Human",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An individual is a human."
+      },
+      {
+        "name": "Mortal",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An individual is mortal."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Human x) (Mortal x)))",
+        "reason": "The statement 'Every human is mortal' is formalized as a universal quantification over all individuals, stating that if an individual is a human, then it is mortal."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(exists x (Human x))",
+        "reason": "The statement 'A human exists' is formalized as an existential quantification over all individuals, asserting that there is at least one individual who is a human."
+      }
+    ],
+    "interpretation_notes": [
+      "The inference from 'Every human is mortal' to 'A human exists' is invalid in classical first-order logic unless an implicit premise asserting the existence of at least one human is added. The current reconstruction does not include such a premise, and the conclusion does not logically follow from the premise alone."
+    ]
+  },
+  "formalization_sha256": "8737a837931b6457a6958f05a3be8e071f9c7089a374ebc536fbbfa4f55ccb43"
+}

@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-09-12T22:07:47.098149+00:00",
+  "finished_at": "2026-09-12T22:08:38.272903+00:00",
+  "prompt_version": "0.2",
+  "prompt_sha256": {
+    "reconstruction": "7082661e2630dd3a7052490a4b909b3f6a0dc777ccd9c69abd64815908590bbe",
+    "formalization": "9524fd864103774448d6782929e7806fc45781a5e30d1e7bc3df8f1d0c9f6101"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true,
+    "retries": 2,
+    "timeout_seconds": 300.0
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Moral Responsibility and Alternative Possibilities\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"If moral responsibility requires alternative possibilities, then an agent who could not have done otherwise is not responsible.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"An objector claims that every responsible action requires alternative possibilities.\",\n      \"role\": \"context\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"An objector claims that every responsible action requires alternative possibilities.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c3\",\n      \"text\": \"Consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated.\",\n      \"role\": \"context\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"But consider a case in which a hidden intervener would have forced the agent to act if the agent had hesitated.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c4\",\n      \"text\": \"The agent acted on their own reasons and the intervener never acted.\",\n      \"role\": \"context\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent acted on their own reasons and the intervener never acted.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c5\",\n      \"text\": \"The agent could not have done otherwise.\",\n      \"role\": \"context\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent could not have done otherwise.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c6\",\n      \"text\": \"Nevertheless, the agent is morally responsible.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Nevertheless, the agent is morally responsible.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c7\",\n      \"text\": \"Moral responsibility does not always require alternative possibilities.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, moral responsibility does not always require alternative possibilities.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\", \"c6\"],\n      \"conclusion\": \"c7\",\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c7\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 1543,
+        "total_tokens": 2232,
+        "completion_tokens": 689,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"unsupported\",\n  \"domain_description\": \"The domain consists of agents and their actions, with a focus on moral responsibility and the presence or absence of alternative possibilities.\",\n  \"symbols\": [\n    {\n      \"name\": \"MoralResponsibility\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An agent is morally responsible for an action.\"\n    },\n    {\n      \"name\": \"AlternativePossibilities\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An agent has alternative possibilities for an action.\"\n    },\n    {\n      \"name\": \"CouldNotHaveDoneOtherwise\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An agent could not have done otherwise in a given situation.\"\n    },\n    {\n      \"name\": \"IntervenerForced\",\n      \"kind\": \"predicate\",\n      \"arity\": 2,\n      \"meaning\": \"An intervener would have forced the agent to act in a given situation.\"\n    },\n    {\n      \"name\": \"AgentActedOnOwnReasons\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"An agent acted on their own reasons.\"\n    },\n    {\n      \"name\": \"IntervenerNeverActed\",\n      \"kind\": \"predicate\",\n      \"arity\": 1,\n      \"meaning\": \"The intervener never acted in a given situation.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a conditional statement about moral responsibility and alternative possibilities, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a general statement about responsible actions and alternative possibilities, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    },\n    {\n      \"claim_id\": \"c3\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a hypothetical scenario involving a hidden intervener, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    },\n    {\n      \"claim_id\": \"c4\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a statement about the agent acting on their own reasons and the intervener never acting, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    },\n    {\n      \"claim_id\": \"c5\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a statement about the agent's inability to have done otherwise, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    },\n    {\n      \"claim_id\": \"c6\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a statement about the agent's moral responsibility, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    },\n    {\n      \"claim_id\": \"c7\",\n      \"formula\": null,\n      \"reason\": \"The claim involves a conclusion about moral responsibility not always requiring alternative possibilities, which cannot be directly formalized in classical first-order logic without modal or deontic semantics.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument involves modal and deontic concepts (e.g., 'could not have done otherwise', 'moral responsibility') that cannot be directly formalized in classical first-order logic.\",\n    \"The argument relies on hypothetical scenarios and counterfactual reasoning, which are not directly expressible in classical first-order logic.\",\n    \"The argument's structure and logical dependencies cannot be fully captured in classical first-order logic due to the need for modal or deontic semantics.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 2001,
+        "total_tokens": 2826,
+        "completion_tokens": 825,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      127
+    ],
+    "c2": [
+      128,
+      212
+    ],
+    "c3": [
+      213,
+      324
+    ],
+    "c4": [
+      325,
+      393
+    ],
+    "c5": [
+      394,
+      434
+    ],
+    "c6": [
+      435,
+      482
+    ],
+    "c7": [
+      483,
+      565
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "f97523372d410d1af7e85b28dead5d2bbf2e256e422f70a09c7f3347d6b5c57e",
+    "reconstruction_sha256": "2a3a8deb38c16e7508997a69a476fa77b7a9eb6ea6f67bf5b5b1704dadd2a20f",
+    "included_premise_ids": [
+      "c1",
+      "c6"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "f97523372d410d1af7e85b28dead5d2bbf2e256e422f70a09c7f3347d6b5c57e",
+    "reconstruction_sha256": "2a3a8deb38c16e7508997a69a476fa77b7a9eb6ea6f67bf5b5b1704dadd2a20f",
+    "included_premise_ids": [
+      "c1",
+      "c6"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "unsupported",
+    "reason": "An active claim lacks a supported formula."
+  }
+}

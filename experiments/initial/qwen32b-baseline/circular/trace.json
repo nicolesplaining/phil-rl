@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-09-12T22:03:29.820730+00:00",
+  "finished_at": "2026-09-12T22:03:41.623428+00:00",
+  "prompt_version": "0.1",
+  "prompt_sha256": {
+    "reconstruction": "351136405eb50abc4125cf0d7784fc8e363a8bb2795aa9922f78db54f9e98a13",
+    "formalization": "a27c89f1a0ad2ff1da1bd187fd07fa435170a100c1c13135611cfc5dd08c3595"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"The Agent's Free Action\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"The agent acted freely.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Therefore, the agent acted freely.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, the agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\"\n    ,\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 403,
+        "total_tokens": 625,
+        "completion_tokens": 222,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"classical_propositional\",\n  \"domain_description\": \"A single proposition about an agent's action.\",\n  \"symbols\": [\n    {\n      \"name\": \"F\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent acted freely.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"F\"\n    ,\n      \"reason\": \"The claim is directly translated as a proposition.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"F\"\n    ,\n      \"reason\": \"The claim is directly translated as a proposition.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument is tautological, with the same proposition stated as both premise and conclusion. No additional logical structure is present.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 777,
+        "total_tokens": 965,
+        "completion_tokens": 188,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      23
+    ],
+    "c2": [
+      24,
+      58
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "42d251b4bbe55736eb028d50aef1ca17e3f808de6c099a9577b61d42d2a2b178",
+    "reconstruction_sha256": "fa63bd9461ad0503462de8950c3520fa7a6830f86771b08e47a81098f1ab7847",
+    "included_premise_ids": [],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[F = False]",
+    "assignments": {
+      "F": "False"
+    }
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "42d251b4bbe55736eb028d50aef1ca17e3f808de6c099a9577b61d42d2a2b178",
+    "reconstruction_sha256": "fa63bd9461ad0503462de8950c3520fa7a6830f86771b08e47a81098f1ab7847",
+    "included_premise_ids": [],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[F = False]",
+    "assignments": {
+      "F": "False"
+    }
+  }
+}

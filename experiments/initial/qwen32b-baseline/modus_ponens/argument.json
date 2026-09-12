@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "source": "If the agent is morally responsible, the agent acted freely. The agent is morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "57c0e12edc98567a2e737ba20dd288f0b293b1e39fe52534a37b4d35a011352d",
+  "reconstruction": {
+    "title": "Argument for the Agent's Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "If the agent is morally responsible, the agent acted freely.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "If the agent is morally responsible, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "6e6a8021db9b5dfb566d929fb43768533b804865a27f3dff139539d5b94b1f38",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "The domain is a single nonempty set of agents. The argument is propositional and does not require quantification over individuals.",
+    "symbols": [
+      {
+        "name": "M",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent is morally responsible."
+      },
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(implies M F)",
+        "reason": ""
+      },
+      {
+        "claim_id": "c2",
+        "formula": "M",
+        "reason": ""
+      },
+      {
+        "claim_id": "c3",
+        "formula": "F",
+        "reason": ""
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is a straightforward modus ponens in classical propositional logic. The translation is faithful to the structure of the original argument."
+    ]
+  },
+  "formalization_sha256": "78053299d1e5dd06c3a755d2f62c5dfc5995d1f5b229ce4c4e4848bb290d1d12"
+}

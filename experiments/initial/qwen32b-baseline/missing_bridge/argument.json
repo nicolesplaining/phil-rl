@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent is morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "d58f743140bd3ad3885209782d30ca95d2cc35697840bcafa531b584a9c36c95",
+  "reconstruction": {
+    "title": "Moral Responsibility and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "7015ced35dcaf171b81535e946cdaae733d5b5951ac8bf7f91f40e5baac2be11",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "A domain of agents and their actions.",
+    "symbols": [
+      {
+        "name": "MorallyResponsible",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent is morally responsible."
+      },
+      {
+        "name": "ActedFreely",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent acted freely."
+      },
+      {
+        "name": "agent",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "A specific agent in the domain."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The claim 'The agent is morally responsible' involves a normative predicate 'MorallyResponsible' which cannot be directly translated into classical first-order logic without additional normative semantics."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The claim 'The agent acted freely' involves a predicate 'ActedFreely' which cannot be directly translated into classical first-order logic without additional modal or causal semantics."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument assumes a connection between moral responsibility and free action, but the logic required to express this connection (e.g., modal or deontic logic) is not supported in the current formalism.",
+      "The predicates 'MorallyResponsible' and 'ActedFreely' are treated as uninterpreted predicates due to the lack of normative or modal semantics in the available logic."
+    ]
+  },
+  "formalization_sha256": "d628d97700659949257958b2b89fed4ea162380239332acde2a6a7ad9cd506ae"
+}

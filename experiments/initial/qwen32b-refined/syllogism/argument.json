@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1",
+  "source": "Every human is mortal. Socrates is human. Therefore, Socrates is mortal.",
+  "source_sha256": "a0e75b3891adee96019a0464e2774a36700d0a8d87390b40b389534617c943d2",
+  "reconstruction": {
+    "title": "Socrates' Mortality",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every human is mortal.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every human is mortal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Socrates is human.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Socrates is human.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, Socrates is mortal.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, Socrates is mortal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "566830078f2cd3549cf51dad19944e68a5b1ae97a2bf1c890b001d28cab6184e",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "The domain consists of all individuals, including humans and other entities, as described in the argument.",
+    "symbols": [
+      {
+        "name": "Human",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An individual is a human."
+      },
+      {
+        "name": "Mortal",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An individual is mortal."
+      },
+      {
+        "name": "Socrates",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "The individual known as Socrates."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Human x) (Mortal x)))",
+        "reason": "The universal statement 'Every human is mortal' is formalized as a universal quantification over all individuals, stating that if an individual is a human, then it is mortal."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Human Socrates)",
+        "reason": "The statement 'Socrates is human' is formalized as the predicate Human applied to the constant Socrates."
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Mortal Socrates)",
+        "reason": "The statement 'Socrates is mortal' is formalized as the predicate Mortal applied to the constant Socrates."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is formalized in classical first-order logic with a single nonempty domain of individuals. The predicates Human and Mortal are interpreted as properties of individuals, and Socrates is treated as a specific individual in the domain."
+    ]
+  },
+  "formalization_sha256": "e38c5ac3ff1ff33a9118b684678a60b960fb98499d1661ab2f6c96d4778888db"
+}

@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-09-12T22:04:18.894966+00:00",
+  "finished_at": "2026-09-12T22:04:33.327898+00:00",
+  "prompt_version": "0.1",
+  "prompt_sha256": {
+    "reconstruction": "351136405eb50abc4125cf0d7784fc8e363a8bb2795aa9922f78db54f9e98a13",
+    "formalization": "a27c89f1a0ad2ff1da1bd187fd07fa435170a100c1c13135611cfc5dd08c3595"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Everyone Admires Someone\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"Everyone admires someone.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Everyone admires someone.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"Therefore, someone is admired by everyone.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, someone is admired by everyone.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\"],\n      \"conclusion\": \"c2\"\n    ,\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c2\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 404,
+        "total_tokens": 628,
+        "completion_tokens": 224,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"classical_first_order\",\n  \"domain_description\": \"A nonempty domain of individuals (people).\",\n  \"symbols\": [\n    {\n      \"name\": \"Admires\",\n      \"kind\": \"predicate\",\n      \"arity\": 2,\n      \"meaning\": \"Admires(x, y) means x admires y.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"(forall x (exists y (Admires x y)))\",\n      \"reason\": \"Translates 'Everyone admires someone' as a universal quantifier over individuals, each of whom has at least one admired individual.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"(exists y (forall x (Admires x y)))\",\n      \"reason\": \"Translates 'Someone is admired by everyone' as the existence of an individual who is admired by all others.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument is invalid in classical first-order logic. The premise (forall x (exists y (Admires x y))) does not entail the conclusion (exists y (forall x (Admires x y))). The former allows for each person to admire a different person, while the latter requires a single person to be admired by all.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 780,
+        "total_tokens": 1068,
+        "completion_tokens": 288,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      25
+    ],
+    "c2": [
+      26,
+      68
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "16ca53f250ccee994d8617e0b4e83a9cff93c585a59bd01bc46304f4ccaa460f",
+    "reconstruction_sha256": "4deb7d6f850ae74ff28a1562f9f6147d47ee8bd195f8bc6da7051c29bd18e16e",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Admires = [else ->\n            Or(And(Var(0) == Domain!val!3,\n                   Var(1) == Domain!val!4,\n                   Not(Var(1) == Domain!val!2)),\n               And(Not(Var(0) == Domain!val!3),\n                   Var(1) == Domain!val!2))]]",
+    "assignments": {}
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "16ca53f250ccee994d8617e0b4e83a9cff93c585a59bd01bc46304f4ccaa460f",
+    "reconstruction_sha256": "4deb7d6f850ae74ff28a1562f9f6147d47ee8bd195f8bc6da7051c29bd18e16e",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Admires = [else ->\n            Or(And(Not(Var(0) == Domain!val!3),\n                   Not(Var(1) == Domain!val!4),\n                   Not(Var(1) == Domain!val!0)),\n               And(Var(0) == Domain!val!3,\n                   Var(1) == Domain!val!4,\n                   Not(Var(1) == Domain!val!0)))]]",
+    "assignments": {}
+  }
+}

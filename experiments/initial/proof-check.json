@@ -1,0 +1,11 @@
+{
+  "file": "qwen32b-refined-proof.lean",
+  "lean_version": "4.19.0",
+  "status": "passed",
+  "statement_typechecked": true,
+  "proof_checked": true,
+  "formalization_sha256": "1b40e668c61e82cf1d929dac9b49eec59d291d991ce69b242f005d5688b3a492",
+  "reconstruction_sha256": "6347fa3d0e29e2c75c6328da164d12e84de9c45d546fc7844dc26315af8ff4c7",
+  "stdout": "'argumentProof' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": ""
+}

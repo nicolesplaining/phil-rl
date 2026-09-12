@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent acted freely. Therefore, the agent acted freely.",
+  "source_sha256": "2cd397bb4ebee67b4b119cae05334a2cec26fe10d0849d5c20a01c5d9c5895c8",
+  "reconstruction": {
+    "title": "The Agent's Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "fa63bd9461ad0503462de8950c3520fa7a6830f86771b08e47a81098f1ab7847",
+  "formalization": {
+    "logic": "classical_propositional",
+    "domain_description": "A single proposition about an agent's action.",
+    "symbols": [
+      {
+        "name": "F",
+        "kind": "proposition",
+        "arity": 0,
+        "meaning": "The agent acted freely."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "F",
+        "reason": "The claim is directly translated as a proposition."
+      },
+      {
+        "claim_id": "c2",
+        "formula": "F",
+        "reason": "The claim is directly translated as a proposition."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument is tautological, with the same proposition stated as both premise and conclusion. No additional logical structure is present."
+    ]
+  },
+  "formalization_sha256": "42d251b4bbe55736eb028d50aef1ca17e3f808de6c099a9577b61d42d2a2b178"
+}

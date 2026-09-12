@@ -1,0 +1,32 @@
+{
+  "explicit": {
+    "formalization_sha256": "16ca53f250ccee994d8617e0b4e83a9cff93c585a59bd01bc46304f4ccaa460f",
+    "reconstruction_sha256": "4deb7d6f850ae74ff28a1562f9f6147d47ee8bd195f8bc6da7051c29bd18e16e",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Admires = [else ->\n            Or(And(Var(0) == Domain!val!3,\n                   Not(Var(1) == Domain!val!0),\n                   Not(Var(1) == Domain!val!2)),\n               And(Not(Var(0) == Domain!val!3),\n                   Var(1) == Domain!val!2))]]",
+    "assignments": {}
+  },
+  "with_proposed_implicit": {
+    "formalization_sha256": "16ca53f250ccee994d8617e0b4e83a9cff93c585a59bd01bc46304f4ccaa460f",
+    "reconstruction_sha256": "4deb7d6f850ae74ff28a1562f9f6147d47ee8bd195f8bc6da7051c29bd18e16e",
+    "included_premise_ids": [
+      "c1"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[Admires = [else ->\n            Or(And(Var(0) == Domain!val!3,\n                   Var(1) == Domain!val!4),\n               And(Not(Var(0) == Domain!val!3),\n                   Var(1) == Domain!val!2,\n                   Not(Var(1) == Domain!val!4)))]]",
+    "assignments": {}
+  }
+}

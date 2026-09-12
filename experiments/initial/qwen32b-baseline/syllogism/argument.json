@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "source": "Every human is mortal. Socrates is human. Therefore, Socrates is mortal.",
+  "source_sha256": "a0e75b3891adee96019a0464e2774a36700d0a8d87390b40b389534617c943d2",
+  "reconstruction": {
+    "title": "Socrates' Mortality",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Every human is mortal.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Every human is mortal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Socrates is human.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Socrates is human.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, Socrates is mortal.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, Socrates is mortal.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "566830078f2cd3549cf51dad19944e68a5b1ae97a2bf1c890b001d28cab6184e",
+  "formalization": {
+    "logic": "classical_first_order",
+    "domain_description": "A nonempty domain of individuals, including at least humans and Socrates.",
+    "symbols": [
+      {
+        "name": "Human",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is a human"
+      },
+      {
+        "name": "Mortal",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "x is mortal"
+      },
+      {
+        "name": "socrates",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "the individual Socrates"
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": "(forall x (implies (Human x) (Mortal x)))",
+        "reason": ""
+      },
+      {
+        "claim_id": "c2",
+        "formula": "(Human socrates)",
+        "reason": ""
+      },
+      {
+        "claim_id": "c3",
+        "formula": "(Mortal socrates)",
+        "reason": ""
+      }
+    ],
+    "interpretation_notes": []
+  },
+  "formalization_sha256": "22624d5a26fbe6cb613b9e503d0b0079cff3b302f0623553c90e6e608d8650fd"
+}

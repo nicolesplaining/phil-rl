@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1",
+  "source": "The agent is morally responsible. The agent is not morally responsible. Therefore, the agent acted freely.",
+  "source_sha256": "8916c1048de1967c509e0bed440319c3c39baf050f2751a1c703f6cfbe6637b0",
+  "reconstruction": {
+    "title": "Contradictory Claims and Free Action",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "The agent is morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "The agent is not morally responsible.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "The agent is not morally responsible.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c3",
+        "text": "Therefore, the agent acted freely.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Therefore, the agent acted freely.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1",
+          "c2"
+        ],
+        "conclusion": "c3",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c3",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "4476c992b3bfed369a220437e6da3d33048cc6ba863f4fa14a29777ce06cb2e5",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "A domain of agents and their actions, with moral responsibility and freedom as properties.",
+    "symbols": [
+      {
+        "name": "MorallyResponsible",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent is morally responsible."
+      },
+      {
+        "name": "ActedFreely",
+        "kind": "predicate",
+        "arity": 1,
+        "meaning": "An agent acted freely."
+      },
+      {
+        "name": "agent",
+        "kind": "constant",
+        "arity": 0,
+        "meaning": "A specific agent in the domain."
+      }
+    ],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The claim 'The agent is morally responsible' is a direct assertion of a property (moral responsibility) of the agent. However, the contradiction with c2 (the agent is not morally responsible) cannot be resolved within classical logic without additional assumptions or a higher-order framework."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The claim 'The agent is not morally responsible' is a direct negation of the property (moral responsibility) of the agent. This contradicts c1, and the logical inconsistency cannot be resolved in classical first-order logic without further assumptions."
+      },
+      {
+        "claim_id": "c3",
+        "formula": null,
+        "reason": "The conclusion 'The agent acted freely' is not logically derivable from the contradictory premises c1 and c2. The argument is invalid and cannot be formalized in classical logic without resolving the contradiction or introducing additional assumptions."
+      }
+    ],
+    "interpretation_notes": [
+      "The argument contains contradictory premises (c1 and c2), which cannot be resolved in classical logic without additional assumptions or a higher-order framework.",
+      "The conclusion (c3) is not logically entailed by the premises, as the contradiction prevents any valid inference.",
+      "The argument is invalid and cannot be formalized in classical first-order logic without resolving the contradiction or introducing additional assumptions."
+    ]
+  },
+  "formalization_sha256": "4125fd164ddc88ec777e18889bdf06bad98bc551172c2dc91028729925e18496"
+}

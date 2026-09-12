@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "source": "Necessarily, every person is self-identical. Therefore, every person is self-identical.",
+  "source_sha256": "3c7db4bfa9caedf479f810f4b97c625b021f6989f1cd44b77a2ccf55b52053d0",
+  "reconstruction": {
+    "title": "Self-Identity Argument",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Necessarily, every person is self-identical.",
+        "role": "premise",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "Necessarily, every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      },
+      {
+        "id": "c2",
+        "text": "Every person is self-identical.",
+        "role": "conclusion",
+        "origin": "explicit",
+        "evidence": {
+          "quote": "every person is self-identical.",
+          "occurrence": 0
+        },
+        "interpretation_note": ""
+      }
+    ],
+    "relations": [
+      {
+        "premises": [
+          "c1"
+        ],
+        "conclusion": "c2",
+        "kind": "supports"
+      }
+    ],
+    "conclusion_id": "c2",
+    "ambiguities": []
+  },
+  "reconstruction_sha256": "32f0bb3c4f81ec0192619947c49e90fa223c2c78122e68fdeac0883b3d07646b",
+  "formalization": {
+    "logic": "unsupported",
+    "domain_description": "The domain consists of all persons.",
+    "symbols": [],
+    "translations": [
+      {
+        "claim_id": "c1",
+        "formula": null,
+        "reason": "The modal operator 'necessarily' cannot be expressed in classical first-order logic without additional semantics."
+      },
+      {
+        "claim_id": "c2",
+        "formula": null,
+        "reason": "The argument requires modal logic, which is not supported in the current formalism."
+      }
+    ],
+    "interpretation_notes": [
+      "The premise 'Necessarily, every person is self-identical' requires modal logic to express the necessity, which is not supported in the current formalism.",
+      "The conclusion 'Every person is self-identical' also cannot be formalized in classical first-order logic because the argument as a whole is modal.",
+      "Since the logic is unsupported, no symbols or formulas are provided."
+    ]
+  },
+  "formalization_sha256": "b91daa20d00769e9e57ff975e68f221581e3bfd4785c6ccb2bf4b3cfcbcdc7f2"
+}

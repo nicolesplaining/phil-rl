@@ -1,0 +1,94 @@
+{
+  "started_at": "2026-09-12T22:02:28.891538+00:00",
+  "finished_at": "2026-09-12T22:02:52.198036+00:00",
+  "prompt_version": "0.1",
+  "prompt_sha256": {
+    "reconstruction": "351136405eb50abc4125cf0d7784fc8e363a8bb2795aa9922f78db54f9e98a13",
+    "formalization": "a27c89f1a0ad2ff1da1bd187fd07fa435170a100c1c13135611cfc5dd08c3595"
+  },
+  "model_config": {
+    "model": "Qwen/Qwen3-32B",
+    "max_tokens": 8192,
+    "temperature": 0.0,
+    "seed": 0,
+    "structured": true,
+    "qwen_nonthinking": true
+  },
+  "provenance": "llm_generated",
+  "reconstruction_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"title\": \"Argument for Moral Responsibility\",\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"text\": \"If the agent is morally responsible, the agent acted freely.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"If the agent is morally responsible, the agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c2\",\n      \"text\": \"The agent acted freely.\",\n      \"role\": \"premise\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"The agent acted freely.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c3\",\n      \"text\": \"Therefore, the agent is morally responsible.\",\n      \"role\": \"conclusion\",\n      \"origin\": \"explicit\",\n      \"evidence\": {\n        \"quote\": \"Therefore, the agent is morally responsible.\",\n        \"occurrence\": 0\n      },\n      \"interpretation_note\": \"\"\n    },\n    {\n      \"id\": \"c4\",\n      \"text\": \"If the agent acted freely, then the agent is morally responsible.\",\n      \"role\": \"premise\",\n      \"origin\": \"implicit\",\n      \"evidence\": null,\n      \"interpretation_note\": \"This is a proposed implicit premise to bridge the gap between the given premises and the conclusion. The argument assumes that acting freely is sufficient for moral responsibility, which is not explicitly stated in the source.\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"premises\": [\"c1\", \"c2\", \"c4\"],\n      \"conclusion\": \"c3\"\n    ,\n      \"kind\": \"supports\"\n    }\n  ],\n  \"conclusion_id\": \"c3\",\n  \"ambiguities\": []\n}",
+      "usage": {
+        "prompt_tokens": 416,
+        "total_tokens": 829,
+        "completion_tokens": 413,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "formalization_attempts": [
+    {
+      "attempt": 1,
+      "response": "{\n  \"logic\": \"classical_propositional\",\n  \"domain_description\": \"The domain consists of a single agent, and the propositions concern the agent's moral responsibility and freedom of action.\",\n  \"symbols\": [\n    {\n      \"name\": \"M\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent is morally responsible.\"\n    },\n    {\n      \"name\": \"F\",\n      \"kind\": \"proposition\",\n      \"arity\": 0,\n      \"meaning\": \"The agent acted freely.\"\n    }\n  ],\n  \"translations\": [\n    {\n      \"claim_id\": \"c1\",\n      \"formula\": \"(implies M F)\"\n    ,\n      \"reason\": \"The claim 'If the agent is morally responsible, the agent acted freely' is translated as a material implication between the propositions M and F.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"formula\": \"F\"\n    ,\n      \"reason\": \"The claim 'The agent acted freely' is directly translated as the proposition F.\"\n    },\n    {\n      \"claim_id\": \"c3\",\n      \"formula\": \"M\"\n    ,\n      \"reason\": \"The claim 'Therefore, the agent is morally responsible' is directly translated as the proposition M.\"\n    },\n    {\n      \"claim_id\": \"c4\",\n      \"formula\": \"(implies F M)\"\n    ,\n      \"reason\": \"The implicit claim 'If the agent acted freely, then the agent is morally responsible' is translated as a material implication between the propositions F and M.\"\n    }\n  ],\n  \"interpretation_notes\": [\n    \"The argument is logically invalid because the conclusion M does not follow from the premises (implies M F), F, and (implies F M). The conclusion M would only follow if the premises included a biconditional (iff M F) or a direct assertion of M.\",\n    \"The implicit premise (implies F M) is necessary to bridge the gap between the given premises and the conclusion, but it is not explicitly stated in the source.\"\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 958,
+        "total_tokens": 1398,
+        "completion_tokens": 440,
+        "prompt_tokens_details": null
+      },
+      "accepted": true
+    }
+  ],
+  "source_spans": {
+    "c1": [
+      0,
+      60
+    ],
+    "c2": [
+      61,
+      84
+    ],
+    "c3": [
+      85,
+      129
+    ]
+  },
+  "explicit_check": {
+    "formalization_sha256": "04f87eda73611623a4cdd4445a236e06ab899cc1f0a41832136c214c35139297",
+    "reconstruction_sha256": "e9553369eb709a6536305417bc9e1720198b18a6fcaef4da7639c30dc4134370",
+    "included_premise_ids": [
+      "c1",
+      "c2"
+    ],
+    "includes_implicit_premises": false,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "invalid",
+    "premises_satisfiable": true,
+    "countermodel": "[F = True, M = False]",
+    "assignments": {
+      "M": "False",
+      "F": "True"
+    }
+  },
+  "with_proposed_implicit_check": {
+    "formalization_sha256": "04f87eda73611623a4cdd4445a236e06ab899cc1f0a41832136c214c35139297",
+    "reconstruction_sha256": "e9553369eb709a6536305417bc9e1720198b18a6fcaef4da7639c30dc4134370",
+    "included_premise_ids": [
+      "c1",
+      "c2",
+      "c4"
+    ],
+    "includes_implicit_premises": true,
+    "fidelity": "not_assessed",
+    "lean_proof_checked": false,
+    "solver": "z3 4.16.0",
+    "status": "valid",
+    "premises_satisfiable": true,
+    "warnings": [],
+    "qualification": "Entailment under this encoding; English fidelity remains unassessed."
+  }
+}
