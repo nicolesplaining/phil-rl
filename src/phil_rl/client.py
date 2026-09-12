@@ -1,6 +1,7 @@
 """Small chat-completions client for a local vLLM server or compatible endpoint."""
 
 import json
+import time
 from dataclasses import dataclass
 from typing import TypeVar
 
@@ -26,11 +27,12 @@ class ModelConfig:
     seed: int = 0
     timeout: float = 180.0
     retries: int = 2
+    transport_retries: int = 2
     structured: bool = True
-    qwen_nonthinking: bool = True
+    qwen_nonthinking: bool = False
 
     def __post_init__(self):
-        if self.retries < 0 or self.retries > 5:
+        if not 0 <= self.retries <= 5 or not 0 <= self.transport_retries <= 5:
             raise ValueError("retries must be between 0 and 5.")
         if self.timeout <= 0 or self.max_tokens <= 0:
             raise ValueError("timeout and max_tokens must be positive.")
@@ -48,6 +50,7 @@ class ModelConfig:
             "structured": self.structured,
             "qwen_nonthinking": self.qwen_nonthinking,
             "retries": self.retries,
+            "transport_retries": self.transport_retries,
             "timeout_seconds": self.timeout,
         }
 
@@ -89,33 +92,57 @@ class ChatClient:
                             "schema": schema.model_json_schema(),
                         },
                     }
-                try:
-                    response = client.post(
-                        config.base_url.rstrip("/") + "/chat/completions",
-                        json=body,
-                        headers=headers,
-                    )
-                except httpx.HTTPError as error:
-                    # Library exception strings may contain credential-bearing URLs.
-                    raise GenerationError(
-                        f"Model request failed ({type(error).__name__})."
-                    ) from None
-                if response.is_error:
-                    raise GenerationError(f"Model endpoint returned HTTP {response.status_code}.")
+                for network_attempt in range(config.transport_retries + 1):
+                    record = {
+                        "attempt": attempt + 1,
+                        "network_attempt": network_attempt + 1,
+                        "accepted": False,
+                    }
+                    attempts.append(record)
+                    try:
+                        response = client.post(
+                            config.base_url.rstrip("/") + "/chat/completions",
+                            json=body,
+                            headers=headers,
+                        )
+                    except httpx.HTTPError as error:
+                        # Exception text can contain credentials. Store only the class.
+                        detail = f"Model request failed ({type(error).__name__})."
+                        transient = isinstance(error, (httpx.TransportError,))
+                    else:
+                        record["http_status"] = response.status_code
+                        if not response.is_error:
+                            break
+                        detail = f"Model endpoint returned HTTP {response.status_code}."
+                        transient = response.status_code in {408, 429, 500, 502, 503, 504}
+                    record["error"] = detail
+                    if not transient or network_attempt == config.transport_retries:
+                        raise GenerationError(detail, attempts) from None
+                    time.sleep(min(0.25 * 2**network_attempt, 2.0))
                 try:
                     data = response.json()
                     choice = data["choices"][0]
+                    content = choice["message"].get("content")
+                    record.update(
+                        {
+                            "response": content,
+                            "reasoning": choice["message"].get(
+                                "reasoning", choice["message"].get("reasoning_content")
+                            ),
+                            "usage": data.get("usage"),
+                            "finish_reason": choice.get("finish_reason"),
+                            "served_model": data.get("model"),
+                        }
+                    )
                     if choice.get("finish_reason") not in {"stop", None}:
-                        raise GenerationError(
-                            "Model generation did not finish; increase max_tokens."
-                        )
-                    content = choice["message"]["content"]
+                        record["error"] = "Model generation did not finish; increase max_tokens."
+                        raise GenerationError(record["error"], attempts)
                     if not isinstance(content, str) or not content.strip():
-                        raise GenerationError("Model returned no text content.")
-                except (ValueError, KeyError, IndexError, TypeError):
-                    raise GenerationError("Malformed chat-completions response.") from None
-                record = {"attempt": attempt + 1, "response": content, "usage": data.get("usage")}
-                attempts.append(record)
+                        record["error"] = "Model returned no text content."
+                        raise GenerationError(record["error"], attempts)
+                except (ValueError, KeyError, IndexError, TypeError, AttributeError):
+                    record["error"] = "Malformed chat-completions response."
+                    raise GenerationError(record["error"], attempts) from None
                 try:
                     result = schema.model_validate_json(content)
                     if validate:

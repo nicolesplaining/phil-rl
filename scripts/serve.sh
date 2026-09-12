@@ -22,4 +22,6 @@ exec "${phil_server[@]}" serve \
   --max-model-len "${PHIL_CONTEXT:-16384}" \
   --max-num-seqs 1 \
   --gpu-memory-utilization 0.90 \
+  --reasoning-parser qwen3 \
+  --generation-config vllm \
   "$@"

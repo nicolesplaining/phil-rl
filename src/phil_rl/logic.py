@@ -1,6 +1,7 @@
 """A bounded, function-free first-order language. Model text is never executable code."""
 
 import re
+import uuid
 from dataclasses import dataclass
 
 import z3
@@ -121,8 +122,18 @@ def validate_formalization(reconstruction: Reconstruction, formalization: Formal
 
 
 class Z3Compiler:
-    def __init__(self, formalization: Formalization):
-        self.domain = z3.DeclareSort("Domain")
+    def __init__(self, formalization: Formalization, domain_size: int | None = None):
+        self.grounding_budget = 20000
+        self.elements = None
+        if domain_size is None:
+            self.domain = z3.DeclareSort("Domain")
+        else:
+            if not 1 <= domain_size <= 4:
+                raise ValueError("Finite model search supports domains of size 1 through 4.")
+            name = "FiniteDomain_" + uuid.uuid4().hex
+            self.domain, self.elements = z3.EnumSort(
+                name, [f"{name}_{i}" for i in range(domain_size)]
+            )
         self.symbols = {}
         for symbol in formalization.symbols:
             if symbol.kind == "proposition":
@@ -134,11 +145,17 @@ class Z3Compiler:
             self.symbols[symbol.name] = value
 
     def compile(self, expr: Expr, bound=None):
+        self.grounding_budget -= 1
+        if self.grounding_budget < 0:
+            raise ValueError("Formula compilation exceeded the grounding budget.")
         bound = {} if bound is None else bound
         op, args = expr.op, expr.args
         if op in {"true", "false"}:
             return z3.BoolVal(op == "true")
         if op in {"forall", "exists"}:
+            if self.elements is not None:
+                instances = [self.compile(args[1], {**bound, args[0].op: v}) for v in self.elements]
+                return (z3.And if op == "forall" else z3.Or)(*instances)
             var = z3.FreshConst(self.domain, prefix="bound_" + args[0].op)
             body = self.compile(args[1], {**bound, args[0].op: var})
             return (z3.ForAll if op == "forall" else z3.Exists)([var], body)

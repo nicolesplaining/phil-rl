@@ -8,6 +8,19 @@ from phil_rl.client import ChatClient, GenerationError, ModelConfig
 from phil_rl.examples import fixtures
 from phil_rl.pipeline import run
 from phil_rl.schema import Artifact, Formalization, Reconstruction, fingerprint
+from phil_rl.source import source_units
+
+
+def grounded_json(reference):
+    data = reference.reconstruction.model_dump()
+    units = source_units(reference.source)
+    for claim in data["claims"]:
+        evidence = claim.pop("evidence")
+        matches = [u.id for u in units if evidence and u.text == evidence["quote"]]
+        claim["evidence_ids"] = (
+            matches[evidence["occurrence"] : evidence["occurrence"] + 1] if evidence else []
+        )
+    return json.dumps(data)
 
 
 def response(content, finish="stop"):
@@ -16,7 +29,8 @@ def response(content, finish="stop"):
     )
 
 
-def test_two_stage_http_pipeline_freezes_claims_and_does_not_send_solver_feedback():
+@pytest.mark.parametrize("legacy", [False, True])
+def test_two_stage_http_pipeline_freezes_claims_and_does_not_send_solver_feedback(legacy):
     reference = fixtures()["affirming_consequent"][0]
     requests = []
 
@@ -24,7 +38,9 @@ def test_two_stage_http_pipeline_freezes_claims_and_does_not_send_solver_feedbac
         body = json.loads(request.content)
         requests.append(body)
         if len(requests) == 1:
-            return response(reference.reconstruction.model_dump_json())
+            return response(
+                reference.reconstruction.model_dump_json() if legacy else grounded_json(reference)
+            )
         assert (
             json.loads(body["messages"][1]["content"])["frozen_reconstruction"]
             == reference.reconstruction.model_dump()
@@ -32,7 +48,7 @@ def test_two_stage_http_pipeline_freezes_claims_and_does_not_send_solver_feedbac
         return response(reference.formalization.model_dump_json())
 
     client = ChatClient(ModelConfig(api_key="test-secret"), httpx.MockTransport(handler))
-    artifact, trace = run(reference.source, client)
+    artifact, trace = run(reference.source, client, legacy_quotes=legacy)
     assert len(requests) == 2
     assert artifact == reference
     assert trace["explicit_check"]["status"] == "invalid"
@@ -153,7 +169,7 @@ def test_evaluation_records_failures_and_withholds_references(tmp_path):
     reference = fixtures()["modus_ponens"][0]
     replies = iter(
         [
-            reference.reconstruction.model_dump_json(),
+            grounded_json(reference),
             reference.formalization.model_dump_json(),
             "{}",
         ]

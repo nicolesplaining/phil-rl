@@ -6,6 +6,29 @@ from phil_rl.logic import Z3Compiler, parse
 from phil_rl.schema import Artifact
 
 
+def finite_counterexample(formalization, translations, premise_ids, conclusion_id, timeout_ms):
+    """A finite SAT witness refutes entailment. Finite UNSAT proves nothing here."""
+    for size in range(1, 4):
+        compiler = Z3Compiler(formalization, domain_size=size)
+        try:
+            premises = [compiler.compile(parse(translations[c])) for c in premise_ids]
+            conclusion = compiler.compile(parse(translations[conclusion_id]))
+        except ValueError:
+            return None
+        solver = z3.Solver()
+        solver.set(timeout=max(1, timeout_ms // 3))
+        solver.add(*premises, z3.Not(conclusion))
+        if solver.check() == z3.sat:
+            return {
+                "status": "invalid",
+                "premises_satisfiable": True,
+                "countermodel": str(solver.model()),
+                "countermodel_domain_size": size,
+                "countermodel_search": "finite witness, without assuming the domain is finite",
+            }
+    return None
+
+
 def check(artifact: Artifact, include_implicit: bool = False, timeout_ms: int = 5000) -> dict:
     if timeout_ms <= 0:
         raise ValueError("Solver timeout must be positive.")
@@ -29,6 +52,16 @@ def check(artifact: Artifact, include_implicit: bool = False, timeout_ms: int = 
             "status": "unsupported",
             "reason": "An active claim lacks a supported formula.",
         }
+    if formalization.logic == "classical_first_order":
+        witness = finite_counterexample(
+            formalization,
+            translations,
+            premise_ids,
+            reconstruction.conclusion_id,
+            min(timeout_ms, 300),
+        )
+        if witness:
+            return {**base, **witness}
     compiler = Z3Compiler(formalization)
     formulas = {c: compiler.compile(parse(translations[c])) for c in needed}
     solver = z3.Solver()

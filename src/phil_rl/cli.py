@@ -7,9 +7,10 @@ from pathlib import Path
 from phil_rl.client import ChatClient, GenerationError, ModelConfig
 from phil_rl.examples import fixtures
 from phil_rl.lean import check_lean, export
-from phil_rl.pipeline import run
+from phil_rl.pipeline import PipelineError, run
 from phil_rl.report import review
-from phil_rl.schema import Artifact, Formalization, Reconstruction
+from phil_rl.schema import Artifact, Formalization
+from phil_rl.source import GroundedReconstruction
 from phil_rl.verify import check
 
 
@@ -21,8 +22,26 @@ def load(path: Path) -> Artifact:
     return Artifact.model_validate_json(path.read_text())
 
 
-def save(directory: Path, artifact: Artifact, trace: dict):
+def save_failure(directory: Path, error: GenerationError):
     directory.mkdir(parents=True, exist_ok=False)
+    write_json(directory / "failure.json", {"error": str(error), "attempts": error.attempts})
+    if isinstance(error, PipelineError):
+        write_json(directory / "trace.json", error.trace)
+
+
+def save(directory: Path, artifact: Artifact | None, trace: dict):
+    directory.mkdir(parents=True, exist_ok=False)
+    if artifact is None:
+        result = {
+            "status": trace["outcome"],
+            "reason": trace["reason"],
+            "included_premise_ids": [],
+            "fidelity": "not_assessed",
+        }
+        checks = {"explicit": result, "with_proposed_implicit": result}
+        write_json(directory / "trace.json", trace)
+        write_json(directory / "checks.json", checks)
+        return checks
     write_json(directory / "argument.json", artifact.model_dump(mode="json"))
     write_json(directory / "trace.json", trace)
     checks = {"explicit": check(artifact), "with_proposed_implicit": check(artifact, True)}
@@ -40,9 +59,13 @@ def model_arguments(parser):
     parser.add_argument("--model", default=os.getenv("PHIL_MODEL", "Qwen/Qwen3-32B"))
     parser.add_argument("--max-tokens", type=int, default=8192)
     parser.add_argument("--retries", type=int, default=2)
-    parser.add_argument("--timeout", type=float, default=180)
+    parser.add_argument("--transport-retries", type=int, default=2)
+    parser.add_argument("--timeout", type=float, default=360)
     parser.add_argument("--no-structured", action="store_true")
     parser.add_argument("--no-qwen-template", action="store_true")
+    parser.add_argument(
+        "--no-thinking", action="store_true", help="Disable Qwen thinking for an ablation."
+    )
 
 
 def model_config(args):
@@ -52,9 +75,10 @@ def model_config(args):
         api_key=os.getenv("PHIL_API_KEY"),
         max_tokens=args.max_tokens,
         retries=args.retries,
+        transport_retries=args.transport_retries,
         timeout=args.timeout,
         structured=not args.no_structured,
-        qwen_nonthinking=not args.no_qwen_template,
+        qwen_nonthinking=args.no_thinking and not args.no_qwen_template,
     )
 
 
@@ -96,9 +120,7 @@ def evaluate(client: ChatClient, directory: Path, names: list[str]) -> dict:
                     "augmented_status_match": False,
                 }
             )
-            failed = directory / name
-            failed.mkdir(exist_ok=False)
-            write_json(failed / "failure.json", {"error": str(error), "attempts": error.attempts})
+            save_failure(directory / name, error)
         rows.append(row)
         result = {
             "provenance": "llm_on_original_synthetic_passages",
@@ -137,6 +159,11 @@ def main(argv=None) -> int:
         "--cases", nargs="+", choices=list(fixtures()), default=list(fixtures())
     )
     model_arguments(evaluation)
+    benchmark = sub.add_parser("benchmark", help="Evaluate only source text from a frozen suite.")
+    benchmark.add_argument("--suite", type=Path, required=True)
+    benchmark.add_argument("--out", type=Path, required=True)
+    benchmark.add_argument("--workers", type=int, default=1)
+    model_arguments(benchmark)
     validate = sub.add_parser("check", help="Check an existing frozen artifact with Z3.")
     validate.add_argument("artifact", type=Path)
     validate.add_argument("--include-implicit", action="store_true")
@@ -151,7 +178,7 @@ def main(argv=None) -> int:
     args = parser.parse_args(argv)
     try:
         if args.command == "schema":
-            model = Reconstruction if args.stage == "reconstruction" else Formalization
+            model = GroundedReconstruction if args.stage == "reconstruction" else Formalization
             print(json.dumps(model.model_json_schema(), indent=2))
         elif args.command == "demo":
             args.out.mkdir(parents=True, exist_ok=False)
@@ -185,12 +212,24 @@ def main(argv=None) -> int:
         elif args.command == "run":
             if args.out.exists():
                 raise ValueError("Output directory exists; choose a new run directory.")
-            artifact, trace = run(args.input.read_text(), ChatClient(model_config(args)))
+            try:
+                artifact, trace = run(args.input.read_text(), ChatClient(model_config(args)))
+            except GenerationError as error:
+                save_failure(args.out, error)
+                raise
             print(json.dumps(save(args.out, artifact, trace), indent=2))
         elif args.command == "evaluate":
             result = evaluate(ChatClient(model_config(args)), args.out, args.cases)
             print(json.dumps(result, indent=2))
             return 0 if result["generated"] == result["total"] else 1
+        elif args.command == "benchmark":
+            from phil_rl.benchmark import evaluate_suite
+
+            result = evaluate_suite(
+                ChatClient(model_config(args)), args.out, args.suite, args.workers
+            )
+            print(json.dumps(result, indent=2))
+            return 0 if all(row["generated"] for row in result["cases"]) else 1
         elif args.command == "check":
             print(
                 json.dumps(

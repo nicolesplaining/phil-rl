@@ -26,7 +26,7 @@ abstention. These are engineering tests, not measured LLM performance.
 
 ## Run a model
 
-On the GPU machine, clone this branch and launch the server:
+On the GPU machine, clone main and launch the server:
 
 ```bash
 git clone https://github.com/nicolesplaining/phil-rl.git
@@ -57,12 +57,14 @@ the environment; do not put tokens in scripts or commit them. Public Qwen weight
 not require a Hugging Face token. `HF_TOKEN`, if needed for downloads, belongs only
 in the server environment. It is distinct from an inference endpoint's API key.
 
-Use `--no-qwen-template` for models without Qwen's chat template, and
+Qwen reasoning is enabled by the server by default. `--no-thinking` disables it
+for a comparison run. The client otherwise sends no model-specific template options.
+The older `--no-qwen-template` option is retained for compatibility. Use
 `--no-structured` for endpoints without JSON-schema constrained generation. The
 fallback still validates JSON and claim/evidence contracts. Retries receive only
 structural errors, never solver feedback. Run `uv run phil run --help` for limits.
 
-Each output directory contains:
+Successful argument directories contain:
 
 - `argument.json`: the source, reconstruction, glossary, formalization, and hashes.
 - `trace.json`: model settings, prompt hashes, responses, retries, and source offsets.
@@ -73,6 +75,13 @@ Each output directory contains:
 Existing output paths are refused. Source offsets count Unicode code points and use
 half-open intervals. Generated artifacts can contain the input text verbatim and
 stay under git-ignored `outputs/` by default.
+
+Reconstruction selects source-unit identifiers. The program resolves these to exact
+quotes, so the model cannot introduce a quotation typo. This does not establish that
+its paraphrase preserves the quote's meaning. Non-argument inputs produce a
+`no_argument` outcome and no Lean file. Failed model calls retain `failure.json` and
+a trace, including the frozen reconstruction when formalization failed. Transient
+network retries are bounded separately from structural retries.
 
 ## Lean
 
