@@ -134,3 +134,54 @@ def test_lean_missing_executable_is_not_a_pass(tmp_path):
     result = check_lean(export(fixtures()["modus_ponens"][0]), str(tmp_path / "absent-lean"))
     assert result["status"] == "unavailable"
     assert not result.get("proof_checked", False)
+
+
+def test_schema_validator_errors_can_be_retried():
+    reference = fixtures()["modus_ponens"][0]
+    missing = reference.reconstruction.model_dump()
+    missing["claims"][0]["evidence"] = None
+    replies = iter([json.dumps(missing), reference.reconstruction.model_dump_json()])
+    client = ChatClient(ModelConfig(), httpx.MockTransport(lambda request: response(next(replies))))
+    reconstruction, attempts = client.generate(Reconstruction, "test", {})
+    assert reconstruction == reference.reconstruction
+    assert attempts[0]["accepted"] is False
+
+
+def test_evaluation_records_failures_and_withholds_references(tmp_path):
+    from phil_rl.cli import evaluate
+
+    reference = fixtures()["modus_ponens"][0]
+    replies = iter(
+        [
+            reference.reconstruction.model_dump_json(),
+            reference.formalization.model_dump_json(),
+            "{}",
+        ]
+    )
+    requests = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        requests.append(json.loads(body["messages"][1]["content"]))
+        return response(next(replies))
+
+    client = ChatClient(ModelConfig(retries=0), httpx.MockTransport(handler))
+    result = evaluate(client, tmp_path / "evaluation", ["modus_ponens", "modal"])
+    assert result["generated"] == result["explicit_status_matches"] == 1
+    assert result["total"] == result["completed"] == 2
+    assert all("expected" not in item and "reference" not in item for item in requests)
+    assert (tmp_path / "evaluation" / "modal" / "failure.json").exists()
+    report = (tmp_path / "evaluation" / "modus_ponens" / "review.md").read_text()
+    assert "not assessed" in report
+    assert "(implies R F)" in report
+
+
+def test_server_script_defaults_to_gpu_one(tmp_path):
+    import subprocess
+    from pathlib import Path
+
+    # Shell syntax check only; no server or GPU process is started in tests.
+    path = Path(__file__).parents[1] / "scripts" / "serve.sh"
+    subprocess.run(["bash", "-n", str(path)], check=True)
+    assert "export CUDA_VISIBLE_DEVICES=1" in path.read_text()
+    assert "--tensor-parallel-size 1" in path.read_text()

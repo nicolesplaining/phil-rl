@@ -8,6 +8,7 @@ from phil_rl.client import ChatClient, GenerationError, ModelConfig
 from phil_rl.examples import fixtures
 from phil_rl.lean import check_lean, export
 from phil_rl.pipeline import run
+from phil_rl.report import review
 from phil_rl.schema import Artifact, Formalization, Reconstruction
 from phil_rl.verify import check
 
@@ -26,9 +27,93 @@ def save(directory: Path, artifact: Artifact, trace: dict):
     write_json(directory / "trace.json", trace)
     checks = {"explicit": check(artifact), "with_proposed_implicit": check(artifact, True)}
     write_json(directory / "checks.json", checks)
+    (directory / "review.md").write_text(review(artifact, checks, trace["provenance"]))
     if checks["explicit"]["status"] != "unsupported":
         (directory / "Statement.lean").write_text(export(artifact))
     return checks
+
+
+def model_arguments(parser):
+    parser.add_argument(
+        "--base-url", default=os.getenv("PHIL_BASE_URL", "http://127.0.0.1:8000/v1")
+    )
+    parser.add_argument("--model", default=os.getenv("PHIL_MODEL", "Qwen/Qwen3-32B"))
+    parser.add_argument("--max-tokens", type=int, default=8192)
+    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument("--timeout", type=float, default=180)
+    parser.add_argument("--no-structured", action="store_true")
+    parser.add_argument("--no-qwen-template", action="store_true")
+
+
+def model_config(args):
+    return ModelConfig(
+        base_url=args.base_url,
+        model=args.model,
+        api_key=os.getenv("PHIL_API_KEY"),
+        max_tokens=args.max_tokens,
+        retries=args.retries,
+        timeout=args.timeout,
+        structured=not args.no_structured,
+        qwen_nonthinking=not args.no_qwen_template,
+    )
+
+
+def evaluate(client: ChatClient, directory: Path, names: list[str]) -> dict:
+    references = fixtures()
+    if not names or len(names) != len(set(names)) or any(n not in references for n in names):
+        raise ValueError("Choose unique case names from the synthetic fixture suite.")
+    directory.mkdir(parents=True, exist_ok=False)
+    rows = []
+    for name in names:
+        reference, expected, expected_augmented = references[name]
+        print(f"Evaluating {name}...", file=sys.stderr, flush=True)
+        row = {
+            "case": name,
+            "expected_explicit": expected,
+            "expected_augmented": expected_augmented,
+        }
+        try:
+            artifact, trace = run(reference.source, client)
+            checks = save(directory / name, artifact, trace)
+            row.update(
+                {
+                    "generated": True,
+                    "actual_explicit": checks["explicit"]["status"],
+                    "actual_augmented": checks["with_proposed_implicit"]["status"],
+                    "status_match": checks["explicit"]["status"] == expected,
+                    "augmented_status_match": checks["with_proposed_implicit"]["status"]
+                    == expected_augmented,
+                    "reconstruction_attempts": len(trace["reconstruction_attempts"]),
+                    "formalization_attempts": len(trace["formalization_attempts"]),
+                }
+            )
+        except GenerationError as error:
+            row.update(
+                {
+                    "generated": False,
+                    "error": str(error),
+                    "status_match": False,
+                    "augmented_status_match": False,
+                }
+            )
+            failed = directory / name
+            failed.mkdir(exist_ok=False)
+            write_json(failed / "failure.json", {"error": str(error), "attempts": error.attempts})
+        rows.append(row)
+        result = {
+            "provenance": "llm_on_original_synthetic_passages",
+            "model_config": client.config.public(),
+            "cases": rows,
+            "total": len(names),
+            "completed": len(rows),
+            "generated": sum(r["generated"] for r in rows),
+            "explicit_status_matches": sum(r["status_match"] for r in rows),
+            "augmented_status_matches": sum(r["augmented_status_match"] for r in rows),
+            "fidelity": "not_assessed",
+            "note": "Status agreement does not establish fidelity or philosophical quality.",
+        }
+        write_json(directory / "summary.json", result)
+    return result
 
 
 def main(argv=None) -> int:
@@ -43,15 +128,15 @@ def main(argv=None) -> int:
     generate = sub.add_parser("run", help="Use two LLM calls: reconstruction then formalization.")
     generate.add_argument("input", type=Path)
     generate.add_argument("--out", type=Path, required=True)
-    generate.add_argument(
-        "--base-url", default=os.getenv("PHIL_BASE_URL", "http://127.0.0.1:8000/v1")
+    model_arguments(generate)
+    evaluation = sub.add_parser(
+        "evaluate", help="Run an LLM on synthetic passages and report failures."
     )
-    generate.add_argument("--model", default=os.getenv("PHIL_MODEL", "Qwen/Qwen3-32B"))
-    generate.add_argument("--max-tokens", type=int, default=8192)
-    generate.add_argument("--retries", type=int, default=2)
-    generate.add_argument("--timeout", type=float, default=180)
-    generate.add_argument("--no-structured", action="store_true")
-    generate.add_argument("--no-qwen-template", action="store_true")
+    evaluation.add_argument("--out", type=Path, required=True)
+    evaluation.add_argument(
+        "--cases", nargs="+", choices=list(fixtures()), default=list(fixtures())
+    )
+    model_arguments(evaluation)
     validate = sub.add_parser("check", help="Check an existing frozen artifact with Z3.")
     validate.add_argument("artifact", type=Path)
     validate.add_argument("--include-implicit", action="store_true")
@@ -100,18 +185,12 @@ def main(argv=None) -> int:
         elif args.command == "run":
             if args.out.exists():
                 raise ValueError("Output directory exists; choose a new run directory.")
-            config = ModelConfig(
-                base_url=args.base_url,
-                model=args.model,
-                api_key=os.getenv("PHIL_API_KEY"),
-                max_tokens=args.max_tokens,
-                retries=args.retries,
-                timeout=args.timeout,
-                structured=not args.no_structured,
-                qwen_nonthinking=not args.no_qwen_template,
-            )
-            artifact, trace = run(args.input.read_text(), ChatClient(config))
+            artifact, trace = run(args.input.read_text(), ChatClient(model_config(args)))
             print(json.dumps(save(args.out, artifact, trace), indent=2))
+        elif args.command == "evaluate":
+            result = evaluate(ChatClient(model_config(args)), args.out, args.cases)
+            print(json.dumps(result, indent=2))
+            return 0 if result["generated"] == result["total"] else 1
         elif args.command == "check":
             print(
                 json.dumps(

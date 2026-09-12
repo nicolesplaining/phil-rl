@@ -36,11 +36,12 @@ cd phil-rl
 bash scripts/serve.sh
 ```
 
-The default is Qwen3-32B in bfloat16 with tensor parallelism across two GPUs. The
-server binds to loopback. From your local machine, open an SSH tunnel:
+The shared-node default is Qwen3-32B in bfloat16 on physical GPU 1, with tensor
+parallelism set to one. GPU 0 is reserved for another project. The server binds to
+loopback port 8011. From your local machine, open an SSH tunnel:
 
 ```bash
-ssh -N -L 8000:127.0.0.1:8000 ubuntu@YOUR_GPU_HOST
+ssh -N -L 8000:127.0.0.1:8011 ubuntu@YOUR_GPU_HOST
 ```
 
 Then run:
@@ -69,6 +70,7 @@ Each output directory contains:
 - `trace.json`: model settings, prompt hashes, responses, retries, and source offsets.
 - `checks.json`: separate explicit-premise and proposed-implicit-premise checks.
 - `Statement.lean`: a definition of the argument's statement, when supported.
+- `review.md`: source evidence, claims, formulas, interpretation notes and a human review checklist.
 
 Existing output paths are refused. Source offsets count Unicode code points and use
 half-open intervals. Generated artifacts can contain the input text verbatim and
@@ -137,6 +139,20 @@ of valid outputs would be a bad objective for faithful translation of invalid in
 The included passages are original synthetic examples. They are small enough for
 manual inspection and are not a representative philosophy corpus. `objection.txt`
 is a harder prose example without a reference encoding.
+
+Run the model on all nine synthetic passages with:
+
+```bash
+uv run phil evaluate --out outputs/baseline
+```
+
+Use `--cases modus_ponens missing_bridge scope modal` for a smaller run. Each case
+uses only the English source; reference formulas and expected statuses are withheld
+from the model. The summary records generation failures, retries and agreement
+with the reference's solver status. Matching status alone does not establish
+semantic equivalence. Review each `review.md` before drawing conclusions about
+translation quality. Evaluation exits nonzero on generation failures; semantic
+disagreements remain in the report rather than triggering proof-driven repairs.
 
 The serving setup follows the [Qwen3 model card](https://huggingface.co/Qwen/Qwen3-32B)
 and [vLLM structured-output documentation](https://docs.vllm.ai/en/latest/features/structured_outputs/).

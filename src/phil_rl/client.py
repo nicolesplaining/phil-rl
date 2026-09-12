@@ -11,7 +11,9 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class GenerationError(RuntimeError):
-    pass
+    def __init__(self, message: str, attempts: list | None = None):
+        super().__init__(message)
+        self.attempts = attempts or []
 
 
 @dataclass(frozen=True)
@@ -145,5 +147,6 @@ class ChatClient:
                         ]
                     )
         raise GenerationError(
-            f"No structurally valid {schema.__name__} after {len(attempts)} attempts."
+            f"No structurally valid {schema.__name__} after {len(attempts)} attempts.",
+            attempts=attempts,
         )
